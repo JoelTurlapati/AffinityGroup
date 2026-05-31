@@ -115,10 +115,10 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 }
 .fvb-compare__col--brok ul li { border-bottom-color: #f0f0f0; }
 .fvb-compare__col ul li::before {
-  content: '&#10003;'; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  content: '\2713'; font-weight: 700; flex-shrink: 0; margin-top: 1px;
 }
 .fvb-compare__col--fid ul li::before { color: #C9A84C; }
-.fvb-compare__col--brok ul li::before { content: '&#10007;'; color: #d45c5c; }
+.fvb-compare__col--brok ul li::before { content: '\2717'; color: #d45c5c; }
 
 /* â”€â”€ IMAGE + TEXT BLOCKS â”€â”€ */
 .fvb-section {
@@ -139,7 +139,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
   box-shadow: 0 16px 56px rgba(0,0,0,.12);
 }
 .fvb-block__img img {
-  width: 100%; height: 380px; object-fit: cover; display: block;
+  width: 100%; height: auto; display: block;
   transition: transform .4s;
 }
 .fvb-block__img:hover img { transform: scale(1.03); }
