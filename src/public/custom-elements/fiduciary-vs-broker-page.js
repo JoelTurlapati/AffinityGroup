@@ -1,0 +1,404 @@
+// ─── Shared NAV / FOOTER (self-contained per Wix requirement) ────────────────
+
+const NAV_HTML = `
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="/" class="ag-nav__logo">
+      <img src="/public/assets/HomePage/TheAffinityGroupLogo.jpeg" alt="The Affinity Group" />
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/life-disability-insurance">Life &amp; Disability Insurance</a>
+          <a href="/401k-retirement">401k / Retirement</a>
+          <a href="/estate-planning">Estate Planning</a>
+          <a href="/tax-planning">Tax Planning</a>
+          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          <a href="/outsourced-cfo">Outsourced CFO</a>
+          <a href="/business-owners">Business Owners</a>
+          <a href="/investment-management">Investment Management</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item">
+        <a href="/contact" class="ag-nav__label">CONTACT</a>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/videos">Videos</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/emoney">eMoney – Your Financial GPS</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="/careers" class="ag-nav__careers">Careers</a>
+    </div>
+    <button class="ag-nav__burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>`;
+
+const FOOTER_HTML = `
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="/public/assets/HomePage/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+          <a href="/public/assets/HomePage/CRS.pdf" target="_blank">CRS</a>
+          <a href="/public/assets/HomePage/ADV.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg>
+          </a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/videos">Videos</a>
+          <a href="/blog">Blog Articles</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/contact">Contact</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/life-disability-insurance">Insurance</a>
+          <a href="/emoney">eMoney – Your Financial GPS</a>
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQ's</a>
+          <a href="/careers">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>`;
+
+// ─── FiduciaryVsBrokerPage Component ─────────────────────────────────────────
+
+class FiduciaryVsBrokerPage extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+fiduciary-vs-broker-page{display:block;font-family:'Inter',sans-serif;color:#1a1a1a}
+
+/* NAV */
+.ag-nav{position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07)}
+.ag-nav__inner{max-width:1380px;margin:0 auto;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px}
+.ag-nav__logo img{height:46px;width:auto;object-fit:contain;display:block}
+.ag-nav__links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.ag-nav__item{position:relative}
+.ag-nav__label{display:block;padding:10px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-decoration:none;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .2s;border:none;background:none}
+.ag-nav__label:hover,.ag-nav__item:hover .ag-nav__label{color:#C9A84C}
+.ag-caret{font-size:10px;opacity:.7}
+.ag-nav__drop{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:230px;box-shadow:0 12px 40px rgba(0,0,0,0.13);border-top:3px solid #1D7080;border-radius:0 0 8px 8px;padding:8px 0;z-index:10000}
+.ag-nav__item--drop:hover .ag-nav__drop{display:block}
+.ag-nav__drop a{display:block;padding:9px 20px;font-family:'Inter',sans-serif;font-size:13px;color:#2d2d2d;text-decoration:none;transition:background .15s,color .15s}
+.ag-nav__drop a:hover{background:#E6F4F7;color:#1D7080}
+.ag-nav__drop-heading{display:block;padding:10px 20px 5px;font-size:10.5px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #f0f0f0;margin-top:4px}
+.ag-nav__drop-heading:first-child{border-top:none;margin-top:0}
+.ag-nav__right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.ag-nav__portal{display:inline-block;padding:9px 15px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;text-decoration:none;border-radius:4px;white-space:nowrap;letter-spacing:.03em;transition:background .2s}
+.ag-nav__portal:hover{background:#145568}
+.ag-nav__phone{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#145568;white-space:nowrap}
+.ag-nav__careers{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#C9A84C;text-decoration:none;text-transform:uppercase;letter-spacing:.07em;transition:color .2s}
+.ag-nav__careers:hover{color:#a8873d}
+.ag-nav__burger{display:none}
+
+/* FOOTER */
+.ag-footer{background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif}
+.ag-footer__inner{max-width:1200px;margin:0 auto}
+.ag-footer__top{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ag-footer__doc-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.ag-footer__doc-links a{color:#C9A84C;text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.ag-footer__doc-links a:hover{color:#e8c96e}
+.ag-footer__social{display:flex;gap:12px;margin-bottom:20px}
+.ag-footer__social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .2s}
+.ag-footer__social a:hover{background:#1D7080}
+.ag-footer__address{font-size:12.5px;line-height:1.8;color:#6a9ca5}
+.ag-footer__disclaimer{font-size:12px;line-height:1.9;color:#6a9ca5}
+.ag-footer__sitemap-heading{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.ag-footer__sitemap{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.ag-footer__sitemap a{color:#8fb8c0;text-decoration:none;font-size:12.5px;transition:color .2s}
+.ag-footer__sitemap a:hover{color:#fff}
+.ag-footer__bottom{padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center}
+
+/* ── PAGE HERO ── */
+.fvb-hero {
+  padding: 140px 32px 80px;
+  background: linear-gradient(135deg, #145568 0%, #1D7080 60%, #2a8a9c 100%);
+  text-align: center;
+}
+.fvb-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff; font-weight: 700; margin-bottom: 24px;
+}
+.fvb-hero p {
+  max-width: 740px; margin: 0 auto;
+  font-size: 1.1rem; line-height: 1.9; color: rgba(255,255,255,.88);
+  font-weight: 300;
+}
+.fvb-hero__bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+
+/* ── COMPARISON BANNER ── */
+.fvb-compare {
+  background: #F0F8FA; padding: 72px 32px;
+}
+.fvb-compare__inner { max-width: 1100px; margin: 0 auto; }
+.fvb-compare h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: #145568; text-align: center;
+  margin-bottom: 48px; font-weight: 600;
+}
+.fvb-compare__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.1);
+}
+.fvb-compare__col {
+  padding: 40px 36px;
+}
+.fvb-compare__col--fid { background: #1D7080; color: #fff; }
+.fvb-compare__col--brok { background: #fff; color: #2d2d2d; }
+.fvb-compare__col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  margin-bottom: 8px;
+}
+.fvb-compare__col--fid h3 { color: #fff; }
+.fvb-compare__col--brok h3 { color: #145568; }
+.fvb-compare__col .badge {
+  display: inline-block; padding: 4px 12px;
+  border-radius: 20px; font-size: 11px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.fvb-compare__col--fid .badge { background: #C9A84C; color: #fff; }
+.fvb-compare__col--brok .badge { background: #f0e4c0; color: #7a6020; }
+.fvb-compare__col ul { list-style: none; }
+.fvb-compare__col ul li {
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.1);
+  font-size: .95rem; line-height: 1.6; display: flex; align-items: flex-start; gap: 10px;
+}
+.fvb-compare__col--brok ul li { border-bottom-color: #f0f0f0; }
+.fvb-compare__col ul li::before {
+  content: '✓'; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.fvb-compare__col--fid ul li::before { color: #C9A84C; }
+.fvb-compare__col--brok ul li::before { color: #ccc; content: '✗'; color: #d45c5c; }
+
+/* ── IMAGE + TEXT BLOCKS ── */
+.fvb-section {
+  padding: 88px 32px;
+}
+.fvb-section:nth-child(even) { background: #fff; }
+.fvb-section:nth-child(odd) { background: #F0F8FA; }
+
+.fvb-block {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+.fvb-block--reverse { direction: rtl; }
+.fvb-block--reverse > * { direction: ltr; }
+
+.fvb-block__img {
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 16px 56px rgba(0,0,0,.12);
+}
+.fvb-block__img img {
+  width: 100%; height: 380px; object-fit: cover; display: block;
+  transition: transform .4s;
+}
+.fvb-block__img:hover img { transform: scale(1.03); }
+
+.fvb-block__text {}
+.fvb-block__label {
+  font-size: 11px; font-weight: 700; color: #1D7080;
+  text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px;
+}
+.fvb-block__text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  color: #145568; font-weight: 700; margin-bottom: 20px; line-height: 1.3;
+}
+.fvb-block__text p {
+  font-size: 1rem; line-height: 1.9; color: #4a5a5e; margin-bottom: 16px;
+}
+.fvb-block__text p:last-child { margin-bottom: 0; }
+.fvb-gold-bar { width: 48px; height: 3px; background: #C9A84C; margin-bottom: 24px; }
+
+/* ── CTA ── */
+.fvb-cta {
+  padding: 88px 32px; background: #145568; text-align: center;
+}
+.fvb-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: #fff; font-weight: 600; margin-bottom: 12px;
+}
+.fvb-cta p { color: #a8d4dc; font-size: 1rem; margin-bottom: 32px; }
+.fvb-btn {
+  display: inline-block; padding: 16px 40px;
+  background: #C9A84C; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none; border-radius: 4px; letter-spacing: .05em;
+  transition: background .2s;
+}
+.fvb-btn:hover { background: #a8873d; }
+
+@media (max-width: 900px) {
+  .ag-nav__links,.ag-nav__right{display:none}
+  .ag-nav__burger{display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer}
+  .ag-footer__top{grid-template-columns:1fr;gap:28px}
+  .fvb-compare__grid{grid-template-columns:1fr}
+  .fvb-block{grid-template-columns:1fr;gap:32px}
+  .fvb-block--reverse{direction:ltr}
+}
+</style>
+
+${NAV_HTML}
+
+<main style="padding-top:72px">
+
+  <!-- § 1: Hero -->
+  <section class="fvb-hero">
+    <div class="fvb-hero__bar"></div>
+    <h1>Fiduciary vs. Broker</h1>
+    <p>Not all financial advisors are created equal. Understanding the difference between a fiduciary and a broker could be the most important financial decision you ever make.</p>
+  </section>
+
+  <!-- Comparison Grid -->
+  <section class="fvb-compare">
+    <div class="fvb-compare__inner">
+      <h2>What is a Fiduciary?</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto 48px;font-size:1rem;line-height:1.9;color:#4a5a5e;">
+        A fiduciary is a person or organization that acts on behalf of another person or persons, putting their clients&rsquo; interests ahead of their own, with a duty to preserve good faith and trust.
+      </p>
+      <div class="fvb-compare__grid">
+        <div class="fvb-compare__col fvb-compare__col--fid">
+          <h3>Fiduciary Advisor</h3>
+          <span class="badge">&#10003; The Affinity Group Standard</span>
+          <ul>
+            <li>Legally and ethically bound to act in YOUR best interest</li>
+            <li>Must disclose all conflicts of interest</li>
+            <li>Recommends the best option for you — not the most profitable for them</li>
+            <li>Fee-based, transparent compensation structure</li>
+            <li>Ongoing duty of care and loyalty to client</li>
+            <li>No proprietary product requirements or third-party compensation</li>
+          </ul>
+        </div>
+        <div class="fvb-compare__col fvb-compare__col--brok">
+          <h3>Broker / Registered Representative</h3>
+          <span class="badge">Suitability Standard Only</span>
+          <ul>
+            <li>Held only to a "suitability" standard — not "best interest"</li>
+            <li>May recommend products that earn them higher commissions</li>
+            <li>Not required to disclose all conflicts of interest</li>
+            <li>Can receive compensation from third-party product providers</li>
+            <li>No ongoing obligation after a transaction</li>
+            <li>May have proprietary product quotas or sales targets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 2: Financial Advisors vs Fiduciaries + Image 1 -->
+  <section class="fvb-section">
+    <div class="fvb-block">
+      <div class="fvb-block__img">
+        <img src="/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage1.avif"
+             alt="Financial Advisors vs Fiduciaries" />
+      </div>
+      <div class="fvb-block__text">
+        <div class="fvb-gold-bar"></div>
+        <div class="fvb-block__label">Financial Advisors vs. Fiduciaries</div>
+        <h2>Not All Financial Advisors Are Fiduciaries</h2>
+        <p>Brokers, also known as registered representatives, are only held to a suitability standard, which requires that the broker make recommendations that are suitable based on a client&rsquo;s personal situation — but the standard does not require the advice to be in the client&rsquo;s best interest.</p>
+        <p>Therefore, some brokers may act for their own benefit. Being a fiduciary requires being bound both legally and ethically to act in the other&rsquo;s best interests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 3: Legally Best for You + Image 2 -->
+  <section class="fvb-section">
+    <div class="fvb-block fvb-block--reverse">
+      <div class="fvb-block__img">
+        <img src="/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage2.avif"
+             alt="Legally Best For You" />
+      </div>
+      <div class="fvb-block__text">
+        <div class="fvb-gold-bar"></div>
+        <div class="fvb-block__label">Legal Standard</div>
+        <h2>Legally Best For You</h2>
+        <p>Being a fiduciary means being bound both legally and ethically to act in the other&rsquo;s best interests. This isn&rsquo;t just a preference or a marketing claim &mdash; it is a legal obligation that carries real consequences if violated.</p>
+        <p>When you work with The Affinity Group, you can be confident that every recommendation we make is designed exclusively to serve your financial goals &mdash; not ours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 4: Going the Extra Mile + Image 3 -->
+  <section class="fvb-section">
+    <div class="fvb-block">
+      <div class="fvb-block__img">
+        <img src="/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage3.avif"
+             alt="Going the Extra Mile" />
+      </div>
+      <div class="fvb-block__text">
+        <div class="fvb-gold-bar"></div>
+        <div class="fvb-block__label">Our Commitment</div>
+        <h2>Going the Extra Mile</h2>
+        <p>Being a Fiduciary means that we take extra steps and go the extra mile to assure that our clients&rsquo; financial issues are being looked after with the care that they deserve, and we are held to the Fiduciary Standard at all times.</p>
+        <p>Our independence means no proprietary products, no third-party commissions, and no conflicts. Just expert, objective advice that puts your financial future first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fvb-cta">
+    <h2>Experience the Fiduciary Difference</h2>
+    <p>Schedule a complimentary 15-minute introduction with our team today.</p>
+    <a href="/contact" class="fvb-btn">Schedule a Free Consultation</a>
+  </section>
+
+</main>
+
+${FOOTER_HTML}
+`;
+  }
+}
+
+customElements.define('fiduciary-vs-broker-page', FiduciaryVsBrokerPage);
