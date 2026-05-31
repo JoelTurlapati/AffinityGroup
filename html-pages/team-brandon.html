@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Affinity Group | Brandon Clemens</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+.ag-nav{position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07)}
+.ag-nav__inner{max-width:1380px;margin:0 auto;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px}
+.ag-nav__logo img{height:46px;width:auto;object-fit:contain;display:block}
+.ag-nav__links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.ag-nav__item{position:relative}
+.ag-nav__label{display:block;padding:10px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-decoration:none;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .2s;border:none;background:none}
+.ag-nav__label:hover,.ag-nav__item:hover .ag-nav__label{color:#C9A84C}
+.ag-caret{font-size:10px;opacity:.7}
+.ag-nav__drop{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:230px;box-shadow:0 12px 40px rgba(0,0,0,0.13);border-top:3px solid #1D7080;border-radius:0 0 8px 8px;padding:8px 0;z-index:10000}
+.ag-nav__item--drop:hover .ag-nav__drop{display:block}
+.ag-nav__drop a{display:block;padding:9px 20px;font-family:'Inter',sans-serif;font-size:13px;color:#2d2d2d;text-decoration:none;transition:background .15s,color .15s}
+.ag-nav__drop a:hover{background:#E6F4F7;color:#1D7080}
+.ag-nav__drop-heading{display:block;padding:10px 20px 5px;font-size:10.5px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #f0f0f0;margin-top:4px}
+.ag-nav__drop-heading:first-child{border-top:none;margin-top:0}
+.ag-nav__right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.ag-nav__portal{display:inline-block;padding:9px 15px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;text-decoration:none;border-radius:4px;white-space:nowrap;letter-spacing:.03em;transition:background .2s}
+.ag-nav__portal:hover{background:#145568}
+.ag-nav__phone{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#145568;white-space:nowrap}
+.ag-nav__careers{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#C9A84C;text-decoration:none;text-transform:uppercase;letter-spacing:.07em;transition:color .2s}
+.ag-nav__careers:hover{color:#a8873d}
+.ag-nav__burger{display:none}
+.ag-footer{background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif}
+.ag-footer__inner{max-width:1200px;margin:0 auto}
+.ag-footer__top{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ag-footer__doc-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.ag-footer__doc-links a{color:#C9A84C;text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.ag-footer__doc-links a:hover{color:#e8c96e}
+.ag-footer__social{display:flex;gap:12px;margin-bottom:20px}
+.ag-footer__social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .2s}
+.ag-footer__social a:hover{background:#1D7080}
+.ag-footer__address{font-size:12.5px;line-height:1.8;color:#6a9ca5}
+.ag-footer__disclaimer{font-size:12px;line-height:1.9;color:#6a9ca5}
+.ag-footer__sitemap-heading{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.ag-footer__sitemap{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.ag-footer__sitemap a{color:#8fb8c0;text-decoration:none;font-size:12.5px;transition:color .2s}
+.ag-footer__sitemap a:hover{color:#fff}
+.ag-footer__bottom{padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center}
+.ag-btn-primary{display:inline-block;padding:16px 38px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em;border:none;cursor:pointer;transition:background .2s,transform .15s}
+.ag-btn-primary:hover{background:#145568;transform:translateY(-2px)}
+.ag-gold-bar{width:56px;height:3px;background:#C9A84C;margin:0 0 28px}
+.ag-section-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
+@media(max-width:900px){.ag-nav__links,.ag-nav__right{display:none}.ag-nav__burger{display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer}.ag-footer__top{grid-template-columns:1fr;gap:28px}}
+.tm-profile{padding:100px 32px 72px;background:linear-gradient(135deg,#145568 0%,#1D7080 60%,#2a8a9c 100%)}
+.tm-profile__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
+.tm-profile__photo{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.tm-profile__photo img{width:100%;height:auto;display:block}
+.tm-profile__info{color:#fff;padding-top:16px}
+.tm-profile__info h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;margin-bottom:8px;line-height:1.2}
+.tm-profile__title{font-family:'Inter',sans-serif;font-size:1rem;font-weight:400;color:rgba(255,255,255,.78);margin-bottom:32px;letter-spacing:.02em}
+.tm-bio{padding:80px 32px;background:#fff}
+.tm-bio__inner{max-width:860px;margin:0 auto}
+.tm-bio h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);color:#145568;margin-bottom:36px;font-weight:600}
+.tm-bio p{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:20px}
+.tm-cta{padding:64px 32px;background:#F0F8FA;text-align:center}
+.tm-cta h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#145568;margin-bottom:24px;font-weight:600}
+.tm-cta__btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+@media(max-width:800px){.tm-profile__inner{grid-template-columns:1fr}.tm-profile__photo{max-width:320px}}
+</style>
+
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="/" class="ag-nav__logo" target="_top"><img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/TheAffinityGroupLogo.jpeg" alt="The Affinity Group" /></a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <a href="/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+          <a href="/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="/life-disability-insurance" target="_top">Life &amp; Disability Insurance</a>
+          <a href="/401k-retirement" target="_top">401k / Retirement</a>
+          <a href="/estate-planning" target="_top">Estate Planning</a>
+          <a href="/tax-planning" target="_top">Tax Planning</a>
+          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          <a href="/outsourced-cfo" target="_top">Outsourced CFO</a>
+          <a href="/business-owners" target="_top">Business Owners</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+          <a href="/legal-structure" target="_top">Legal Structure</a>
+          <a href="/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="/business-sale-planning" target="_top">Business Sale Planning</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/our-team" target="_top">Our Team</a>
+          <a href="/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item"><a href="/contact" class="ag-nav__label" target="_top">CONTACT</a></div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/videos" target="_top">Videos</a>
+          <a href="/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="/careers" class="ag-nav__careers" target="_top">Careers</a>
+    </div>
+    <button class="ag-nav__burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<main>
+  <section class="tm-profile">
+    <div class="tm-profile__inner">
+      <div class="tm-profile__photo">
+        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/OurTeam/Brandon/BrandonImage.avif" alt="Brandon Clemens" />
+      </div>
+      <div class="tm-profile__info">
+        <p class="ag-section-label">In-House Team</p>
+        <div class="ag-gold-bar"></div>
+        <h1>Brandon Clemens</h1>
+        <p class="tm-profile__title">Financial Planner</p>
+        <a href="/contact" class="ag-btn-primary" target="_top">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-bio">
+    <div class="tm-bio__inner">
+      <h2>Get to Know Brandon</h2>
+      <p>Brandon is a dedicated Financial Planner at The Affinity Group, bringing over a decade of experience in guiding families and business owners toward financial security. His mission is to empower clients to achieve their financial goals through personalized and comprehensive total wealth management.</p>
+      <p>He began his journey in the financial services industry in 2013 after earning a bachelor&rsquo;s degree in finance from Kent State University. Brandon is committed to continuous education and professional development to better serve his clients, ensuring they receive the most up-to-date financial strategies and insights. He is also a licensed Investment Advisor Representative and holds the Ohio Life &amp; Health insurance license, allowing him to provide a holistic approach to financial planning.</p>
+      <p>Brandon specializes in helping business owners and families navigate intricate financial landscapes, from retirement planning and investment management to tax-efficient wealth strategies and succession planning. His approach emphasizes fiduciary responsibility, financial education, and strategic wealth management to ensure his clients&rsquo; long-term success.</p>
+      <p>Beyond his career, Brandon is a devoted husband to Amber and a proud father to his two young sons, Carter and Dean. He is deeply involved in his community and volunteers with various organizations. His interests extend to golf, wine, Cleveland Sports, personal development and holistic wellness. Brandon and his family reside in Stark County, Ohio, where they enjoy traveling, spending time outdoors, and creating memorable experiences with loved ones.</p>
+    </div>
+  </section>
+
+  <section class="tm-cta">
+    <h2>Meet the Full Affinity Group Team</h2>
+    <div class="tm-cta__btns">
+      <a href="/contact" class="ag-btn-primary" target="_top">Contact Us</a>
+      <a href="/our-team" style="display:inline-block;padding:14px 32px;background:transparent;color:#1D7080;border:2px solid #1D7080;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em" target="_top">Meet the Full Team</a>
+    </div>
+  </section>
+</main>
+
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/CRS.pdf" target="_blank">CRS</a>
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/ADV.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="/videos" target="_top">Videos</a>
+          <a href="/blog" target="_top">Blog Articles</a>
+          <a href="/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="/contact" target="_top">Contact</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+          <a href="/life-disability-insurance" target="_top">Insurance</a>
+          <a href="/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
+          <a href="/our-team" target="_top">Our Team</a>
+          <a href="/faqs" target="_top">FAQ&#39;s</a>
+          <a href="/careers" target="_top">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
+</script>
+</body>
+</html>
