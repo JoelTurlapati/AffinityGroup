@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Affinity Group | Real Estate Investing</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+
+/* NAV */
+.ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+.ag-nav__inner { max-width: 1380px; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 28px; gap: 20px; }
+.ag-nav__logo img { height: 46px; width: auto; object-fit: contain; display: block; }
+.ag-nav__links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+.ag-nav__item { position: relative; }
+.ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
+.ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
+.ag-caret { font-size: 10px; opacity: .7; }
+.ag-nav__drop { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 230px; box-shadow: 0 12px 40px rgba(0,0,0,0.13); border-top: 3px solid #1D7080; border-radius: 0 0 8px 8px; padding: 8px 0; z-index: 10000; }
+.ag-nav__item--drop:hover .ag-nav__drop { display: block; }
+.ag-nav__drop a { display: block; padding: 9px 20px; font-family: 'Inter', sans-serif; font-size: 13px; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s; }
+.ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading { display: block; padding: 10px 20px 5px; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; border-top: 1px solid #f0f0f0; margin-top: 4px; }
+.ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.ag-nav__portal { display: inline-block; padding: 9px 15px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
+.ag-nav__portal:hover { background: #145568; }
+.ag-nav__phone { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap; }
+.ag-nav__careers { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: #C9A84C; text-decoration: none; text-transform: uppercase; letter-spacing: .07em; transition: color .2s; }
+.ag-nav__careers:hover { color: #a8873d; }
+.ag-nav__burger { display: none; }
+
+/* FOOTER */
+.ag-footer { background: #0c3540; color: #8fb8c0; padding: 56px 28px 28px; font-family: 'Inter', sans-serif; }
+.ag-footer__inner { max-width: 1200px; margin: 0 auto; }
+.ag-footer__top { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ag-footer__doc-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.ag-footer__doc-links a { color: #C9A84C; text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
+.ag-footer__doc-links a:hover { color: #e8c96e; }
+.ag-footer__social { display: flex; gap: 12px; margin-bottom: 20px; }
+.ag-footer__social a { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: background .2s; }
+.ag-footer__social a:hover { background: #1D7080; }
+.ag-footer__address { font-size: 12.5px; line-height: 1.8; color: #6a9ca5; }
+.ag-footer__disclaimer { font-size: 12px; line-height: 1.9; color: #6a9ca5; }
+.ag-footer__sitemap-heading { font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 12px; }
+.ag-footer__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.ag-footer__sitemap a { color: #8fb8c0; text-decoration: none; font-size: 12.5px; transition: color .2s; }
+.ag-footer__sitemap a:hover { color: #fff; }
+.ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
+
+/* SHARED */
+.ag-btn-primary { display: inline-block; padding: 16px 38px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
+.ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
+.ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+
+@media (max-width: 900px) {
+  .ag-nav__links, .ag-nav__right { display: none; }
+  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
+  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* PAGE: REAL ESTATE INVESTING */
+.rei-hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; background: #0e3d47; margin-top: 72px; }
+.rei-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.rei-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(14,61,71,.78) 100%); }
+.rei-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; }
+.rei-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 600; margin-bottom: 16px; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+
+.rei-stat { padding: 56px 32px; background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%); text-align: center; }
+.rei-stat h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.8rem); color: #C9A84C; font-weight: 700; }
+
+.rei-body { padding: 80px 32px; background: #fff; }
+.rei-body__inner { max-width: 900px; margin: 0 auto; }
+.rei-body p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 20px; }
+
+.rei-services { padding: 72px 32px; background: #F0F8FA; }
+.rei-services__inner { max-width: 1100px; margin: 0 auto; }
+.rei-services h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 36px; font-weight: 600; text-align: center; }
+.rei-services__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.rei-services__col h3 { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #C9A84C; }
+.rei-services__col ul { list-style: none; }
+.rei-services__col ul li { padding: 10px 0 10px 24px; position: relative; font-size: .97rem; line-height: 1.7; color: #2a2a2a; border-bottom: 1px solid rgba(29,112,128,.08); }
+.rei-services__col ul li:last-child { border-bottom: none; }
+.rei-services__col ul li::before { content: '\2022'; position: absolute; left: 0; color: #C9A84C; font-size: 1.3rem; top: 8px; }
+
+.rei-video { padding: 72px 32px; background: #fff; text-align: center; }
+.rei-video__inner { max-width: 820px; margin: 0 auto; }
+.rei-video__embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.12); margin-bottom: 40px; }
+.rei-video__embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+@media (max-width: 768px) {
+  .rei-services__grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="/" class="ag-nav__logo" target="_top">
+      <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/TheAffinityGroupLogo.jpeg" alt="The Affinity Group" />
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <a href="/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+          <a href="/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="/life-disability-insurance" target="_top">Life &amp; Disability Insurance</a>
+          <a href="/401k-retirement" target="_top">401k / Retirement</a>
+          <a href="/estate-planning" target="_top">Estate Planning</a>
+          <a href="/tax-planning" target="_top">Tax Planning</a>
+          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          <a href="/outsourced-cfo" target="_top">Outsourced CFO</a>
+          <a href="/business-owners" target="_top">Business Owners</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/our-team" target="_top">Our Team</a>
+          <a href="/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item">
+        <a href="/contact" class="ag-nav__label" target="_top">CONTACT</a>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/videos" target="_top">Videos</a>
+          <a href="/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="/careers" class="ag-nav__careers" target="_top">Careers</a>
+    </div>
+    <button class="ag-nav__burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- §1 Hero -->
+  <section class="rei-hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/RealEstateInvestingBackgroundVideo.mp4" type="video/mp4" />
+    </video>
+    <div class="rei-hero__overlay"></div>
+    <div class="rei-hero__text">
+      <h1>Real Estate Investing</h1>
+    </div>
+  </section>
+
+  <!-- §2 Stat Banner -->
+  <section class="rei-stat">
+    <h2>90% of All Millionaires Are Made Through Real Estate</h2>
+  </section>
+
+  <!-- §3 Body Text -->
+  <section class="rei-body">
+    <div class="rei-body__inner">
+      <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
+      <p>The vast majority of financial advisors ignore one of the most powerful wealth-building tools in the universe &mdash; real estate investing. Separately from a &ldquo;Total Wealth Management&rdquo; relationship, clients can engage our firm in assisting them to pursue their real estate investment goals.</p>
+      <p>Our Senior Wealth Advisor Scott Lowe has 18 years of experience building his own personal real estate investment portfolio, which has grown to become its own separate company.</p>
+    </div>
+  </section>
+
+  <!-- §4 Two-Column Services -->
+  <section class="rei-services">
+    <div class="rei-services__inner">
+      <h2>How We Help You Invest in Real Estate</h2>
+      <div class="rei-services__grid">
+        <div class="rei-services__col">
+          <h3>Direct Ownership Guidance</h3>
+          <ul>
+            <li>Determining the type of real estate to invest in &mdash; residential, commercial, short-term</li>
+            <li>Evaluating individual properties and running rate-of-return numbers</li>
+            <li>Partnering with the right real estate agent</li>
+            <li>Financing options and banking relationships</li>
+            <li>Structuring your real estate investment entity through LLCs</li>
+            <li>Determining bookkeeping and accounting strategies</li>
+            <li>Creating property management systems</li>
+          </ul>
+        </div>
+        <div class="rei-services__col">
+          <h3>Passive Investment Options</h3>
+          <ul>
+            <li>Evaluate limited partnership opportunities</li>
+            <li>Explore opportunities to be a lender to other real estate investors</li>
+            <li>Direct property ownership with delegating all responsibilities to an outside management company</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §5 Video + CTA -->
+  <section class="rei-video">
+    <div class="rei-video__inner">
+      <div class="rei-video__embed">
+        <iframe src="https://www.youtube.com/embed/hG4dzwl8Sag" title="Real Estate Investing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <a href="/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/CRS.pdf" target="_blank">CRS</a>
+          <a href="https://joelturlapati.github.io/AffinityGroup/src/public/assets/HomePage/ADV.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="/videos" target="_top">Videos</a>
+          <a href="/blog" target="_top">Blog Articles</a>
+          <a href="/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="/contact" target="_top">Contact</a>
+          <a href="/investment-management" target="_top">Investment Management</a>
+          <a href="/life-disability-insurance" target="_top">Insurance</a>
+          <a href="/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
+          <a href="/our-team" target="_top">Our Team</a>
+          <a href="/faqs" target="_top">FAQ&rsquo;s</a>
+          <a href="/careers" target="_top">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function r(){
+    var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);
+    window.parent.postMessage(JSON.stringify({type:"iFrameHeight",height:h}),"*");
+    window.parent.postMessage(JSON.stringify({type:"iFrameReady",height:h}),"*");
+    window.parent.postMessage({height:h},"*");
+  }
+  ["load","resize","DOMContentLoaded"].forEach(function(e){window.addEventListener(e,r);});
+  setInterval(r,200);
+})();
+</script>
+</body>
+</html>
