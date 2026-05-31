@@ -54,7 +54,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-footer__sitemap a:hover{color:#fff}
 .ag-footer__bottom{padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center}
 
-/* â”€â”€ PAGE HERO â”€â”€ */
+/* PAGE HERO */
 .fvb-hero {
   padding: 140px 32px 80px;
   background: linear-gradient(135deg, #145568 0%, #1D7080 60%, #2a8a9c 100%);
@@ -72,10 +72,8 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 }
 .fvb-hero__bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* â”€â”€ COMPARISON BANNER â”€â”€ */
-.fvb-compare {
-  background: #F0F8FA; padding: 72px 32px;
-}
+/* COMPARISON BANNER */
+.fvb-compare { background: #F0F8FA; padding: 72px 32px; }
 .fvb-compare__inner { max-width: 1100px; margin: 0 auto; }
 .fvb-compare h2 {
   font-family: 'Playfair Display', serif;
@@ -88,23 +86,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
   border-radius: 12px; overflow: hidden;
   box-shadow: 0 8px 40px rgba(0,0,0,.1);
 }
-.fvb-compare__col {
-  padding: 40px 36px;
-}
+.fvb-compare__col { padding: 40px 36px; }
 .fvb-compare__col--fid { background: #1D7080; color: #fff; }
 .fvb-compare__col--brok { background: #fff; color: #2d2d2d; }
 .fvb-compare__col h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem; font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;
 }
 .fvb-compare__col--fid h3 { color: #fff; }
 .fvb-compare__col--brok h3 { color: #145568; }
 .fvb-compare__col .badge {
   display: inline-block; padding: 4px 12px;
   border-radius: 20px; font-size: 11px; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase;
-  margin-bottom: 20px;
+  letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px;
 }
 .fvb-compare__col--fid .badge { background: #C9A84C; color: #fff; }
 .fvb-compare__col--brok .badge { background: #f0e4c0; color: #7a6020; }
@@ -120,26 +114,25 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .fvb-compare__col--fid ul li::before { color: #C9A84C; }
 .fvb-compare__col--brok ul li::before { content: '\2717'; color: #d45c5c; }
 
-/* â”€â”€ IMAGE + TEXT BLOCKS â”€â”€ */
-.fvb-section {
-  padding: 88px 32px;
-}
+/* IMAGE + TEXT BLOCKS */
+.fvb-section { padding: 88px 32px; }
 .fvb-section:nth-child(even) { background: #fff; }
 .fvb-section:nth-child(odd) { background: #F0F8FA; }
 
 .fvb-block {
   max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
 }
 .fvb-block--reverse { direction: rtl; }
 .fvb-block--reverse > * { direction: ltr; }
 
 .fvb-block__img {
-  border-radius: 12px; overflow: hidden;
   box-shadow: 0 16px 56px rgba(0,0,0,.12);
+  line-height: 0;
 }
 .fvb-block__img img {
   width: 100%; height: auto; display: block;
+  border-radius: 12px;
   transition: transform .4s;
 }
 .fvb-block__img:hover img { transform: scale(1.03); }
@@ -159,10 +152,8 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .fvb-block__text p:last-child { margin-bottom: 0; }
 .fvb-gold-bar { width: 48px; height: 3px; background: #C9A84C; margin-bottom: 24px; }
 
-/* â”€â”€ CTA â”€â”€ */
-.fvb-cta {
-  padding: 88px 32px; background: #145568; text-align: center;
-}
+/* CTA */
+.fvb-cta { padding: 88px 32px; background: #145568; text-align: center; }
 .fvb-cta h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
@@ -242,14 +233,12 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 
 <main style="padding-top:72px">
 
-  <!-- Â§ 1: Hero -->
   <section class="fvb-hero">
     <div class="fvb-hero__bar"></div>
     <h1>Fiduciary vs. Broker</h1>
     <p>Not all financial advisors are created equal. Understanding the difference between a fiduciary and a broker could be the most important financial decision you ever make.</p>
   </section>
 
-  <!-- Comparison Grid -->
   <section class="fvb-compare">
     <div class="fvb-compare__inner">
       <h2>What is a Fiduciary?</h2>
@@ -285,12 +274,10 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     </div>
   </section>
 
-  <!-- Â§ 2: Financial Advisors vs Fiduciaries + Image 1 -->
   <section class="fvb-section">
     <div class="fvb-block">
       <div class="fvb-block__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage1.avif"
-             alt="Financial Advisors vs Fiduciaries" />
+        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage1.avif" alt="Financial Advisors vs Fiduciaries" />
       </div>
       <div class="fvb-block__text">
         <div class="fvb-gold-bar"></div>
@@ -302,12 +289,10 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     </div>
   </section>
 
-  <!-- Â§ 3: Legally Best for You + Image 2 -->
   <section class="fvb-section">
     <div class="fvb-block fvb-block--reverse">
       <div class="fvb-block__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage2.avif"
-             alt="Legally Best For You" />
+        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage2.avif" alt="Legally Best For You" />
       </div>
       <div class="fvb-block__text">
         <div class="fvb-gold-bar"></div>
@@ -319,12 +304,10 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     </div>
   </section>
 
-  <!-- Â§ 4: Going the Extra Mile + Image 3 -->
   <section class="fvb-section">
     <div class="fvb-block">
       <div class="fvb-block__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage3.avif"
-             alt="Going the Extra Mile" />
+        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/FiduciaryVsBroker/FiduciaryVsBrokerImage3.avif" alt="Going the Extra Mile" />
       </div>
       <div class="fvb-block__text">
         <div class="fvb-gold-bar"></div>
@@ -336,7 +319,6 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="fvb-cta">
     <h2>Experience the Fiduciary Difference</h2>
     <p>Schedule a complimentary 15-minute introduction with our team today.</p>
@@ -397,6 +379,3 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 </script>
 </body>
 </html>
-
-
-
