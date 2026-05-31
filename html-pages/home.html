@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Affinity Group | Home</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* â”€â”€ NAV â”€â”€ */
+.ag-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 72px; z-index: 9999;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(29,112,128,0.12);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+}
+.ag-nav__inner {
+  max-width: 1380px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center;
+  padding: 0 28px; gap: 20px;
+}
+.ag-nav__logo img { height: 46px; width: auto; object-fit: contain; display: block; }
+.ag-nav__links {
+  display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center;
+}
+.ag-nav__item { position: relative; }
+.ag-nav__label {
+  display: block; padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em;
+  color: #145568; text-decoration: none; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap;
+  transition: color .2s;
+  border: none; background: none; font-style: normal;
+}
+.ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
+.ag-caret { font-size: 10px; opacity: .7; }
+
+.ag-nav__drop {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; min-width: 230px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+  border-top: 3px solid #1D7080;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 0; z-index: 10000;
+}
+.ag-nav__item--drop:hover .ag-nav__drop { display: block; }
+.ag-nav__drop a {
+  display: block; padding: 9px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; color: #2d2d2d; text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading {
+  display: block; padding: 10px 20px 5px;
+  font-size: 10.5px; font-weight: 700; color: #1D7080;
+  text-transform: uppercase; letter-spacing: .12em;
+  border-top: 1px solid #f0f0f0; margin-top: 4px;
+}
+.ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+
+.ag-nav__right {
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
+}
+.ag-nav__portal {
+  display: inline-block; padding: 9px 15px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  white-space: nowrap; letter-spacing: .03em;
+  transition: background .2s;
+}
+.ag-nav__portal:hover { background: #145568; }
+.ag-nav__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap;
+}
+.ag-nav__careers {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 700; color: #C9A84C;
+  text-decoration: none; text-transform: uppercase; letter-spacing: .07em;
+  transition: color .2s;
+}
+.ag-nav__careers:hover { color: #a8873d; }
+.ag-nav__burger { display: none; }
+
+/* â”€â”€ FOOTER â”€â”€ */
+.ag-footer {
+  background: #0c3540; color: #8fb8c0;
+  padding: 56px 28px 28px; font-family: 'Inter', sans-serif;
+}
+.ag-footer__inner { max-width: 1200px; margin: 0 auto; }
+.ag-footer__top {
+  display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 48px;
+  padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ag-footer__doc-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.ag-footer__doc-links a {
+  color: #C9A84C; text-decoration: none;
+  font-size: 13px; font-weight: 500; transition: color .2s;
+}
+.ag-footer__doc-links a:hover { color: #e8c96e; }
+.ag-footer__social { display: flex; gap: 12px; margin-bottom: 20px; }
+.ag-footer__social a {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; text-decoration: none;
+  transition: background .2s;
+}
+.ag-footer__social a:hover { background: #1D7080; }
+.ag-footer__address { font-size: 12.5px; line-height: 1.8; color: #6a9ca5; }
+.ag-footer__disclaimer { font-size: 12px; line-height: 1.9; color: #6a9ca5; }
+.ag-footer__sitemap-heading {
+  font-size: 11px; font-weight: 700; color: #fff;
+  text-transform: uppercase; letter-spacing: .12em; margin-bottom: 12px;
+}
+.ag-footer__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.ag-footer__sitemap a {
+  color: #8fb8c0; text-decoration: none; font-size: 12.5px; transition: color .2s;
+}
+.ag-footer__sitemap a:hover { color: #fff; }
+.ag-footer__bottom {
+  padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center;
+}
+
+/* â”€â”€ SHARED COMPONENTS â”€â”€ */
+.ag-btn-primary {
+  display: inline-block; padding: 16px 38px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  letter-spacing: .04em; border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
+.ag-btn-gold {
+  display: inline-block; padding: 14px 32px;
+  background: #C9A84C; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  letter-spacing: .04em; border: none; cursor: pointer;
+  transition: background .2s;
+}
+.ag-btn-gold:hover { background: #a8873d; }
+.ag-section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; color: #1D7080;
+  text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px;
+}
+.ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+
+@media (max-width: 900px) {
+  .ag-nav__links, .ag-nav__right { display: none; }
+  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
+  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+}
+
+
+/* â”€â”€ HOME-PAGE SPECIFIC â”€â”€ */
+home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
+
+/* Hero */
+.hp-hero {
+  position: relative; height: 100vh; min-height: 580px;
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.hp-hero video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hp-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(14,61,71,.72) 100%);
+}
+.hp-hero__text {
+  position: relative; z-index: 2;
+  text-align: center; padding: 48px 32px;
+  color: #fff;
+}
+.hp-hero__text p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.8rem);
+  font-style: italic; line-height: 1.55;
+  text-shadow: 0 2px 24px rgba(0,0,0,.5);
+}
+.hp-hero__text em {
+  color: #C9A84C; font-style: normal; font-weight: 700;
+}
+
+/* Section 2 â€“ Firm */
+.hp-firm {
+  padding: 88px 32px;
+  background: #fff; text-align: center;
+}
+.hp-firm__inner { max-width: 860px; margin: 0 auto; }
+.hp-firm p {
+  font-size: 1.12rem; line-height: 1.95; color: #3a3a3a; font-weight: 300;
+}
+.hp-firm p + p { margin-top: 22px; }
+
+/* Section 3 â€“ Personas */
+.hp-personas { display: grid; grid-template-columns: repeat(3, 1fr); }
+.hp-persona {
+  position: relative; height: 500px; overflow: hidden;
+  text-decoration: none; display: block; cursor: pointer;
+}
+.hp-persona img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+}
+.hp-persona:hover img { transform: scale(1.06); }
+.hp-persona__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.05) 20%, rgba(20,85,104,.8) 100%);
+  display: flex; align-items: flex-end; padding: 36px;
+  transition: background .3s;
+}
+.hp-persona:hover .hp-persona__overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,.15) 20%, rgba(20,85,104,.92) 100%);
+}
+.hp-persona__text {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 600; line-height: 1.45;
+  text-shadow: 0 2px 10px rgba(0,0,0,.3);
+}
+.hp-persona__arrow {
+  display: inline-block; margin-left: 8px;
+  color: #C9A84C; font-family: 'Inter', sans-serif; font-weight: 400;
+}
+
+/* Section 4 â€“ TWM intro */
+.hp-twm-intro {
+  padding: 88px 32px; background: #F0F8FA; text-align: center;
+}
+.hp-twm-intro__inner { max-width: 800px; margin: 0 auto; }
+.hp-twm-intro p { font-size: 1.08rem; line-height: 1.9; color: #3a3a3a; }
+
+/* Section 5 â€“ Circle */
+.hp-circle { padding: 64px 32px; background: #fff; text-align: center; }
+.hp-circle img { max-width: 720px; width: 100%; height: auto; }
+
+/* Section 6 â€“ Fiduciary CTA */
+.hp-fid-cta {
+  padding: 88px 32px; background: #145568; text-align: center;
+}
+.hp-fid-cta__inner { max-width: 680px; margin: 0 auto; }
+.hp-fid-cta p {
+  font-size: 1.25rem; line-height: 1.8; color: #E6F4F7; margin-bottom: 36px;
+}
+.hp-fid-cta strong { color: #fff; }
+
+/* Section 7 â€“ Schedule */
+.hp-schedule {
+  padding: 88px 32px; background: #E6F4F7; text-align: center;
+}
+.hp-schedule h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: #145568; margin-bottom: 32px; font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hp-personas { grid-template-columns: 1fr; }
+  .hp-persona { height: 320px; }
+}
+</style>
+
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="/" class="ag-nav__logo">
+      <img src="/public/assets/HomePage/TheAffinityGroupLogo.jpeg" alt="The Affinity Group" />
+    </a>
+
+    <div class="ag-nav__links">
+
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/life-disability-insurance">Life &amp; Disability Insurance</a>
+          <a href="/401k-retirement">401k / Retirement</a>
+          <a href="/estate-planning">Estate Planning</a>
+          <a href="/tax-planning">Tax Planning</a>
+          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          <a href="/outsourced-cfo">Outsourced CFO</a>
+          <a href="/business-owners">Business Owners</a>
+          <a href="/investment-management">Investment Management</a>
+        </div>
+      </div>
+
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQs</a>
+        </div>
+      </div>
+
+      <div class="ag-nav__item">
+        <a href="/contact" class="ag-nav__label">CONTACT</a>
+      </div>
+
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/videos">Videos</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/emoney">eMoney â€“ Your Financial GPS</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning"
+         class="ag-nav__portal" target="_blank" rel="noopener">
+        Total Wealth Management Portal
+      </a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="/careers" class="ag-nav__careers">Careers</a>
+    </div>
+
+    <button class="ag-nav__burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<main style="padding-top:0">
+
+  <!-- Â§ 1: Hero Video -->
+  <section class="hp-hero">
+    <video autoplay muted loop playsinline>
+      <source src="/public/assets/HomePage/HomePageBackgroundVideo.mp4" type="video/mp4" />
+    </video>
+    <div class="hp-hero__overlay"></div>
+    <div class="hp-hero__text">
+      <p>
+        <em>A</em>&middot;ffin&middot;i&middot;ty&nbsp;Group &nbsp;&nbsp;|&nbsp;&nbsp; <span style="font-style:italic;font-weight:400;font-size:.85em">noun</span><br/>
+        <span style="font-size:.88em;font-style:normal;font-weight:400;">A group of people linked by a common interest or goal.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Â§ 2: Firm Description -->
+  <section class="hp-firm">
+    <div class="hp-firm__inner">
+      <div class="ag-gold-bar"></div>
+      <p>The Affinity Group is a fiduciary wealth management firm based in Canton and Akron, Ohio serving retirees with sizable investment assets, business owners, and high-earning individuals/families nationwide. Affinity Wealth is an SEC Registered Investment Advisor, providing wealth management, retirement planning, investment management, and total financial coordination.</p>
+      <p>Affinity Private Tax provides integrated tax planning and preparation for Affinity Wealth clients, designed to support the broader wealth strategy year round.</p>
+    </div>
+  </section>
+
+  <!-- Â§ 3: Three Personas -->
+  <section class="hp-personas">
+    <a href="/business-owners" class="hp-persona">
+      <img src="/public/assets/HomePage/ManBackgroundImage.avif" alt="Business Owners" />
+      <div class="hp-persona__overlay">
+        <div class="hp-persona__text">
+          Click Here If You Are A Business Owner
+          <span class="hp-persona__arrow">&#8594;</span>
+        </div>
+      </div>
+    </a>
+    <a href="/pre-retirees-and-retirees" class="hp-persona">
+      <img src="/public/assets/HomePage/RetireeBackgroundImage.avif" alt="Pre-Retirees &amp; Retirees" />
+      <div class="hp-persona__overlay">
+        <div class="hp-persona__text">
+          Click Here If You Are A Retiree Or Pre-Retiree
+          <span class="hp-persona__arrow">&#8594;</span>
+        </div>
+      </div>
+    </a>
+    <a href="/high-earners-wealth-accumulators" class="hp-persona">
+      <img src="/public/assets/HomePage/HighEarnerBackgroundImage.avif" alt="High Earners &amp; Wealth Accumulators" />
+      <div class="hp-persona__overlay">
+        <div class="hp-persona__text">
+          Click Here If You Are A High Earner / Wealth Accumulator
+          <span class="hp-persona__arrow">&#8594;</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Â§ 4: TWM Intro -->
+  <section class="hp-twm-intro">
+    <div class="hp-twm-intro__inner">
+      <div class="ag-section-label">Total Wealth Management</div>
+      <p>Our clients recognize that success and "doing well" often brings added complexity to managing the entirety of their financial picture. Our clients value our "Total Wealth Management" approach with our multi-disciplined team taking ownership of optimizing and integrating your professional team in every area of the Wealth Management Circle below.</p>
+    </div>
+  </section>
+
+  <!-- Â§ 5: Circle Image -->
+  <section class="hp-circle">
+    <img src="/public/assets/HomePage/Circle.png" alt="Total Wealth Management Circle" />
+  </section>
+
+  <!-- Â§ 6: Fiduciary CTA + Video -->
+  <section class="hp-fid-cta">
+    <div class="hp-fid-cta__inner">
+      <p>Our firm is an <strong>independent fiduciary</strong>, not a broker.<br/><strong>What&rsquo;s the difference?</strong></p>
+      <!-- NOTE: Replace YOUTUBE_VIDEO_ID with the ID for "3 Rules That Separate Winners from Losers" -->
+      <a class="ag-btn-gold"
+         href="https://www.youtube.com/watch?v=I4GZnamCsS4"
+         target="_blank" rel="noopener">
+        &#9654;&nbsp; Watch: 3 Rules That Separate Winners from Losers
+      </a>
+    </div>
+  </section>
+
+  <!-- Â§ 7: Schedule CTA -->
+  <section class="hp-schedule">
+    <h2>Ready to Start Your Journey?</h2>
+    <a href="/contact" class="ag-btn-primary">
+      Schedule a 15-Minute Personalized Virtual Introduction Here
+    </a>
+  </section>
+
+</main>
+
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="/public/assets/HomePage/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+          <a href="/public/assets/HomePage/CRS.pdf" target="_blank">CRS</a>
+          <a href="/public/assets/HomePage/ADV.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg>
+          </a>
+        </div>
+        <div class="ag-footer__address">
+          4481 Munson St NW Ste 302, Canton OH, 44718<br />
+          (330) 526-8412
+        </div>
+      </div>
+
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">
+          Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services.
+          Affinity Private Tax provides tax planning and tax preparation to select clients.
+          Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with
+          Affinity Wealth LLC to provide services to our clients.
+          Affinity Wealth LLC does not directly offer legal advice.
+        </p>
+      </div>
+
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/videos">Videos</a>
+          <a href="/blog">Blog Articles</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/contact">Contact</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/life-disability-insurance">Insurance</a>
+          <a href="/emoney">eMoney â€“ Your Financial GPS</a>
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQ's</a>
+          <a href="/careers">Careers</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="ag-footer__bottom">
+      Copyright &copy; 2025 The Affinity Group. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Affinity Group | Contact</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
+
+/* ── NAV ── */
+.ag-nav { position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07); }
+.ag-nav__inner { max-width:1380px;margin:0 auto;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px; }
+.ag-nav__logo img { height:46px;width:auto;object-fit:contain;display:block; }
+.ag-nav__links { display:flex;align-items:center;gap:4px;flex:1;justify-content:center; }
+.ag-nav__item { position:relative; }
+.ag-nav__label { display:block;padding:10px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-decoration:none;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .2s;border:none;background:none; }
+.ag-nav__label:hover,.ag-nav__item:hover .ag-nav__label { color:#C9A84C; }
+.ag-caret { font-size:10px;opacity:.7; }
+.ag-nav__drop { display:none;position:absolute;top:100%;left:0;background:#fff;min-width:230px;box-shadow:0 12px 40px rgba(0,0,0,0.13);border-top:3px solid #1D7080;border-radius:0 0 8px 8px;padding:8px 0;z-index:10000; }
+.ag-nav__item--drop:hover .ag-nav__drop { display:block; }
+.ag-nav__drop a { display:block;padding:9px 20px;font-family:'Inter',sans-serif;font-size:13px;color:#2d2d2d;text-decoration:none;transition:background .15s,color .15s; }
+.ag-nav__drop a:hover { background:#E6F4F7;color:#1D7080; }
+.ag-nav__drop-heading { display:block;padding:10px 20px 5px;font-size:10.5px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #f0f0f0;margin-top:4px; }
+.ag-nav__drop-heading:first-child { border-top:none;margin-top:0; }
+.ag-nav__right { display:flex;align-items:center;gap:14px;flex-shrink:0; }
+.ag-nav__portal { display:inline-block;padding:9px 15px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;text-decoration:none;border-radius:4px;white-space:nowrap;letter-spacing:.03em;transition:background .2s; }
+.ag-nav__portal:hover { background:#145568; }
+.ag-nav__phone { font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#145568;white-space:nowrap; }
+.ag-nav__careers { font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#C9A84C;text-decoration:none;text-transform:uppercase;letter-spacing:.07em;transition:color .2s; }
+.ag-nav__careers:hover { color:#a8873d; }
+.ag-nav__burger { display:none; }
+
+/* ── FOOTER ── */
+.ag-footer { background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif; }
+.ag-footer__inner { max-width:1200px;margin:0 auto; }
+.ag-footer__top { display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08); }
+.ag-footer__doc-links { display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px; }
+.ag-footer__doc-links a { color:#C9A84C;text-decoration:none;font-size:13px;font-weight:500;transition:color .2s; }
+.ag-footer__doc-links a:hover { color:#e8c96e; }
+.ag-footer__social { display:flex;gap:12px;margin-bottom:20px; }
+.ag-footer__social a { width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .2s; }
+.ag-footer__social a:hover { background:#1D7080; }
+.ag-footer__address { font-size:12.5px;line-height:1.8;color:#6a9ca5; }
+.ag-footer__disclaimer { font-size:12px;line-height:1.9;color:#6a9ca5; }
+.ag-footer__sitemap-heading { font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px; }
+.ag-footer__sitemap { display:grid;grid-template-columns:1fr 1fr;gap:6px 16px; }
+.ag-footer__sitemap a { color:#8fb8c0;text-decoration:none;font-size:12.5px;transition:color .2s; }
+.ag-footer__sitemap a:hover { color:#fff; }
+.ag-footer__bottom { padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center; }
+
+/* ── CONTACT PAGE ── */
+
+/* Hero with video */
+.cp-hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.cp-hero video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.cp-hero__overlay {
+  position: absolute; inset: 0;
+  background: rgba(14,61,71,0.68);
+}
+.cp-hero__content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 620px;
+  margin: 0 auto; padding: 100px 32px 60px;
+}
+.cp-hero__heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: #fff; font-weight: 600;
+  text-align: center; margin-bottom: 36px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.4);
+}
+
+/* Form */
+.cp-form {
+  background: rgba(255,255,255,0.96);
+  border-radius: 12px;
+  padding: 40px 36px;
+  box-shadow: 0 16px 60px rgba(0,0,0,.3);
+}
+.cp-form .form-group { margin-bottom: 20px; }
+.cp-form label {
+  display: block; margin-bottom: 6px;
+  font-size: 12.5px; font-weight: 600; color: #145568;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.cp-form input,
+.cp-form textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid #d0dfe3;
+  border-radius: 6px; font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+  resize: vertical;
+}
+.cp-form input:focus,
+.cp-form textarea:focus {
+  outline: none;
+  border-color: #1D7080;
+  box-shadow: 0 0 0 3px rgba(29,112,128,.12);
+}
+.cp-form textarea { min-height: 110px; }
+.cp-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cp-form__submit {
+  width: 100%; padding: 16px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px; font-weight: 700;
+  border: none; border-radius: 6px;
+  cursor: pointer; letter-spacing: .05em;
+  transition: background .2s;
+}
+.cp-form__submit:hover { background: #145568; }
+.cp-disclaimer {
+  margin-top: 18px;
+  font-size: 12px; color: #6a8a92; line-height: 1.7;
+  text-align: center;
+}
+
+/* Section 2 – Process info */
+.cp-info {
+  padding: 96px 32px; background: #fff;
+}
+.cp-info__inner { max-width: 900px; margin: 0 auto; }
+
+.cp-info__headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #145568; font-weight: 700;
+  text-align: center; margin-bottom: 16px;
+}
+.cp-info__sub {
+  text-align: center;
+  font-size: 1rem; color: #6a8a92;
+  margin-bottom: 56px;
+}
+
+.cp-steps {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 32px;
+}
+.cp-step {
+  text-align: center; padding: 36px 24px;
+  border: 1.5px solid #E6F4F7;
+  border-radius: 10px;
+  transition: box-shadow .2s, border-color .2s;
+}
+.cp-step:hover {
+  box-shadow: 0 8px 32px rgba(29,112,128,.12);
+  border-color: #1D7080;
+}
+.cp-step__icon {
+  width: 56px; height: 56px;
+  background: #E6F4F7; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  color: #1D7080; font-size: 22px;
+}
+.cp-step h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: #145568;
+  margin-bottom: 12px; font-weight: 600;
+}
+.cp-step p { font-size: .92rem; line-height: 1.75; color: #5a6a6e; }
+
+.cp-info__note {
+  margin-top: 48px;
+  padding: 28px 36px;
+  background: #F0F8FA;
+  border-left: 4px solid #1D7080;
+  border-radius: 0 8px 8px 0;
+  font-size: .95rem; line-height: 1.85; color: #3a4a4e;
+}
+
+@media (max-width: 900px) {
+  .ag-nav__links, .ag-nav__right { display:none; }
+  .ag-nav__burger { display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer; }
+  .ag-footer__top { grid-template-columns:1fr;gap:28px; }
+  .cp-steps { grid-template-columns:1fr; }
+  .cp-form-row { grid-template-columns:1fr; }
+}
+</style>
+
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="/" class="ag-nav__logo">
+      <img src="/public/assets/HomePage/TheAffinityGroupLogo.jpeg" alt="The Affinity Group" />
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/life-disability-insurance">Life &amp; Disability Insurance</a>
+          <a href="/401k-retirement">401k / Retirement</a>
+          <a href="/estate-planning">Estate Planning</a>
+          <a href="/tax-planning">Tax Planning</a>
+          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          <a href="/outsourced-cfo">Outsourced CFO</a>
+          <a href="/business-owners">Business Owners</a>
+          <a href="/investment-management">Investment Management</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item">
+        <a href="/contact" class="ag-nav__label">CONTACT</a>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="/videos">Videos</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/emoney">eMoney &#8211; Your Financial GPS</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning"
+         class="ag-nav__portal" target="_blank" rel="noopener">
+        Total Wealth Management Portal
+      </a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="/careers" class="ag-nav__careers">Careers</a>
+    </div>
+    <button class="ag-nav__burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- § 1: Hero Video + Form -->
+  <section class="cp-hero">
+    <video autoplay muted loop playsinline>
+      <source src="/public/assets/ContactPageBackgroundVideo.mp4" type="video/mp4" />
+    </video>
+    <div class="cp-hero__overlay"></div>
+    <div class="cp-hero__content">
+      <h1 class="cp-hero__heading">Getting Started on Your Journey</h1>
+      <div class="cp-form">
+        <form method="post" action="#" id="contact-form">
+          <div class="cp-form-row">
+            <div class="form-group">
+              <label for="cp-first-name">First Name</label>
+              <input type="text" id="cp-first-name" name="first_name" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="cp-last-name">Last Name</label>
+              <input type="text" id="cp-last-name" name="last_name" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cp-phone">Phone</label>
+            <input type="tel" id="cp-phone" name="phone" placeholder="(330) 555-1234" required />
+          </div>
+          <div class="form-group">
+            <label for="cp-message">Message</label>
+            <textarea id="cp-message" name="message" placeholder="Tell us a bit about your situation&hellip;"></textarea>
+          </div>
+          <button type="submit" class="cp-form__submit">SUBMIT</button>
+        </form>
+        <p class="cp-disclaimer">
+          Please do not send personal financial information through this form.
+          If you need to submit forms or access personal information, please call our
+          Canton, Ohio office at (330)&nbsp;526-8412.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 2: Process Info -->
+  <section class="cp-info">
+    <div class="cp-info__inner">
+      <h2 class="cp-info__headline">No Cost. No Pressure. Always Transparent.</h2>
+      <p class="cp-info__sub">We look forward to speaking with you soon.</p>
+
+      <div class="cp-steps">
+        <div class="cp-step">
+          <div class="cp-step__icon">&#128222;</div>
+          <h3>Step 1 &mdash; Intro Call</h3>
+          <p>Once you enter your information we will contact you via phone call within 24 hours. This call is free and just introductory &mdash; no financial advice will be given.</p>
+        </div>
+        <div class="cp-step">
+          <div class="cp-step__icon">&#128100;</div>
+          <h3>Step 2 &mdash; Advisor Meeting</h3>
+          <p>We will then set up a meeting with Financial Advisor and CEO Scott Lowe to start your journey toward your financial goals.</p>
+        </div>
+        <div class="cp-step">
+          <div class="cp-step__icon">&#127760;</div>
+          <h3>Nationwide Service</h3>
+          <p>Location is no barrier. We service people from all across the country. No form of payment is required for the initial phone call and meeting.</p>
+        </div>
+      </div>
+
+      <div class="cp-info__note">
+        No form of payment required for the initial phone call and meeting. Location is no barrier as we service people from all across the country. We look forward to speaking with you soon.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="/public/assets/HomePage/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+          <a href="/public/assets/HomePage/CRS.pdf" target="_blank">CRS</a>
+          <a href="/public/assets/HomePage/ADV.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg>
+          </a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="/total-wealth-management">Total Wealth Management</a>
+          <a href="/real-estate-investing">Real Estate Investing</a>
+          <a href="/videos">Videos</a>
+          <a href="/blog">Blog Articles</a>
+          <a href="/fiduciary-vs-broker">Fiduciary vs. Broker</a>
+          <a href="/contact">Contact</a>
+          <a href="/investment-management">Investment Management</a>
+          <a href="/life-disability-insurance">Insurance</a>
+          <a href="/emoney">eMoney &#8211; Your Financial GPS</a>
+          <a href="/our-team">Our Team</a>
+          <a href="/faqs">FAQ's</a>
+          <a href="/careers">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.cp-form__submit');
+      btn.textContent = "Thank you! We'll be in touch within 24 hours.";
+      btn.style.background = '#145568';
+      btn.disabled = true;
+    });
+  }
+</script>
+<script>
+(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
+</script>
+</body>
+</html>
