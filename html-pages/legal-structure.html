@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Affinity Group | Estate Planning</title>
+<title>The Affinity Group | Legal Structure</title>
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,55 +67,41 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE: ESTATE PLANNING */
-.ep-hero {
-  position: relative; height: 60vh; min-height: 440px;
+/* PAGE */
+.sub-hero {
+  position: relative; height: 55vh; min-height: 400px;
   overflow: hidden; display: flex; align-items: center; justify-content: center;
   background: #0e3d47; margin-top: 72px;
 }
-.ep-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.ep-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(14,61,71,.8) 100%); }
-.ep-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; }
-.ep-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 600; text-shadow: 0 2px 24px rgba(0,0,0,.4); margin-bottom: 16px; }
-.ep-hero__text p { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; opacity: .9; }
+.sub-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sub-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, rgba(14,61,71,.82) 100%); }
+.sub-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; }
+.sub-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
 
-.ep-intro { padding: 80px 32px; background: #fff; text-align: center; }
-.ep-intro__inner { max-width: 820px; margin: 0 auto; }
-.ep-intro p { font-size: 1.08rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; }
+.sub-body { padding: 80px 32px; background: #fff; }
+.sub-body__inner { max-width: 900px; margin: 0 auto; }
+.sub-body p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 20px; }
 
-/* Core four sections with alternating images */
-.ep-section { padding: 72px 32px; }
-.ep-section--light { background: #F0F8FA; }
-.ep-section--white { background: #fff; }
-.ep-section__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.ep-section__inner--rev > :first-child { order: 2; }
-.ep-section__inner--rev > :last-child { order: 1; }
-.ep-section__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
-.ep-section__img img { width: 100%; height: auto; display: block; }
-.ep-section__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #145568; margin-bottom: 16px; font-weight: 600; }
-.ep-section__text p { font-size: 1rem; line-height: 1.9; color: #3a3a3a; }
+.sub-entities { padding: 64px 32px; background: #F0F8FA; }
+.sub-entities__inner { max-width: 900px; margin: 0 auto; }
+.sub-entities h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #145568; margin-bottom: 28px; font-weight: 600; }
+.sub-entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+.sub-entity-card { background: #fff; border: 2px solid rgba(29,112,128,.15); border-radius: 8px; padding: 20px 18px; text-align: center; }
+.sub-entity-card h3 { font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .08em; }
 
-/* Services grid */
-.ep-services { padding: 80px 32px; background: #145568; }
-.ep-services__inner { max-width: 1100px; margin: 0 auto; }
-.ep-services h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); color: #fff; margin-bottom: 48px; font-weight: 600; text-align: center; }
-.ep-services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.ep-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 28px 24px; }
-.ep-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #C9A84C; margin-bottom: 12px; font-weight: 600; }
-.ep-card p { font-size: .93rem; line-height: 1.8; color: #cce6ec; }
+.sub-split { padding: 72px 32px; background: #fff; }
+.sub-split__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.sub-split__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.sub-split__img img { width: 100%; height: auto; display: block; }
+.sub-split__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.75rem); color: #145568; margin-bottom: 18px; font-weight: 600; }
+.sub-split__text p { font-size: 1rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 14px; }
 
-.ep-cta { padding: 72px 32px; background: #E6F4F7; text-align: center; }
-.ep-cta__inner { max-width: 640px; margin: 0 auto; }
-.ep-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 28px; font-weight: 600; }
+.sub-cta { padding: 64px 32px; background: #145568; text-align: center; }
+.sub-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #fff; margin-bottom: 28px; font-weight: 600; }
 
-@media (max-width: 900px) {
-  .ep-services__grid { grid-template-columns: 1fr 1fr; }
-}
 @media (max-width: 768px) {
-  .ep-section__inner { grid-template-columns: 1fr; gap: 32px; }
-  .ep-section__inner--rev > :first-child { order: 0; }
-  .ep-section__inner--rev > :last-child { order: 0; }
-  .ep-services__grid { grid-template-columns: 1fr; }
+  .sub-entity-grid { grid-template-columns: repeat(2, 1fr); }
+  .sub-split__inner { grid-template-columns: 1fr; gap: 32px; }
 }
 </style>
 
@@ -175,126 +161,54 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 
 <main>
 
-  <!-- §1 Hero -->
-  <section class="ep-hero">
-    <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/EstatePlanningImage.avif" alt="Estate Planning" />
-    <div class="ep-hero__overlay"></div>
-    <div class="ep-hero__text">
-      <h1>Estate Planning</h1>
-      <p>&ldquo;Will, Powers of Attorney, Living Wills are all just the start of evaluating the vision you have for your legacy.&rdquo;</p>
+  <section class="sub-hero">
+    <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/Outsourced%20CFO/LegalStructure/LegalStructureBackgroundImage.avif" alt="Legal Structure" />
+    <div class="sub-hero__overlay"></div>
+    <div class="sub-hero__text">
+      <h1>Legal Structure</h1>
     </div>
   </section>
 
-  <!-- §1b Intro -->
-  <section class="ep-intro">
-    <div class="ep-intro__inner">
-      <div class="ag-gold-bar"></div>
-      <p>We evaluate clients&rsquo; estate plans and introduce them to a network estate planning attorney to help them ensure their goals will be fully met with their current documents.</p>
+  <section class="sub-body">
+    <div class="sub-body__inner">
+      <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
+      <p>Every business owner must determine what is the proper legal structure for their entity. Each of these different entity structures changes how the IRS views your business &mdash; and specific to your situation, some structures provide more advantageous taxation of the business&rsquo;s annual profits.</p>
+      <p>Once a legal structure is chosen, you then want to ensure that the proper operating agreements pursuant to your legal structure are drafted by qualified attorneys.</p>
     </div>
   </section>
 
-  <!-- §2 Setting Up Correct Documents -->
-  <section class="ep-section ep-section--light">
-    <div class="ep-section__inner">
-      <div class="ep-section__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/SettinguptheCorrectEstateDocumentsImage1.avif" alt="Setting Up Estate Documents" />
+  <section class="sub-entities">
+    <div class="sub-entities__inner">
+      <h2>Entity Structure Options</h2>
+      <div class="sub-entity-grid">
+        <div class="sub-entity-card"><h3>Sole Proprietorship</h3></div>
+        <div class="sub-entity-card"><h3>S Corporation</h3></div>
+        <div class="sub-entity-card"><h3>C Corporation</h3></div>
+        <div class="sub-entity-card"><h3>LLC</h3></div>
+        <div class="sub-entity-card"><h3>Taxed as S Corporation</h3></div>
+        <div class="sub-entity-card"><h3>Partnership</h3></div>
       </div>
-      <div class="ep-section__text">
-        <div class="ag-section-label">Step One</div>
-        <h2>Setting Up the Correct Estate Documents</h2>
-        <p>It takes a lifetime to build a comfortable nest egg for retirement, however many have not fully evaluated exactly what would happen in the event of a premature death. With a couple conversations, a few swipes of the pen, and a few sentences of an estate plan that summarizes all of your wishes and puts in place proper protections for your loved ones can be achieved.</p>
-      </div>
+      <p style="font-size:1rem; line-height:1.9; color:#3a3a3a;">We work with our business owner clients to not only help them determine the proper structure but also pull in our team of CPAs and attorneys to provide their added feedback, and to draft the necessary documents as well as assign the appropriate election to the business moving forward.</p>
     </div>
   </section>
 
-  <!-- §2b Second image -->
-  <section class="ep-section ep-section--white">
-    <div class="ep-section__inner ep-section__inner--rev">
-      <div class="ep-section__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/SettinguptheCorrectEstateDocumentsImage2.avif" alt="Estate Documents" />
+  <section class="sub-split">
+    <div class="sub-split__inner">
+      <div class="sub-split__img">
+        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/Outsourced%20CFO/LegalStructure/LegalStructureImage1.avif" alt="Legal Structure Planning" />
       </div>
-      <div class="ep-section__text">
-        <div class="ag-section-label">Step Two</div>
-        <h2>Managing Unknown Risk</h2>
-        <p>We find that many of our clients when we first meet them are unknowingly putting their children and loved ones at risk and not even realizing it by leaving assets to them outright.</p>
-        <p>We walk through all the important considerations as it relates to each client&rsquo;s specific familial situation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- §3 Managing Unknown Risk images -->
-  <section class="ep-section ep-section--light">
-    <div class="ep-section__inner">
-      <div class="ep-section__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/ManagingUnknownRiskImage1.avif" alt="Managing Risk" />
-      </div>
-      <div class="ep-section__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/ManagingUnknownRiskImage2.avif" alt="Managing Risk" />
+      <div class="sub-split__text">
+        <div class="ag-section-label">Our Collaborative Approach</div>
+        <h2>Building the Right Foundation</h2>
+        <p>We pull together our network specialists and your existing team of professionals in order to create a collaborative and interactive team, looking at all legal and tax perspectives.</p>
+        <p>Most importantly, we incorporate your future business goals regarding the future succession or sale of the business to identify the optimal structure that supports both today&rsquo;s operations and tomorrow&rsquo;s exit strategy.</p>
       </div>
     </div>
   </section>
 
-  <!-- §4 Taking Care of Everything -->
-  <section class="ep-section ep-section--white">
-    <div class="ep-section__inner ep-section__inner--rev">
-      <div class="ep-section__img">
-        <img src="https://joelturlapati.github.io/AffinityGroup/src/public/assets/EstatePlanning/TakingCareofEverythingImage.avif" alt="Taking Care of Everything" />
-      </div>
-      <div class="ep-section__text">
-        <div class="ag-section-label">Step Three</div>
-        <h2>Taking Care of Everything</h2>
-        <p>We then conduct a state alignment across all of the client&rsquo;s assets and financial accounts, meaning once the proper estate planning documents are put in place they directly help the client get account titling correct and proper beneficiaries updated on all their financial accounts and assets.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- §5 Services Grid -->
-  <section class="ep-services">
-    <div class="ep-services__inner">
-      <h2>Our Estate Planning Services</h2>
-      <div class="ep-services__grid">
-        <div class="ep-card">
-          <h3>Personalized Estate Planning</h3>
-          <p>Our team takes a personalized approach to craft tailored strategies that align with your unique financial goals, family dynamics, and legacy aspirations.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Will &amp; Trust Formation</h3>
-          <p>We guide you through will and trust formation &mdash; revocable living trusts, irrevocable trusts, or comprehensive wills &mdash; ensuring your intentions are legally sound.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Probate Avoidance</h3>
-          <p>We craft tailored strategies that align with your unique financial goals, family dynamics, and legacy aspirations to keep your estate out of probate.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Tax-Efficient Planning</h3>
-          <p>We guide you through strategies that minimize estate and income taxes, preserving more of your wealth for the people and causes you care about.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Business Succession Planning</h3>
-          <p>We create personalized strategies for transferring business ownership that protect your legacy and ensure a smooth transition for all parties involved.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Charitable Giving Strategies</h3>
-          <p>We help you articulate your philanthropic wishes clearly and implement giving vehicles that reduce taxes while supporting the causes you believe in.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Family Wealth Education</h3>
-          <p>We take a personalized approach to prepare the next generation to be responsible stewards of the wealth you&rsquo;ve worked a lifetime to build.</p>
-        </div>
-        <div class="ep-card">
-          <h3>Guardianship &amp; Conservatorship</h3>
-          <p>We guide you through establishing proper guardianship documents to ensure your loved ones are protected according to your wishes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- §6 CTA -->
-  <section class="ep-cta">
-    <div class="ep-cta__inner">
-      <h2>Ready to Protect Your Legacy?</h2>
-      <a href="/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
-    </div>
+  <section class="sub-cta">
+    <h2>Ready to Structure Your Business for Success?</h2>
+    <a href="/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
   </section>
 
 </main>
@@ -323,8 +237,6 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         <div class="ag-footer__sitemap">
           <a href="/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="/real-estate-investing" target="_top">Real Estate Investing</a>
-          <a href="/videos" target="_top">Videos</a>
-          <a href="/blog" target="_top">Blog Articles</a>
           <a href="/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="/contact" target="_top">Contact</a>
           <a href="/investment-management" target="_top">Investment Management</a>
@@ -332,7 +244,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <a href="/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
           <a href="/our-team" target="_top">Our Team</a>
           <a href="/faqs" target="_top">FAQ&rsquo;s</a>
-          <a href="/careers" target="_top">Careers</a>
+          <a href="/outsourced-cfo" target="_top">Outsourced CFO</a>
         </div>
       </div>
     </div>
