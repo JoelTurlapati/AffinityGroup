@@ -18,8 +18,6 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
 .ag-nav__inner { max-width: 1380px; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 28px; gap: 20px; }
 .ag-nav__logo img { height: 46px; width: auto; object-fit: contain; display: block; }
-.ag-nav__logo-stack { display: flex; flex-direction: column; gap: 3px; justify-content: center; }
-.ag-nav__logo-stack img { height: 27px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
 .ag-nav__item { position: relative; }
 .ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
@@ -571,10 +569,9 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 <!-- NAV -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
-    <div class="ag-nav__logo-stack">
-      <a href="https://tagplanning.wixstudio.com/demo/" target="_top"><img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" /></a>
-      <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top"><img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" /></a>
-    </div>
+    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
+    </a>
     <div class="ag-nav__links">
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
@@ -630,7 +627,10 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
     <a href="#tp-retire">Retirement</a>
     <a href="#tp-receive">What You Receive</a>
     <a href="#tp-difference">Our Difference</a>
-    <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" class="tp-subnav__cta">Schedule Consultation</a>
+    <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
+      <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" style="height:30px;width:auto;object-fit:contain;border-radius:3px;display:block;" />
+      <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" class="tp-subnav__cta" style="margin-left:0!important;">Schedule Consultation</a>
+    </div>
   </div>
 </nav>
 
