@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Affinity Group | Outsourced CFO &ndash; Business Owners</title>
+<title>Affinity Private Tax | Outsourced CFO &amp; Private Tax Planning for Business Owners</title>
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,10 +56,17 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
 
 /* SHARED */
-.ag-btn-primary { display: inline-block; padding: 16px 38px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.ag-btn-primary { display: inline-block; padding: 15px 36px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
 .ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
-.ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
+.ag-btn-outline { display: inline-block; padding: 14px 34px; background: transparent; color: #1D7080; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; border: 2px solid #1D7080; letter-spacing: .04em; cursor: pointer; transition: background .2s, color .2s; }
+.ag-btn-outline:hover { background: #1D7080; color: #fff; }
+.ag-btn-outline--white { border-color: rgba(255,255,255,.7); color: #fff; }
+.ag-btn-outline--white:hover { background: rgba(255,255,255,.15); color: #fff; }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+.ag-gold-bar--left { margin-left: 0; }
+.ag-section-label { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .2em; margin-bottom: 12px; display: block; }
+.ag-section-label--gold { color: #C9A84C; }
+.ag-section-label--white { color: rgba(255,255,255,.7); }
 
 @media (max-width: 900px) {
   .ag-nav__links, .ag-nav__right { display: none; }
@@ -67,52 +74,552 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE: OUTSOURCED CFO */
-.cfo-hero {
-  position: relative; height: 70vh; min-height: 480px;
-  overflow: hidden; display: flex; align-items: flex-end; justify-content: center;
-  background: #0e3d47; margin-top: 72px;
+/* ============================================================
+   PAGE: OUTSOURCED CFO / AFFINITY PRIVATE TAX
+   ============================================================ */
+
+/* STICKY SUB-NAV */
+.apt-subnav {
+  position: sticky; top: 72px; z-index: 900;
+  background: #145568; border-bottom: 2px solid #C9A84C;
+  overflow-x: auto; white-space: nowrap;
 }
-.cfo-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.cfo-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(14,61,71,.8) 100%); }
-.cfo-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; }
-.cfo-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 600; margin-bottom: 12px; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
-.cfo-hero__text p { font-family: 'Inter', sans-serif; font-size: 1.05rem; opacity: .88; font-weight: 300; }
+.apt-subnav__inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 0;
+  padding: 0 24px;
+}
+.apt-subnav a {
+  display: inline-block; padding: 13px 20px;
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+  color: rgba(255,255,255,.78); transition: color .2s, background .2s;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+}
+.apt-subnav a:hover { color: #C9A84C; background: rgba(255,255,255,.06); }
+.apt-subnav a.apt-subnav__cta {
+  margin-left: auto; background: #C9A84C; color: #0c3540;
+  border-radius: 3px; padding: 10px 20px; margin-top: 4px; margin-bottom: 4px;
+  font-weight: 700;
+}
+.apt-subnav a.apt-subnav__cta:hover { background: #e8c96e; }
 
-.cfo-intro { padding: 80px 32px; background: #fff; text-align: center; }
-.cfo-intro__inner { max-width: 860px; margin: 0 auto; }
-.cfo-intro p { font-size: 1.08rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 16px; }
+/* HERO */
+.apt-hero {
+  background: linear-gradient(135deg, #0a2d38 0%, #1D7080 60%, #216070 100%);
+  margin-top: 72px; padding: 80px 32px 72px;
+  position: relative; overflow: hidden;
+}
+.apt-hero::before {
+  content: ''; position: absolute; top: -60px; right: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.15);
+  pointer-events: none;
+}
+.apt-hero::after {
+  content: ''; position: absolute; bottom: -100px; right: 60px;
+  width: 300px; height: 300px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.1);
+  pointer-events: none;
+}
+.apt-hero__inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start;
+}
+.apt-hero__brand {
+  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: #C9A84C; margin-bottom: 20px;
+}
+.apt-hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 24px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.3);
+}
+.apt-hero__sub {
+  font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.8;
+  color: rgba(255,255,255,.9); font-weight: 400; margin-bottom: 16px;
+}
+.apt-hero__para {
+  font-family: 'Inter', sans-serif; font-size: .93rem; line-height: 1.85;
+  color: rgba(255,255,255,.72); font-weight: 300; margin-bottom: 36px;
+}
+.apt-hero__btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.apt-hero__note {
+  font-family: 'Inter', sans-serif; font-size: .78rem;
+  color: rgba(255,255,255,.5); font-style: italic; line-height: 1.6;
+  border-top: 1px solid rgba(255,255,255,.12); padding-top: 16px; margin-top: 4px;
+}
 
-/* Services image that acts as a clickable menu */
-.cfo-services-img { padding: 48px 32px; background: #F0F8FA; text-align: center; }
-.cfo-services-img__inner { max-width: 960px; margin: 0 auto; }
-.cfo-services-img h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 32px; font-weight: 600; }
-.cfo-services-img img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+/* Hero side card */
+.apt-hero__card {
+  background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
+  border-radius: 8px; padding: 32px 28px; backdrop-filter: blur(8px);
+}
+.apt-hero__card-title {
+  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: #C9A84C;
+  margin-bottom: 20px; border-bottom: 1px solid rgba(201,168,76,.3); padding-bottom: 12px;
+}
+.apt-hero__card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.apt-hero__card li {
+  font-family: 'Inter', sans-serif; font-size: .9rem; line-height: 1.6;
+  color: rgba(255,255,255,.85); padding-left: 20px; position: relative;
+}
+.apt-hero__card li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: #C9A84C;
+}
 
-/* Services grid navigation */
-.cfo-grid { padding: 72px 32px; background: #fff; }
-.cfo-grid__inner { max-width: 1100px; margin: 0 auto; }
-.cfo-grid h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 40px; font-weight: 600; text-align: center; }
-.cfo-grid__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.cfo-card {
-  display: block; text-decoration: none;
+/* SECTION 1: WHY APT EXISTS */
+.apt-why { padding: 88px 32px; background: #fff; }
+.apt-why__inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
+}
+.apt-why h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #145568; margin-bottom: 24px; line-height: 1.3;
+}
+.apt-why p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
+  color: #3a3a3a; font-weight: 300; margin-bottom: 14px;
+}
+
+/* Relationship card */
+.apt-rel-card {
+  background: #F0F8FA; border: 1px solid rgba(29,112,128,.18);
+  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #1D7080;
+}
+.apt-rel-card__title {
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600;
+  color: #145568; margin-bottom: 20px; line-height: 1.4; font-style: italic;
+}
+.apt-rel-card p {
+  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.85;
+  color: #4a4a4a; font-weight: 300; margin-bottom: 12px;
+}
+.apt-rel-card p:last-child { margin-bottom: 0; }
+
+/* SECTION 2: HUB AND SPOKE */
+.apt-hub { padding: 88px 32px; background: #F0F8FA; }
+.apt-hub__head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+.apt-hub__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 600; color: #145568; margin-bottom: 14px;
+}
+.apt-hub__head p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; color: #5a5a5a;
+  line-height: 1.7; font-weight: 300;
+}
+.apt-hub-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 220px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.apt-hub-center {
+  grid-column: 2; grid-row: 1 / span 3;
+  width: 220px; height: 220px; border-radius: 50%;
+  background: linear-gradient(145deg, #1D7080, #145568);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+  box-shadow: 0 0 0 12px rgba(29,112,128,.1), 0 0 0 24px rgba(29,112,128,.05);
+  position: relative;
+}
+.apt-hub-center::before {
+  content: ''; position: absolute; inset: -4px; border-radius: 50%;
+  border: 2px dashed rgba(201,168,76,.4); pointer-events: none;
+}
+.apt-hub-center__brand {
+  font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: #C9A84C; margin-bottom: 8px;
+}
+.apt-hub-center__name {
+  font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 600;
+  color: #fff; line-height: 1.4;
+}
+.apt-hub-center__sub {
+  font-family: 'Inter', sans-serif; font-size: .7rem; color: rgba(255,255,255,.65);
+  margin-top: 6px; line-height: 1.4;
+}
+.apt-hub-spoke {
+  background: #fff; border: 1px solid rgba(29,112,128,.15);
+  border-radius: 8px; padding: 22px 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.05);
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.apt-hub-spoke:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(29,112,128,.15); }
+.apt-hub-spoke--left { text-align: right; border-right: 3px solid #1D7080; }
+.apt-hub-spoke--right { text-align: left; border-left: 3px solid #1D7080; }
+.apt-hub-spoke__num {
+  display: inline-block; font-family: 'Inter', sans-serif; font-size: 10px;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: #C9A84C; margin-bottom: 8px;
+}
+.apt-hub-spoke h3 {
+  font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700;
+  color: #145568; margin-bottom: 7px; line-height: 1.3;
+}
+.apt-hub-spoke p {
+  font-family: 'Inter', sans-serif; font-size: .8rem; line-height: 1.7;
+  color: #5a5a5a; font-weight: 300;
+}
+
+/* SECTION 3: WHAT THE CLIENT IS BUYING */
+.apt-buying { padding: 88px 32px; background: #fff; }
+.apt-buying__head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.apt-buying__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #145568; margin-bottom: 16px;
+}
+.apt-buying__head p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
+  color: #4a4a4a; font-weight: 300;
+}
+.apt-buying__cards {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.apt-buying-card {
+  background: #F0F8FA; border: 1px solid rgba(29,112,128,.13);
+  border-radius: 8px; padding: 32px 24px;
+  border-top: 4px solid #1D7080;
+  transition: transform .2s, box-shadow .2s;
+}
+.apt-buying-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(29,112,128,.12); }
+.apt-buying-card h3 {
+  font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700;
+  color: #145568; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .05em;
+}
+.apt-buying-card p {
+  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.8;
+  color: #4a4a4a; font-weight: 300;
+}
+
+/* SECTION 4: WHAT'S INCLUDED */
+.apt-included { padding: 88px 32px; background: #F0F8FA; }
+.apt-included__head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.apt-included__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #145568; margin-bottom: 14px;
+}
+.apt-included__head p {
+  font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.8;
+  color: #5a5a5a; font-weight: 300;
+}
+.apt-included__cards {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.apt-included-card {
+  background: #fff; border: 1px solid rgba(29,112,128,.13);
+  border-radius: 8px; padding: 32px 28px;
+  border-left: 4px solid #C9A84C;
+  box-shadow: 0 4px 16px rgba(0,0,0,.04);
+  transition: transform .2s;
+}
+.apt-included-card:hover { transform: translateY(-3px); }
+.apt-included-card__num {
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px;
+}
+.apt-included-card h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
+  color: #145568; margin-bottom: 12px;
+}
+.apt-included-card p {
+  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.85;
+  color: #4a4a4a; font-weight: 300;
+}
+
+/* SECTION 5: BIONIC BOOKKEEPING */
+.apt-bionic { padding: 88px 32px; background: #fff; }
+.apt-bionic__inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
+}
+.apt-bionic__text h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600; color: #145568; margin-bottom: 20px; line-height: 1.3;
+}
+.apt-bionic__text p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
+  color: #3a3a3a; font-weight: 300; margin-bottom: 14px;
+}
+.apt-bionic__card {
   background: #F0F8FA; border: 1px solid rgba(29,112,128,.15);
-  border-radius: 8px; padding: 24px 20px; text-align: center;
-  transition: background .2s, transform .2s, box-shadow .2s;
+  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #C9A84C;
 }
-.cfo-card:hover { background: #1D7080; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(29,112,128,.25); }
-.cfo-card:hover .cfo-card__title { color: #fff; }
-.cfo-card:hover .cfo-card__icon { color: #C9A84C; }
-.cfo-card__icon { font-size: 2rem; color: #1D7080; margin-bottom: 12px; display: block; }
-.cfo-card__title { font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .06em; line-height: 1.4; }
+.apt-bionic__card-title {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
+  color: #145568; margin-bottom: 14px; font-style: italic;
+}
+.apt-bionic__card p {
+  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.85;
+  color: #4a4a4a; font-weight: 300; margin-bottom: 16px;
+}
+.apt-bionic__card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.apt-bionic__card li {
+  font-family: 'Inter', sans-serif; font-size: .87rem; color: #3a3a3a;
+  padding-left: 18px; position: relative; font-weight: 400; line-height: 1.6;
+}
+.apt-bionic__card li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: #1D7080;
+}
 
-.cfo-cta { padding: 64px 32px; background: #145568; text-align: center; }
-.cfo-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #fff; margin-bottom: 28px; font-weight: 600; }
+/* SECTION 5A: PRIOR-YEAR RETURNS */
+.apt-prior { padding: 88px 32px; background: #0b2d38; position: relative; overflow: hidden; }
+.apt-prior::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.1); pointer-events: none;
+}
+.apt-prior__head {
+  max-width: 1200px; margin: 0 auto 48px;
+}
+.apt-prior__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 600; color: #fff; margin-bottom: 16px; line-height: 1.25;
+}
+.apt-prior__head p {
+  font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.85;
+  color: rgba(255,255,255,.75); font-weight: 300; max-width: 720px;
+}
+.apt-prior__body {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start;
+}
+.apt-prior__callouts { display: flex; flex-direction: column; gap: 24px; }
+.apt-prior__callout {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.3);
+  border-left: 4px solid #C9A84C; border-radius: 6px; padding: 28px 28px;
+}
+.apt-prior__callout p {
+  font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.7;
+  color: rgba(255,255,255,.88); font-style: italic;
+}
+.apt-prior__card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.3);
+  border-radius: 8px; padding: 32px 28px;
+}
+.apt-prior__card-title {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: #C9A84C; margin-bottom: 16px;
+}
+.apt-prior__years { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.apt-prior__year {
+  display: inline-block; padding: 5px 14px; border: 1px solid rgba(201,168,76,.5);
+  border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 12px;
+  font-weight: 600; color: #C9A84C; letter-spacing: .04em;
+}
+.apt-prior__card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.apt-prior__card li {
+  font-family: 'Inter', sans-serif; font-size: .87rem; color: rgba(255,255,255,.8);
+  padding-left: 18px; position: relative; line-height: 1.6;
+}
+.apt-prior__card li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 5px; height: 5px; border-radius: 50%; background: #C9A84C;
+}
+.apt-prior__card-note {
+  font-family: 'Inter', sans-serif; font-size: .75rem; color: rgba(255,255,255,.4);
+  font-style: italic; margin-top: 12px; line-height: 1.5;
+}
 
-@media (max-width: 900px) { .cfo-grid__cards { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .cfo-grid__cards { grid-template-columns: 1fr; } }
+/* SECTION 6: NOT ONLY */
+.apt-notonly { padding: 88px 32px; background: #fff; }
+.apt-notonly__head { text-align: center; max-width: 800px; margin: 0 auto 52px; }
+.apt-notonly__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #145568; margin-bottom: 16px; line-height: 1.3;
+}
+.apt-notonly__head p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
+  color: #4a4a4a; font-weight: 300;
+}
+.apt-notonly__cols {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.apt-notonly__col {
+  background: #F0F8FA; border-radius: 8px; padding: 36px 32px;
+}
+.apt-notonly__col--for { border-top: 4px solid #1D7080; }
+.apt-notonly__col--not { border-top: 4px solid rgba(29,112,128,.3); }
+.apt-notonly__col h3 {
+  font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; color: #145568;
+  margin-bottom: 24px; line-height: 1.4;
+}
+.apt-notonly__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.apt-notonly__col li {
+  font-family: 'Inter', sans-serif; font-size: .92rem; line-height: 1.65;
+  color: #3a3a3a; padding-left: 22px; position: relative;
+}
+.apt-notonly__col--for li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 7px; height: 7px; border-radius: 50%; background: #1D7080;
+}
+.apt-notonly__col--not li::before {
+  content: '&#215;'; position: absolute; left: 0; top: 0;
+  font-size: 1rem; color: rgba(29,112,128,.4); font-weight: 700; line-height: 1.6;
+}
+
+/* SECTION 7: TAX PREP COORDINATED */
+.apt-taxprep { padding: 88px 32px; background: #F0F8FA; }
+.apt-taxprep__inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
+}
+.apt-taxprep__text h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600; color: #145568; margin-bottom: 20px; line-height: 1.3;
+}
+.apt-taxprep__text p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
+  color: #3a3a3a; font-weight: 300;
+}
+.apt-taxprep__card {
+  background: #fff; border: 1px solid rgba(29,112,128,.15);
+  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #1D7080;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+.apt-taxprep__card h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
+  color: #145568; margin-bottom: 14px; font-style: italic;
+}
+.apt-taxprep__card p {
+  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.85;
+  color: #4a4a4a; font-weight: 300;
+}
+
+/* SECTION 8: PROCESS */
+.apt-process { padding: 88px 32px; background: #fff; }
+.apt-process__head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+.apt-process__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #145568; margin-bottom: 14px;
+}
+.apt-process__head p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.7; color: #5a5a5a; font-weight: 300;
+}
+.apt-process__steps {
+  max-width: 900px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 0;
+}
+.apt-process__step {
+  display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: start;
+  padding: 32px 0; border-bottom: 1px solid rgba(29,112,128,.1);
+}
+.apt-process__step:last-child { border-bottom: none; }
+.apt-process__step-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #1D7080; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+  flex-shrink: 0; margin-top: 2px;
+  box-shadow: 0 4px 12px rgba(29,112,128,.3);
+}
+.apt-process__step-text h3 {
+  font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 700;
+  color: #145568; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .06em;
+}
+.apt-process__step-text p {
+  font-family: 'Inter', sans-serif; font-size: .92rem; line-height: 1.85;
+  color: #4a4a4a; font-weight: 300;
+}
+
+/* SECTION 9: WHO IT'S FOR */
+.apt-who { padding: 88px 32px; background: #145568; }
+.apt-who__head { text-align: center; margin-bottom: 48px; }
+.apt-who__head h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 600; color: #fff; margin-bottom: 14px;
+}
+.apt-who__head p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
+  color: rgba(255,255,255,.72); font-weight: 300; max-width: 720px; margin: 0 auto;
+}
+.apt-who__cards {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.apt-who-card {
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; padding: 36px 28px;
+  border-top: 3px solid #C9A84C;
+  transition: background .2s;
+}
+.apt-who-card:hover { background: rgba(255,255,255,.11); }
+.apt-who-card h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
+  color: #fff; margin-bottom: 12px;
+}
+.apt-who-card p {
+  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.8;
+  color: rgba(255,255,255,.7); font-weight: 300;
+}
+
+/* FINAL CTA */
+.apt-final-cta {
+  padding: 88px 32px; background: linear-gradient(135deg, #0c3540, #1D7080);
+  text-align: center; position: relative; overflow: hidden;
+}
+.apt-final-cta::before {
+  content: ''; position: absolute; bottom: -60px; left: -60px;
+  width: 300px; height: 300px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.12); pointer-events: none;
+}
+.apt-final-cta h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+  font-weight: 600; color: #fff; margin-bottom: 20px; position: relative;
+}
+.apt-final-cta p {
+  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.85;
+  color: rgba(255,255,255,.75); font-weight: 300; max-width: 680px;
+  margin: 0 auto 40px; position: relative;
+}
+.apt-final-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* RESPONSIVE */
+@media (max-width: 1050px) {
+  .apt-buying__cards { grid-template-columns: repeat(2, 1fr); }
+  .apt-hub-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .apt-hub-center {
+    grid-column: 1; grid-row: 1;
+    margin: 0 auto 8px;
+  }
+  .apt-hub-spoke--left, .apt-hub-spoke--right {
+    text-align: left; border-left: 3px solid #1D7080; border-right: none;
+  }
+  .apt-notonly__cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .apt-hero__inner,
+  .apt-why__inner,
+  .apt-bionic__inner,
+  .apt-taxprep__inner { grid-template-columns: 1fr; }
+  .apt-hero__card { margin-top: 8px; }
+  .apt-why__inner .apt-rel-card { margin-top: 0; }
+  .apt-included__cards { grid-template-columns: repeat(2, 1fr); }
+  .apt-who__cards { grid-template-columns: 1fr; }
+  .apt-prior__body { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .apt-buying__cards,
+  .apt-included__cards { grid-template-columns: 1fr; }
+  .apt-process__step { grid-template-columns: 48px 1fr; gap: 16px; }
+}
 </style>
 
+<!-- NAV -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
@@ -126,17 +633,15 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
-          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Life &amp; Disability Insurance</a>
-          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401k / Retirement</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/tax-planning" target="_top">Tax Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-nav__drop-heading">Services for Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
-          <a href="https://tagplanning.wixstudio.com/demo/business-owners" target="_top">Business Owners</a>
-          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Legal Structure</a>
-          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
@@ -167,83 +672,380 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   </div>
 </nav>
 
+<!-- STICKY SUB-NAV -->
+<nav class="apt-subnav" aria-label="Page sections">
+  <div class="apt-subnav__inner">
+    <a href="#apt-overview">Overview</a>
+    <a href="#apt-what">What APT Does</a>
+    <a href="#apt-included">What&#8217;s Included</a>
+    <a href="#apt-who">Who It&#8217;s For</a>
+    <a href="#apt-process">How It Works</a>
+    <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" class="apt-subnav__cta">Schedule a Conversation</a>
+  </div>
+</nav>
+
 <main>
 
-  <!-- §1 Hero -->
-  <section class="cfo-hero">
-    <video autoplay muted loop playsinline>
-      <source src="https://video.wixstatic.com/video/64b604_6b29f8c54f7b48b2a5d11ba25faf03dd/file" type="video/mp4" />
-    </video>
-    <div class="cfo-hero__overlay"></div>
-    <div class="cfo-hero__text">
-      <h1>Outsourced CFO</h1>
-      <p>Comprehensive financial leadership for your business</p>
+<!-- HERO -->
+<section class="apt-hero" id="apt-overview">
+  <div class="apt-hero__inner">
+    <div class="apt-hero__content">
+      <span class="apt-hero__brand">Affinity Private Tax &mdash; Outsourced CFO</span>
+      <h1>Private Tax Planning &amp; CFO-Level Financial Organization for Business Owners</h1>
+      <p class="apt-hero__sub">Affinity Private Tax helps business owners coordinate bookkeeping, financial records, business tax planning, business tax returns, owner-level individual tax planning, individual tax preparation, and cash-flow guidance through one integrated relationship.</p>
+      <p class="apt-hero__para">Affinity Wealth leads the broader financial planning and wealth management relationship. Affinity Private Tax supports that relationship by helping business-owner clients keep their books organized, their financial reports useful, their tax returns coordinated, and their business and individual tax planning aligned throughout the year.</p>
+      <div class="apt-hero__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Conversation</a>
+        <a href="#apt-included" class="ag-btn-outline ag-btn-outline--white">See What&#8217;s Included</a>
+      </div>
+      <p class="apt-hero__note">To engage Affinity Private Tax, business-owner clients should also maintain an Affinity Wealth planning relationship.</p>
     </div>
-  </section>
-
-  <!-- §2 Intro -->
-  <section class="cfo-intro">
-    <div class="cfo-intro__inner">
-      <div class="ag-gold-bar"></div>
-      <p>As a business owner, your time is your most valuable asset. Our Outsourced CFO service provides you with the strategic financial expertise of a Chief Financial Officer without the cost of a full-time executive. We become an extension of your leadership team, helping you navigate the financial complexities of running and growing a successful business.</p>
-      <p>From legal structure and business agreements to payroll, bookkeeping, and succession planning &mdash; our integrated team of specialists ensures every financial dimension of your business is optimized and aligned with your long-term goals.</p>
+    <div class="apt-hero__card">
+      <p class="apt-hero__card-title">What APT Deals With</p>
+      <ul>
+        <li>Business bookkeeping using cloud-based tools such as QuickBooks Online</li>
+        <li>Financial records, P&amp;L structure, balance sheets, and cash-flow reporting</li>
+        <li>Business tax planning and business tax return preparation</li>
+        <li>Owner-level individual tax planning and individual tax return preparation</li>
+        <li>Cash-flow advice based on income, expenses, gross profit, and business trends</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- §3 Services Overview Image -->
-  <section class="cfo-services-img">
-    <div class="cfo-services-img__inner">
-      <h2>Our Business Services</h2>
-      <img src="https://static.wixstatic.com/media/64b604_b094821c3ecd4b3788f8b4ededfa056a~mv2.avif" alt="Outsourced CFO Services" />
+<!-- SECTION 1: WHY APT EXISTS -->
+<section class="apt-why" id="apt-what">
+  <div class="apt-why__inner">
+    <div class="apt-why__text">
+      <span class="ag-section-label">Section One</span>
+      <div class="ag-gold-bar ag-gold-bar--left"></div>
+      <h2>Why Affinity Private Tax Exists</h2>
+      <p>Business-owner planning does not stop with investments, and tax planning does not stop with a tax return.</p>
+      <p>For business owners, the company&#8217;s books, business tax return, individual tax return, retirement contributions, estimated taxes, cash flow, and long-term planning are all connected.</p>
+      <p>Affinity Private Tax was created to bring those pieces together inside the broader Affinity planning relationship.</p>
     </div>
-  </section>
+    <div class="apt-rel-card">
+      <p class="apt-rel-card__title">The relationship is coordinated, not fragmented.</p>
+      <p>Affinity Wealth leads the overall financial planning and wealth management relationship.</p>
+      <p>Affinity Private Tax supports the tax planning, tax preparation, bookkeeping, reporting, and business financial organization side.</p>
+      <p>The business owner client receives a coordinated view of business finances, business tax returns, individual tax returns, cash-flow guidance, and long-term planning.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- §4 Clickable service grid -->
-  <section class="cfo-grid">
-    <div class="cfo-grid__inner">
-      <h2>Explore Each Service Area</h2>
-      <div class="cfo-grid__cards">
-        <a href="https://tagplanning.wixstudio.com/demo/legal-structure" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#9878;</span>
-          <span class="cfo-card__title">Legal Structure</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/business-agreements" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#128196;</span>
-          <span class="cfo-card__title">Business Agreements</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#127942;</span>
-          <span class="cfo-card__title">Executive Benefit Planning</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/group-health-insurance" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#10084;</span>
-          <span class="cfo-card__title">Group Health Insurance</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/banking-loans" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#127968;</span>
-          <span class="cfo-card__title">Banking &amp; Loans</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/payroll-services" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#128200;</span>
-          <span class="cfo-card__title">Payroll Services</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/bookkeeping" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#128218;</span>
-          <span class="cfo-card__title">Bookkeeping</span>
-        </a>
-        <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" class="cfo-card" target="_top">
-          <span class="cfo-card__icon">&#128176;</span>
-          <span class="cfo-card__title">Business Sale Planning</span>
-        </a>
+<!-- SECTION 2: HUB AND SPOKE -->
+<section class="apt-hub">
+  <div class="apt-hub__head">
+    <span class="ag-section-label">Section Two</span>
+    <div class="ag-gold-bar"></div>
+    <h2>One Integrated Private Tax &amp; CFO Service</h2>
+    <p>This is one coordinated relationship, not a collection of disconnected services.</p>
+  </div>
+  <div class="apt-hub-grid">
+    <!-- Left spokes -->
+    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:1">
+      <span class="apt-hub-spoke__num">01</span>
+      <h3>Bionic Bookkeeping&#8482;</h3>
+      <p>Cloud-based bookkeeping supported by AI, experienced bookkeepers, and tax-planning oversight.</p>
+    </div>
+    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:2">
+      <span class="apt-hub-spoke__num">03</span>
+      <h3>Business Tax Planning</h3>
+      <p>Year-round planning around deductions, entity decisions, retirement contributions, estimates, and timing strategies.</p>
+    </div>
+    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:3">
+      <span class="apt-hub-spoke__num">05</span>
+      <h3>Owner-Level Individual Tax Planning</h3>
+      <p>Planning for how the business tax picture flows into the owner&#8217;s individual tax picture.</p>
+    </div>
+    <!-- Center -->
+    <div class="apt-hub-center" style="grid-column:2;grid-row:1/span 3">
+      <span class="apt-hub-center__brand">Affinity<br>Private Tax</span>
+      <span class="apt-hub-center__name">Outsourced CFO &amp; Private Tax Planning Service</span>
+    </div>
+    <!-- Right spokes -->
+    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:1">
+      <span class="apt-hub-spoke__num">02</span>
+      <h3>Financial Records, Reporting &amp; Cash Flow</h3>
+      <p>P&amp;L structure, balance sheets, financial reports, expense review, income trends, and cash-flow guidance.</p>
+    </div>
+    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:2">
+      <span class="apt-hub-spoke__num">04</span>
+      <h3>Business Tax Return Preparation</h3>
+      <p>Business tax filing coordinated with clean books, reviewed reports, and proactive planning.</p>
+    </div>
+    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:3">
+      <span class="apt-hub-spoke__num">06</span>
+      <h3>Individual Tax Return Preparation</h3>
+      <p>The owner&#8217;s individual tax return prepared or coordinated as part of the same integrated relationship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: WHAT THE CLIENT IS BUYING -->
+<section class="apt-buying">
+  <div class="apt-buying__head">
+    <span class="ag-section-label">Section Three</span>
+    <div class="ag-gold-bar"></div>
+    <h2>What the Client Is Buying</h2>
+    <p>The business owner is hiring a coordinated team to keep books organized, reports useful, tax returns aligned, cash flow visible, and tax planning active throughout the year.</p>
+  </div>
+  <div class="apt-buying__cards">
+    <div class="apt-buying-card">
+      <h3>Tax-Aware Bookkeeping</h3>
+      <p>Books are not maintained only for data entry. They are organized with tax planning, tax preparation, and financial reporting in mind.</p>
+    </div>
+    <div class="apt-buying-card">
+      <h3>Business + Individual Tax Coordination</h3>
+      <p>Business tax returns and individual tax returns are reviewed together because the business owner&#8217;s company and personal tax picture are connected.</p>
+    </div>
+    <div class="apt-buying-card">
+      <h3>Cash-Flow Guidance</h3>
+      <p>Income, expenses, gross profit, and cash-flow trends are reviewed so the business owner receives practical financial guidance from the numbers.</p>
+    </div>
+    <div class="apt-buying-card">
+      <h3>Affinity Wealth Integration</h3>
+      <p>Tax planning is coordinated with the broader wealth planning relationship when decisions affect retirement, investments, insurance, estate planning, or long-term goals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHAT'S INCLUDED -->
+<section class="apt-included" id="apt-included">
+  <div class="apt-included__head">
+    <span class="ag-section-label">Section Four</span>
+    <div class="ag-gold-bar"></div>
+    <h2>What&#8217;s Included</h2>
+    <p>Each part of the service is designed to support better organization, better planning, and cleaner tax preparation.</p>
+  </div>
+  <div class="apt-included__cards">
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">01</span>
+      <h3>Bionic Bookkeeping&#8482;</h3>
+      <p>QuickBooks Online organization, transaction categorization, reconciliation support, AI-assisted processing, experienced bookkeeping review, and tax-planning oversight throughout the year.</p>
+    </div>
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">02</span>
+      <h3>Financial Records &amp; Cash-Flow Reporting</h3>
+      <p>Review and organization of P&amp;L statements, balance sheets, financial categories, expense patterns, income trends, gross profit, and cash-flow visibility.</p>
+    </div>
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">03</span>
+      <h3>Business Tax Planning</h3>
+      <p>Proactive planning around deductions, retirement contributions, entity decisions, estimated taxes, timing strategies, and opportunities that may affect the business return.</p>
+    </div>
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">04</span>
+      <h3>Business Tax Return Preparation</h3>
+      <p>Preparation or coordination of federal and state business tax returns using clean books and reviewed financial records.</p>
+    </div>
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">05</span>
+      <h3>Owner-Level Individual Tax Planning</h3>
+      <p>Planning for how business income, deductions, payroll, distributions, retirement contributions, and estimated taxes affect the owner&#8217;s individual return.</p>
+    </div>
+    <div class="apt-included-card">
+      <span class="apt-included-card__num">06</span>
+      <h3>Individual Tax Return Preparation</h3>
+      <p>Preparation or coordination of the owner&#8217;s individual tax return as part of the integrated business-owner relationship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: BIONIC BOOKKEEPING -->
+<section class="apt-bionic">
+  <div class="apt-bionic__inner">
+    <div class="apt-bionic__text">
+      <span class="ag-section-label">Section Five</span>
+      <div class="ag-gold-bar ag-gold-bar--left"></div>
+      <h2>Bionic Bookkeeping&#8482;: AI Support, Human Review, and Tax-Planning Oversight</h2>
+      <p>Clean books are the foundation of strong tax planning. Affinity Private Tax&#8217;s bookkeeping process combines cloud-based accounting software, AI-supported categorization, experienced bookkeepers, and review from professionals with tax-planning experience.</p>
+      <p>The goal is not only accurate books. The goal is books that support tax planning, tax preparation, cash-flow advice, and better business decisions throughout the year.</p>
+    </div>
+    <div class="apt-bionic__card">
+      <p class="apt-bionic__card-title">Designed to reduce missed opportunities.</p>
+      <p>When books are reviewed through a tax-planning lens before filing season, the business owner has a better chance to identify deductible expenses, organize categories correctly, and avoid rushed year-end cleanup.</p>
+      <ul>
+        <li>AI-assisted bookkeeping efficiency</li>
+        <li>Experienced human review</li>
+        <li>Oversight from professionals with tax-planning experience</li>
+        <li>Books organized for business and individual tax strategy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5A: PRIOR-YEAR RETURNS -->
+<section class="apt-prior">
+  <div class="apt-prior__head">
+    <span class="ag-section-label ag-section-label--gold">Important &mdash; Read This</span>
+    <div class="ag-gold-bar ag-gold-bar--left"></div>
+    <h2>Prior-Year Tax Returns Filed on Incomplete Books?</h2>
+    <p>If your 2023, 2024, or 2025 tax returns were filed using incomplete or inaccurate financial records, money may still be on the table. You may have paid more in taxes than you were legally required to.</p>
+  </div>
+  <div class="apt-prior__body">
+    <div class="apt-prior__callouts">
+      <div class="apt-prior__callout">
+        <p>&#8220;If your prior-year tax returns were prepared using incomplete, disorganized, or inaccurate bookkeeping records, our team can help clean up, reconstruct, and clarify your financial records.&#8221;</p>
+      </div>
+      <div class="apt-prior__callout">
+        <p>&#8220;If adjustments result in additional deductions or tax-saving opportunities, our team can guide you through the amendment process and handle filings on your behalf.&#8221;</p>
       </div>
     </div>
-  </section>
+    <div class="apt-prior__card">
+      <p class="apt-prior__card-title">Review Your Prior Returns</p>
+      <p style="font-family:'Inter',sans-serif;font-size:.87rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:16px;font-weight:300;">We review and clean up books from prior years to identify missed deductions, inaccurate categories, and possible tax-saving opportunities.</p>
+      <div class="apt-prior__years">
+        <span class="apt-prior__year">Tax Year 2023</span>
+        <span class="apt-prior__year">Tax Year 2024</span>
+        <span class="apt-prior__year">Tax Year 2025</span>
+      </div>
+      <ul>
+        <li>Reconstruct and clean up prior-year financial records</li>
+        <li>Identify missed deductions and overlooked categories</li>
+        <li>Review prior business and individual returns for amendment opportunities</li>
+        <li>File amended returns when appropriate</li>
+        <li>Build a clean financial baseline for future tax planning and tax preparation</li>
+      </ul>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top" style="margin-top:24px;display:inline-block;">Request a Prior-Year Review</a>
+      <p class="apt-prior__card-note">No obligation to determine if a deeper review is appropriate.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- §5 CTA -->
-  <section class="cfo-cta">
-    <h2>Ready to Streamline Your Business Finances?</h2>
-    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
-  </section>
+<!-- SECTION 6: NOT ONLY -->
+<section class="apt-notonly">
+  <div class="apt-notonly__head">
+    <span class="ag-section-label">Section Six</span>
+    <div class="ag-gold-bar"></div>
+    <h2>Not Bookkeeping-Only. Not Tax Filing-Only.<br>One Integrated Relationship.</h2>
+    <p>Affinity Private Tax is designed for business owners who want their bookkeeping, financial reporting, business tax planning, business tax returns, individual tax planning, individual tax returns, and cash-flow guidance coordinated together.</p>
+  </div>
+  <div class="apt-notonly__cols">
+    <div class="apt-notonly__col apt-notonly__col--for">
+      <h3>This Service Is For Business Owners Who Want:</h3>
+      <ul>
+        <li>Clean, tax-ready books</li>
+        <li>Business and individual tax returns coordinated together</li>
+        <li>Tax planning reviewed throughout the year</li>
+        <li>Cash-flow guidance based on real business numbers</li>
+        <li>Clearer P&amp;L, balance sheet, and financial reporting</li>
+        <li>A private, ongoing planning relationship</li>
+        <li>Coordination with Affinity Wealth</li>
+      </ul>
+    </div>
+    <div class="apt-notonly__col apt-notonly__col--not">
+      <h3>This Service Is Not For Business Owners Looking For:</h3>
+      <ul>
+        <li>Only business tax preparation</li>
+        <li>Only individual tax preparation</li>
+        <li>Only bookkeeping without tax planning</li>
+        <li>A one-time tax filing relationship</li>
+        <li>Business services with no individual tax coordination</li>
+        <li>A public tax-preparation shop</li>
+        <li>A replacement for the broader Affinity Wealth planning relationship</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: TAX PREP COORDINATED -->
+<section class="apt-taxprep">
+  <div class="apt-taxprep__inner">
+    <div class="apt-taxprep__text">
+      <span class="ag-section-label">Section Seven</span>
+      <div class="ag-gold-bar ag-gold-bar--left"></div>
+      <h2>Business and Individual Tax Preparation, Coordinated Together</h2>
+      <p>For business owners, the business return and individual return are connected. Business income, deductions, payroll, distributions, retirement contributions, estimated taxes, and entity decisions all affect the owner&#8217;s individual tax picture.</p>
+    </div>
+    <div class="apt-taxprep__card">
+      <h3>APT coordinates both sides of the tax picture.</h3>
+      <p>Business tax preparation and individual tax preparation are handled as part of the same business-owner relationship, giving the client a more complete view of how business decisions affect individual taxes and long-term planning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: HOW IT WORKS -->
+<section class="apt-process" id="apt-process">
+  <div class="apt-process__head">
+    <span class="ag-section-label">Section Eight</span>
+    <div class="ag-gold-bar"></div>
+    <h2>How the Relationship Works</h2>
+    <p>A structured process for fit, organization, planning, tax preparation, and year-round financial visibility.</p>
+  </div>
+  <div class="apt-process__steps">
+    <div class="apt-process__step">
+      <div class="apt-process__step-num">1</div>
+      <div class="apt-process__step-text">
+        <h3>Discovery Conversation</h3>
+        <p>Determine whether the business owner is a good fit for the Affinity Private Tax and Affinity Wealth relationship.</p>
+      </div>
+    </div>
+    <div class="apt-process__step">
+      <div class="apt-process__step-num">2</div>
+      <div class="apt-process__step-text">
+        <h3>Review the Full Tax Picture</h3>
+        <p>Review business structure, prior business returns, individual returns, current books, estimated taxes, and planning needs.</p>
+      </div>
+    </div>
+    <div class="apt-process__step">
+      <div class="apt-process__step-num">3</div>
+      <div class="apt-process__step-text">
+        <h3>Organize Books &amp; Reports</h3>
+        <p>Organize books, financial reports, categories, P&amp;L structure, balance sheet details, and cash-flow visibility.</p>
+      </div>
+    </div>
+    <div class="apt-process__step">
+      <div class="apt-process__step-num">4</div>
+      <div class="apt-process__step-text">
+        <h3>Year-Round Planning</h3>
+        <p>Coordinate planning before year-end so the owner has time to act on tax and cash-flow opportunities.</p>
+      </div>
+    </div>
+    <div class="apt-process__step">
+      <div class="apt-process__step-num">5</div>
+      <div class="apt-process__step-text">
+        <h3>Tax Prep &amp; Ongoing Oversight</h3>
+        <p>Business and individual returns are prepared or coordinated with the benefit of clean records and proactive planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: WHO IT'S FOR -->
+<section class="apt-who" id="apt-who">
+  <div class="apt-who__head">
+    <span class="ag-section-label ag-section-label--white">Section Nine</span>
+    <div class="ag-gold-bar"></div>
+    <h2>Who This Service Is For</h2>
+    <p>This service is for business owners who want a coordinated relationship for bookkeeping, financial records, reporting, cash-flow guidance, business tax planning, business tax preparation, individual tax planning, individual tax preparation, and planning coordination with Affinity Wealth.</p>
+  </div>
+  <div class="apt-who__cards">
+    <div class="apt-who-card">
+      <h3>Closely Held Business Owners</h3>
+      <p>LLC owners, S-Corp owners, consultants, contractors, and professional service firms.</p>
+    </div>
+    <div class="apt-who-card">
+      <h3>Owners With Connected Tax Needs</h3>
+      <p>Business owners whose business return and individual return need to be reviewed together.</p>
+    </div>
+    <div class="apt-who-card">
+      <h3>Growing Private Businesses</h3>
+      <p>Companies that want cleaner books, stronger reporting, cash-flow visibility, and proactive planning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="apt-final-cta">
+  <div class="ag-gold-bar"></div>
+  <h2>Ready to Coordinate Your Business and Individual Tax Picture?</h2>
+  <p>If you are a business owner looking for a more organized, proactive, and integrated approach to bookkeeping, financial reporting, cash-flow guidance, tax planning, and tax preparation, Affinity Private Tax may be the right fit.</p>
+  <div class="apt-final-cta__btns">
+    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Conversation</a>
+    <a href="#apt-included" class="ag-btn-outline ag-btn-outline--white">Explore What&#8217;s Included</a>
+  </div>
+</section>
 
 </main>
 
@@ -277,28 +1079,14 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
-          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
+          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
-          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
-          <a href="https://tagplanning.wixstudio.com/demo/careers" target="_top">Careers</a>
         </div>
       </div>
     </div>
-    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+    <div class="ag-footer__bottom">&copy; 2025 The Affinity Group. All rights reserved. Affinity Wealth LLC is a Registered Investment Advisor.</div>
   </div>
 </footer>
 
-<script>
-(function(){
-  function r(){
-    var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);
-    window.parent.postMessage(JSON.stringify({type:"iFrameHeight",height:h}),"*");
-    window.parent.postMessage(JSON.stringify({type:"iFrameReady",height:h}),"*");
-    window.parent.postMessage({height:h},"*");
-  }
-  ["load","resize","DOMContentLoaded"].forEach(function(e){window.addEventListener(e,r);});
-  setInterval(r,200);
-})();
-</script>
 </body>
 </html>
