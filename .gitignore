@@ -4,3 +4,7 @@ node_modules/
 .idea/
 .wix/
 jsconfig.json
+
+Resources.zip
+asset-upload-tracker.csv
+Resources/
