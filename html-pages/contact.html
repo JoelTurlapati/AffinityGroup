@@ -370,15 +370,34 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  const form = document.getElementById('contact-form');
+  // TODO: Replace the three placeholders below with your EmailJS credentials.
+  // Sign up free at https://www.emailjs.com — setup steps are in the EMAILJS_SETUP.md doc.
+  var EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account → API Keys → Public Key
+  var EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services → your connected service ID
+  var EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates → your template ID
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  var form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = form.querySelector('.cp-form__submit');
-      btn.textContent = "Thank you! We'll be in touch within 24 hours.";
-      btn.style.background = '#145568';
+      var btn = form.querySelector('.cp-form__submit');
+      btn.textContent = 'Sending…';
       btn.disabled = true;
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        .then(function() {
+          btn.textContent = "Thank you! We’ll be in touch within 24 hours.";
+          btn.style.background = '#145568';
+          form.reset();
+        }, function() {
+          btn.textContent = 'SUBMIT';
+          btn.disabled = false;
+          alert('Something went wrong. Please call us at (330) 526-8412 or try again.');
+        });
     });
   }
 </script>
