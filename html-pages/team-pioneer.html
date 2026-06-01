@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -12,6 +12,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+
+/* NAV */
 .ag-nav{position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07)}
 .ag-nav__inner{max-width:1380px;margin:0 auto;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px}
 .ag-nav__logo img{height:46px;width:auto;object-fit:contain;display:block}
@@ -33,6 +35,8 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-nav__careers{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#C9A84C;text-decoration:none;text-transform:uppercase;letter-spacing:.07em;transition:color .2s}
 .ag-nav__careers:hover{color:#a8873d}
 .ag-nav__burger{display:none}
+
+/* FOOTER */
 .ag-footer{background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif}
 .ag-footer__inner{max-width:1200px;margin:0 auto}
 .ag-footer__top{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -49,27 +53,39 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-footer__sitemap a{color:#8fb8c0;text-decoration:none;font-size:12.5px;transition:color .2s}
 .ag-footer__sitemap a:hover{color:#fff}
 .ag-footer__bottom{padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center}
+
+/* SHARED */
 .ag-btn-primary{display:inline-block;padding:16px 38px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em;border:none;cursor:pointer;transition:background .2s,transform .15s}
 .ag-btn-primary:hover{background:#145568;transform:translateY(-2px)}
 .ag-gold-bar{width:56px;height:3px;background:#C9A84C;margin:0 0 28px}
 .ag-section-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
+
 @media(max-width:900px){.ag-nav__links,.ag-nav__right{display:none}.ag-nav__burger{display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer}.ag-footer__top{grid-template-columns:1fr;gap:28px}}
-.tm-profile{padding:100px 32px 72px;background:linear-gradient(135deg,#0e3d47 0%,#145568 55%,#1D7080 100%)}
-.tm-profile__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
-.tm-profile__photo{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.tm-profile__photo img{width:100%;height:auto;display:block}
-.tm-profile__info{color:#fff;padding-top:16px}
-.tm-profile__info h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:700;margin-bottom:6px;line-height:1.2}
-.tm-profile__title{font-family:'Inter',sans-serif;font-size:1rem;font-weight:400;color:rgba(255,255,255,.75);margin-bottom:28px}
-.tm-profile__firm{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;color:#C9A84C;margin-bottom:28px;letter-spacing:.04em}
-.tm-bio{padding:80px 32px;background:#fff}
-.tm-bio__inner{max-width:860px;margin:0 auto}
-.tm-bio h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);color:#145568;margin-bottom:36px;font-weight:600}
-.tm-bio p{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:20px}
-.tm-cta{padding:64px 32px;background:#F0F8FA;text-align:center}
-.tm-cta h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#145568;margin-bottom:24px;font-weight:600}
-.tm-cta__btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-@media(max-width:800px){.tm-profile__inner{grid-template-columns:1fr}.tm-profile__photo{max-width:300px}}
+
+/* PAGE: PIONEER PARTNER */
+.pf-hero{padding:100px 32px 72px;background:linear-gradient(135deg,#0e3d47 0%,#145568 55%,#1D7080 100%)}
+.pf-hero__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+.pf-hero__photo{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.pf-hero__photo img{width:100%;height:auto;display:block}
+.pf-hero__info{color:#fff;padding-top:16px}
+.pf-hero__info .ag-section-label{color:#C9A84C}
+.pf-hero__info h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:24px}
+.pf-contact{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.pf-contact__item{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.97rem;font-weight:400;color:rgba(255,255,255,.85)}
+.pf-contact__item svg{flex-shrink:0;opacity:.8}
+.pf-contact__item a{color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s}
+.pf-contact__item a:hover{color:#C9A84C}
+
+.pf-bio{padding:80px 32px;background:#fff}
+.pf-bio__inner{max-width:860px;margin:0 auto}
+.pf-bio h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);color:#145568;margin-bottom:36px;font-weight:600}
+.pf-bio p{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:20px}
+
+.pf-cta{padding:64px 32px;background:#F0F8FA;text-align:center}
+.pf-cta h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#145568;margin-bottom:24px;font-weight:600}
+.pf-cta__btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:800px){.pf-hero__inner{grid-template-columns:1fr}.pf-hero__photo{max-width:300px}}
 </style>
 
 <nav class="ag-nav">
@@ -121,36 +137,57 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 </nav>
 
 <main>
-  <section class="tm-profile">
-    <div class="tm-profile__inner">
-      <div class="tm-profile__photo">
+
+  <!-- Hero / Profile -->
+  <section class="pf-hero">
+    <div class="pf-hero__inner">
+      <div class="pf-hero__photo">
         <img src="https://static.wixstatic.com/media/64b604_c1c2710861c24ae69172a441e828aa21~mv2.avif" alt="Pioneer Financial Services" />
       </div>
-      <div class="tm-profile__info">
+      <div class="pf-hero__info">
         <p class="ag-section-label">External Team</p>
         <div class="ag-gold-bar"></div>
-        <h1>Pioneer Financial Services</h1>
-        <p class="tm-profile__firm">Mortgage Financial Services &mdash; Canton, OH</p>
-        <p class="tm-profile__title">Trusted Mortgage Partner</p>
+        <h1>Pioneer Financial &mdash; Mortgage Brokerage</h1>
+        <div class="pf-contact">
+          <div class="pf-contact__item">
+            <!-- Phone icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            <a href="tel:3304545320">330-454-5320</a>
+          </div>
+          <div class="pf-contact__item">
+            <!-- Globe icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <a href="https://www.pfsohio.com" target="_blank" rel="noopener">www.pfsohio.com</a>
+          </div>
+          <div class="pf-contact__item">
+            <!-- Map pin icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>2515 Cleveland Ave N, Canton, Ohio 44709</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="tm-bio">
-    <div class="tm-bio__inner">
-      <h2>About Pioneer Financial Services</h2>
-      <p>Pioneer Financial Services is a trusted mortgage financial services provider based in Canton, Ohio. As part of The Affinity Group&rsquo;s comprehensive network of specialists, Pioneer works alongside our team to ensure clients have access to the best mortgage and financing solutions to complement their broader wealth management strategy.</p>
-      <p>Whether you are purchasing a home, refinancing an existing mortgage, or exploring real estate investment financing, Pioneer Financial Services brings the expertise and local knowledge to guide you through every step of the process.</p>
+  <!-- Bio -->
+  <section class="pf-bio">
+    <div class="pf-bio__inner">
+      <div class="ag-gold-bar"></div>
+      <h2>Get to Know Pioneer Financial Services</h2>
+      <p>Founded in 2000, Pioneer was built on honesty, integrity, and personal service. They offer a wide variety of loan programs with fast and efficient service. Their knowledgeable staff has over 50 combined years of experience originating mortgage loans.</p>
+      <p>As a registered member of the Better Business Bureau, with an A+ rating, they are dedicated to making the home loan process as easy and effortless as possible. With access to a variety of different lenders, they are able to consistently offer some of the lowest interest rates and closing costs to their customers.</p>
     </div>
   </section>
 
-  <section class="tm-cta">
+  <!-- CTA -->
+  <section class="pf-cta">
     <h2>Meet the Full Affinity Group Team</h2>
-    <div class="tm-cta__btns">
+    <div class="pf-cta__btns">
       <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Contact TAG</a>
       <a href="https://tagplanning.wixstudio.com/demo/our-team" style="display:inline-block;padding:14px 32px;background:transparent;color:#1D7080;border:2px solid #1D7080;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em" target="_top">Meet the Full Team</a>
     </div>
   </section>
+
 </main>
 
 <footer class="ag-footer">
@@ -185,7 +222,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
           <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
-          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&#39;s</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
           <a href="https://tagplanning.wixstudio.com/demo/careers" target="_top">Careers</a>
         </div>
       </div>
@@ -193,8 +230,9 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
   </div>
 </footer>
+
 <script>
-(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
+(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);window.parent.postMessage(JSON.stringify({type:"iFrameHeight",height:h}),"*");window.parent.postMessage(JSON.stringify({type:"iFrameReady",height:h}),"*");window.parent.postMessage({height:h},"*");}["load","resize","DOMContentLoaded"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,200);})();
 </script>
 </body>
 </html>
