@@ -18,17 +18,20 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
 .ag-nav__inner { max-width: 1380px; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 28px; gap: 20px; }
 .ag-nav__logo img { height: 46px; width: auto; object-fit: contain; display: block; }
+.ag-nav__logo-stack { display: flex; flex-direction: column; gap: 3px; justify-content: center; }
+.ag-nav__logo-stack img { height: 27px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
 .ag-nav__item { position: relative; }
 .ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
 .ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
 .ag-caret { font-size: 10px; opacity: .7; }
-.ag-nav__drop { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 230px; box-shadow: 0 12px 40px rgba(0,0,0,0.13); border-top: 3px solid #1D7080; border-radius: 0 0 8px 8px; padding: 8px 0; z-index: 10000; }
+.ag-nav__drop { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 480px; box-shadow: 0 12px 40px rgba(0,0,0,0.13); border-top: 3px solid #1D7080; border-radius: 0 0 8px 8px; padding: 8px 0; z-index: 10000; }
 .ag-nav__item--drop:hover .ag-nav__drop { display: block; }
 .ag-nav__drop a { display: block; padding: 9px 20px; font-family: 'Inter', sans-serif; font-size: 13px; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s; }
 .ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
 .ag-nav__drop-heading { display: block; padding: 10px 20px 5px; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; border-top: 1px solid #f0f0f0; margin-top: 4px; }
 .ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
 .ag-nav__right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .ag-nav__portal { display: inline-block; padding: 9px 15px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
 .ag-nav__portal:hover { background: #145568; }
@@ -622,26 +625,27 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 <!-- NAV -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
-    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
-      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
-    </a>
+    <div class="ag-nav__logo-stack">
+      <a href="https://tagplanning.wixstudio.com/demo/" target="_top"><img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" /></a>
+      <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top"><img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" /></a>
+    </div>
     <div class="ag-nav__links">
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
-          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <div class="ag-nav__drop-cols"><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
-          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          </div><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
           <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a></div></div>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
@@ -655,7 +659,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label" target="_top">CONTACT</a>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
-        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <span class="ag-nav__label">INSIGHTS <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/videos" target="_top">Videos</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
@@ -760,8 +764,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
     </div>
     <!-- Center -->
     <div class="apt-hub-center" style="grid-column:2;grid-row:1/span 3">
-      <span class="apt-hub-center__brand">Affinity<br>Private Tax</span>
-      <span class="apt-hub-center__name">Outsourced CFO &amp; Private Tax Planning Service</span>
+      <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" style="width:158px;height:158px;object-fit:contain;border-radius:4px;" />
     </div>
     <!-- Right spokes -->
     <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:1">

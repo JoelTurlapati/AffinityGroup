@@ -47,7 +47,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 
 .ag-nav__drop {
   display: none; position: absolute; top: 100%; left: 0;
-  background: #fff; min-width: 230px;
+  background: #fff; min-width: 480px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.13);
   border-top: 3px solid #1D7080;
   border-radius: 0 0 8px 8px;
@@ -68,6 +68,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   border-top: 1px solid #f0f0f0; margin-top: 4px;
 }
 .ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
 
 .ag-nav__right {
   display: flex; align-items: center; gap: 14px; flex-shrink: 0;
@@ -293,19 +294,19 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
-          <span class="ag-nav__drop-heading">Services For Individuals</span>
+          <div class="ag-nav__drop-cols"><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
-          <span class="ag-nav__drop-heading">Services for Businesses</span>
+          </div><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
           <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a></div></div>
         </div>
       </div>
 
@@ -322,7 +323,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
 
       <div class="ag-nav__item ag-nav__item--drop">
-        <span class="ag-nav__label">MEDIA <span class="ag-caret">&#9662;</span></span>
+        <span class="ag-nav__label">INSIGHTS <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/videos" target="_top">Videos</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
@@ -355,7 +356,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <div class="hp-hero__overlay"></div>
     <div class="hp-hero__text">
       <p>
-        <em>A</em>&middot;ffin&middot;i&middot;ty&nbsp;Group &nbsp;&nbsp;|&nbsp;&nbsp; <span style="font-style:italic;font-weight:400;font-size:.85em">noun</span><br/>
+        Affinity Group<br/>
         <span style="font-size:.88em;font-style:normal;font-weight:400;">A group of people linked by a common interest or goal.</span>
       </p>
     </div>
