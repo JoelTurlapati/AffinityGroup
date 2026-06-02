@@ -64,19 +64,21 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 /* STICKY SIDE-NAV */
 .cfo-sidenav {
   position: fixed; right: 12px; top: 50%; transform: translateY(-50%);
-  z-index: 800; background: #145568; border-radius: 8px;
+  z-index: 800; background: rgba(255,255,255,.82); border-radius: 8px;
   padding: 8px 0; border-right: 3px solid #C9A84C;
-  box-shadow: 0 4px 24px rgba(0,0,0,.25);
+  border: 1px solid rgba(201,168,76,.35); border-right: 3px solid #C9A84C;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  backdrop-filter: blur(12px);
 }
 .cfo-sidenav a {
-  display: block; padding: 9px 16px 9px 13px;
-  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-  letter-spacing: .09em; text-transform: uppercase; text-decoration: none;
-  color: rgba(255,255,255,.65); white-space: nowrap;
+  display: block; padding: 8px 16px 8px 13px;
+  font-family: 'Inter', sans-serif; font-size: 9.5px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+  color: #2d5a65; white-space: nowrap;
   transition: color .2s, background .2s;
 }
 .cfo-sidenav a:hover,
-.cfo-sidenav a.cfo-sidenav__active { color: #C9A84C; background: rgba(255,255,255,.06); }
+.cfo-sidenav a.cfo-sidenav__active { color: #C9A84C; background: rgba(201,168,76,.08); }
 @media (max-width: 1100px) { .cfo-sidenav { display: none; } }
 
 /* SHARED */
@@ -94,7 +96,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .cfo-hero { padding: 136px 32px 96px; background: linear-gradient(135deg, #080e12 0%, #0c3540 40%, #145568 75%, #1D7080 100%); position: relative; overflow: hidden; }
 .cfo-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,.08) 0%, transparent 70%); }
 .cfo-hero__inner { max-width: 1120px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.cfo-hero__eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .25em; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+.cfo-hero__eyebrow { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .2em; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
 .cfo-hero__eyebrow::before { content: ''; width: 28px; height: 2px; background: #C9A84C; flex-shrink: 0; }
 .cfo-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.5rem); color: #fff; font-weight: 700; line-height: 1.17; margin-bottom: 8px; }
 .cfo-hero__subtitle { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.25rem); color: #C9A84C; font-weight: 400; font-style: italic; margin-bottom: 24px; line-height: 1.4; }
@@ -162,13 +164,13 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .cfo-orbit-wrap svg.cfo-orbit-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cfo-orbit-center {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 140px; height: 140px; border-radius: 50%;
+  width: 170px; height: 170px; border-radius: 50%;
   background: linear-gradient(145deg, #0c3540, #1D7080);
   border: 3px solid #C9A84C;
-  box-shadow: 0 0 0 12px rgba(201,168,76,.1), 0 8px 32px rgba(29,112,128,.35);
+  box-shadow: 0 0 0 14px rgba(201,168,76,.1), 0 0 0 28px rgba(201,168,76,.05), 0 8px 32px rgba(29,112,128,.35);
   display: flex; align-items: center; justify-content: center; z-index: 2;
 }
-.cfo-orbit-center img { width: 108px; height: auto; object-fit: contain; border-radius: 4px; }
+.cfo-orbit-center img { width: 138px; height: auto; object-fit: contain; border-radius: 4px; }
 .cfo-orbit-node {
   position: absolute; width: 136px;
   background: #fff; border: 1.5px solid #1D7080; border-radius: 8px;
@@ -323,8 +325,41 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .cfo-taxplan__panel p { font-size: .92rem; line-height: 1.8; color: #4a5a5e; margin-bottom: 14px; }
 .cfo-taxplan__panel p:last-child { margin-bottom: 0; }
 
-/* 13. HOW IT WORKS */
-.cfo-process { padding: 100px 32px; background: #fff; }
+/* 13. BUSINESS TAX PREPARATION */
+.cfo-biztaxprep { padding: 96px 32px; background: #F0F8FA; }
+.cfo-biztaxprep__inner { max-width: 1060px; margin: 0 auto; }
+.cfo-biztaxprep__body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+.cfo-biztaxprep__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem,3vw,2.3rem); color: #145568; font-weight: 700; margin-bottom: 20px; line-height: 1.25; }
+.cfo-biztaxprep__left p { font-size: .95rem; line-height: 1.85; color: #4a5a5e; margin-bottom: 14px; }
+.cfo-biztaxprep__subhead { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #145568; font-weight: 700; margin: 28px 0 10px; }
+.cfo-biztaxprep__list { list-style: none; margin: 0 0 28px; }
+.cfo-biztaxprep__list li { font-size: .92rem; line-height: 1.65; color: #3d5560; padding: 10px 0; border-bottom: 1px solid #dde8eb; display: flex; align-items: flex-start; gap: 10px; }
+.cfo-biztaxprep__list li::before { content: '\2713'; color: #1D7080; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.cfo-biztaxprep__list li:last-child { border-bottom: none; }
+.cfo-biztaxprep__panel { background: linear-gradient(145deg, #145568, #1D7080); border-radius: 14px; padding: 36px 32px; color: #fff; }
+.cfo-biztaxprep__panel h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #C9A84C; font-weight: 700; margin-bottom: 18px; }
+.cfo-biztaxprep__panel p { font-size: .9rem; line-height: 1.8; color: rgba(255,255,255,.82); margin-bottom: 14px; }
+.cfo-biztaxprep__panel p:last-child { margin-bottom: 0; }
+
+/* 14. BUSINESS TAX PLANNING */
+.cfo-biztaxplan { padding: 96px 32px; background: #fff; }
+.cfo-biztaxplan__inner { max-width: 1060px; margin: 0 auto; }
+.cfo-biztaxplan__header { margin-bottom: 48px; }
+.cfo-biztaxplan__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem,3.2vw,2.4rem); color: #145568; font-weight: 700; margin-bottom: 16px; }
+.cfo-biztaxplan__body { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.cfo-biztaxplan__left p { font-size: .95rem; line-height: 1.85; color: #4a5a5e; margin-bottom: 14px; }
+.cfo-biztaxplan__subhead { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .14em; margin: 24px 0 12px; display: block; }
+.cfo-biztaxplan__list { list-style: none; }
+.cfo-biztaxplan__list li { font-size: .92rem; line-height: 1.65; color: #3d5560; padding: 9px 0; border-bottom: 1px solid #dde8eb; display: flex; align-items: flex-start; gap: 10px; }
+.cfo-biztaxplan__list li::before { content: '\2713'; color: #1D7080; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.cfo-biztaxplan__list li:last-child { border-bottom: none; }
+.cfo-biztaxplan__panel { background: #F0F8FA; border-radius: 14px; padding: 36px 32px; border-top: 4px solid #C9A84C; box-shadow: 0 4px 24px rgba(29,112,128,.08); }
+.cfo-biztaxplan__panel h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #145568; font-weight: 700; margin-bottom: 14px; }
+.cfo-biztaxplan__panel p { font-size: .92rem; line-height: 1.8; color: #4a5a5e; margin-bottom: 14px; }
+.cfo-biztaxplan__panel p:last-child { margin-bottom: 0; }
+
+/* 15. HOW IT WORKS */
+.cfo-process { padding: 100px 32px; background: #E6F4F7; }
 .cfo-process__inner { max-width: 1060px; margin: 0 auto; }
 .cfo-process__header { text-align: center; margin-bottom: 16px; }
 .cfo-process__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: #145568; font-weight: 700; margin-bottom: 14px; }
@@ -357,7 +392,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   .cfo-stats__inner { grid-template-columns: 1fr 1fr; }
   .cfo-serves__grid,.cfo-reality__grid,.cfo-taxplan__body { grid-template-columns: 1fr; }
   .cfo-serves__exclusions ul { grid-template-columns: 1fr; }
-  .cfo-partner__inner,.cfo-bionic__layout,.cfo-records__layout,.cfo-taxprep__body { grid-template-columns: 1fr; gap: 40px; }
+  .cfo-partner__inner,.cfo-bionic__layout,.cfo-records__layout,.cfo-taxprep__body,.cfo-biztaxprep__body,.cfo-biztaxplan__body { grid-template-columns: 1fr; gap: 40px; }
   .cfo-records__cards { grid-template-columns: 1fr 1fr; }
   .cfo-orbit-wrap { width: 100%; max-width: 360px; height: 360px; }
 }
@@ -504,12 +539,15 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 <!-- STICKY SIDE-NAV -->
 <nav class="cfo-sidenav" aria-label="Page sections">
   <a href="#cfo-serves">Who We Serve</a>
-  <a href="#cfo-partner">Partnership</a>
-  <a href="#cfo-compare">APT Wins</a>
-  <a href="#cfo-bionic">Bionic Books</a>
+  <a href="#cfo-partner">AW &amp; APT</a>
+  <a href="#cfo-compare">APT</a>
+  <a href="#cfo-reality">Why APT</a>
+  <a href="#cfo-bionic">Bookkeeping</a>
   <a href="#cfo-records">Financial Records</a>
-  <a href="#cfo-taxprep">Tax Preparation</a>
-  <a href="#cfo-taxplan">Tax Planning</a>
+  <a href="#cfo-taxprep">Indv. Tax Prep</a>
+  <a href="#cfo-biztaxprep">Bus. Tax Prep</a>
+  <a href="#cfo-taxplan">Indv. Tax Plan</a>
+  <a href="#cfo-biztaxplan">Bus. Tax Plan</a>
   <a href="#cfo-process">How It Works</a>
 </nav>
 
@@ -525,7 +563,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         <p class="cfo-hero__sub">Affinity Private Tax combines AI-powered technology with experienced accounting and tax professionals to deliver a bionic approach to business financial management. We bring bookkeeping, financial reporting, tax planning, tax preparation, and cash-flow guidance together under one coordinated relationship.</p>
         <div class="cfo-hero__metrics">
           <div class="cfo-hero__metric">
-            <span class="cfo-hero__metric-val">5</span>
+            <span class="cfo-hero__metric-val">6</span>
             <span class="cfo-hero__metric-lbl">Integrated<br />Services</span>
           </div>
           <div class="cfo-hero__metric">
@@ -533,8 +571,8 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
             <span class="cfo-hero__metric-lbl">Coordinated<br />Relationship</span>
           </div>
           <div class="cfo-hero__metric">
-            <span class="cfo-hero__metric-val">365</span>
-            <span class="cfo-hero__metric-lbl">Days / Year<br />Support</span>
+            <span class="cfo-hero__metric-val">12</span>
+            <span class="cfo-hero__metric-lbl">Months / Year<br />Support</span>
           </div>
         </div>
         <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top">Schedule Your CFO Consultation</a>
@@ -649,30 +687,33 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
     <div class="cfo-orbit-section__head">
       <span class="cfo-label cfo-label--teal">One Integrated Relationship</span>
       <div class="cfo-gold-bar cfo-gold-bar--center"></div>
-      <h2>Five Services. One Coordinated Relationship.</h2>
-      <p>Affinity Private Tax brings bookkeeping, financial reporting, tax planning, tax preparation, and cash-flow guidance together under one roof&mdash;working in concert for business owners and their families.</p>
+      <h2>Six Services. One Coordinated Relationship.</h2>
+      <p>Affinity Private Tax brings bookkeeping, financial reporting, individual &amp; business tax planning, individual &amp; business tax preparation, and cash-flow guidance together under one roof&mdash;working in concert for business owners and their families.</p>
     </div>
 
     <div class="cfo-orbit-wrap">
       <!-- SVG lines + rings -->
       <svg class="cfo-orbit-svg" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
         <!-- outer decorative ring -->
-        <circle cx="280" cy="280" r="205" fill="none" stroke="rgba(29,112,128,.12)" stroke-width="1" stroke-dasharray="5,5"/>
+        <circle cx="280" cy="280" r="210" fill="none" stroke="rgba(29,112,128,.1)" stroke-width="1.5" stroke-dasharray="6,5"/>
+        <!-- mid decorative ring -->
+        <circle cx="280" cy="280" r="160" fill="none" stroke="rgba(29,112,128,.07)" stroke-width="1" stroke-dasharray="4,6"/>
         <!-- inner ring around center -->
-        <circle cx="280" cy="280" r="86" fill="none" stroke="rgba(201,168,76,.25)" stroke-width="1.5" stroke-dasharray="4,4"/>
-        <!-- spoke lines: center edge (r=86) to near node (35px from node center) -->
-        <!-- Node 0: top (280,80) -->
-        <line x1="280" y1="194" x2="280" y2="115" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
-        <!-- Node 1: top-right (453,180) unit=(0.866,-0.5) -->
-        <line x1="354" y1="237" x2="423" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
-        <!-- Node 2: bot-right (453,380) unit=(0.866,0.5) -->
-        <line x1="354" y1="323" x2="423" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
-        <!-- Node 3: bottom (280,480) -->
-        <line x1="280" y1="366" x2="280" y2="445" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
-        <!-- Node 4: bot-left (107,380) unit=(-0.866,0.5) -->
-        <line x1="206" y1="323" x2="137" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
-        <!-- Node 5: top-left (107,180) unit=(-0.866,-0.5) -->
-        <line x1="206" y1="237" x2="137" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
+        <circle cx="280" cy="280" r="100" fill="none" stroke="rgba(201,168,76,.3)" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <!-- spokes from inner ring edge (r=100) to near each node (35px from node center) -->
+        <line x1="280" y1="180" x2="280" y2="115" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <line x1="367" y1="230" x2="423" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <line x1="367" y1="330" x2="423" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <line x1="280" y1="380" x2="280" y2="445" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <line x1="193" y1="330" x2="137" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <line x1="193" y1="230" x2="137" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
+        <!-- node halos -->
+        <circle cx="280" cy="80" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
+        <circle cx="453" cy="180" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
+        <circle cx="453" cy="380" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
+        <circle cx="280" cy="480" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
+        <circle cx="107" cy="380" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
+        <circle cx="107" cy="180" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
       </svg>
 
       <!-- Center circle with logo -->
@@ -687,7 +728,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
       </div>
       <div class="cfo-orbit-node cfo-orbit-node--1">
         <span class="cfo-orbit-node__icon">&#128202;</span>
-        <span class="cfo-orbit-node__label">Financial Records &amp; Reporting</span>
+        <span class="cfo-orbit-node__label">Financial Reporting &amp; Cash Flow Guidance</span>
       </div>
       <div class="cfo-orbit-node cfo-orbit-node--2">
         <span class="cfo-orbit-node__icon">&#128196;</span>
@@ -702,8 +743,8 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         <span class="cfo-orbit-node__label">Individual Tax Planning</span>
       </div>
       <div class="cfo-orbit-node cfo-orbit-node--5">
-        <span class="cfo-orbit-node__icon">&#128176;</span>
-        <span class="cfo-orbit-node__label">Cash-Flow Guidance</span>
+        <span class="cfo-orbit-node__icon">&#128221;</span>
+        <span class="cfo-orbit-node__label">Individual Tax Preparation</span>
       </div>
     </div>
   </section>
@@ -971,6 +1012,43 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
     </div>
   </section>
 
+  <!-- BUSINESS TAX PREPARATION -->
+  <section class="cfo-biztaxprep" id="cfo-biztaxprep">
+    <div class="cfo-biztaxprep__inner">
+      <span class="cfo-label cfo-label--teal">Business Tax Returns</span>
+      <div class="cfo-gold-bar"></div>
+      <div class="cfo-biztaxprep__body">
+        <div class="cfo-biztaxprep__left">
+          <h2>Business Tax Preparation: Accurate Returns Built on Clean Books</h2>
+          <p>The business tax return is not just a compliance exercise. It is a direct reflection of the financial organization, bookkeeping accuracy, and tax planning that happened throughout the year.</p>
+          <p>At Affinity Private Tax, business tax returns are prepared as part of an integrated relationship&mdash;not as a standalone filing engagement.</p>
+          <p class="cfo-biztaxprep__subhead">Why Integration Matters</p>
+          <p>When your bookkeeper, tax planner, and tax preparer are part of the same coordinated team, the tax return benefits from cleaner data, fewer last-minute surprises, and a better understanding of the business&rsquo;s full financial picture.</p>
+          <p>Because our team maintains your books throughout the year and coordinates tax planning before the return is prepared, the filing process is more organized, more accurate, and more strategically aligned with your long-term goals.</p>
+          <p class="cfo-biztaxprep__subhead">What Is Included</p>
+          <ul class="cfo-biztaxprep__list">
+            <li>Business entity tax return preparation (S-Corp, C-Corp, Partnership, LLC, and Sole Proprietor)</li>
+            <li>Coordination with bookkeeping to ensure accurate, tax-ready financial records</li>
+            <li>Review of deductible expenses, depreciation, and business-related tax items</li>
+            <li>Coordination between business and owner-level individual returns</li>
+            <li>Communication with the IRS and state tax authorities when needed</li>
+            <li>Extension requests when appropriate</li>
+            <li>Year-round availability for tax questions and planning coordination</li>
+          </ul>
+        </div>
+        <div class="cfo-biztaxprep__panel">
+          <h3>Prepared With Context</h3>
+          <p>The biggest advantage of our approach is context. Because our team is involved in your business&rsquo;s financial management throughout the year, we are not seeing your books for the first time in February or March.</p>
+          <p>This allows us to review your return with a broader understanding of your business activity, owner compensation decisions, entity structure, retirement contributions, and long-term tax strategy&mdash;rather than simply processing the documents provided at tax time.</p>
+          <p>The result is a more accurate return, fewer missed opportunities, and a smoother, less stressful filing experience for the business owner.</p>
+          <div style="margin-top:28px;text-align:center;">
+            <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top" style="display:inline-block;padding:14px 28px;font-size:13px;background:#C9A84C;">Schedule a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INDIVIDUAL TAX PLANNING -->
   <section class="cfo-taxplan" id="cfo-taxplan">
     <div class="cfo-taxplan__inner">
@@ -1003,6 +1081,48 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <p>When we have visibility into both your business and personal finances, we can better coordinate tax planning across both areas and help ensure decisions are made with their full tax impact in mind.</p>
           <div style="margin-top:28px;padding:20px;background:#F0F8FA;border-radius:8px;border-left:3px solid #C9A84C;">
             <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:#1D7080;line-height:1.7;">&ldquo;Integrated tax planning means every decision&mdash;business or personal&mdash;is made with its full tax impact in mind.&rdquo;</p>
+          </div>
+          <div style="margin-top:28px;text-align:center;">
+            <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top" style="display:inline-block;padding:14px 28px;font-size:13px;">Start Planning</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS TAX PLANNING -->
+  <section class="cfo-biztaxplan" id="cfo-biztaxplan">
+    <div class="cfo-biztaxplan__inner">
+      <div class="cfo-biztaxplan__header">
+        <span class="cfo-label cfo-label--teal">Business Tax Planning</span>
+        <div class="cfo-gold-bar"></div>
+        <h2>Business Tax Planning</h2>
+      </div>
+      <div class="cfo-biztaxplan__body">
+        <div class="cfo-biztaxplan__left">
+          <span class="cfo-biztaxplan__subhead">The Goal</span>
+          <p>The goal is not simply to minimize the tax bill at the end of the year. The goal is to make informed business decisions throughout the year&mdash;with their full tax impact considered in advance.</p>
+          <span class="cfo-biztaxplan__subhead">Why Our Approach Is Different</span>
+          <p>Most accounting relationships are compliance-focused. Tax planning, when it happens at all, often occurs after the fiscal year has ended&mdash;limiting the opportunities available.</p>
+          <p>At Affinity Private Tax, business tax planning is a year-round process. Because we maintain your books and have visibility into both business operations and owner-level finances, we can identify planning opportunities before decisions are made&mdash;not after.</p>
+          <span class="cfo-biztaxplan__subhead">What Is Included</span>
+          <ul class="cfo-biztaxplan__list">
+            <li>Entity structure review and optimization</li>
+            <li>Owner compensation and distribution planning</li>
+            <li>Business deduction and depreciation strategies</li>
+            <li>Qualified Business Income (QBI) deduction planning</li>
+            <li>Retirement plan contributions and selection</li>
+            <li>Year-end tax estimates and projections</li>
+            <li>Coordination between business and owner individual tax planning</li>
+            <li>Planning around major business decisions (hires, equipment, real estate)</li>
+          </ul>
+        </div>
+        <div class="cfo-biztaxplan__panel">
+          <h3>Planning Before Decisions Are Made</h3>
+          <p>Business owners make decisions every day that carry tax consequences&mdash;compensation structures, capital purchases, timing of income and expenses, retirement contributions, and more.</p>
+          <p>Our goal is to be part of those conversations before decisions are finalized, not after. By coordinating business tax planning with bookkeeping, financial reporting, and the owner&rsquo;s personal tax situation, we help ensure that major decisions are made with a full understanding of their tax impact.</p>
+          <div style="margin-top:24px;padding:20px;background:rgba(201,168,76,.1);border-radius:8px;border-left:3px solid #C9A84C;">
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:#1D7080;line-height:1.7;">&ldquo;The best tax planning happens before the decision&mdash;not after the year-end.&rdquo;</p>
           </div>
           <div style="margin-top:28px;text-align:center;">
             <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top" style="display:inline-block;padding:14px 28px;font-size:13px;">Start Planning</a>
@@ -1129,7 +1249,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 <script>
 (function(){
   var links = document.querySelectorAll('.cfo-sidenav a');
-  var ids = ['cfo-serves','cfo-partner','cfo-compare','cfo-bionic','cfo-records','cfo-taxprep','cfo-taxplan','cfo-process'];
+  var ids = ['cfo-serves','cfo-partner','cfo-compare','cfo-reality','cfo-bionic','cfo-records','cfo-taxprep','cfo-biztaxprep','cfo-taxplan','cfo-biztaxplan','cfo-process'];
   function onScroll(){
     var fromTop = window.scrollY + 140;
     var current = ids[0];
