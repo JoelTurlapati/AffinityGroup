@@ -80,30 +80,23 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
    PAGE: TAX PLANNING & PREPARATION
    ============================================================ */
 
-/* STICKY SUB-NAV */
-.tp-subnav {
-  position: sticky; top: 72px; z-index: 900;
-  background: #145568; border-bottom: 2px solid #C9A84C;
-  overflow-x: auto; white-space: nowrap;
+/* STICKY SIDE-NAV */
+.tp-sidenav {
+  position: fixed; left: 12px; top: 50%; transform: translateY(-50%);
+  z-index: 800; background: #145568; border-radius: 8px;
+  padding: 8px 0; border-left: 3px solid #C9A84C;
+  box-shadow: 0 4px 24px rgba(0,0,0,.25);
 }
-.tp-subnav__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center;
-  padding: 0 24px;
+.tp-sidenav a {
+  display: block; padding: 9px 16px 9px 13px;
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase; text-decoration: none;
+  color: rgba(255,255,255,.65); white-space: nowrap;
+  transition: color .2s, background .2s;
 }
-.tp-subnav a {
-  display: inline-block; padding: 13px 18px;
-  font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600;
-  letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
-  color: rgba(255,255,255,.75); transition: color .2s, background .2s;
-}
-.tp-subnav a:hover { color: #C9A84C; background: rgba(255,255,255,.06); }
-.tp-subnav a.tp-subnav__cta {
-  margin-left: auto; background: #C9A84C; color: #0c3540;
-  border-radius: 3px; padding: 10px 20px; margin-top: 4px; margin-bottom: 4px;
-  font-weight: 700;
-}
-.tp-subnav a.tp-subnav__cta:hover { background: #e8c96e; }
+.tp-sidenav a:hover,
+.tp-sidenav a.tp-sidenav__active { color: #C9A84C; background: rgba(255,255,255,.06); }
+@media (max-width: 1100px) { .tp-sidenav { display: none; } }
 
 /* HERO */
 .tp-hero {
@@ -618,19 +611,13 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   </div>
 </nav>
 
-<!-- STICKY SUB-NAV -->
-<nav class="tp-subnav" aria-label="Page sections">
-  <div class="tp-subnav__inner">
-    <a href="#tp-planning">Tax Planning</a>
-    <a href="#tp-tech">Technology</a>
-    <a href="#tp-retire">Retirement</a>
-    <a href="#tp-receive">What You Receive</a>
-    <a href="#tp-difference">Our Difference</a>
-    <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
-      <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" style="height:30px;width:auto;object-fit:contain;border-radius:3px;display:block;" />
-      <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" class="tp-subnav__cta" style="margin-left:0!important;">Schedule Consultation</a>
-    </div>
-  </div>
+<!-- STICKY SIDE-NAV -->
+<nav class="tp-sidenav" aria-label="Page sections">
+  <a href="#tp-planning">Tax Planning</a>
+  <a href="#tp-tech">Technology</a>
+  <a href="#tp-retire">Retirement</a>
+  <a href="#tp-receive">What You Receive</a>
+  <a href="#tp-difference">Our Difference</a>
 </nav>
 
 <main>
@@ -1177,5 +1164,24 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   </div>
 </footer>
 
+<script>
+(function(){
+  var links = document.querySelectorAll('.tp-sidenav a');
+  var ids = ['tp-planning','tp-tech','tp-retire','tp-receive','tp-difference'];
+  function onScroll(){
+    var fromTop = window.scrollY + 140;
+    var current = ids[0];
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= fromTop) current = id;
+    });
+    links.forEach(function(a){
+      a.classList.toggle('tp-sidenav__active', a.getAttribute('href') === '#'+current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
 </body>
 </html>
