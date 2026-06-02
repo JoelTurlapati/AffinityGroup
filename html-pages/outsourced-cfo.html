@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -56,571 +56,207 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .ag-footer__sitemap a:hover { color: #fff; }
 .ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
 
-/* SHARED */
-.ag-btn-primary { display: inline-block; padding: 15px 36px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
-.ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
-.ag-btn-outline { display: inline-block; padding: 14px 34px; background: transparent; color: #1D7080; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; border: 2px solid #1D7080; letter-spacing: .04em; cursor: pointer; transition: background .2s, color .2s; }
-.ag-btn-outline:hover { background: #1D7080; color: #fff; }
-.ag-btn-outline--white { border-color: rgba(255,255,255,.7); color: #fff; }
-.ag-btn-outline--white:hover { background: rgba(255,255,255,.15); color: #fff; }
-.ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
-.ag-gold-bar--left { margin-left: 0; }
-.ag-section-label { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .2em; margin-bottom: 12px; display: block; }
-.ag-section-label--gold { color: #C9A84C; }
-.ag-section-label--white { color: rgba(255,255,255,.7); }
-
-@media (max-width: 900px) {
-  .ag-nav__links, .ag-nav__right { display: none; }
-  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
-  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
-}
-
 /* ============================================================
    PAGE: OUTSOURCED CFO / AFFINITY PRIVATE TAX
    ============================================================ */
 
-/* STICKY SUB-NAV */
-.apt-subnav {
-  position: sticky; top: 72px; z-index: 900;
-  background: #145568; border-bottom: 2px solid #C9A84C;
-  overflow-x: auto; white-space: nowrap;
-}
-.apt-subnav__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; gap: 0;
-  padding: 0 24px;
-}
-.apt-subnav a {
-  display: inline-block; padding: 13px 20px;
-  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
-  letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
-  color: rgba(255,255,255,.78); transition: color .2s, background .2s;
-  border-bottom: 2px solid transparent; margin-bottom: -2px;
-}
-.apt-subnav a:hover { color: #C9A84C; background: rgba(255,255,255,.06); }
-.apt-subnav a.apt-subnav__cta {
-  margin-left: auto; background: #C9A84C; color: #0c3540;
-  border-radius: 3px; padding: 10px 20px; margin-top: 4px; margin-bottom: 4px;
-  font-weight: 700;
-}
-.apt-subnav a.apt-subnav__cta:hover { background: #e8c96e; }
+/* SHARED */
+.cfo-label { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .22em; display: block; margin-bottom: 14px; }
+.cfo-label--teal { color: #1D7080; }
+.cfo-label--white { color: rgba(255,255,255,.7); }
+.cfo-gold-bar { width: 52px; height: 3px; background: #C9A84C; margin-bottom: 24px; }
+.cfo-gold-bar--center { margin: 0 auto 24px; }
+.cfo-btn { display: inline-block; padding: 16px 40px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 5px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.cfo-btn:hover { background: #145568; transform: translateY(-2px); }
+.cfo-btn--gold { background: #C9A84C; }
+.cfo-btn--gold:hover { background: #a8873d; }
 
-/* HERO */
-.apt-hero {
-  background: linear-gradient(135deg, #0a2d38 0%, #1D7080 60%, #216070 100%);
-  margin-top: 72px; padding: 80px 32px 72px;
-  position: relative; overflow: hidden;
-}
-.apt-hero::before {
-  content: ''; position: absolute; top: -60px; right: -80px;
-  width: 500px; height: 500px; border-radius: 50%;
-  border: 1px solid rgba(201,168,76,.15);
-  pointer-events: none;
-}
-.apt-hero::after {
-  content: ''; position: absolute; bottom: -100px; right: 60px;
-  width: 300px; height: 300px; border-radius: 50%;
-  border: 1px solid rgba(201,168,76,.1);
-  pointer-events: none;
-}
-.apt-hero__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start;
-}
-.apt-hero__brand {
-  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-  letter-spacing: .22em; text-transform: uppercase;
-  color: #C9A84C; margin-bottom: 20px;
-}
-.apt-hero h1 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 3rem);
-  font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 24px;
-  text-shadow: 0 2px 20px rgba(0,0,0,.3);
-}
-.apt-hero__sub {
-  font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.8;
-  color: rgba(255,255,255,.9); font-weight: 400; margin-bottom: 16px;
-}
-.apt-hero__para {
-  font-family: 'Inter', sans-serif; font-size: .93rem; line-height: 1.85;
-  color: rgba(255,255,255,.72); font-weight: 300; margin-bottom: 36px;
-}
-.apt-hero__btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
-.apt-hero__note {
-  font-family: 'Inter', sans-serif; font-size: .78rem;
-  color: rgba(255,255,255,.5); font-style: italic; line-height: 1.6;
-  border-top: 1px solid rgba(255,255,255,.12); padding-top: 16px; margin-top: 4px;
-}
+/* 1. HERO */
+.cfo-hero { padding: 136px 32px 96px; background: linear-gradient(135deg, #080e12 0%, #0c3540 40%, #145568 75%, #1D7080 100%); position: relative; overflow: hidden; }
+.cfo-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,.08) 0%, transparent 70%); }
+.cfo-hero__inner { max-width: 1120px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.cfo-hero__eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .25em; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+.cfo-hero__eyebrow::before { content: ''; width: 28px; height: 2px; background: #C9A84C; flex-shrink: 0; }
+.cfo-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.5rem); color: #fff; font-weight: 700; line-height: 1.17; margin-bottom: 20px; }
+.cfo-hero__sub { font-size: 1.08rem; color: rgba(255,255,255,.75); line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+.cfo-hero__metrics { display: flex; gap: 32px; margin-bottom: 40px; }
+.cfo-hero__metric-val { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #C9A84C; line-height: 1; display: block; }
+.cfo-hero__metric-lbl { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .12em; margin-top: 6px; display: block; }
+.cfo-hero__card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 36px 32px; backdrop-filter: blur(10px); }
+.cfo-hero__card-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 20px; }
+.cfo-hero__card ul { list-style: none; }
+.cfo-hero__card ul li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .9rem; color: rgba(255,255,255,.82); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+.cfo-hero__card ul li::before { content: '\2713'; color: #C9A84C; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.cfo-hero__card ul li:last-child { border-bottom: none; }
 
-/* Hero side card */
-.apt-hero__card {
-  background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
-  border-radius: 8px; padding: 32px 28px; backdrop-filter: blur(8px);
-}
-.apt-hero__card-title {
-  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase; color: #C9A84C;
-  margin-bottom: 20px; border-bottom: 1px solid rgba(201,168,76,.3); padding-bottom: 12px;
-}
-.apt-hero__card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-.apt-hero__card li {
-  font-family: 'Inter', sans-serif; font-size: .9rem; line-height: 1.6;
-  color: rgba(255,255,255,.85); padding-left: 20px; position: relative;
-}
-.apt-hero__card li::before {
-  content: ''; position: absolute; left: 0; top: 8px;
-  width: 6px; height: 6px; border-radius: 50%; background: #C9A84C;
-}
+/* 2. STATS */
+.cfo-stats { background: #E6F4F7; }
+.cfo-stats__inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+.cfo-stat { padding: 32px 24px; text-align: center; border-right: 1px solid rgba(29,112,128,.15); }
+.cfo-stat:last-child { border-right: none; }
+.cfo-stat__val { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700; color: #1D7080; line-height: 1.2; }
+.cfo-stat__lbl { font-family: 'Inter', sans-serif; font-size: .82rem; color: #5a7a82; margin-top: 6px; line-height: 1.4; }
 
-/* SECTION 1: WHY APT EXISTS */
-.apt-why { padding: 88px 32px; background: #fff; }
-.apt-why__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
-}
-.apt-why h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #145568; margin-bottom: 24px; line-height: 1.3;
-}
-.apt-why p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
-  color: #3a3a3a; font-weight: 300; margin-bottom: 14px;
-}
+/* 3. WHO SERVES */
+.cfo-serves { padding: 96px 32px; background: #fff; }
+.cfo-serves__inner { max-width: 1120px; margin: 0 auto; }
+.cfo-serves__header { text-align: center; margin-bottom: 64px; }
+.cfo-serves__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #145568; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+.cfo-serves__header p { font-size: 1rem; line-height: 1.85; color: #5a7a82; max-width: 680px; margin: 0 auto; }
+.cfo-serves__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 40px; }
+.cfo-serves__card { border-radius: 12px; padding: 40px 36px; border: 1px solid #dde8eb; }
+.cfo-serves__card--teal { background: linear-gradient(135deg, #1D7080, #145568); border-color: transparent; }
+.cfo-serves__card__badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 18px; background: #C9A84C; color: #fff; }
+.cfo-serves__card--teal .cfo-serves__card__badge { background: rgba(255,255,255,.18); color: #fff; }
+.cfo-serves__card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #145568; margin-bottom: 14px; }
+.cfo-serves__card--teal h3 { color: #fff; }
+.cfo-serves__card p { font-size: .95rem; line-height: 1.8; color: #4a5a5e; }
+.cfo-serves__card--teal p { color: rgba(255,255,255,.82); }
+.cfo-serves__exclusions { background: #F0F8FA; border-radius: 12px; padding: 40px 36px; }
+.cfo-serves__exclusions h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #145568; font-weight: 700; margin-bottom: 20px; }
+.cfo-serves__exclusions ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.cfo-serves__exclusions li { font-size: .92rem; line-height: 1.65; color: #4a5a5e; display: flex; align-items: flex-start; gap: 8px; }
+.cfo-serves__exclusions li::before { content: '\2014'; color: #d45c5c; font-weight: 700; flex-shrink: 0; }
+.cfo-serves__note { margin-top: 28px; font-size: .9rem; line-height: 1.8; color: #5a7a82; font-style: italic; padding-top: 20px; border-top: 1px solid #dde8eb; }
+.cfo-serves__cta { text-align: center; margin-top: 48px; }
 
-/* Relationship card */
-.apt-rel-card {
-  background: #F0F8FA; border: 1px solid rgba(29,112,128,.18);
-  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #1D7080;
-}
-.apt-rel-card__title {
-  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600;
-  color: #145568; margin-bottom: 20px; line-height: 1.4; font-style: italic;
-}
-.apt-rel-card p {
-  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.85;
-  color: #4a4a4a; font-weight: 300; margin-bottom: 12px;
-}
-.apt-rel-card p:last-child { margin-bottom: 0; }
+/* 4. PARTNERSHIP */
+.cfo-partner { padding: 96px 32px; background: linear-gradient(160deg, #0c3540 0%, #145568 100%); }
+.cfo-partner__inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: start; }
+.cfo-partner__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: #fff; font-weight: 700; margin-bottom: 28px; line-height: 1.25; }
+.cfo-partner__left p { font-size: .97rem; line-height: 1.9; color: rgba(255,255,255,.75); margin-bottom: 18px; }
+.cfo-partner__right { display: flex; flex-direction: column; gap: 18px; }
+.cfo-partner__block { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 24px 26px; }
+.cfo-partner__block-label { font-size: 10px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 8px; }
+.cfo-partner__block p { font-size: .9rem; line-height: 1.7; color: rgba(255,255,255,.78); }
+.cfo-partner__result { padding: 24px 26px; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.3); border-radius: 10px; }
+.cfo-partner__result p { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-style: italic; color: #C9A84C; line-height: 1.7; }
 
-/* SECTION 2: HUB AND SPOKE */
-.apt-hub { padding: 88px 32px; background: #F0F8FA; }
-.apt-hub__head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
-.apt-hub__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem);
-  font-weight: 600; color: #145568; margin-bottom: 14px;
-}
-.apt-hub__head p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; color: #5a5a5a;
-  line-height: 1.7; font-weight: 300;
-}
-.apt-hub-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 220px 1fr;
-  gap: 24px;
-  align-items: center;
-}
-.apt-hub-center {
-  grid-column: 2; grid-row: 1 / span 3;
-  width: 220px; height: 220px; border-radius: 50%;
-  background: linear-gradient(145deg, #1D7080, #145568);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 24px;
-  box-shadow: 0 0 0 12px rgba(29,112,128,.1), 0 0 0 24px rgba(29,112,128,.05);
-  position: relative;
-}
-.apt-hub-center::before {
-  content: ''; position: absolute; inset: -4px; border-radius: 50%;
-  border: 2px dashed rgba(201,168,76,.4); pointer-events: none;
-}
-.apt-hub-center__brand {
-  font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
-  letter-spacing: .15em; text-transform: uppercase; color: #C9A84C; margin-bottom: 8px;
-}
-.apt-hub-center__name {
-  font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 600;
-  color: #fff; line-height: 1.4;
-}
-.apt-hub-center__sub {
-  font-family: 'Inter', sans-serif; font-size: .7rem; color: rgba(255,255,255,.65);
-  margin-top: 6px; line-height: 1.4;
-}
-.apt-hub-spoke {
-  background: #fff; border: 1px solid rgba(29,112,128,.15);
-  border-radius: 8px; padding: 22px 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,.05);
-  position: relative;
-  transition: transform .2s, box-shadow .2s;
-}
-.apt-hub-spoke:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(29,112,128,.15); }
-.apt-hub-spoke--left { text-align: right; border-right: 3px solid #1D7080; }
-.apt-hub-spoke--right { text-align: left; border-left: 3px solid #1D7080; }
-.apt-hub-spoke__num {
-  display: inline-block; font-family: 'Inter', sans-serif; font-size: 10px;
-  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: #C9A84C; margin-bottom: 8px;
-}
-.apt-hub-spoke h3 {
-  font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700;
-  color: #145568; margin-bottom: 7px; line-height: 1.3;
-}
-.apt-hub-spoke p {
-  font-family: 'Inter', sans-serif; font-size: .8rem; line-height: 1.7;
-  color: #5a5a5a; font-weight: 300;
-}
+/* 5. COMPARISON */
+.cfo-compare { padding: 100px 32px; background: #fff; }
+.cfo-compare__inner { max-width: 1120px; margin: 0 auto; }
+.cfo-compare__header { text-align: center; margin-bottom: 64px; }
+.cfo-compare__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: #145568; font-weight: 700; margin-bottom: 16px; }
+.cfo-compare__header p { font-size: 1.02rem; line-height: 1.85; color: #5a7a82; max-width: 700px; margin: 0 auto; }
+.cfo-table-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.1); border: 1px solid #dde8eb; }
+.cfo-table { width: 100%; border-collapse: collapse; }
+.cfo-table thead tr { background: #0c3540; }
+.cfo-table thead th { padding: 20px 24px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.cfo-table thead th:first-child { color: rgba(255,255,255,.6); text-align: left; width: 28%; }
+.cfo-table thead th:nth-child(2) { color: #ff9a9a; text-align: center; width: 30%; }
+.cfo-table thead th:nth-child(3) { color: #5edfb8; text-align: center; width: 42%; background: #1a5f6e; }
+.cfo-table tbody tr { border-bottom: 1px solid #eef3f5; }
+.cfo-table tbody tr:nth-child(even) { background: #f8fbfc; }
+.cfo-table tbody tr:last-child { border-bottom: none; }
+.cfo-table tbody td { padding: 16px 24px; font-size: .88rem; line-height: 1.5; vertical-align: middle; }
+.cfo-table tbody td:first-child { font-weight: 600; color: #2d4e55; }
+.cfo-table tbody td:nth-child(2) { text-align: center; color: #c04040; background: rgba(255,235,235,.3); }
+.cfo-table tbody td:nth-child(3) { text-align: center; color: #1a5f6e; font-weight: 500; background: rgba(29,112,128,.04); }
+.cfo-compare__cta { text-align: center; margin-top: 52px; }
 
-/* SECTION 3: WHAT THE CLIENT IS BUYING */
-.apt-buying { padding: 88px 32px; background: #fff; }
-.apt-buying__head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
-.apt-buying__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #145568; margin-bottom: 16px;
-}
-.apt-buying__head p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
-  color: #4a4a4a; font-weight: 300;
-}
-.apt-buying__cards {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-}
-.apt-buying-card {
-  background: #F0F8FA; border: 1px solid rgba(29,112,128,.13);
-  border-radius: 8px; padding: 32px 24px;
-  border-top: 4px solid #1D7080;
-  transition: transform .2s, box-shadow .2s;
-}
-.apt-buying-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(29,112,128,.12); }
-.apt-buying-card h3 {
-  font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700;
-  color: #145568; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .05em;
-}
-.apt-buying-card p {
-  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.8;
-  color: #4a4a4a; font-weight: 300;
-}
+/* 6. REALITY CHECK */
+.cfo-reality { padding: 100px 32px; background: #F0F8FA; }
+.cfo-reality__inner { max-width: 1060px; margin: 0 auto; }
+.cfo-reality__header { text-align: center; margin-bottom: 60px; }
+.cfo-reality__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); color: #145568; font-weight: 700; margin-bottom: 14px; }
+.cfo-reality__header p { font-size: 1rem; color: #5a7a82; line-height: 1.8; max-width: 620px; margin: 0 auto; }
+.cfo-reality__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.cfo-reality__col-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 20px; }
+.cfo-reality__col-label--pain { color: #c04040; }
+.cfo-reality__col-label--apt { color: #1D7080; }
+.cfo-reality__item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: #fff; border-radius: 10px; margin-bottom: 12px; border-left: 4px solid transparent; }
+.cfo-reality__item--pain { border-left-color: #f08080; }
+.cfo-reality__item--apt { border-left-color: #1D7080; }
+.cfo-reality__item-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+.cfo-reality__item p { font-size: .92rem; line-height: 1.65; color: #3d5560; }
+.cfo-reality__item--pain p { color: #5a2a2a; }
+.cfo-reality__item--apt p { font-weight: 500; color: #1a5f6e; }
+.cfo-reality__cta { text-align: center; margin-top: 56px; }
 
-/* SECTION 4: WHAT'S INCLUDED */
-.apt-included { padding: 88px 32px; background: #F0F8FA; }
-.apt-included__head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
-.apt-included__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #145568; margin-bottom: 14px;
-}
-.apt-included__head p {
-  font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.8;
-  color: #5a5a5a; font-weight: 300;
-}
-.apt-included__cards {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-.apt-included-card {
-  background: #fff; border: 1px solid rgba(29,112,128,.13);
-  border-radius: 8px; padding: 32px 28px;
-  border-left: 4px solid #C9A84C;
-  box-shadow: 0 4px 16px rgba(0,0,0,.04);
-  transition: transform .2s;
-}
-.apt-included-card:hover { transform: translateY(-3px); }
-.apt-included-card__num {
-  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px;
-}
-.apt-included-card h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
-  color: #145568; margin-bottom: 12px;
-}
-.apt-included-card p {
-  font-family: 'Inter', sans-serif; font-size: .87rem; line-height: 1.85;
-  color: #4a4a4a; font-weight: 300;
-}
+/* 7. SCOREBOARD */
+.cfo-score { padding: 96px 32px; background: #0c3540; }
+.cfo-score__inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.cfo-score__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: #fff; font-weight: 700; margin-bottom: 12px; }
+.cfo-score__header p { font-size: .97rem; color: rgba(255,255,255,.65); margin-bottom: 56px; line-height: 1.7; }
+.cfo-score__bars { display: flex; flex-direction: column; gap: 28px; max-width: 720px; margin: 0 auto 52px; }
+.cfo-score__bar-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.cfo-score__bar-name { font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.82); }
+.cfo-score__bar-val { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
+.cfo-score__bar-val--low { color: #f08080; }
+.cfo-score__bar-val--high { color: #C9A84C; }
+.cfo-score__bar-track { background: rgba(255,255,255,.1); border-radius: 4px; height: 10px; overflow: hidden; }
+.cfo-score__bar-fill { height: 100%; border-radius: 4px; }
+.cfo-score__bar-fill--low { background: linear-gradient(90deg, #c04040, #f08080); width: 40%; }
+.cfo-score__bar-fill--high { background: linear-gradient(90deg, #1D7080, #5edfb8); width: 100%; }
+.cfo-score__cats { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.cfo-score__cat { padding: 6px 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; font-size: 11.5px; color: rgba(255,255,255,.7); }
 
-/* SECTION 5: BIONIC BOOKKEEPING */
-.apt-bionic { padding: 88px 32px; background: #fff; }
-.apt-bionic__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
-}
-.apt-bionic__text h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem);
-  font-weight: 600; color: #145568; margin-bottom: 20px; line-height: 1.3;
-}
-.apt-bionic__text p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
-  color: #3a3a3a; font-weight: 300; margin-bottom: 14px;
-}
-.apt-bionic__card {
-  background: #F0F8FA; border: 1px solid rgba(29,112,128,.15);
-  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #C9A84C;
-}
-.apt-bionic__card-title {
-  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
-  color: #145568; margin-bottom: 14px; font-style: italic;
-}
-.apt-bionic__card p {
-  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.85;
-  color: #4a4a4a; font-weight: 300; margin-bottom: 16px;
-}
-.apt-bionic__card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.apt-bionic__card li {
-  font-family: 'Inter', sans-serif; font-size: .87rem; color: #3a3a3a;
-  padding-left: 18px; position: relative; font-weight: 400; line-height: 1.6;
-}
-.apt-bionic__card li::before {
-  content: ''; position: absolute; left: 0; top: 8px;
-  width: 6px; height: 6px; border-radius: 50%; background: #1D7080;
-}
+/* 8. BIONIC BOOKKEEPING */
+.cfo-bionic { padding: 100px 32px; background: #fff; }
+.cfo-bionic__inner { max-width: 1120px; margin: 0 auto; }
+.cfo-bionic__header { max-width: 780px; margin: 0 auto 64px; text-align: center; }
+.cfo-bionic__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #145568; font-weight: 700; margin-bottom: 16px; }
+.cfo-bionic__quote { font-family: 'Playfair Display', serif; font-size: 1.12rem; font-style: italic; color: #1D7080; border-left: 4px solid #C9A84C; padding: 16px 24px; background: #E6F4F7; border-radius: 0 8px 8px 0; text-align: left; line-height: 1.75; margin-top: 28px; }
+.cfo-bionic__layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
+.cfo-bionic__checklist h3 { font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 24px; }
+.cfo-bionic__check-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #eef3f5; }
+.cfo-bionic__check-item:last-child { border-bottom: none; }
+.cfo-bionic__check-icon { width: 26px; height: 26px; border-radius: 50%; background: #1D7080; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.cfo-bionic__check-icon svg { width: 13px; height: 13px; color: #fff; }
+.cfo-bionic__check-text { font-size: .91rem; line-height: 1.65; color: #3d5560; }
+.cfo-bionic__why { background: #F0F8FA; border-radius: 14px; padding: 36px 32px; }
+.cfo-bionic__why h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #145568; font-weight: 700; margin-bottom: 18px; }
+.cfo-bionic__why p { font-size: .92rem; line-height: 1.8; color: #4a5a5e; margin-bottom: 16px; }
+.cfo-bionic__why p:last-child { margin-bottom: 0; }
 
-/* SECTION 5A: PRIOR-YEAR RETURNS */
-.apt-prior { padding: 88px 32px; background: #0b2d38; position: relative; overflow: hidden; }
-.apt-prior::before {
-  content: ''; position: absolute; top: -80px; right: -80px;
-  width: 400px; height: 400px; border-radius: 50%;
-  border: 1px solid rgba(201,168,76,.1); pointer-events: none;
-}
-.apt-prior__head {
-  max-width: 1200px; margin: 0 auto 48px;
-}
-.apt-prior__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-  font-weight: 600; color: #fff; margin-bottom: 16px; line-height: 1.25;
-}
-.apt-prior__head p {
-  font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.85;
-  color: rgba(255,255,255,.75); font-weight: 300; max-width: 720px;
-}
-.apt-prior__body {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start;
-}
-.apt-prior__callouts { display: flex; flex-direction: column; gap: 24px; }
-.apt-prior__callout {
-  background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.3);
-  border-left: 4px solid #C9A84C; border-radius: 6px; padding: 28px 28px;
-}
-.apt-prior__callout p {
-  font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.7;
-  color: rgba(255,255,255,.88); font-style: italic;
-}
-.apt-prior__card {
-  background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.3);
-  border-radius: 8px; padding: 32px 28px;
-}
-.apt-prior__card-title {
-  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
-  letter-spacing: .16em; text-transform: uppercase; color: #C9A84C; margin-bottom: 16px;
-}
-.apt-prior__years { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-.apt-prior__year {
-  display: inline-block; padding: 5px 14px; border: 1px solid rgba(201,168,76,.5);
-  border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 12px;
-  font-weight: 600; color: #C9A84C; letter-spacing: .04em;
-}
-.apt-prior__card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-.apt-prior__card li {
-  font-family: 'Inter', sans-serif; font-size: .87rem; color: rgba(255,255,255,.8);
-  padding-left: 18px; position: relative; line-height: 1.6;
-}
-.apt-prior__card li::before {
-  content: ''; position: absolute; left: 0; top: 8px;
-  width: 5px; height: 5px; border-radius: 50%; background: #C9A84C;
-}
-.apt-prior__card-note {
-  font-family: 'Inter', sans-serif; font-size: .75rem; color: rgba(255,255,255,.4);
-  font-style: italic; margin-top: 12px; line-height: 1.5;
-}
+/* 9. FINANCIAL RECORDS */
+.cfo-records { padding: 96px 32px; background: #E6F4F7; }
+.cfo-records__inner { max-width: 1120px; margin: 0 auto; }
+.cfo-records__header { text-align: center; margin-bottom: 64px; }
+.cfo-records__header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: #145568; font-weight: 700; margin-bottom: 16px; }
+.cfo-records__header p { font-size: 1rem; color: #5a7a82; max-width: 720px; margin: 0 auto; line-height: 1.85; }
+.cfo-records__layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+.cfo-records__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cfo-records__card { background: #fff; border-radius: 12px; padding: 26px 24px; border: 1px solid #dde8eb; transition: box-shadow .2s, transform .2s; }
+.cfo-records__card:hover { box-shadow: 0 12px 32px rgba(29,112,128,.1); transform: translateY(-3px); }
+.cfo-records__card-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+.cfo-records__card h3 { font-size: .92rem; font-weight: 700; color: #145568; margin-bottom: 8px; }
+.cfo-records__card p { font-size: .83rem; line-height: 1.7; color: #5a7a82; }
+.cfo-records__panel { background: linear-gradient(145deg, #145568, #1D7080); border-radius: 16px; padding: 40px 34px; color: #fff; }
+.cfo-records__panel h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.3; }
+.cfo-records__panel-metrics { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+.cfo-records__panel-metric { padding: 8px 14px; background: rgba(255,255,255,.12); border-radius: 6px; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,.9); }
+.cfo-records__panel ul { list-style: none; }
+.cfo-records__panel ul li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: .88rem; color: rgba(255,255,255,.8); display: flex; align-items: flex-start; gap: 10px; }
+.cfo-records__panel ul li::before { content: '\2713'; color: #C9A84C; font-weight: 700; flex-shrink: 0; }
+.cfo-records__panel ul li:last-child { border-bottom: none; }
+.cfo-records__panel-note { margin-top: 20px; font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; }
 
-/* SECTION 6: NOT ONLY */
-.apt-notonly { padding: 88px 32px; background: #fff; }
-.apt-notonly__head { text-align: center; max-width: 800px; margin: 0 auto 52px; }
-.apt-notonly__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #145568; margin-bottom: 16px; line-height: 1.3;
-}
-.apt-notonly__head p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
-  color: #4a4a4a; font-weight: 300;
-}
-.apt-notonly__cols {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-}
-.apt-notonly__col {
-  background: #F0F8FA; border-radius: 8px; padding: 36px 32px;
-}
-.apt-notonly__col--for { border-top: 4px solid #1D7080; }
-.apt-notonly__col--not { border-top: 4px solid rgba(29,112,128,.3); }
-.apt-notonly__col h3 {
-  font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em; color: #145568;
-  margin-bottom: 24px; line-height: 1.4;
-}
-.apt-notonly__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.apt-notonly__col li {
-  font-family: 'Inter', sans-serif; font-size: .92rem; line-height: 1.65;
-  color: #3a3a3a; padding-left: 22px; position: relative;
-}
-.apt-notonly__col--for li::before {
-  content: ''; position: absolute; left: 0; top: 9px;
-  width: 7px; height: 7px; border-radius: 50%; background: #1D7080;
-}
-.apt-notonly__col--not li::before {
-  content: '&#215;'; position: absolute; left: 0; top: 0;
-  font-size: 1rem; color: rgba(29,112,128,.4); font-weight: 700; line-height: 1.6;
-}
+/* 10. FINAL BANNER */
+.cfo-final { padding: 104px 32px; background: linear-gradient(135deg, #080e12 0%, #0c3540 50%, #145568 100%); text-align: center; position: relative; overflow: hidden; }
+.cfo-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,168,76,.08) 0%, transparent 65%); }
+.cfo-final__inner { position: relative; max-width: 780px; margin: 0 auto; }
+.cfo-final__trophy { font-size: 3.2rem; margin-bottom: 16px; display: block; }
+.cfo-final__divider { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 32px; }
+.cfo-final h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: #fff; font-weight: 700; margin-bottom: 22px; line-height: 1.2; }
+.cfo-final p { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.9; margin-bottom: 14px; }
+.cfo-final p:last-of-type { margin-bottom: 40px; }
 
-/* SECTION 7: TAX PREP COORDINATED */
-.apt-taxprep { padding: 88px 32px; background: #F0F8FA; }
-.apt-taxprep__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
-}
-.apt-taxprep__text h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem);
-  font-weight: 600; color: #145568; margin-bottom: 20px; line-height: 1.3;
-}
-.apt-taxprep__text p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.95;
-  color: #3a3a3a; font-weight: 300;
-}
-.apt-taxprep__card {
-  background: #fff; border: 1px solid rgba(29,112,128,.15);
-  border-radius: 8px; padding: 32px 28px; border-top: 4px solid #1D7080;
-  box-shadow: 0 4px 20px rgba(0,0,0,.05);
-}
-.apt-taxprep__card h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
-  color: #145568; margin-bottom: 14px; font-style: italic;
-}
-.apt-taxprep__card p {
-  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.85;
-  color: #4a4a4a; font-weight: 300;
-}
-
-/* SECTION 8: PROCESS */
-.apt-process { padding: 88px 32px; background: #fff; }
-.apt-process__head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
-.apt-process__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #145568; margin-bottom: 14px;
-}
-.apt-process__head p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.7; color: #5a5a5a; font-weight: 300;
-}
-.apt-process__steps {
-  max-width: 900px; margin: 0 auto;
-  display: flex; flex-direction: column; gap: 0;
-}
-.apt-process__step {
-  display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: start;
-  padding: 32px 0; border-bottom: 1px solid rgba(29,112,128,.1);
-}
-.apt-process__step:last-child { border-bottom: none; }
-.apt-process__step-num {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: #1D7080; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-  flex-shrink: 0; margin-top: 2px;
-  box-shadow: 0 4px 12px rgba(29,112,128,.3);
-}
-.apt-process__step-text h3 {
-  font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 700;
-  color: #145568; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .06em;
-}
-.apt-process__step-text p {
-  font-family: 'Inter', sans-serif; font-size: .92rem; line-height: 1.85;
-  color: #4a4a4a; font-weight: 300;
-}
-
-/* SECTION 9: WHO IT'S FOR */
-.apt-who { padding: 88px 32px; background: #145568; }
-.apt-who__head { text-align: center; margin-bottom: 48px; }
-.apt-who__head h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2.1rem);
-  font-weight: 600; color: #fff; margin-bottom: 14px;
-}
-.apt-who__head p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.8;
-  color: rgba(255,255,255,.72); font-weight: 300; max-width: 720px; margin: 0 auto;
-}
-.apt-who__cards {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-.apt-who-card {
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-  border-radius: 8px; padding: 36px 28px;
-  border-top: 3px solid #C9A84C;
-  transition: background .2s;
-}
-.apt-who-card:hover { background: rgba(255,255,255,.11); }
-.apt-who-card h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
-  color: #fff; margin-bottom: 12px;
-}
-.apt-who-card p {
-  font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.8;
-  color: rgba(255,255,255,.7); font-weight: 300;
-}
-
-/* FINAL CTA */
-.apt-final-cta {
-  padding: 88px 32px; background: linear-gradient(135deg, #0c3540, #1D7080);
-  text-align: center; position: relative; overflow: hidden;
-}
-.apt-final-cta::before {
-  content: ''; position: absolute; bottom: -60px; left: -60px;
-  width: 300px; height: 300px; border-radius: 50%;
-  border: 1px solid rgba(201,168,76,.12); pointer-events: none;
-}
-.apt-final-cta h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.3rem);
-  font-weight: 600; color: #fff; margin-bottom: 20px; position: relative;
-}
-.apt-final-cta p {
-  font-family: 'Inter', sans-serif; font-size: .97rem; line-height: 1.85;
-  color: rgba(255,255,255,.75); font-weight: 300; max-width: 680px;
-  margin: 0 auto 40px; position: relative;
-}
-.apt-final-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
-
-/* RESPONSIVE */
-@media (max-width: 1050px) {
-  .apt-buying__cards { grid-template-columns: repeat(2, 1fr); }
-  .apt-hub-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .apt-hub-center {
-    grid-column: 1; grid-row: 1;
-    margin: 0 auto 8px;
-  }
-  .apt-hub-spoke--left, .apt-hub-spoke--right {
-    text-align: left; border-left: 3px solid #1D7080; border-right: none;
-  }
-  .apt-notonly__cols { grid-template-columns: 1fr; }
-}
-@media (max-width: 860px) {
-  .apt-hero__inner,
-  .apt-why__inner,
-  .apt-bionic__inner,
-  .apt-taxprep__inner { grid-template-columns: 1fr; }
-  .apt-hero__card { margin-top: 8px; }
-  .apt-why__inner .apt-rel-card { margin-top: 0; }
-  .apt-included__cards { grid-template-columns: repeat(2, 1fr); }
-  .apt-who__cards { grid-template-columns: 1fr; }
-  .apt-prior__body { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-  .apt-buying__cards,
-  .apt-included__cards { grid-template-columns: 1fr; }
-  .apt-process__step { grid-template-columns: 48px 1fr; gap: 16px; }
+@media (max-width: 900px) {
+  .ag-nav__links,.ag-nav__right { display: none; }
+  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
+  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .cfo-hero__inner { grid-template-columns: 1fr; }
+  .cfo-hero__card { display: none; }
+  .cfo-hero__metrics { justify-content: center; }
+  .cfo-stats__inner { grid-template-columns: 1fr 1fr; }
+  .cfo-serves__grid,.cfo-reality__grid { grid-template-columns: 1fr; }
+  .cfo-serves__exclusions ul { grid-template-columns: 1fr; }
+  .cfo-partner__inner,.cfo-bionic__layout,.cfo-records__layout { grid-template-columns: 1fr; gap: 40px; }
+  .cfo-records__cards { grid-template-columns: 1fr 1fr; }
 }
 </style>
 
-<!-- NAV -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
@@ -653,14 +289,14 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         </div>
       </div>
       <div class="ag-nav__item">
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label" target="_top">CONTACT</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label" target="_top">SCHEDULE CONSULTATION</a>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">INSIGHTS <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
-          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
         </div>
       </div>
     </div>
@@ -673,382 +309,365 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   </div>
 </nav>
 
-<!-- STICKY SUB-NAV -->
-<nav class="apt-subnav" aria-label="Page sections">
-  <div class="apt-subnav__inner">
-    <a href="#apt-overview">Overview</a>
-    <a href="#apt-what">What APT Does</a>
-    <a href="#apt-included">What&#8217;s Included</a>
-    <a href="#apt-who">Who It&#8217;s For</a>
-    <a href="#apt-process">How It Works</a>
-    <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
-      <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" style="height:30px;width:auto;object-fit:contain;border-radius:3px;display:block;" />
-      <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" class="apt-subnav__cta" style="margin-left:0!important;">Schedule a Conversation</a>
-    </div>
-  </div>
-</nav>
+<main style="padding-top:72px">
 
-<main>
-
-<!-- HERO -->
-<section class="apt-hero" id="apt-overview">
-  <div class="apt-hero__inner">
-    <div class="apt-hero__content">
-      <span class="apt-hero__brand">Affinity Private Tax &mdash; Outsourced CFO</span>
-      <h1>Private Tax Planning &amp; CFO-Level Financial Organization for Business Owners</h1>
-      <p class="apt-hero__sub">Affinity Private Tax helps business owners coordinate bookkeeping, financial records, business tax planning, business tax returns, owner-level individual tax planning, individual tax preparation, and cash-flow guidance through one integrated relationship.</p>
-      <p class="apt-hero__para">Affinity Wealth leads the broader financial planning and wealth management relationship. Affinity Private Tax supports that relationship by helping business-owner clients keep their books organized, their financial reports useful, their tax returns coordinated, and their business and individual tax planning aligned throughout the year.</p>
-      <div class="apt-hero__btns">
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Conversation</a>
-        <a href="#apt-included" class="ag-btn-outline ag-btn-outline--white">See What&#8217;s Included</a>
+  <!-- HERO -->
+  <section class="cfo-hero">
+    <div class="cfo-hero__inner">
+      <div class="cfo-hero__text">
+        <div class="cfo-hero__eyebrow">Affinity Private Tax</div>
+        <h1>Outsourced CFO &amp;<br />Private Tax Planning</h1>
+        <p class="cfo-hero__sub">Private Tax Planning &amp; CFO-Level Financial Organization for Business Owners &mdash; powered by AI-enhanced technology and experienced professionals working in one coordinated relationship.</p>
+        <div class="cfo-hero__metrics">
+          <div class="cfo-hero__metric">
+            <span class="cfo-hero__metric-val">5</span>
+            <span class="cfo-hero__metric-lbl">Integrated<br />Services</span>
+          </div>
+          <div class="cfo-hero__metric">
+            <span class="cfo-hero__metric-val">1</span>
+            <span class="cfo-hero__metric-lbl">Coordinated<br />Relationship</span>
+          </div>
+          <div class="cfo-hero__metric">
+            <span class="cfo-hero__metric-val">365</span>
+            <span class="cfo-hero__metric-lbl">Days / Year<br />Support</span>
+          </div>
+        </div>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top">Schedule Your CFO Consultation</a>
       </div>
-      <p class="apt-hero__note">To engage Affinity Private Tax, business-owner clients should also maintain an Affinity Wealth planning relationship.</p>
-    </div>
-    <div class="apt-hero__card">
-      <p class="apt-hero__card-title">What APT Deals With</p>
-      <ul>
-        <li>Business bookkeeping using cloud-based tools such as QuickBooks Online</li>
-        <li>Financial records, P&amp;L structure, balance sheets, and cash-flow reporting</li>
-        <li>Business tax planning and business tax return preparation</li>
-        <li>Owner-level individual tax planning and individual tax return preparation</li>
-        <li>Cash-flow advice based on income, expenses, gross profit, and business trends</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 1: WHY APT EXISTS -->
-<section class="apt-why" id="apt-what">
-  <div class="apt-why__inner">
-    <div class="apt-why__text">
-      <span class="ag-section-label">Section One</span>
-      <div class="ag-gold-bar ag-gold-bar--left"></div>
-      <h2>Why Affinity Private Tax Exists</h2>
-      <p>Business-owner planning does not stop with investments, and tax planning does not stop with a tax return.</p>
-      <p>For business owners, the company&#8217;s books, business tax return, individual tax return, retirement contributions, estimated taxes, cash flow, and long-term planning are all connected.</p>
-      <p>Affinity Private Tax was created to bring those pieces together inside the broader Affinity planning relationship.</p>
-    </div>
-    <div class="apt-rel-card">
-      <p class="apt-rel-card__title">The relationship is coordinated, not fragmented.</p>
-      <p>Affinity Wealth leads the overall financial planning and wealth management relationship.</p>
-      <p>Affinity Private Tax supports the tax planning, tax preparation, bookkeeping, reporting, and business financial organization side.</p>
-      <p>The business owner client receives a coordinated view of business finances, business tax returns, individual tax returns, cash-flow guidance, and long-term planning.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 2: HUB AND SPOKE -->
-<section class="apt-hub">
-  <div class="apt-hub__head">
-    <span class="ag-section-label">Section Two</span>
-    <div class="ag-gold-bar"></div>
-    <h2>One Integrated Private Tax &amp; CFO Service</h2>
-    <p>This is one coordinated relationship, not a collection of disconnected services.</p>
-  </div>
-  <div class="apt-hub-grid">
-    <!-- Left spokes -->
-    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:1">
-      <span class="apt-hub-spoke__num">01</span>
-      <h3>Bionic Bookkeeping&#8482;</h3>
-      <p>Cloud-based bookkeeping supported by AI, experienced bookkeepers, and tax-planning oversight.</p>
-    </div>
-    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:2">
-      <span class="apt-hub-spoke__num">03</span>
-      <h3>Business Tax Planning</h3>
-      <p>Year-round planning around deductions, entity decisions, retirement contributions, estimates, and timing strategies.</p>
-    </div>
-    <div class="apt-hub-spoke apt-hub-spoke--left" style="grid-column:1;grid-row:3">
-      <span class="apt-hub-spoke__num">05</span>
-      <h3>Owner-Level Individual Tax Planning</h3>
-      <p>Planning for how the business tax picture flows into the owner&#8217;s individual tax picture.</p>
-    </div>
-    <!-- Center -->
-    <div class="apt-hub-center" style="grid-column:2;grid-row:1/span 3">
-      <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" style="width:158px;height:158px;object-fit:contain;border-radius:4px;" />
-    </div>
-    <!-- Right spokes -->
-    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:1">
-      <span class="apt-hub-spoke__num">02</span>
-      <h3>Financial Records, Reporting &amp; Cash Flow</h3>
-      <p>P&amp;L structure, balance sheets, financial reports, expense review, income trends, and cash-flow guidance.</p>
-    </div>
-    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:2">
-      <span class="apt-hub-spoke__num">04</span>
-      <h3>Business Tax Return Preparation</h3>
-      <p>Business tax filing coordinated with clean books, reviewed reports, and proactive planning.</p>
-    </div>
-    <div class="apt-hub-spoke apt-hub-spoke--right" style="grid-column:3;grid-row:3">
-      <span class="apt-hub-spoke__num">06</span>
-      <h3>Individual Tax Return Preparation</h3>
-      <p>The owner&#8217;s individual tax return prepared or coordinated as part of the same integrated relationship.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 3: WHAT THE CLIENT IS BUYING -->
-<section class="apt-buying">
-  <div class="apt-buying__head">
-    <span class="ag-section-label">Section Three</span>
-    <div class="ag-gold-bar"></div>
-    <h2>What the Client Is Buying</h2>
-    <p>The business owner is hiring a coordinated team to keep books organized, reports useful, tax returns aligned, cash flow visible, and tax planning active throughout the year.</p>
-  </div>
-  <div class="apt-buying__cards">
-    <div class="apt-buying-card">
-      <h3>Tax-Aware Bookkeeping</h3>
-      <p>Books are not maintained only for data entry. They are organized with tax planning, tax preparation, and financial reporting in mind.</p>
-    </div>
-    <div class="apt-buying-card">
-      <h3>Business + Individual Tax Coordination</h3>
-      <p>Business tax returns and individual tax returns are reviewed together because the business owner&#8217;s company and personal tax picture are connected.</p>
-    </div>
-    <div class="apt-buying-card">
-      <h3>Cash-Flow Guidance</h3>
-      <p>Income, expenses, gross profit, and cash-flow trends are reviewed so the business owner receives practical financial guidance from the numbers.</p>
-    </div>
-    <div class="apt-buying-card">
-      <h3>Affinity Wealth Integration</h3>
-      <p>Tax planning is coordinated with the broader wealth planning relationship when decisions affect retirement, investments, insurance, estate planning, or long-term goals.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 4: WHAT'S INCLUDED -->
-<section class="apt-included" id="apt-included">
-  <div class="apt-included__head">
-    <span class="ag-section-label">Section Four</span>
-    <div class="ag-gold-bar"></div>
-    <h2>What&#8217;s Included</h2>
-    <p>Each part of the service is designed to support better organization, better planning, and cleaner tax preparation.</p>
-  </div>
-  <div class="apt-included__cards">
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">01</span>
-      <h3>Bionic Bookkeeping&#8482;</h3>
-      <p>QuickBooks Online organization, transaction categorization, reconciliation support, AI-assisted processing, experienced bookkeeping review, and tax-planning oversight throughout the year.</p>
-    </div>
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">02</span>
-      <h3>Financial Records &amp; Cash-Flow Reporting</h3>
-      <p>Review and organization of P&amp;L statements, balance sheets, financial categories, expense patterns, income trends, gross profit, and cash-flow visibility.</p>
-    </div>
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">03</span>
-      <h3>Business Tax Planning</h3>
-      <p>Proactive planning around deductions, retirement contributions, entity decisions, estimated taxes, timing strategies, and opportunities that may affect the business return.</p>
-    </div>
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">04</span>
-      <h3>Business Tax Return Preparation</h3>
-      <p>Preparation or coordination of federal and state business tax returns using clean books and reviewed financial records.</p>
-    </div>
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">05</span>
-      <h3>Owner-Level Individual Tax Planning</h3>
-      <p>Planning for how business income, deductions, payroll, distributions, retirement contributions, and estimated taxes affect the owner&#8217;s individual return.</p>
-    </div>
-    <div class="apt-included-card">
-      <span class="apt-included-card__num">06</span>
-      <h3>Individual Tax Return Preparation</h3>
-      <p>Preparation or coordination of the owner&#8217;s individual tax return as part of the integrated business-owner relationship.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5: BIONIC BOOKKEEPING -->
-<section class="apt-bionic">
-  <div class="apt-bionic__inner">
-    <div class="apt-bionic__text">
-      <span class="ag-section-label">Section Five</span>
-      <div class="ag-gold-bar ag-gold-bar--left"></div>
-      <h2>Bionic Bookkeeping&#8482;: AI Support, Human Review, and Tax-Planning Oversight</h2>
-      <p>Clean books are the foundation of strong tax planning. Affinity Private Tax&#8217;s bookkeeping process combines cloud-based accounting software, AI-supported categorization, experienced bookkeepers, and review from professionals with tax-planning experience.</p>
-      <p>The goal is not only accurate books. The goal is books that support tax planning, tax preparation, cash-flow advice, and better business decisions throughout the year.</p>
-    </div>
-    <div class="apt-bionic__card">
-      <p class="apt-bionic__card-title">Designed to reduce missed opportunities.</p>
-      <p>When books are reviewed through a tax-planning lens before filing season, the business owner has a better chance to identify deductible expenses, organize categories correctly, and avoid rushed year-end cleanup.</p>
-      <ul>
-        <li>AI-assisted bookkeeping efficiency</li>
-        <li>Experienced human review</li>
-        <li>Oversight from professionals with tax-planning experience</li>
-        <li>Books organized for business and individual tax strategy</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5A: PRIOR-YEAR RETURNS -->
-<section class="apt-prior">
-  <div class="apt-prior__head">
-    <span class="ag-section-label ag-section-label--gold">Important &mdash; Read This</span>
-    <div class="ag-gold-bar ag-gold-bar--left"></div>
-    <h2>Prior-Year Tax Returns Filed on Incomplete Books?</h2>
-    <p>If your 2023, 2024, or 2025 tax returns were filed using incomplete or inaccurate financial records, money may still be on the table. You may have paid more in taxes than you were legally required to.</p>
-  </div>
-  <div class="apt-prior__body">
-    <div class="apt-prior__callouts">
-      <div class="apt-prior__callout">
-        <p>&#8220;If your prior-year tax returns were prepared using incomplete, disorganized, or inaccurate bookkeeping records, our team can help clean up, reconstruct, and clarify your financial records.&#8221;</p>
-      </div>
-      <div class="apt-prior__callout">
-        <p>&#8220;If adjustments result in additional deductions or tax-saving opportunities, our team can guide you through the amendment process and handle filings on your behalf.&#8221;</p>
+      <div class="cfo-hero__card">
+        <div class="cfo-hero__card-title">What Affinity Private Tax Manages</div>
+        <ul>
+          <li>Business bookkeeping on QuickBooks Online with AI-enhanced overlay</li>
+          <li>Financial records, P&amp;L structure, balance sheets &amp; cash-flow reporting</li>
+          <li>Business tax planning &amp; business tax return preparation</li>
+          <li>Owner-level individual tax planning &amp; tax return preparation</li>
+          <li>Cash-flow advice based on income, expenses &amp; business trends</li>
+        </ul>
       </div>
     </div>
-    <div class="apt-prior__card">
-      <p class="apt-prior__card-title">Review Your Prior Returns</p>
-      <p style="font-family:'Inter',sans-serif;font-size:.87rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:16px;font-weight:300;">We review and clean up books from prior years to identify missed deductions, inaccurate categories, and possible tax-saving opportunities.</p>
-      <div class="apt-prior__years">
-        <span class="apt-prior__year">Tax Year 2023</span>
-        <span class="apt-prior__year">Tax Year 2024</span>
-        <span class="apt-prior__year">Tax Year 2025</span>
-      </div>
-      <ul>
-        <li>Reconstruct and clean up prior-year financial records</li>
-        <li>Identify missed deductions and overlooked categories</li>
-        <li>Review prior business and individual returns for amendment opportunities</li>
-        <li>File amended returns when appropriate</li>
-        <li>Build a clean financial baseline for future tax planning and tax preparation</li>
-      </ul>
-      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top" style="margin-top:24px;display:inline-block;">Request a Prior-Year Review</a>
-      <p class="apt-prior__card-note">No obligation to determine if a deeper review is appropriate.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- SECTION 6: NOT ONLY -->
-<section class="apt-notonly">
-  <div class="apt-notonly__head">
-    <span class="ag-section-label">Section Six</span>
-    <div class="ag-gold-bar"></div>
-    <h2>Not Bookkeeping-Only. Not Tax Filing-Only.<br>One Integrated Relationship.</h2>
-    <p>Affinity Private Tax is designed for business owners who want their bookkeeping, financial reporting, business tax planning, business tax returns, individual tax planning, individual tax returns, and cash-flow guidance coordinated together.</p>
-  </div>
-  <div class="apt-notonly__cols">
-    <div class="apt-notonly__col apt-notonly__col--for">
-      <h3>This Service Is For Business Owners Who Want:</h3>
-      <ul>
-        <li>Clean, tax-ready books</li>
-        <li>Business and individual tax returns coordinated together</li>
-        <li>Tax planning reviewed throughout the year</li>
-        <li>Cash-flow guidance based on real business numbers</li>
-        <li>Clearer P&amp;L, balance sheet, and financial reporting</li>
-        <li>A private, ongoing planning relationship</li>
-        <li>Coordination with Affinity Wealth</li>
-      </ul>
-    </div>
-    <div class="apt-notonly__col apt-notonly__col--not">
-      <h3>This Service Is Not For Business Owners Looking For:</h3>
-      <ul>
-        <li>Only business tax preparation</li>
-        <li>Only individual tax preparation</li>
-        <li>Only bookkeeping without tax planning</li>
-        <li>A one-time tax filing relationship</li>
-        <li>Business services with no individual tax coordination</li>
-        <li>A public tax-preparation shop</li>
-        <li>A replacement for the broader Affinity Wealth planning relationship</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 7: TAX PREP COORDINATED -->
-<section class="apt-taxprep">
-  <div class="apt-taxprep__inner">
-    <div class="apt-taxprep__text">
-      <span class="ag-section-label">Section Seven</span>
-      <div class="ag-gold-bar ag-gold-bar--left"></div>
-      <h2>Business and Individual Tax Preparation, Coordinated Together</h2>
-      <p>For business owners, the business return and individual return are connected. Business income, deductions, payroll, distributions, retirement contributions, estimated taxes, and entity decisions all affect the owner&#8217;s individual tax picture.</p>
-    </div>
-    <div class="apt-taxprep__card">
-      <h3>APT coordinates both sides of the tax picture.</h3>
-      <p>Business tax preparation and individual tax preparation are handled as part of the same business-owner relationship, giving the client a more complete view of how business decisions affect individual taxes and long-term planning.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 8: HOW IT WORKS -->
-<section class="apt-process" id="apt-process">
-  <div class="apt-process__head">
-    <span class="ag-section-label">Section Eight</span>
-    <div class="ag-gold-bar"></div>
-    <h2>How the Relationship Works</h2>
-    <p>A structured process for fit, organization, planning, tax preparation, and year-round financial visibility.</p>
-  </div>
-  <div class="apt-process__steps">
-    <div class="apt-process__step">
-      <div class="apt-process__step-num">1</div>
-      <div class="apt-process__step-text">
-        <h3>Discovery Conversation</h3>
-        <p>Determine whether the business owner is a good fit for the Affinity Private Tax and Affinity Wealth relationship.</p>
+  <!-- STATS -->
+  <div class="cfo-stats">
+    <div class="cfo-stats__inner">
+      <div class="cfo-stat">
+        <div class="cfo-stat__val">Year-Round</div>
+        <div class="cfo-stat__lbl">Tax planning, not just filing season</div>
       </div>
-    </div>
-    <div class="apt-process__step">
-      <div class="apt-process__step-num">2</div>
-      <div class="apt-process__step-text">
-        <h3>Review the Full Tax Picture</h3>
-        <p>Review business structure, prior business returns, individual returns, current books, estimated taxes, and planning needs.</p>
+      <div class="cfo-stat">
+        <div class="cfo-stat__val">Bionic&trade;</div>
+        <div class="cfo-stat__lbl">AI + human review bookkeeping</div>
       </div>
-    </div>
-    <div class="apt-process__step">
-      <div class="apt-process__step-num">3</div>
-      <div class="apt-process__step-text">
-        <h3>Organize Books &amp; Reports</h3>
-        <p>Organize books, financial reports, categories, P&amp;L structure, balance sheet details, and cash-flow visibility.</p>
+      <div class="cfo-stat">
+        <div class="cfo-stat__val">CFO-Level</div>
+        <div class="cfo-stat__lbl">Strategic financial oversight</div>
       </div>
-    </div>
-    <div class="apt-process__step">
-      <div class="apt-process__step-num">4</div>
-      <div class="apt-process__step-text">
-        <h3>Year-Round Planning</h3>
-        <p>Coordinate planning before year-end so the owner has time to act on tax and cash-flow opportunities.</p>
-      </div>
-    </div>
-    <div class="apt-process__step">
-      <div class="apt-process__step-num">5</div>
-      <div class="apt-process__step-text">
-        <h3>Tax Prep &amp; Ongoing Oversight</h3>
-        <p>Business and individual returns are prepared or coordinated with the benefit of clean records and proactive planning.</p>
+      <div class="cfo-stat">
+        <div class="cfo-stat__val">Integrated</div>
+        <div class="cfo-stat__lbl">Books + tax + wealth in one relationship</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- SECTION 9: WHO IT'S FOR -->
-<section class="apt-who" id="apt-who">
-  <div class="apt-who__head">
-    <span class="ag-section-label ag-section-label--white">Section Nine</span>
-    <div class="ag-gold-bar"></div>
-    <h2>Who This Service Is For</h2>
-    <p>This service is for business owners who want a coordinated relationship for bookkeeping, financial records, reporting, cash-flow guidance, business tax planning, business tax preparation, individual tax planning, individual tax preparation, and planning coordination with Affinity Wealth.</p>
-  </div>
-  <div class="apt-who__cards">
-    <div class="apt-who-card">
-      <h3>Closely Held Business Owners</h3>
-      <p>LLC owners, S-Corp owners, consultants, contractors, and professional service firms.</p>
+  <!-- WHO APT SERVES -->
+  <section class="cfo-serves">
+    <div class="cfo-serves__inner">
+      <div class="cfo-serves__header">
+        <span class="cfo-label">Who We Work With</span>
+        <div class="cfo-gold-bar cfo-gold-bar--center"></div>
+        <h2>Who Affinity Private Tax Serves</h2>
+        <p>Affinity Private Tax is not a standalone tax preparation service for the general public. We work with clients where tax preparation and tax planning are part of a larger advisory relationship.</p>
+      </div>
+      <div class="cfo-serves__grid">
+        <div class="cfo-serves__card cfo-serves__card--teal">
+          <span class="cfo-serves__card__badge">Total Wealth Management Clients</span>
+          <h3>Individuals &amp; Families</h3>
+          <p>Individuals, families, retirees, executives, and business owners who are engaged in Affinity Wealth&rsquo;s Total Wealth Management relationship receive coordinated tax planning and preparation as part of their integrated advisory experience.</p>
+        </div>
+        <div class="cfo-serves__card">
+          <span class="cfo-serves__card__badge">Outsourced CFO Business Clients</span>
+          <h3>Business Owners</h3>
+          <p>Business-owner clients who utilize our Outsourced CFO service and want coordinated bookkeeping, business tax preparation, and owner-level tax planning &mdash; all managed through one integrated relationship.</p>
+        </div>
+      </div>
+      <div class="cfo-serves__exclusions">
+        <h3>We do not provide tax preparation for:</h3>
+        <ul>
+          <li>Individuals who are not Affinity Wealth Total Wealth Management clients</li>
+          <li>Businesses that are not part of our Outsourced CFO relationship</li>
+          <li>Clients seeking only a one-time tax return</li>
+          <li>Clients who are not looking for integrated planning</li>
+          <li>Businesses with incomplete or unsupported books (unless a cleanup engagement is first completed)</li>
+        </ul>
+        <p class="cfo-serves__note">This allows our team to remain focused on the clients we are built to serve: families and business owners who want coordinated advice across their full financial picture.</p>
+      </div>
+      <div class="cfo-serves__cta">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top">Explore Our CFO &amp; Tax Services</a>
+      </div>
     </div>
-    <div class="apt-who-card">
-      <h3>Owners With Connected Tax Needs</h3>
-      <p>Business owners whose business return and individual return need to be reviewed together.</p>
-    </div>
-    <div class="apt-who-card">
-      <h3>Growing Private Businesses</h3>
-      <p>Companies that want cleaner books, stronger reporting, cash-flow visibility, and proactive planning.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- FINAL CTA -->
-<section class="apt-final-cta">
-  <div class="ag-gold-bar"></div>
-  <h2>Ready to Coordinate Your Business and Individual Tax Picture?</h2>
-  <p>If you are a business owner looking for a more organized, proactive, and integrated approach to bookkeeping, financial reporting, cash-flow guidance, tax planning, and tax preparation, Affinity Private Tax may be the right fit.</p>
-  <div class="apt-final-cta__btns">
-    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Conversation</a>
-    <a href="#apt-included" class="ag-btn-outline ag-btn-outline--white">Explore What&#8217;s Included</a>
-  </div>
-</section>
+  <!-- PARTNERSHIP -->
+  <section class="cfo-partner">
+    <div class="cfo-partner__inner">
+      <div class="cfo-partner__left">
+        <span class="cfo-label cfo-label--white">One Coordinated Experience</span>
+        <div class="cfo-gold-bar"></div>
+        <h2>How Affinity Wealth and Affinity Private Tax Work Together</h2>
+        <p>Business owners often need guidance that extends beyond a single discipline. Financial decisions, tax considerations, business growth objectives, and personal goals are interconnected and should be viewed through a coordinated lens.</p>
+        <p>That is why Affinity operates through two specialized firms working together within a unified client experience.</p>
+        <p>Rather than operating in separate silos, the two firms collaborate to provide a more connected experience &mdash; allowing clients to benefit from broader perspective, improved coordination, and advice that reflects the complete picture.</p>
+      </div>
+      <div class="cfo-partner__right">
+        <div class="cfo-partner__block">
+          <div class="cfo-partner__block-label">Affinity Wealth</div>
+          <p>Focuses on helping clients define and pursue their long-term financial goals &mdash; investment management, retirement planning, wealth building, and legacy strategy.</p>
+        </div>
+        <div class="cfo-partner__block">
+          <div class="cfo-partner__block-label">Affinity Private Tax</div>
+          <p>Provides the financial infrastructure and insights that support informed decision-making &mdash; bookkeeping, tax planning, tax preparation, cash-flow guidance, and CFO-level oversight.</p>
+        </div>
+        <div class="cfo-partner__result">
+          <p>&ldquo;The result is a relationship designed around alignment, continuity, and long-term client success.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="cfo-compare">
+    <div class="cfo-compare__inner">
+      <div class="cfo-compare__header">
+        <span class="cfo-label cfo-label--teal">&#127942; Where Affinity Private Tax Wins</span>
+        <div class="cfo-gold-bar cfo-gold-bar--center"></div>
+        <h2>The Affinity Advantage vs. Traditional CPA Firms</h2>
+        <p>Most accounting firms focus on compliance. Affinity Private Tax focuses on helping business owners build a more organized, tax-efficient, and financially informed business.</p>
+      </div>
+      <div class="cfo-table-wrap">
+        <table class="cfo-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>&#10060; Traditional CPA Firm</th>
+              <th>&#127942; Affinity Private Tax</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Year-Round Relationship</td><td>&#10060; Usually seasonal</td><td>&#10003; Year-round support</td></tr>
+            <tr><td>Tax Planning</td><td>&#10060; Often happens after the year ends</td><td>&#10003; Happens before decisions are made</td></tr>
+            <tr><td>Bookkeeping</td><td>&#10060; Basic bookkeeping</td><td>&#10003; Bionic Bookkeeping&trade; with AI + Human Review</td></tr>
+            <tr><td>Financial Visibility</td><td>&#10060; Limited</td><td>&#10003; Real-time reporting and financial visibility</td></tr>
+            <tr><td>Cash Flow Guidance</td><td>&#10060; Rarely included</td><td>&#10003; Included as part of the relationship</td></tr>
+            <tr><td>Business Tax Planning</td><td>&#10060; Filing focused</td><td>&#10003; Proactive tax strategy</td></tr>
+            <tr><td>Individual Tax Planning</td><td>&#10060; Often isolated</td><td>&#10003; Coordinated with business and wealth planning</td></tr>
+            <tr><td>Business &amp; Personal Coordination</td><td>&#10060; Usually separate</td><td>&#10003; Viewed together when appropriate</td></tr>
+            <tr><td>Tax Deduction Opportunities</td><td>&#10060; May depend on year-end review</td><td>&#10003; Reviewed throughout the year</td></tr>
+            <tr><td>Financial Reporting</td><td>&#10060; Compliance reporting</td><td>&#10003; Decision-making reporting</td></tr>
+            <tr><td>CPA Oversight</td><td>&#9888; Often filing focused</td><td>&#10003; Books reviewed through a tax-planning lens</td></tr>
+            <tr><td>Technology</td><td>&#10060; Traditional workflows</td><td>&#10003; AI-enhanced workflows</td></tr>
+            <tr><td>Profitability Analysis</td><td>&#10060; Not typically included</td><td>&#10003; Ongoing review and discussion</td></tr>
+            <tr><td>Strategic Guidance</td><td>&#10060; Limited</td><td>&#10003; CFO-level oversight</td></tr>
+            <tr><td>Advisor Coordination</td><td>&#10060; Multiple disconnected firms</td><td>&#10003; One integrated relationship</td></tr>
+            <tr><td>Primary Goal</td><td>&#10060; File your tax return</td><td>&#10003; Help you legally keep more of what you earn</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cfo-compare__cta">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn cfo-btn--gold" target="_top">Talk to Our CFO Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REALITY CHECK -->
+  <section class="cfo-reality">
+    <div class="cfo-reality__inner">
+      <div class="cfo-reality__header">
+        <span class="cfo-label cfo-label--teal">Business Owner Reality Check</span>
+        <h2>Do Any of These Sound Familiar?</h2>
+        <p>If you recognize these frustrations, you are experiencing the limitations of a traditional accounting relationship. Affinity Private Tax was built to solve exactly these problems.</p>
+      </div>
+      <div class="cfo-reality__grid">
+        <div>
+          <div class="cfo-reality__col-label cfo-reality__col-label--pain">Common Frustrations</div>
+          <div class="cfo-reality__item cfo-reality__item--pain"><span class="cfo-reality__item-icon">&#128553;</span><p>My CPA only calls me during tax season.</p></div>
+          <div class="cfo-reality__item cfo-reality__item--pain"><span class="cfo-reality__item-icon">&#128553;</span><p>My bookkeeper and CPA don&rsquo;t communicate with each other.</p></div>
+          <div class="cfo-reality__item cfo-reality__item--pain"><span class="cfo-reality__item-icon">&#128553;</span><p>I don&rsquo;t know my actual cash flow position at any given time.</p></div>
+          <div class="cfo-reality__item cfo-reality__item--pain"><span class="cfo-reality__item-icon">&#128553;</span><p>I feel like I&rsquo;m paying too much in taxes every year.</p></div>
+          <div class="cfo-reality__item cfo-reality__item--pain"><span class="cfo-reality__item-icon">&#128553;</span><p>My financial reports don&rsquo;t actually help me make business decisions.</p></div>
+        </div>
+        <div>
+          <div class="cfo-reality__col-label cfo-reality__col-label--apt">The APT Solution</div>
+          <div class="cfo-reality__item cfo-reality__item--apt"><span class="cfo-reality__item-icon">&#9989;</span><p>Year-round tax planning and proactive relationship, 365 days a year</p></div>
+          <div class="cfo-reality__item cfo-reality__item--apt"><span class="cfo-reality__item-icon">&#9989;</span><p>Integrated books + tax + CFO oversight in one coordinated team</p></div>
+          <div class="cfo-reality__item cfo-reality__item--apt"><span class="cfo-reality__item-icon">&#9989;</span><p>Tax-aware bookkeeping with real-time cash-flow visibility</p></div>
+          <div class="cfo-reality__item cfo-reality__item--apt"><span class="cfo-reality__item-icon">&#9989;</span><p>Proactive tax strategy reviewed before decisions are made, not after</p></div>
+          <div class="cfo-reality__item cfo-reality__item--apt"><span class="cfo-reality__item-icon">&#9989;</span><p>Strategic reporting designed to support real business decisions</p></div>
+        </div>
+      </div>
+      <div class="cfo-reality__cta">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn" target="_top">Start Working With Affinity Private Tax</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOREBOARD -->
+  <section class="cfo-score">
+    <div class="cfo-score__inner">
+      <div class="cfo-score__header">
+        <span class="cfo-label cfo-label--white">Performance Comparison</span>
+        <h2>The Affinity Private Tax Scoreboard</h2>
+        <p>Across every category that matters to business owners, Affinity Private Tax consistently delivers more comprehensive, more coordinated, and more strategically focused support.</p>
+      </div>
+      <div class="cfo-score__bars">
+        <div class="cfo-score__bar-row">
+          <div class="cfo-score__bar-meta">
+            <span class="cfo-score__bar-name">&#10060; Traditional CPA Firm</span>
+            <span class="cfo-score__bar-val cfo-score__bar-val--low">4 / 10</span>
+          </div>
+          <div class="cfo-score__bar-track"><div class="cfo-score__bar-fill cfo-score__bar-fill--low"></div></div>
+        </div>
+        <div class="cfo-score__bar-row">
+          <div class="cfo-score__bar-meta">
+            <span class="cfo-score__bar-name">&#127942; Affinity Private Tax</span>
+            <span class="cfo-score__bar-val cfo-score__bar-val--high">10 / 10</span>
+          </div>
+          <div class="cfo-score__bar-track"><div class="cfo-score__bar-fill cfo-score__bar-fill--high"></div></div>
+        </div>
+      </div>
+      <div class="cfo-score__cats">
+        <span class="cfo-score__cat">Planning</span>
+        <span class="cfo-score__cat">Visibility</span>
+        <span class="cfo-score__cat">Coordination</span>
+        <span class="cfo-score__cat">Reporting</span>
+        <span class="cfo-score__cat">Tax Strategy</span>
+        <span class="cfo-score__cat">Business Owner Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIONIC BOOKKEEPING -->
+  <section class="cfo-bionic">
+    <div class="cfo-bionic__inner">
+      <div class="cfo-bionic__header">
+        <span class="cfo-label cfo-label--teal">Bionic Bookkeeping&trade;</span>
+        <div class="cfo-gold-bar cfo-gold-bar--center"></div>
+        <h2>What Is Included in Bionic Bookkeeping&trade;</h2>
+        <blockquote class="cfo-bionic__quote">The goal is not accurate books. The goal is books that support tax planning, tax preparation, cash-flow advice, and better business decisions throughout the year.</blockquote>
+      </div>
+      <div class="cfo-bionic__layout">
+        <div class="cfo-bionic__checklist">
+          <h3>Everything Included in Bionic Bookkeeping&trade;</h3>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Business bookkeeping using the cloud-based QuickBooks Online platform with AI-enhanced workflows</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Recording, categorizing, and reconciling business transactions</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Preparation of Profit &amp; Loss Statements and Balance Sheets</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Financial reporting to support cash-flow management and business decision-making</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Ongoing oversight from professionals with bookkeeping, accounting, and tax-planning experience</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Coordination between bookkeeping, tax planning, and tax preparation</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Year-round maintenance of organized, tax-ready financial records</span>
+          </div>
+          <div class="cfo-bionic__check-item">
+            <div class="cfo-bionic__check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="cfo-bionic__check-text">Review of books to identify potential tax-planning opportunities and improve financial visibility</span>
+          </div>
+        </div>
+        <div class="cfo-bionic__why">
+          <h3>Why It Matters</h3>
+          <p>The goal is not simply accurate books. The goal is books that support better tax planning, cleaner tax preparation, stronger cash-flow management, and more informed business decisions throughout the year.</p>
+          <p>Because Bionic Bookkeeping&trade; is reviewed through both a bookkeeping and tax-planning lens, transactions are categorized with greater attention to how they may impact deductions, tax strategy, and financial reporting.</p>
+          <p>This integrated approach helps reduce errors, minimize missed opportunities, and keep your books tax-ready year-round. With accurate, up-to-date financial records, our team can provide more effective tax planning guidance, better cash-flow insights, and a stronger foundation for long-term decision-making.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL RECORDS, REPORTING & CASH FLOW -->
+  <section class="cfo-records">
+    <div class="cfo-records__inner">
+      <div class="cfo-records__header">
+        <span class="cfo-label cfo-label--teal">Financial Infrastructure</span>
+        <div class="cfo-gold-bar cfo-gold-bar--center"></div>
+        <h2>Financial Records, Reporting &amp; Cash Flow</h2>
+        <p>Affinity Private Tax transforms bookkeeping data into meaningful financial reporting and cash-flow visibility. The goal is not simply accurate records &mdash; it is providing business owners with the information needed to improve profitability, support tax planning, manage cash flow, and make informed decisions throughout the year.</p>
+      </div>
+      <div class="cfo-records__layout">
+        <div class="cfo-records__cards">
+          <div class="cfo-records__card">
+            <span class="cfo-records__card-icon">&#128202;</span>
+            <h3>Real-Time Financial Visibility</h3>
+            <p>See where your business stands with organized, up-to-date financial records that provide clarity into revenue, expenses, and overall performance.</p>
+          </div>
+          <div class="cfo-records__card">
+            <span class="cfo-records__card-icon">&#128176;</span>
+            <h3>Cash Flow Monitoring</h3>
+            <p>Track cash movement throughout the business, identify potential shortages early, and improve financial stability through proactive planning.</p>
+          </div>
+          <div class="cfo-records__card">
+            <span class="cfo-records__card-icon">&#128196;</span>
+            <h3>Integrated Financial Reporting</h3>
+            <p>Profit &amp; Loss Statements, Balance Sheets, and financial reporting that connect bookkeeping, tax planning, and business strategy.</p>
+          </div>
+          <div class="cfo-records__card">
+            <span class="cfo-records__card-icon">&#127919;</span>
+            <h3>Decision-Making Support</h3>
+            <p>Use accurate financial data to evaluate growth opportunities, manage expenses, improve profitability, and support strategic business decisions.</p>
+          </div>
+        </div>
+        <div class="cfo-records__panel">
+          <h3>Financial Reporting That Supports Better Decisions</h3>
+          <div class="cfo-records__panel-metrics">
+            <span class="cfo-records__panel-metric">Real-Time Visibility</span>
+            <span class="cfo-records__panel-metric">Monthly Reporting</span>
+            <span class="cfo-records__panel-metric">Year-Round Cash Flow</span>
+            <span class="cfo-records__panel-metric">Integrated CFO Oversight</span>
+          </div>
+          <ul>
+            <li>Profit &amp; Loss Statement reporting</li>
+            <li>Balance Sheet reporting</li>
+            <li>Cash-flow analysis and monitoring</li>
+            <li>Business performance tracking</li>
+            <li>Expense and profitability analysis</li>
+            <li>Tax-ready financial records</li>
+            <li>Financial visibility for business owners</li>
+            <li>Reporting that supports tax planning and strategic decisions</li>
+          </ul>
+          <p class="cfo-records__panel-note">Financial data is organized, reviewed, and utilized to support tax planning, cash-flow management, profitability improvement, and better business decisions throughout the year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL BANNER -->
+  <section class="cfo-final">
+    <div class="cfo-final__inner">
+      <span class="cfo-final__trophy">&#127942;</span>
+      <span class="cfo-label cfo-label--white" style="letter-spacing:.25em">The Affinity Private Tax Advantage</span>
+      <div class="cfo-final__divider"></div>
+      <h2>Most Firms Help You Stay Compliant.<br />We Help You Build a Better Business.</h2>
+      <p>Most firms help you stay compliant. Affinity Private Tax helps you build a more organized, more tax-efficient, and more financially informed business through one coordinated relationship that combines bookkeeping, reporting, tax planning, tax preparation, and CFO-level guidance.</p>
+      <p>When your books, your taxes, and your financial strategy are all managed together &mdash; you keep more of what you earn, make better decisions, and build a stronger business.</p>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="cfo-btn cfo-btn--gold" target="_top">Schedule a CFO Strategy Call Today</a>
+    </div>
+  </section>
 
 </main>
 
@@ -1062,9 +681,15 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_33996409bbfa48599a354141d29073d0.pdf" target="_blank">ADV</a>
         </div>
         <div class="ag-footer__social">
-          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg>
+          </a>
         </div>
         <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
       </div>
@@ -1082,14 +707,19 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
-          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &#8211; Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
+          <a href="https://tagplanning.wixstudio.com/demo/careers" target="_top">Careers</a>
         </div>
       </div>
     </div>
-    <div class="ag-footer__bottom">&copy; 2025 The Affinity Group. All rights reserved. Affinity Wealth LLC is a Registered Investment Advisor.</div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
   </div>
 </footer>
 
+<script>
+(function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
+</script>
 </body>
 </html>
