@@ -113,11 +113,11 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 
 /* 2. STATS */
 .cfo-stats { background: #E6F4F7; }
-.cfo-stats__inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); }
-.cfo-stat { padding: 28px 18px; text-align: center; border-right: 1px solid rgba(29,112,128,.15); }
+.cfo-stats__inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(6,1fr); }
+.cfo-stat { padding: 22px 12px; text-align: center; border-right: 1px solid rgba(29,112,128,.15); }
 .cfo-stat:last-child { border-right: none; }
-.cfo-stat__val { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: #1D7080; line-height: 1.2; }
-.cfo-stat__lbl { font-family: 'Inter', sans-serif; font-size: .78rem; color: #5a7a82; margin-top: 6px; line-height: 1.4; }
+.cfo-stat__val { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: #1D7080; line-height: 1.25; }
+.cfo-stat__lbl { font-family: 'Inter', sans-serif; font-size: .72rem; color: #5a7a82; margin-top: 6px; line-height: 1.4; }
 
 /* 3. WHO SERVES */
 .cfo-serves { padding: 96px 32px; background: #fff; }
@@ -160,10 +160,12 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 .cfo-orbit-section__head { text-align: center; margin-bottom: 56px; }
 .cfo-orbit-section__head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.3rem); color: #145568; font-weight: 700; margin-bottom: 14px; }
 .cfo-orbit-section__head p { font-family: 'Inter', sans-serif; font-size: .97rem; color: #5a7a82; max-width: 620px; margin: 0 auto; line-height: 1.8; }
-.cfo-orbit-wrap { position: relative; width: 560px; height: 560px; margin: 0 auto; }
-.cfo-orbit-wrap svg.cfo-orbit-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* HUB DIAGRAM */
+.cfo-hub-wrap { display: grid; grid-template-columns: 1fr 200px 1fr; gap: 32px; align-items: center; max-width: 920px; margin: 0 auto; position: relative; }
+.cfo-hub__col { display: flex; flex-direction: column; gap: 14px; }
+.cfo-hub__center-col { display: flex; align-items: center; justify-content: center; }
 .cfo-orbit-center {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  position: relative; flex-shrink: 0;
   width: 170px; height: 170px; border-radius: 50%;
   background: linear-gradient(145deg, #0c3540, #1D7080);
   border: 3px solid #C9A84C;
@@ -171,23 +173,22 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   display: flex; align-items: center; justify-content: center; z-index: 2;
 }
 .cfo-orbit-center img { width: 138px; height: auto; object-fit: contain; border-radius: 4px; }
-.cfo-orbit-node {
-  position: absolute; width: 136px;
-  background: #fff; border: 1.5px solid #1D7080; border-radius: 8px;
-  padding: 10px 14px; text-align: center; z-index: 2;
-  box-shadow: 0 4px 16px rgba(29,112,128,.12);
-  transition: box-shadow .2s, transform .2s;
+.cfo-hub__node {
+  background: #fff; border: 1px solid #dde8eb; border-radius: 10px;
+  padding: 16px 18px; text-align: center;
+  box-shadow: 0 3px 14px rgba(29,112,128,.08);
+  transition: box-shadow .2s, transform .2s; position: relative; z-index: 2;
 }
-.cfo-orbit-node:hover { box-shadow: 0 8px 24px rgba(29,112,128,.2); transform: translateY(-3px); }
-.cfo-orbit-node__icon { font-size: 1.2rem; display: block; margin-bottom: 5px; }
-.cfo-orbit-node__label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .05em; line-height: 1.4; }
-/* Node positions: center=(280,280), radius=200 */
-.cfo-orbit-node--0 { top: 30px;   left: 212px; } /* top       */
-.cfo-orbit-node--1 { top: 148px;  left: 384px; } /* top-right */
-.cfo-orbit-node--2 { top: 365px;  left: 384px; } /* bot-right */
-.cfo-orbit-node--3 { top: 482px;  left: 212px; } /* bottom    */
-.cfo-orbit-node--4 { top: 365px;  left: 40px;  } /* bot-left  */
-.cfo-orbit-node--5 { top: 148px;  left: 40px;  } /* top-left  */
+.cfo-hub__col--left .cfo-hub__node { border-right: 3px solid #1D7080; border-radius: 10px 4px 4px 10px; }
+.cfo-hub__col--right .cfo-hub__node { border-left: 3px solid #1D7080; border-radius: 4px 10px 10px 4px; }
+.cfo-hub__node:hover { box-shadow: 0 8px 24px rgba(29,112,128,.16); transform: translateY(-2px); }
+.cfo-hub__node__icon { font-size: 1.4rem; display: block; margin-bottom: 6px; }
+.cfo-hub__node__label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .05em; line-height: 1.4; }
+@media (max-width: 768px) {
+  .cfo-hub-wrap { grid-template-columns: 1fr; gap: 10px; }
+  .cfo-hub__center-col { margin: 12px auto; }
+  .cfo-hub__col--left .cfo-hub__node, .cfo-hub__col--right .cfo-hub__node { border-radius: 10px; border-right: 1px solid #dde8eb; border-left: 3px solid #1D7080; }
+}
 
 /* 6. COMPARISON */
 .cfo-compare { padding: 100px 32px; background: #fff; }
@@ -394,7 +395,6 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   .cfo-serves__exclusions ul { grid-template-columns: 1fr; }
   .cfo-partner__inner,.cfo-bionic__layout,.cfo-records__layout,.cfo-taxprep__body,.cfo-biztaxprep__body,.cfo-biztaxplan__body { grid-template-columns: 1fr; gap: 40px; }
   .cfo-records__cards { grid-template-columns: 1fr 1fr; }
-  .cfo-orbit-wrap { width: 100%; max-width: 360px; height: 360px; }
 }
 </style>
 
@@ -581,10 +581,11 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
         <div class="cfo-hero__card-title">What APT Deals With</div>
         <ul>
           <li>Business bookkeeping using the cloud-based QuickBooks Online platform with an AI-enhanced overlay</li>
-          <li>Financial records, P&amp;L structure, balance sheets, and cash-flow reporting</li>
-          <li>Business tax planning and business tax return preparation</li>
-          <li>Owner-level individual tax planning and individual tax return preparation</li>
-          <li>Cash-flow advice based on income, expenses, gross profit, and business trends</li>
+          <li>Financial reporting, cash-flow forecasting, and data-driven guidance to improve profitability and decision-making</li>
+          <li>Business tax planning to reduce liabilities and align tax strategy with business goals</li>
+          <li>Business tax return preparation and year-round compliance support</li>
+          <li>Owner-level individual tax planning designed to coordinate with overall financial objectives</li>
+          <li>Individual tax return preparation integrated with business and personal tax considerations</li>
         </ul>
       </div>
     </div>
@@ -594,24 +595,28 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   <div class="cfo-stats">
     <div class="cfo-stats__inner">
       <div class="cfo-stat">
-        <div class="cfo-stat__val">Bionic&trade;</div>
+        <div class="cfo-stat__val">Bionic&trade; Bookkeeping</div>
         <div class="cfo-stat__lbl">AI + human bookkeeping</div>
       </div>
       <div class="cfo-stat">
-        <div class="cfo-stat__val">Reporting</div>
-        <div class="cfo-stat__lbl">P&amp;L, balance sheets &amp; cash flow</div>
+        <div class="cfo-stat__val">Financial Reporting &amp; Cash Flow</div>
+        <div class="cfo-stat__lbl">Forecasting, insights &amp; decision support</div>
       </div>
       <div class="cfo-stat">
-        <div class="cfo-stat__val">Tax Planning</div>
-        <div class="cfo-stat__lbl">Business &amp; individual, year-round</div>
+        <div class="cfo-stat__val">Business Tax Planning</div>
+        <div class="cfo-stat__lbl">Reduce liabilities &amp; optimize outcomes</div>
       </div>
       <div class="cfo-stat">
-        <div class="cfo-stat__val">Tax Prep</div>
-        <div class="cfo-stat__lbl">Business &amp; individual returns</div>
+        <div class="cfo-stat__val">Business Tax Returns</div>
+        <div class="cfo-stat__lbl">Accurate business tax compliance</div>
       </div>
       <div class="cfo-stat">
-        <div class="cfo-stat__val">Cash Flow</div>
-        <div class="cfo-stat__lbl">Advice based on trends &amp; data</div>
+        <div class="cfo-stat__val">Individual Tax Planning</div>
+        <div class="cfo-stat__lbl">Wealth-focused tax strategies</div>
+      </div>
+      <div class="cfo-stat">
+        <div class="cfo-stat__val">Individual Tax Returns</div>
+        <div class="cfo-stat__lbl">Coordinated personal tax preparation</div>
       </div>
     </div>
   </div>
@@ -691,63 +696,83 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
       <p>Affinity Private Tax brings bookkeeping, financial reporting, individual &amp; business tax planning, individual &amp; business tax preparation, and cash-flow guidance together under one roof&mdash;working in concert for business owners and their families.</p>
     </div>
 
-    <div class="cfo-orbit-wrap">
-      <!-- SVG lines + rings -->
-      <svg class="cfo-orbit-svg" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
-        <!-- outer decorative ring -->
-        <circle cx="280" cy="280" r="210" fill="none" stroke="rgba(29,112,128,.1)" stroke-width="1.5" stroke-dasharray="6,5"/>
-        <!-- mid decorative ring -->
-        <circle cx="280" cy="280" r="160" fill="none" stroke="rgba(29,112,128,.07)" stroke-width="1" stroke-dasharray="4,6"/>
-        <!-- inner ring around center -->
-        <circle cx="280" cy="280" r="100" fill="none" stroke="rgba(201,168,76,.3)" stroke-width="1.5" stroke-dasharray="4,4"/>
-        <!-- spokes from inner ring edge (r=100) to near each node (35px from node center) -->
-        <line x1="280" y1="180" x2="280" y2="115" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <line x1="367" y1="230" x2="423" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <line x1="367" y1="330" x2="423" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <line x1="280" y1="380" x2="280" y2="445" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <line x1="193" y1="330" x2="137" y2="362" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <line x1="193" y1="230" x2="137" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>
-        <!-- node halos -->
-        <circle cx="280" cy="80" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-        <circle cx="453" cy="180" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-        <circle cx="453" cy="380" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-        <circle cx="280" cy="480" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-        <circle cx="107" cy="380" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-        <circle cx="107" cy="180" r="78" fill="rgba(29,112,128,.04)" stroke="rgba(29,112,128,.12)" stroke-width="1"/>
-      </svg>
+    <div class="cfo-hub-wrap" id="cfoHubWrap">
+      <!-- SVG lines drawn by JS -->
+      <svg id="cfoHubLines" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1;"></svg>
 
-      <!-- Center circle with logo -->
-      <div class="cfo-orbit-center">
-        <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" />
+      <!-- Left column -->
+      <div class="cfo-hub__col cfo-hub__col--left">
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#128218;</span>
+          <span class="cfo-hub__node__label">Business Bookkeeping</span>
+        </div>
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#9881;</span>
+          <span class="cfo-hub__node__label">Individual Tax Planning</span>
+        </div>
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#128221;</span>
+          <span class="cfo-hub__node__label">Individual Tax Preparation</span>
+        </div>
       </div>
 
-      <!-- 6 service nodes -->
-      <div class="cfo-orbit-node cfo-orbit-node--0">
-        <span class="cfo-orbit-node__icon">&#128218;</span>
-        <span class="cfo-orbit-node__label">Business Bookkeeping</span>
+      <!-- Center hub -->
+      <div class="cfo-hub__center-col">
+        <div class="cfo-orbit-center" id="cfoHubCenter">
+          <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax" />
+        </div>
       </div>
-      <div class="cfo-orbit-node cfo-orbit-node--1">
-        <span class="cfo-orbit-node__icon">&#128202;</span>
-        <span class="cfo-orbit-node__label">Financial Reporting &amp; Cash Flow Guidance</span>
-      </div>
-      <div class="cfo-orbit-node cfo-orbit-node--2">
-        <span class="cfo-orbit-node__icon">&#128196;</span>
-        <span class="cfo-orbit-node__label">Business Tax Planning</span>
-      </div>
-      <div class="cfo-orbit-node cfo-orbit-node--3">
-        <span class="cfo-orbit-node__icon">&#128203;</span>
-        <span class="cfo-orbit-node__label">Business Tax Preparation</span>
-      </div>
-      <div class="cfo-orbit-node cfo-orbit-node--4">
-        <span class="cfo-orbit-node__icon">&#9881;</span>
-        <span class="cfo-orbit-node__label">Individual Tax Planning</span>
-      </div>
-      <div class="cfo-orbit-node cfo-orbit-node--5">
-        <span class="cfo-orbit-node__icon">&#128221;</span>
-        <span class="cfo-orbit-node__label">Individual Tax Preparation</span>
+
+      <!-- Right column -->
+      <div class="cfo-hub__col cfo-hub__col--right">
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#128202;</span>
+          <span class="cfo-hub__node__label">Financial Reporting &amp; Cash Flow Guidance</span>
+        </div>
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#128196;</span>
+          <span class="cfo-hub__node__label">Business Tax Planning</span>
+        </div>
+        <div class="cfo-hub__node">
+          <span class="cfo-hub__node__icon">&#128203;</span>
+          <span class="cfo-hub__node__label">Business Tax Preparation</span>
+        </div>
       </div>
     </div>
   </section>
+<script>
+(function(){
+  function drawHubLines(){
+    var wrap=document.getElementById('cfoHubWrap');
+    var svg=document.getElementById('cfoHubLines');
+    var center=document.getElementById('cfoHubCenter');
+    if(!wrap||!svg||!center)return;
+    var wr=wrap.getBoundingClientRect();
+    if(wr.width<10)return;
+    var cr=center.getBoundingClientRect();
+    var cx=cr.left+cr.width/2-wr.left;
+    var cy=cr.top+cr.height/2-wr.top;
+    var r=cr.width/2;
+    svg.setAttribute('viewBox','0 0 '+wr.width+' '+wr.height);
+    var html='';
+    wrap.querySelectorAll('.cfo-hub__col--left .cfo-hub__node').forEach(function(n){
+      var nr=n.getBoundingClientRect();
+      var nx=nr.right-wr.left; var ny=nr.top+nr.height/2-wr.top;
+      var a=Math.atan2(ny-cy,nx-cx);
+      html+='<line x1="'+(cx+r*Math.cos(a)).toFixed(1)+'" y1="'+(cy+r*Math.sin(a)).toFixed(1)+'" x2="'+nx.toFixed(1)+'" y2="'+ny.toFixed(1)+'" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>';
+    });
+    wrap.querySelectorAll('.cfo-hub__col--right .cfo-hub__node').forEach(function(n){
+      var nr=n.getBoundingClientRect();
+      var nx=nr.left-wr.left; var ny=nr.top+nr.height/2-wr.top;
+      var a=Math.atan2(ny-cy,nx-cx);
+      html+='<line x1="'+(cx+r*Math.cos(a)).toFixed(1)+'" y1="'+(cy+r*Math.sin(a)).toFixed(1)+'" x2="'+nx.toFixed(1)+'" y2="'+ny.toFixed(1)+'" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".75"/>';
+    });
+    svg.innerHTML=html;
+  }
+  ['load','resize'].forEach(function(e){window.addEventListener(e,drawHubLines);});
+  setTimeout(drawHubLines,150);
+})();
+</script>
 
   <!-- COMPARISON TABLE — KEEP EXACT -->
   <section class="cfo-compare" id="cfo-compare">
