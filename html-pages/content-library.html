@@ -92,6 +92,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 }
 .ag-nav__careers:hover { color: #C9A84C; }
 .ag-nav__burger { display: none; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
 .ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
 
 /* ── FOOTER ── */
@@ -296,11 +297,13 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 @media (max-width: 960px) {
   .cl-grid, .cl-video-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 600px) {
-  .cl-grid, .cl-video-grid { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
   .ag-nav__links, .ag-nav__right { display: none; }
   .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 600px) {
+  .cl-grid, .cl-video-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -314,18 +317,19 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
-          <span class="ag-nav__drop-heading">For Individuals</span>
+          <div class="ag-nav__drop-cols"><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
-          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Life &amp; Disability Insurance</a>
-          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401k / Retirement</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-          <span class="ag-nav__drop-heading">For Businesses</span>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+          </div><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Legal Structure</a>
-          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a></div></div>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
