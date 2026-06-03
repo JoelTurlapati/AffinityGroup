@@ -13,6 +13,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+html { font-size: 17px; }
 
 /* â”€â”€ NAV â”€â”€ */
 .ag-nav {
@@ -28,7 +29,7 @@ html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
   display: flex; align-items: center;
   padding: 0 28px; gap: 20px;
 }
-.ag-nav__logo img { height: 46px; width: auto; object-fit: contain; display: block; }
+.ag-nav__logo img { height: 58px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links {
   display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center;
 }
@@ -188,7 +189,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(14,61,71,.72) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.58) 100%);
 }
 .hp-hero__text {
   position: relative; z-index: 2;
@@ -229,22 +230,39 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .hp-persona:hover img { transform: scale(1.06); }
 .hp-persona__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.05) 20%, rgba(20,85,104,.8) 100%);
-  display: flex; align-items: flex-end; padding: 36px;
-  transition: background .3s;
+  background: linear-gradient(to bottom, transparent 25%, rgba(12,53,64,.9) 100%);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+  padding: 28px 32px; transition: background .3s;
 }
 .hp-persona:hover .hp-persona__overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,.15) 20%, rgba(20,85,104,.92) 100%);
+  background: linear-gradient(to bottom, transparent 10%, rgba(12,53,64,.96) 100%);
+}
+.hp-persona__badge {
+  display: inline-block;
+  background: rgba(201,168,76,.9); color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .14em;
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
 }
 .hp-persona__text {
   color: #fff;
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem; font-weight: 600; line-height: 1.45;
-  text-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font-size: 1.22rem; font-weight: 700; line-height: 1.4;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  margin-bottom: 16px;
 }
-.hp-persona__arrow {
-  display: inline-block; margin-left: 8px;
-  color: #C9A84C; font-family: 'Inter', sans-serif; font-weight: 400;
+.hp-persona__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.45);
+  color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+  padding: 8px 18px; border-radius: 4px;
+  letter-spacing: .05em; text-transform: uppercase;
+  transition: background .25s, border-color .25s; backdrop-filter: blur(4px);
+}
+.hp-persona:hover .hp-persona__cta {
+  background: rgba(201,168,76,.85); border-color: #C9A84C;
 }
 
 /* Section 4 â€“ TWM intro */
@@ -315,6 +333,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
         </div>
       </div>
@@ -324,14 +343,12 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
-          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
         </div>
       </div>
 
     </div>
 
     <div class="ag-nav__right">
-      <a href="https://tagplanning.wixstudio.com/demo/careers" class="ag-nav__careers" target="_top">Careers</a>
       <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
       <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
       <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">SCHEDULE CONSULTATION</a>
@@ -363,6 +380,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <button class="ag-mob__heading" data-toggle="mob-about">ABOUT US <span class="ag-mob__caret">&#9662;</span></button>
         <div class="ag-mob__sub" id="mob-about">
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
         </div>
       </div>
@@ -371,10 +389,8 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="ag-mob__sub" id="mob-insights">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
-          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
         </div>
       </div>
-      <a href="https://tagplanning.wixstudio.com/demo/careers" class="ag-mob__link" target="_top">CAREERS</a>
       <div class="ag-mob__bottom">
         <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
         <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
@@ -439,8 +455,10 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <div class="hp-hero__overlay"></div>
     <div class="hp-hero__text">
       <p>
-        Affinity Group<br/>
-        <span style="font-size:.88em;font-style:normal;font-weight:400;">A group of people linked by a common interest or goal.</span>
+        A&middot;ffin&middot;i&middot;ty Group
+        <span style="font-size:.78em;font-style:italic;font-weight:400;opacity:.88;">(noun):</span>
+        <br/>
+        <span style="font-size:.9em;font-style:normal;font-weight:400;">A group of people linked by a common interest or goal.</span>
       </p>
     </div>
   </section>
@@ -459,28 +477,25 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="hp-persona" target="_top">
       <img src="https://static.wixstatic.com/media/64b604_05447413995e4b64bcc2b3667ff4095a~mv2.avif" alt="Business Owners" />
       <div class="hp-persona__overlay">
-        <div class="hp-persona__text">
-          Click Here If You Are A Business Owner
-          <span class="hp-persona__arrow">&#8594;</span>
-        </div>
+        <div class="hp-persona__badge">Business Owners</div>
+        <div class="hp-persona__text">If You Are A Business Owner</div>
+        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
       </div>
     </a>
-    <a href="https://tagplanning.wixstudio.com/demo/pre-retirees-and-retirees" class="hp-persona" target="_top">
+    <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="hp-persona" target="_top">
       <img src="https://static.wixstatic.com/media/64b604_0461148705564117be558ea52d014f47~mv2.avif" alt="Pre-Retirees &amp; Retirees" />
       <div class="hp-persona__overlay">
-        <div class="hp-persona__text">
-          Click Here If You Are A Retiree Or Pre-Retiree
-          <span class="hp-persona__arrow">&#8594;</span>
-        </div>
+        <div class="hp-persona__badge">Retirees &amp; Pre-Retirees</div>
+        <div class="hp-persona__text">If You Are A Retiree Or Pre-Retiree</div>
+        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
       </div>
     </a>
-    <a href="https://tagplanning.wixstudio.com/demo/high-earners-wealth-accumulators" class="hp-persona" target="_top">
+    <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="hp-persona" target="_top">
       <img src="https://static.wixstatic.com/media/64b604_d5b584a07328475d8f593eac489d43c1~mv2.avif" alt="High Earners &amp; Wealth Accumulators" />
       <div class="hp-persona__overlay">
-        <div class="hp-persona__text">
-          Click Here If You Are A High Earner / Wealth Accumulator
-          <span class="hp-persona__arrow">&#8594;</span>
-        </div>
+        <div class="hp-persona__badge">High Earners</div>
+        <div class="hp-persona__text">If You Are A High Earner / Wealth Accumulator</div>
+        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
       </div>
     </a>
   </section>
@@ -504,7 +519,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <p>Our firm is an <strong>independent fiduciary</strong>, not a broker.<br/><strong>What&rsquo;s the difference?</strong></p>
       <!-- NOTE: Replace YOUTUBE_VIDEO_ID with the ID for "3 Rules That Separate Winners from Losers" -->
       <a class="ag-btn-gold"
-         href="https://www.youtube.com/watch?v=I4GZnamCsS4"
+         href="https://www.youtube.com/watch?v=yXNW5AukPQI"
          target="_blank" rel="noopener">
         &#9654;&nbsp; Watch: 3 Rules That Separate Winners from Losers
       </a>
@@ -572,7 +587,6 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney â€“ Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ's</a>
-          <a href="https://tagplanning.wixstudio.com/demo/careers" target="_top">Careers</a>
         </div>
       </div>
 
