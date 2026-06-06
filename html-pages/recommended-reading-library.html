@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Recommended Reading Library | The Affinity Group</title>
+<meta name="description" content="Explore The Affinity Group's curated reading library — handpicked books on retirement planning, wealth building, business growth, leadership, and personal development for investors, entrepreneurs, and retirees."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Recommended Reading Library",
+  "description": "A curated collection of books recommended by The Affinity Group covering retirement planning, wealth building, business growth, leadership, and personal development.",
+  "url": "https://tagplanning.wixstudio.com/demo/recommended-reading-library",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Affinity Group",
+    "url": "https://tagplanning.wixstudio.com/demo",
+    "logo": "https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg"
+  },
+  "hasPart": [
+    {"@type":"Book","name":"Keys to a Successful Retirement","author":{"@type":"Person","name":"Fritz Gilbert"},"isbn":"9781250243119","url":"https://www.amazon.com/dp/1250243114"},
+    {"@type":"Book","name":"Die with Zero","author":{"@type":"Person","name":"Bill Perkins"},"isbn":"9780358099765","url":"https://www.amazon.com/dp/0358099765"},
+    {"@type":"Book","name":"The Power of Zero","author":{"@type":"Person","name":"David McKnight"},"isbn":"9781984822307","url":"https://www.amazon.com/dp/1984822306"},
+    {"@type":"Book","name":"Atomic Habits","author":{"@type":"Person","name":"James Clear"},"isbn":"9780735211292","url":"https://www.amazon.com/dp/0735211299"},
+    {"@type":"Book","name":"The Psychology of Money","author":{"@type":"Person","name":"Morgan Housel"},"isbn":"9780857197689","url":"https://www.amazon.com/dp/0857197681"},
+    {"@type":"Book","name":"Just Keep Buying","author":{"@type":"Person","name":"Nick Maggiulli"},"isbn":"9780857199263","url":"https://www.amazon.com/dp/0857199269"},
+    {"@type":"Book","name":"Money for Couples","author":{"@type":"Person","name":"Ramit Sethi"},"isbn":"9781668081686","url":"https://www.amazon.com/dp/1668081687"},
+    {"@type":"Book","name":"Unreasonable Hospitality","author":{"@type":"Person","name":"Will Guidara"},"isbn":"9780593418574","url":"https://www.amazon.com/dp/0593418573"},
+    {"@type":"Book","name":"Good to Great","author":{"@type":"Person","name":"Jim Collins"},"isbn":"9780066620992","url":"https://www.amazon.com/dp/0066620996"},
+    {"@type":"Book","name":"The AI-Driven Leader","author":{"@type":"Person","name":"Geoff Woods"},"isbn":"9781394281954","url":"https://www.amazon.com/dp/1394281951"},
+    {"@type":"Book","name":"The 7 Habits of Highly Effective People","author":{"@type":"Person","name":"Stephen R. Covey"},"isbn":"9781982137274","url":"https://www.amazon.com/dp/1982137274"},
+    {"@type":"Book","name":"How to Win Friends and Influence People","author":{"@type":"Person","name":"Dale Carnegie"},"isbn":"9780671027032","url":"https://www.amazon.com/dp/0671027034"},
+    {"@type":"Book","name":"Think and Grow Rich","author":{"@type":"Person","name":"Napoleon Hill"},"isbn":"9781585424337","url":"https://www.amazon.com/dp/1585424331"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+html { font-size: 20px; }
+
+/* ── NAV ── */
+.ag-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 72px; z-index: 9999;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(29,112,128,0.12);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+}
+.ag-nav__inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  padding: 0 28px; gap: 20px;
+}
+.ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
+.ag-nav__links {
+  display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center;
+}
+.ag-nav__item { position: relative; }
+.ag-nav__label {
+  display: block; padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em;
+  color: #145568; text-decoration: none; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap;
+  transition: color .2s;
+  border: none; background: none; font-style: normal;
+}
+.ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
+.ag-nav__links .ag-nav__label { font-size: 15px; }
+.ag-caret { font-size: 10px; opacity: .7; }
+.ag-nav__drop {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; min-width: 480px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+  border-top: 3px solid #1D7080;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 0; z-index: 10000;
+}
+.ag-nav__item--drop:hover .ag-nav__drop { display: block; }
+.ag-nav__drop a {
+  display: block; padding: 9px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; color: #2d2d2d; text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading {
+  display: block; padding: 10px 20px 5px;
+  font-size: 10.5px; font-weight: 700; color: #1D7080;
+  text-transform: uppercase; letter-spacing: .12em;
+  border-top: 1px solid #f0f0f0; margin-top: 4px;
+}
+.ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
+.ag-nav__right {
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
+}
+.ag-nav__portal {
+  display: inline-block; padding: 9px 15px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  white-space: nowrap; letter-spacing: .03em;
+  transition: background .2s;
+}
+.ag-nav__portal:hover { background: #145568; }
+.ag-nav__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap;
+}
+.ag-nav__burger { display: none; }
+.ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+
+/* ── laptop nav tightening (901–1380px) ── */
+@media (min-width: 901px) and (max-width: 1380px) {
+  .ag-nav__inner { padding: 0 16px; gap: 10px; }
+  .ag-nav__links { gap: 0; }
+  .ag-nav__links .ag-nav__label { font-size: 12px; padding: 10px 9px; }
+  .ag-nav__right { gap: 8px; }
+  .ag-nav__phone { display: none; }
+  .ag-nav__portal { font-size: 10.5px; padding: 8px 10px; }
+  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
+}
+
+@media (max-width: 900px) {
+  .ag-nav__links, .ag-nav__right { display: none; }
+  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
+}
+
+/* ── FOOTER ── */
+.ag-footer {
+  background: #0c3540; color: #8fb8c0;
+  padding: 56px 28px 28px; font-family: 'Inter', sans-serif;
+}
+.ag-footer__inner { max-width: 1200px; margin: 0 auto; }
+.ag-footer__top {
+  display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 48px;
+  padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ag-footer__doc-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.ag-footer__doc-links a { color: #C9A84C; text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
+.ag-footer__doc-links a:hover { color: #e8c96e; }
+.ag-footer__social { display: flex; gap: 12px; margin-bottom: 20px; }
+.ag-footer__social a {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; text-decoration: none; transition: background .2s;
+}
+.ag-footer__social a:hover { background: #1D7080; }
+.ag-footer__address { font-size: 12.5px; line-height: 1.8; color: #6a9ca5; }
+.ag-footer__disclaimer { font-size: 12px; line-height: 1.9; color: #6a9ca5; }
+.ag-footer__sitemap-heading { font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 12px; }
+.ag-footer__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.ag-footer__sitemap a { color: #8fb8c0; text-decoration: none; font-size: 12.5px; transition: color .2s; }
+.ag-footer__sitemap a:hover { color: #fff; }
+.ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
+
+/* ── SHARED BUTTONS ── */
+.ag-btn-primary {
+  display: inline-block; padding: 16px 38px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  letter-spacing: .04em; border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
+.ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+
+/* ── HERO ── */
+.rl-hero {
+  padding: 120px 32px 80px;
+  background: linear-gradient(148deg, #071e24 0%, #0e3d47 52%, #0c3540 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.rl-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #C9A84C 50%, transparent 100%);
+}
+.rl-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.28) 50%, transparent 100%);
+}
+.rl-hero__inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+.rl-hero__eyebrow {
+  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: 0.26em; margin-bottom: 20px;
+}
+.rl-hero__icon {
+  font-size: 3rem; margin-bottom: 18px; display: block;
+  filter: drop-shadow(0 4px 16px rgba(201,168,76,0.3));
+}
+.rl-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 20px;
+}
+.rl-hero__rule {
+  width: 56px; height: 2px; background: #C9A84C; margin: 0 auto 28px; border-radius: 2px;
+}
+.rl-hero__sub {
+  font-family: 'Inter', sans-serif; font-size: 1.05rem;
+  line-height: 1.82; color: #8fc4cc; font-weight: 300;
+}
+.rl-hero__stats {
+  display: flex; justify-content: center; gap: 48px; margin-top: 44px;
+  flex-wrap: wrap;
+}
+.rl-stat {
+  text-align: center;
+}
+.rl-stat__num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 700; color: #C9A84C; line-height: 1;
+  margin-bottom: 4px;
+}
+.rl-stat__label {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500;
+  color: #6a9ca5; text-transform: uppercase; letter-spacing: .1em;
+}
+
+/* ── FILTER BAR ── */
+.rl-filter-bar {
+  background: #fff;
+  padding: 32px 32px 0;
+  border-bottom: 1px solid rgba(29,112,128,0.1);
+  position: sticky; top: 72px; z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.rl-filter-bar__inner { max-width: 1100px; margin: 0 auto; }
+.rl-filter-bar__search {
+  position: relative; margin-bottom: 20px;
+}
+.rl-filter-bar__search input {
+  width: 100%;
+  padding: 13px 20px 13px 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; color: #1a1a1a;
+  border: 2px solid rgba(29,112,128,0.2);
+  border-radius: 8px; outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  background: #f8fbfc;
+}
+.rl-filter-bar__search input:focus {
+  border-color: #1D7080;
+  box-shadow: 0 0 0 3px rgba(29,112,128,0.12);
+  background: #fff;
+}
+.rl-filter-bar__search input::placeholder { color: #9ab5bb; }
+.rl-search-icon {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  color: #1D7080; opacity: 0.6; pointer-events: none;
+}
+.rl-filter-bar__cats {
+  display: flex; gap: 4px; flex-wrap: wrap; padding-bottom: 0;
+}
+.rl-filter-btn {
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase;
+  border: none; background: transparent;
+  color: #5a7a82; cursor: pointer;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.rl-filter-btn:hover { color: #1D7080; }
+.rl-filter-btn.active {
+  color: #1D7080;
+  border-bottom-color: #C9A84C;
+  font-weight: 700;
+}
+
+/* ── LIBRARY MAIN ── */
+.rl-library {
+  background: #F0F8FA;
+  padding: 60px 32px 80px;
+  min-height: 400px;
+}
+.rl-library__inner { max-width: 1100px; margin: 0 auto; }
+
+/* ── NO RESULTS ── */
+.rl-no-results {
+  display: none;
+  text-align: center; padding: 80px 32px;
+}
+.rl-no-results.visible { display: block; }
+.rl-no-results p {
+  font-family: 'Inter', sans-serif; font-size: 1rem;
+  color: #5a7a82; line-height: 1.8;
+}
+
+/* ── SECTION ── */
+.rl-section { margin-bottom: 64px; }
+.rl-section:last-of-type { margin-bottom: 0; }
+.rl-section__header { margin-bottom: 32px; }
+.rl-section__number {
+  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: 0.24em; margin-bottom: 10px;
+}
+.rl-section__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 10px;
+}
+.rl-section__rule {
+  width: 48px; height: 2px; background: #C9A84C; border-radius: 2px; margin-bottom: 12px;
+}
+.rl-section__desc {
+  font-family: 'Inter', sans-serif; font-size: 0.92rem;
+  color: #5a7a82; line-height: 1.7;
+}
+
+/* ── CARDS GRID ── */
+.rl-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 960px) {
+  .rl-cards { grid-template-columns: 1fr; }
+}
+
+/* ── SINGLE CARD ── */
+.rl-card {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+.rl-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.14);
+}
+.rl-card.rl-hidden { display: none; }
+
+/* ── COVER ── */
+.rl-card__cover {
+  width: 148px;
+  flex-shrink: 0;
+  background: linear-gradient(145deg, #0c3540 0%, #1D7080 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex; align-items: center; justify-content: center;
+}
+.rl-card__cover img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.rl-cover__fallback {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 20px 14px; text-align: center;
+  position: relative; z-index: 0;
+}
+.rl-cover__fallback-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 700; color: #C9A84C;
+  line-height: 1; margin-bottom: 10px;
+}
+.rl-cover__fallback-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 500;
+  color: rgba(255,255,255,0.75); line-height: 1.5;
+}
+
+/* ── CARD BODY ── */
+.rl-card__body {
+  flex: 1; padding: 24px 26px 22px;
+  display: flex; flex-direction: column;
+  min-width: 0;
+}
+.rl-card__tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;
+}
+.rl-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  padding: 3px 10px; border-radius: 20px;
+}
+.rl-tag--retirement { background: #E6F4F7; color: #1D7080; }
+.rl-tag--wealth     { background: #FEF7E7; color: #8B6914; }
+.rl-tag--business   { background: #E8EFF2; color: #0c3540; }
+.rl-tag--leadership { background: #E8F5EF; color: #1a5e3a; }
+.rl-tag--personal   { background: #F3EEFA; color: #5a3a8a; }
+
+.rl-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.12rem);
+  color: #0c3540; font-weight: 700; line-height: 1.3;
+  margin-bottom: 4px;
+}
+.rl-card__author {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; color: #1D7080; font-weight: 600;
+  letter-spacing: .02em; margin-bottom: 14px;
+}
+.rl-card__summary {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem; line-height: 1.8;
+  color: #444; font-weight: 400; flex: 1;
+  margin-bottom: 16px;
+}
+.rl-card__takeaways { margin-bottom: 18px; }
+.rl-takeaways__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: #1D7080; margin-bottom: 8px;
+}
+.rl-takeaways__list {
+  list-style: none; padding: 0;
+}
+.rl-takeaways__list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.73rem; color: #3a3a3a; line-height: 1.65;
+  padding-left: 16px; position: relative; margin-bottom: 4px;
+}
+.rl-takeaways__list li::before {
+  content: '›';
+  position: absolute; left: 0; color: #C9A84C;
+  font-weight: 700; font-size: 1rem; top: -1px;
+}
+.rl-card__amazon {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 600;
+  text-decoration: none; border-radius: 5px;
+  letter-spacing: .04em;
+  transition: background .2s, transform .15s;
+  align-self: flex-start; margin-top: auto;
+  white-space: nowrap;
+}
+.rl-card__amazon:hover { background: #145568; transform: translateY(-2px); }
+.rl-card__amazon svg { flex-shrink: 0; }
+
+/* ── MOBILE CARD ── */
+@media (max-width: 600px) {
+  .rl-card { flex-direction: column; }
+  .rl-card__cover { width: 100%; min-height: 200px; }
+  .rl-card__cover img { object-position: center 20%; }
+  .rl-card__body { padding: 20px; }
+}
+
+/* ── CTA SECTION ── */
+.rl-cta {
+  padding: 96px 32px;
+  background: linear-gradient(148deg, #071e24 0%, #0e3d47 52%, #0c3540 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.rl-cta::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #C9A84C 50%, transparent 100%);
+}
+.rl-cta__inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+.rl-cta__eyebrow {
+  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: 0.24em; margin-bottom: 20px;
+}
+.rl-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.3rem);
+  color: #fff; font-weight: 600; line-height: 1.28; margin-bottom: 18px;
+}
+.rl-cta__rule {
+  width: 56px; height: 2px; background: #C9A84C; margin: 0 auto 28px; border-radius: 2px;
+}
+.rl-cta__sub {
+  font-family: 'Inter', sans-serif; font-size: 1rem;
+  line-height: 1.85; color: #8fc4cc; font-weight: 300; margin-bottom: 40px;
+}
+.rl-cta__btn {
+  display: inline-block; padding: 16px 40px;
+  background: #C9A84C; color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  letter-spacing: .06em; text-transform: uppercase; border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.rl-cta__btn:hover { background: #a8873d; transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .rl-filter-bar__cats { gap: 2px; }
+  .rl-filter-btn { padding: 10px 12px; font-size: 11px; }
+  .rl-hero__stats { gap: 28px; }
+  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .rl-library { padding: 40px 16px 60px; }
+  .rl-filter-bar { padding: 20px 16px 0; }
+}
+</style>
+
+<!-- ── NAV ── -->
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <div class="ag-nav__drop-cols">
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services For Individuals</span>
+              <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+              <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+            </div>
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services for Businesses</span>
+              <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
+              <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">SCHEDULE CONSULTATION</a>
+    </div>
+    <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="ag-mobile-nav" id="agMobileNav" aria-hidden="true">
+    <div class="ag-mobile-nav__inner">
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-services">SERVICES <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-services">
+          <span class="ag-mob__sub-heading">For Individuals</span>
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+          <span class="ag-mob__sub-heading">For Businesses</span>
+          <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
+          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+        </div>
+      </div>
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-about">ABOUT US <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-about">
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS AND TOOLS <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-insights">
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+        </div>
+      </div>
+      <div class="ag-mob__bottom">
+        <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">SCHEDULE CONSULTATION</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+.ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
+.ag-mobile-nav.open{display:block}
+.ag-mobile-nav__inner{padding:4px 0 20px}
+.ag-mob__section{border-bottom:1px solid rgba(29,112,128,.1)}
+.ag-mob__heading{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;background:none;border:none;cursor:pointer;text-align:left}
+.ag-mob__heading:active{background:#f0f8fa}
+.ag-mob__caret{font-size:10px;opacity:.7;transition:transform .2s}
+.ag-mob__heading.open .ag-mob__caret{transform:rotate(180deg)}
+.ag-mob__sub{display:none;background:#f7fbfc;padding:0 0 8px}
+.ag-mob__sub.open{display:block}
+.ag-mob__sub-heading{display:block;padding:10px 28px 4px;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em}
+.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:13.5px;color:#2d2d2d;text-decoration:none}
+.ag-mob__sub a:active{background:#E6F4F7;color:#1D7080}
+.ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
+.ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
+.ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
+.ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}.ag-nav__burger:active{background:#f0f8fa}}
+</style>
+
+<script>
+(function(){
+  var burger=document.getElementById('agBurger');
+  var drawer=document.getElementById('agMobileNav');
+  if(!burger||!drawer)return;
+  burger.addEventListener('click',function(){
+    var open=drawer.classList.toggle('open');
+    burger.setAttribute('aria-expanded',String(open));
+    burger.setAttribute('aria-label',open?'Close Menu':'Open Menu');
+    burger.innerHTML=open?'&#10005;':'&#9776;';
+    drawer.setAttribute('aria-hidden',String(!open));
+  });
+  drawer.querySelectorAll('[data-toggle]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.getAttribute('data-toggle');
+      var sub=document.getElementById(id);
+      if(!sub)return;
+      var isOpen=sub.classList.toggle('open');
+      btn.classList.toggle('open',isOpen);
+    });
+  });
+})();
+</script>
+
+<main style="padding-top:72px">
+
+  <!-- ── HERO ── -->
+  <section class="rl-hero">
+    <div class="rl-hero__inner">
+      <div class="rl-hero__eyebrow">The Affinity Group Recommends</div>
+      <span class="rl-hero__icon">📚</span>
+      <h1>Recommended Reading Library</h1>
+      <div class="rl-hero__rule"></div>
+      <p class="rl-hero__sub">Books that can help you build wealth, grow your business, improve leadership skills, and prepare for a successful retirement. Curated by our advisors for clients who never stop growing.</p>
+      <div class="rl-hero__stats">
+        <div class="rl-stat">
+          <div class="rl-stat__num">13</div>
+          <div class="rl-stat__label">Curated Books</div>
+        </div>
+        <div class="rl-stat">
+          <div class="rl-stat__num">2</div>
+          <div class="rl-stat__label">Reader Profiles</div>
+        </div>
+        <div class="rl-stat">
+          <div class="rl-stat__num">5</div>
+          <div class="rl-stat__label">Topic Areas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="rl-filter-bar" id="rlFilterBar">
+    <div class="rl-filter-bar__inner">
+      <div class="rl-filter-bar__search">
+        <svg class="rl-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="rlSearch" placeholder="Search by title, author, or keyword..." autocomplete="off" />
+      </div>
+      <div class="rl-filter-bar__cats">
+        <button class="rl-filter-btn active" data-filter="all">All Books</button>
+        <button class="rl-filter-btn" data-filter="retirement">Retirement</button>
+        <button class="rl-filter-btn" data-filter="wealth">Wealth Building</button>
+        <button class="rl-filter-btn" data-filter="business">Business</button>
+        <button class="rl-filter-btn" data-filter="leadership">Leadership</button>
+        <button class="rl-filter-btn" data-filter="personal">Personal Development</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LIBRARY ── -->
+  <div class="rl-library" id="rlLibrary">
+    <div class="rl-library__inner">
+
+      <!-- NO RESULTS -->
+      <div class="rl-no-results" id="rlNoResults">
+        <p>No books match your search. Try a different keyword or category.</p>
+      </div>
+
+      <!-- ══ CATEGORY 1 ══ -->
+      <div class="rl-section" id="rlSection1">
+        <div class="rl-section__header">
+          <div class="rl-section__number">Category 01</div>
+          <h2 class="rl-section__title">Preparing For &amp; Retiring Well</h2>
+          <div class="rl-section__rule"></div>
+          <p class="rl-section__desc">For those approaching retirement or already in it — books that address the full picture of retirement success: financial strategy, purpose, identity, and lifestyle.</p>
+        </div>
+        <div class="rl-cards">
+
+          <!-- BOOK: Keys to a Successful Retirement -->
+          <article class="rl-card" data-cat="retirement" data-book-id="keys-retirement" data-search="keys to a successful retirement fritz gilbert retirement lifestyle purpose identity">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1250243114-L.jpg" alt="Keys to a Successful Retirement book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">K</div>
+                <div class="rl-cover__fallback-title">Keys to a Successful Retirement</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--retirement">Retirement</span>
+              </div>
+              <h3 class="rl-card__title">Keys to a Successful Retirement</h3>
+              <p class="rl-card__author">by Fritz Gilbert</p>
+              <p class="rl-card__summary">Fritz Gilbert retired at 55 after a 30-year corporate career, and in this remarkably candid book he documents what actually makes retirement work — beyond the balance sheet. Drawing from his popular blog RetirementManifesto.com and interviews with dozens of retirees, Gilbert explores the non-financial dimensions most financial books overlook: finding purpose, managing time, sustaining relationships, maintaining health, and building a meaningful identity outside of work. This is the guide for the whole retirement transition, not just the financial one.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Retirement is as much a psychological transition as a financial one</li>
+                  <li>Purpose and identity outside of work are essential for long-term fulfillment</li>
+                  <li>Managing unstructured time is a skill retirees must intentionally develop</li>
+                  <li>Social connections require deliberate cultivation after leaving the workplace</li>
+                  <li>Health investments made before retirement pay compounding dividends in retirement</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1250243114" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Die with Zero -->
+          <article class="rl-card" data-cat="retirement wealth" data-book-id="die-with-zero" data-search="die with zero bill perkins retirement spending experiences memory dividends wealth">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0358099765-L.jpg" alt="Die with Zero book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">D</div>
+                <div class="rl-cover__fallback-title">Die with Zero</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--retirement">Retirement</span>
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+              </div>
+              <h3 class="rl-card__title">Die with Zero</h3>
+              <p class="rl-card__author">by Bill Perkins</p>
+              <p class="rl-card__summary">Hedge fund manager Bill Perkins challenges one of personal finance's most sacred rules: save as much as possible. His well-argued thesis is that over-saving leads to under-living — and that dying with significant wealth is, paradoxically, a financial failure. Perkins introduces the concept of "memory dividends," argues for strategic giving while alive, and offers a life-stage framework for aligning spending with your health and energy. A paradigm-shifting read for anyone nearing or already in retirement who wants to rethink what their wealth is truly for.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Optimize for life experiences, not maximum wealth accumulation</li>
+                  <li>"Memory dividends" compound — invest in experiences while you're healthy enough to enjoy them</li>
+                  <li>Strategic giving to heirs while alive is more impactful than post-death inheritance</li>
+                  <li>Align your spending with your health and energy across life stages</li>
+                  <li>The goal is zero regrets at end of life, not just a zero bank balance</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0358099765" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: The Power of Zero -->
+          <article class="rl-card" data-cat="retirement wealth" data-book-id="power-of-zero" data-search="the power of zero david mcknight tax free retirement roth ira taxes planning">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1984822306-L.jpg" alt="The Power of Zero book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">P</div>
+                <div class="rl-cover__fallback-title">The Power of Zero</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--retirement">Retirement</span>
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+              </div>
+              <h3 class="rl-card__title">The Power of Zero</h3>
+              <p class="rl-card__author">by David McKnight</p>
+              <p class="rl-card__summary">Financial advisor David McKnight makes an urgent, well-supported case that tax rates in the United States are historically low and headed significantly higher — and that most Americans' retirement accounts are entirely unprepared for this shift. He outlines a practical strategy for repositioning money from taxable and tax-deferred accounts into tax-free vehicles, guiding readers toward the "0% tax bracket" in retirement through Roth IRAs, Roth conversions, and other tax-advantaged strategies. Clear, direct, and genuinely actionable for anyone within 10-15 years of retirement.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Tax rates are near historic lows and likely to increase — plan accordingly today</li>
+                  <li>The 0% tax bracket in retirement is an achievable, specific, plannable target</li>
+                  <li>Roth IRAs and Roth conversions are the most accessible tax-free retirement tools</li>
+                  <li>Life insurance can play a legitimate, tax-advantaged role in retirement income</li>
+                  <li>The window for beneficial Roth conversions may narrow as tax law evolves</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1984822306" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /rl-cards -->
+      </div><!-- /rl-section cat1 -->
+
+      <!-- ══ CATEGORY 2 ══ -->
+      <div class="rl-section" id="rlSection2">
+        <div class="rl-section__header">
+          <div class="rl-section__number">Category 02</div>
+          <h2 class="rl-section__title">Accumulators &amp; Business Owners</h2>
+          <div class="rl-section__rule"></div>
+          <p class="rl-section__desc">For high earners, entrepreneurs, and wealth builders — books on financial psychology, habit mastery, leadership, and building businesses and lives of lasting significance.</p>
+        </div>
+        <div class="rl-cards">
+
+          <!-- BOOK: Atomic Habits -->
+          <article class="rl-card" data-cat="personal business" data-book-id="atomic-habits" data-search="atomic habits james clear habits systems behavior change personal development business">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0735211299-L.jpg" alt="Atomic Habits book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">A</div>
+                <div class="rl-cover__fallback-title">Atomic Habits</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+                <span class="rl-tag rl-tag--business">Business</span>
+              </div>
+              <h3 class="rl-card__title">Atomic Habits</h3>
+              <p class="rl-card__author">by James Clear</p>
+              <p class="rl-card__summary">Drawing on cognitive science, biology, and behavioral psychology, James Clear delivers the most practical guide to habit formation ever written. His "Four Laws of Behavior Change" framework — make it obvious, make it attractive, make it easy, make it satisfying — provides an actionable blueprint for building any positive routine. Whether you're building disciplined savings habits, systematizing business operations, or improving personal performance, Atomic Habits gives you tools to make lasting change feel effortless rather than forced.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>A 1% daily improvement compounds to 37× better results over a year</li>
+                  <li>Identity-based habits ("I am a saver") are more durable than outcome-based goals</li>
+                  <li>Environment design influences behavior far more than willpower or motivation</li>
+                  <li>Habit stacking attaches new behaviors to existing routines for easier adoption</li>
+                  <li>Systems and processes — not goals alone — determine long-term outcomes</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0735211299" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: The Psychology of Money -->
+          <article class="rl-card" data-cat="wealth personal" data-book-id="psychology-of-money" data-search="the psychology of money morgan housel behavior investing compounding wealth personal finance">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0857197681-L.jpg" alt="The Psychology of Money book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">P</div>
+                <div class="rl-cover__fallback-title">The Psychology of Money</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+              </div>
+              <h3 class="rl-card__title">The Psychology of Money</h3>
+              <p class="rl-card__author">by Morgan Housel</p>
+              <p class="rl-card__summary">Through 19 short, incisive essays, Morgan Housel explores the often irrational, deeply personal ways people think about money — and why behavior matters infinitely more than knowledge when building wealth. He argues that financial success is less about intelligence or strategy and more about temperament, patience, and avoiding catastrophic mistakes. Covering compounding, the role of luck and risk, and the psychology of "enough," this is the most readable and genuinely human personal finance book written in the last decade.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Behavior and emotional temperament matter more than financial knowledge or IQ</li>
+                  <li>Wealth is what you don't spend — income and net worth are fundamentally different</li>
+                  <li>Compounding demands patience and time — never interrupt it unnecessarily</li>
+                  <li>Reasonable financial plans you can stick to beat theoretically optimal ones you can't</li>
+                  <li>Luck and risk are invisible forces that shape every financial outcome — stay humble</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0857197681" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Just Keep Buying -->
+          <article class="rl-card" data-cat="wealth" data-book-id="just-keep-buying" data-search="just keep buying nick maggiulli investing saving data evidence wealth accumulation">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0857199269-L.jpg" alt="Just Keep Buying book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">J</div>
+                <div class="rl-cover__fallback-title">Just Keep Buying</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+              </div>
+              <h3 class="rl-card__title">Just Keep Buying</h3>
+              <p class="rl-card__author">by Nick Maggiulli</p>
+              <p class="rl-card__summary">Data scientist Nick Maggiulli applies rigorous quantitative research to answer two fundamental personal finance questions: how much should you save, and how should you invest? His counterintuitive, data-backed conclusion is both simple and powerful: just keep buying diversified assets on a consistent schedule, regardless of market conditions. Maggiulli dismantles popular myths around timing the market, optimal savings rates, and investment selection — and replaces anxiety with a clear, evidence-based path to long-term wealth accumulation.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Consistent, automated investing outperforms market timing in nearly every historical scenario</li>
+                  <li>Early in your career, increasing income matters more than optimizing investment returns</li>
+                  <li>Lump-sum investing historically beats dollar-cost averaging in most market conditions</li>
+                  <li>Broad diversification across asset classes reduces both volatility and decision regret</li>
+                  <li>The greatest wealth-building advantage is simply starting early and never stopping</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0857199269" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Money for Couples -->
+          <article class="rl-card" data-cat="wealth personal" data-book-id="money-for-couples" data-search="money for couples ramit sethi relationships finances couples budgeting rich life wealth">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1668081687-L.jpg" alt="Money for Couples book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">M</div>
+                <div class="rl-cover__fallback-title">Money for Couples</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+              </div>
+              <h3 class="rl-card__title">Money for Couples</h3>
+              <p class="rl-card__author">by Ramit Sethi</p>
+              <p class="rl-card__summary">Personal finance expert Ramit Sethi turns his attention to one of the most avoided conversations in relationships: money. Based on thousands of interviews with couples across all income levels, he provides a practical framework for discussing finances openly, identifying shared values, and building a joint "Rich Life" together. This is not a budgeting manual — it's a guide to aligning on money as a couple, eliminating financial conflict, and creating shared wealth without sacrificing the relationship in the process.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Most couples avoid money conversations — learning to engage transforms both relationship and finances</li>
+                  <li>Define your shared "Rich Life" together before building any financial system around it</li>
+                  <li>Align on values first; the specific tactics — accounts, budgets — are secondary</li>
+                  <li>Automation and shared financial systems dramatically reduce daily friction and conflict</li>
+                  <li>Money disagreements are rarely about money — they're about values, security, and control</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1668081687" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Die with Zero (Cat 2) -->
+          <article class="rl-card" data-cat="retirement wealth" data-book-id="die-with-zero-b" data-search="die with zero bill perkins spending experiences memory dividends wealth retirement living">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0358099765-L.jpg" alt="Die with Zero book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">D</div>
+                <div class="rl-cover__fallback-title">Die with Zero</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--retirement">Retirement</span>
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+              </div>
+              <h3 class="rl-card__title">Die with Zero</h3>
+              <p class="rl-card__author">by Bill Perkins</p>
+              <p class="rl-card__summary">Hedge fund manager Bill Perkins challenges one of personal finance's most sacred rules: save as much as possible. His well-argued thesis is that over-saving leads to under-living — and that dying with significant wealth is, paradoxically, a financial failure. Perkins introduces the concept of "memory dividends," argues for strategic giving while alive, and offers a life-stage framework for aligning spending with your health and energy. Equally vital for high-earners and accumulators who may be sacrificing present living for future wealth they'll never fully enjoy.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Optimize for life experiences, not maximum wealth accumulation</li>
+                  <li>"Memory dividends" compound — invest in experiences while you're healthy enough to enjoy them</li>
+                  <li>Strategic giving to heirs while alive is more impactful than post-death inheritance</li>
+                  <li>Align your spending with your health and energy across life stages</li>
+                  <li>The goal is zero regrets at end of life, not just a zero bank balance</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0358099765" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Unreasonable Hospitality -->
+          <article class="rl-card" data-cat="business leadership" data-book-id="unreasonable-hospitality" data-search="unreasonable hospitality will guidara service customer experience business leadership culture restaurant">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0593418573-L.jpg" alt="Unreasonable Hospitality book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">U</div>
+                <div class="rl-cover__fallback-title">Unreasonable Hospitality</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--business">Business</span>
+                <span class="rl-tag rl-tag--leadership">Leadership</span>
+              </div>
+              <h3 class="rl-card__title">Unreasonable Hospitality</h3>
+              <p class="rl-card__author">by Will Guidara</p>
+              <p class="rl-card__summary">Will Guidara co-owned Eleven Madison Park, rated the world's best restaurant in 2017, and this book reveals the philosophy that made it extraordinary. His concept of "unreasonable hospitality" — proactively giving people more than they expect, in moments they'll never forget — is a masterclass in building client loyalty through genuine human connection. For business owners and service professionals, this book redefines what world-class client experience looks like and provides a practical leadership framework for creating it at every level of an organization.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Legendary service is the result of intentional, creative acts of generosity — not accidents</li>
+                  <li>Culture is built through the specific, deliberate behaviors leadership models daily</li>
+                  <li>Details that seem small to the business are often enormous to the client</li>
+                  <li>Empowering your team to make clients feel truly seen creates irreplaceable loyalty</li>
+                  <li>Business differentiation comes from emotional connection, not just quality of product</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0593418573" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Good to Great -->
+          <article class="rl-card" data-cat="business leadership" data-book-id="good-to-great" data-search="good to great jim collins business leadership excellence flywheel hedgehog organizations">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0066620996-L.jpg" alt="Good to Great book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">G</div>
+                <div class="rl-cover__fallback-title">Good to Great</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--business">Business</span>
+                <span class="rl-tag rl-tag--leadership">Leadership</span>
+              </div>
+              <h3 class="rl-card__title">Good to Great</h3>
+              <p class="rl-card__author">by Jim Collins</p>
+              <p class="rl-card__summary">After a rigorous five-year study comparing 28 companies, Jim Collins and his research team identified exactly what separates truly enduring, great businesses from merely good ones. Their findings — Level 5 Leadership, the Hedgehog Concept, the Flywheel Effect, and the discipline of "first who, then what" — remain the most cited and applied business research of the past 25 years. For business owners and executives building organizations meant to last, this is the essential foundational read on what sustainable greatness actually requires.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Level 5 Leaders combine fierce professional will with deep personal humility</li>
+                  <li>Great companies find their Hedgehog Concept: passion + skill + economic engine</li>
+                  <li>"Who before what": get the right people in place before determining strategy</li>
+                  <li>Disciplined thought and action — not dramatic moves — create compounding results</li>
+                  <li>The Flywheel Effect: consistent effort in the right direction builds unstoppable momentum</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0066620996" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: The AI-Driven Leader -->
+          <article class="rl-card" data-cat="business leadership" data-book-id="ai-driven-leader" data-search="the ai driven leader geoff woods artificial intelligence leadership strategy decision making business">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1394281951-L.jpg" alt="The AI-Driven Leader book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">A</div>
+                <div class="rl-cover__fallback-title">The AI-Driven Leader</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--business">Business</span>
+                <span class="rl-tag rl-tag--leadership">Leadership</span>
+              </div>
+              <h3 class="rl-card__title">The AI-Driven Leader</h3>
+              <p class="rl-card__author">by Geoff Woods</p>
+              <p class="rl-card__summary">As former President of The ONE Thing Company, Geoff Woods has advised some of the world's most effective leaders — and in this forward-thinking book he argues that AI is the most powerful leadership multiplier ever created. But only for leaders who know how to use it. Woods provides a practical framework for treating AI not as a task-automation tool but as a strategic thinking partner — one that helps leaders prioritize ruthlessly, make better decisions faster, and achieve leverage that once required entire teams. Essential for any business leader navigating the AI era.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>AI is a leadership multiplier for those who ask it the right strategic questions</li>
+                  <li>Treat AI as a thinking partner, not merely a content or task-automation tool</li>
+                  <li>Effective AI collaboration requires clarity of purpose and strong self-awareness as a leader</li>
+                  <li>Leaders who master AI leverage will compound advantages over those who don't — within years</li>
+                  <li>AI augments human judgment and strategy — it cannot replace strong leadership values</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1394281951" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: The 7 Habits -->
+          <article class="rl-card" data-cat="leadership personal" data-book-id="seven-habits" data-search="7 habits highly effective people stephen covey leadership personal development effectiveness principles">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1982137274-L.jpg" alt="The 7 Habits of Highly Effective People book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">7</div>
+                <div class="rl-cover__fallback-title">The 7 Habits of Highly Effective People</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--leadership">Leadership</span>
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+              </div>
+              <h3 class="rl-card__title">The 7 Habits of Highly Effective People</h3>
+              <p class="rl-card__author">by Stephen R. Covey</p>
+              <p class="rl-card__summary">With over 40 million copies sold, Stephen Covey's landmark work remains one of the most transformative leadership and personal development books ever written. The seven habits — from "Be Proactive" and "Begin with the End in Mind" to "Think Win-Win" and "Sharpen the Saw" — are grounded in principle-centered character ethics rather than personality techniques or shortcuts. Covey's framework provides a complete approach to moving from dependence to independence to genuine interdependence across work and life.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>Effectiveness begins with private victory: mastering yourself before leading others</li>
+                  <li>Begin with the end in mind — clarity of purpose is the foundation of meaningful action</li>
+                  <li>Put first things first — prioritize by importance, not urgency, to achieve what truly matters</li>
+                  <li>Think win-win in every negotiation and relationship — abundance replaces scarcity thinking</li>
+                  <li>Continuous self-renewal ("sharpen the saw") sustains high performance in all life dimensions</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1982137274" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: How to Win Friends -->
+          <article class="rl-card" data-cat="leadership personal" data-book-id="win-friends" data-search="how to win friends influence people dale carnegie leadership communication relationships influence sales business">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/0671027034-L.jpg" alt="How to Win Friends and Influence People book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">H</div>
+                <div class="rl-cover__fallback-title">How to Win Friends &amp; Influence People</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--leadership">Leadership</span>
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+              </div>
+              <h3 class="rl-card__title">How to Win Friends and Influence People</h3>
+              <p class="rl-card__author">by Dale Carnegie</p>
+              <p class="rl-card__summary">First published in 1936 and still a consistent bestseller nearly 90 years later, Dale Carnegie's guide to human relations has influenced more leaders, salespeople, and business professionals than perhaps any other book ever written. Carnegie's core insight — that people are primarily motivated by their desire to feel important and valued — translates into timeless principles for building trust, leading teams, winning clients, and navigating conflict. The techniques are elegantly simple; the results, across generations, have been profound.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>People care far more about their own interests than yours — lead with genuine curiosity about them</li>
+                  <li>Sincere appreciation — not flattery — is the most powerful relationship-building tool available</li>
+                  <li>Criticism and complaint rarely produce lasting behavior change; encouragement always works better</li>
+                  <li>Listening actively and making others feel heard is the foundation of all genuine influence</li>
+                  <li>You can change others' behavior most effectively by changing your own approach and attitude first</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/0671027034" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+          <!-- BOOK: Think and Grow Rich -->
+          <article class="rl-card" data-cat="personal wealth" data-book-id="think-grow-rich" data-search="think and grow rich napoleon hill success wealth mindset desire purpose mastermind personal development">
+            <div class="rl-card__cover">
+              <img src="https://covers.openlibrary.org/b/isbn/1585424331-L.jpg" alt="Think and Grow Rich book cover" loading="lazy" onerror="this.style.display='none'" />
+              <div class="rl-cover__fallback">
+                <div class="rl-cover__fallback-letter">T</div>
+                <div class="rl-cover__fallback-title">Think and Grow Rich</div>
+              </div>
+            </div>
+            <div class="rl-card__body">
+              <div class="rl-card__tags">
+                <span class="rl-tag rl-tag--personal">Personal Development</span>
+                <span class="rl-tag rl-tag--wealth">Wealth Building</span>
+              </div>
+              <h3 class="rl-card__title">Think and Grow Rich</h3>
+              <p class="rl-card__author">by Napoleon Hill</p>
+              <p class="rl-card__summary">Published in 1937 after 20 years studying over 500 of America's most successful people — including Andrew Carnegie, Henry Ford, and Thomas Edison — Napoleon Hill distilled his findings into 13 principles of personal achievement. From definiteness of purpose and burning desire to the role of the mastermind alliance and the power of the subconscious mind, this book established the philosophical foundation of virtually all modern success literature. Nearly 90 years later it remains one of the best-selling books of all time, and for good reason.</p>
+              <div class="rl-card__takeaways">
+                <p class="rl-takeaways__label">Key Takeaways</p>
+                <ul class="rl-takeaways__list">
+                  <li>A definiteness of purpose combined with burning desire is the starting point of all achievement</li>
+                  <li>Faith and a positive mental attitude directly influence the quality of your outcomes</li>
+                  <li>Mastermind alliances multiply individual intelligence and dramatically accelerate success</li>
+                  <li>Specialized knowledge, organized planning, and decisive action create lasting wealth</li>
+                  <li>The subconscious mind works continuously — consciously feed it purposeful, constructive thought</li>
+                </ul>
+              </div>
+              <a href="https://www.amazon.com/dp/1585424331" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View on Amazon
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /rl-cards -->
+      </div><!-- /rl-section cat2 -->
+
+    </div><!-- /rl-library__inner -->
+  </div><!-- /rl-library -->
+
+  <!-- ── CTA ── -->
+  <section class="rl-cta">
+    <div class="rl-cta__inner">
+      <div class="rl-cta__eyebrow">Keep Growing</div>
+      <h2>Continue Your Learning Journey</h2>
+      <div class="rl-cta__rule"></div>
+      <p class="rl-cta__sub">The most successful investors, business owners, and retirees never stop learning. Explore these recommended books and gain insights that can help you build wealth, strengthen relationships, and achieve long-term success.</p>
+      <button class="rl-cta__btn" onclick="document.getElementById('rlLibrary').scrollIntoView({behavior:'smooth'})">Browse All Books</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_d76b3e98e958484c8a5074a88aef9d5e.pdf" target="_blank">Privacy Policy</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_90fd5a779d224c12bcf411abd245e453.pdf" target="_blank">CRS</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_33996409bbfa48599a354141d29073d0.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
+          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney – Your Financial GPS</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ's</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ── SEARCH & FILTER LOGIC ── -->
+<script>
+(function () {
+  var searchInput = document.getElementById('rlSearch');
+  var filterBtns  = document.querySelectorAll('.rl-filter-btn');
+  var cards       = document.querySelectorAll('.rl-card');
+  var sections    = document.querySelectorAll('.rl-section');
+  var noResults   = document.getElementById('rlNoResults');
+
+  var activeFilter = 'all';
+  var searchQuery  = '';
+
+  function applyFilters() {
+    var query  = searchQuery.toLowerCase().trim();
+    var filter = activeFilter;
+    var visibleCount = 0;
+
+    cards.forEach(function (card) {
+      var cats   = (card.getAttribute('data-cat') || '').split(' ');
+      var search = (card.getAttribute('data-search') || '').toLowerCase();
+
+      var catMatch    = filter === 'all' || cats.indexOf(filter) !== -1;
+      var searchMatch = query === '' || search.indexOf(query) !== -1;
+      var visible     = catMatch && searchMatch;
+
+      card.classList.toggle('rl-hidden', !visible);
+      if (visible) visibleCount++;
+    });
+
+    // Show/hide section headings based on whether they have visible cards
+    sections.forEach(function (section) {
+      var sectionCards = section.querySelectorAll('.rl-card');
+      var anyVisible   = false;
+      sectionCards.forEach(function (c) {
+        if (!c.classList.contains('rl-hidden')) anyVisible = true;
+      });
+      section.style.display = anyVisible ? '' : 'none';
+    });
+
+    // Show/hide section headers when filtering
+    var isFiltering = filter !== 'all' || query !== '';
+    document.querySelectorAll('.rl-section__header').forEach(function (h) {
+      h.style.display = isFiltering ? 'none' : '';
+    });
+
+    noResults.classList.toggle('visible', visibleCount === 0);
+  }
+
+  // Category filter
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  // Search input
+  searchInput.addEventListener('input', function () {
+    searchQuery = searchInput.value;
+    applyFilters();
+  });
+})();
+</script>
+
+<!-- ── iFrame height reporter ── -->
+<script>
+(function(){
+  function r(){
+    var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);
+    window.parent.postMessage(JSON.stringify({type:"iFrameHeight",height:h}),"*");
+    window.parent.postMessage(JSON.stringify({type:"iFrameReady",height:h}),"*");
+    window.parent.postMessage({height:h},"*");
+  }
+  ["load","resize","DOMContentLoaded"].forEach(function(e){window.addEventListener(e,r);});
+  setInterval(r,200);
+})();
+</script>
+
+<style>
+/* ── wide-screen gap fix ── */
+@media (min-width: 1600px) {
+  main div[class*="__inner"],
+  .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
+}
+@media (min-width: 1920px) {
+  main div[class*="__inner"],
+  .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
+}
+</style>
+
+</body>
+</html>
