@@ -353,11 +353,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   text-align: left;
 }
 
-/* ── FIDUCIARY — 3-panel animation ── */
+/* ── FIDUCIARY — video section ── */
 .hp-fid-cta {
-  padding: 96px 32px; background: #ffffff; text-align: center; overflow: hidden;
+  padding: 96px 32px; background: #ffffff; text-align: center;
 }
-.hp-fid-cta__inner { max-width: 760px; margin: 0 auto; }
+.hp-fid-cta__inner { max-width: 820px; margin: 0 auto; }
 .hp-fid-cta__eyebrow {
   font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
   color: #1D7080; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 18px;
@@ -374,35 +374,14 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .hp-fid-cta__rule {
   width: 52px; height: 2px; background: #C9A84C; margin: 0 auto 42px; border-radius: 2px;
 }
-.fid-three {
-  display: flex;
-  max-width: 720px; margin: 0 auto 38px;
-  border-radius: 10px; overflow: visible;
+.fid-video-wrap {
+  max-width: 820px; margin: 0 auto 38px;
+  border-radius: 10px; overflow: hidden;
   box-shadow: 0 12px 50px rgba(0,0,0,.16);
 }
-.fid-col {
-  width: 33.3334%; flex-shrink: 0; overflow: hidden;
+.fid-video-wrap video {
+  width: 100%; height: auto; display: block;
 }
-.fid-col img {
-  width: 300%; height: auto; display: block; max-width: none;
-}
-.fid-col--left img  { margin-left: 0; }
-.fid-col--mid img   { margin-left: -100%; }
-.fid-col--right img { margin-left: -200%; }
-.fid-col--left {
-  border-radius: 10px 0 0 10px;
-  transform: translateX(-120vw);
-  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-.fid-col--right {
-  border-radius: 0 10px 10px 0;
-  transform: translateX(120vw);
-  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-.fid-col--left.fid-visible  { transform: translateX(0); }
-.fid-col--right.fid-visible { transform: translateX(0); }
 .hp-fid-cta__btns {
   display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
 }
@@ -721,16 +700,10 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <p class="hp-fid-cta__sub" style="margin-bottom:38px;">
         Our firm is an <strong style="color:#145568;">independent fiduciary</strong>, not a broker.
       </p>
-      <div class="fid-three" id="fidThree">
-        <div class="fid-col fid-col--left">
-          <img src="https://static.wixstatic.com/media/64b604_665a5bcce83a4ebba186a44a600adf13~mv2.png" alt="Broker" />
-        </div>
-        <div class="fid-col fid-col--mid">
-          <img src="https://static.wixstatic.com/media/64b604_665a5bcce83a4ebba186a44a600adf13~mv2.png" alt="" aria-hidden="true" />
-        </div>
-        <div class="fid-col fid-col--right">
-          <img src="https://static.wixstatic.com/media/64b604_665a5bcce83a4ebba186a44a600adf13~mv2.png" alt="Fiduciary Advisor" />
-        </div>
+      <div class="fid-video-wrap">
+        <video autoplay muted loop playsinline>
+          <source src="https://video.wixstatic.com/video/64b604_4e329482b26442cc90939d6f4bf7d7ce/360p/mp4/file.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="hp-fid-cta__btns">
         <button class="ag-btn-gold" onclick="openYtModal()">
@@ -799,24 +772,6 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var container = document.getElementById('fidThree');
-  if (!container) return;
-  var leftCol  = container.querySelector('.fid-col--left');
-  var rightCol = container.querySelector('.fid-col--right');
-  function activate() {
-    if (leftCol)  leftCol.classList.add('fid-visible');
-    if (rightCol) rightCol.classList.add('fid-visible');
-  }
-  if (!window.IntersectionObserver) { activate(); return; }
-  var obs = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) { activate(); obs.disconnect(); }
-  }, { threshold: 0.25 });
-  obs.observe(container);
-})();
-</script>
 
 <!-- ── YOUTUBE MODAL ── -->
 <div id="ytModal" class="yt-modal" role="dialog" aria-modal="true" aria-label="Video Player">
