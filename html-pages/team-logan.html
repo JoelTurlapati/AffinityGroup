@@ -321,5 +321,17 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
   .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
 }
 </style>
+
+<style>
+/* ── mobile profile layout fix (overrides cascade-order bug) ── */
+@media (max-width: 1024px) {
+  .tm-profile__inner { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .tm-profile__photo { max-width: 300px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .tm-profile__photo { max-width: 220px; }
+}
+</style>
 </body>
 </html>
+
