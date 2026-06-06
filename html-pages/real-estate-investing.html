@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -13,7 +13,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
-html { font-size: 17px; }
+html { font-size: 20px; }
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -138,7 +138,7 @@ html { font-size: 17px; }
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
-        <span class="ag-nav__label">INSIGHTS <span class="ag-caret">&#9662;</span></span>
+        <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
@@ -181,7 +181,7 @@ html { font-size: 17px; }
         </div>
       </div>
       <div class="ag-mob__section">
-        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS <span class="ag-mob__caret">&#9662;</span></button>
+        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS AND TOOLS <span class="ag-mob__caret">&#9662;</span></button>
         <div class="ag-mob__sub" id="mob-insights">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
@@ -361,5 +361,16 @@ html { font-size: 17px; }
   setInterval(r,200);
 })();
 </script>
+<style>
+/* ── wide-screen gap fix ── */
+@media (min-width: 1600px) {
+  main div[class*="__inner"],
+  .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
+}
+@media (min-width: 1920px) {
+  main div[class*="__inner"],
+  .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
+}
+</style>
 </body>
 </html>
