@@ -196,11 +196,11 @@ html { font-size: 20px; }
   gap: 24px;
 }
 
-/* PDF Card */
+/* Article Card (image-based) */
 .cl-pdf-card {
   background: #fff;
   border-radius: 10px;
-  padding: 28px 24px 24px;
+  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,.07);
   display: flex; flex-direction: column;
   transition: box-shadow .25s, transform .25s;
@@ -210,17 +210,25 @@ html { font-size: 20px; }
   box-shadow: 0 12px 40px rgba(29,112,128,.15);
   transform: translateY(-4px);
 }
-.cl-pdf-card__icon {
-  width: 52px; height: 52px; border-radius: 10px;
-  background: #E6F4F7;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px; flex-shrink: 0;
+.cl-pdf-card__thumb {
+  height: 185px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
-.cl-pdf-card__icon svg { width: 28px; height: 28px; }
+.cl-pdf-card__thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .45s ease;
+}
+.cl-pdf-card:hover .cl-pdf-card__thumb img { transform: scale(1.06); }
+.cl-pdf-card__body {
+  padding: 22px 22px 20px;
+  flex: 1; display: flex; flex-direction: column;
+}
 .cl-pdf-card__title {
   font-family: 'Playfair Display', serif;
   font-size: 1rem; font-weight: 600; color: #145568;
-  line-height: 1.45; flex: 1; margin-bottom: 20px;
+  line-height: 1.45; flex: 1; margin-bottom: 16px;
 }
 .cl-pdf-card__cta {
   display: inline-flex; align-items: center; gap: 6px;
@@ -248,15 +256,29 @@ html { font-size: 20px; }
 }
 .cl-video-card__thumb {
   position: relative;
-  height: 160px;
+  height: 185px;
   background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
+.cl-video-card__thumb img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .45s ease;
+}
+.cl-video-card:hover .cl-video-card__thumb img { transform: scale(1.06); }
+.cl-video-card__thumb::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(10,40,50,0.42);
+  z-index: 1;
+}
 .cl-video-card__play {
+  position: relative; z-index: 2;
   width: 56px; height: 56px; border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  border: 2px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.6);
   display: flex; align-items: center; justify-content: center;
   transition: background .25s, transform .25s;
 }
@@ -267,8 +289,8 @@ html { font-size: 20px; }
 }
 .cl-video-card__play svg { width: 22px; height: 22px; margin-left: 3px; }
 .cl-video-card__badge {
-  position: absolute; top: 12px; right: 12px;
-  background: rgba(201,168,76,0.9);
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  background: rgba(201,168,76,0.92);
   color: #fff; font-family: 'Inter', sans-serif;
   font-size: 10px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .08em;
@@ -455,88 +477,88 @@ html { font-size: 20px; }
     <p>Educational resources, market insights, and financial planning guides curated for our clients.</p>
   </section>
 
-  <!-- PDFs -->
+  <!-- Articles -->
   <section class="cl-section cl-section--pdf">
     <div class="cl-section__inner">
       <div class="cl-section__header">
         <div class="ag-section-label">Reports &amp; Guides</div>
         <div class="ag-gold-bar"></div>
-        <h2>PDF Resources</h2>
+        <h2>Articles</h2>
         <p>In-depth articles and reports you can read or download.</p>
       </div>
 
       <div class="cl-grid">
 
-        <!-- PDF 1 -->
+        <!-- Article 1 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=0b3673d4e7da4132baa9a549b8581a05"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_0ef7659ba3d9473095014b0f6ff359a3~mv2.jpg" alt="Market Insights" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">Market Insights &mdash; May 28, 2026</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">Market Insights &mdash; May 28, 2026</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
-        <!-- PDF 2 -->
+        <!-- Article 2 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=7b18146b183842d38a2d5f60e5aad8ce"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_f2ceaef966914d58b3f0c477468af1ee~mv2.jpg" alt="Retirement Confidence Gap" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">Retirement Confidence Gap &mdash; Bridging Savings, Debt &amp; Emergencies</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">Retirement Confidence Gap &mdash; Bridging Savings, Debt &amp; Emergencies</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
-        <!-- PDF 3 -->
+        <!-- Article 3 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=23551e2abd774f22a86b4741e4b36406"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_ace4fd288f174db99991cb47225b6d33~mv2.jpg" alt="Investing in Inflation" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">Investing in an Inflation Not Quite Over World</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">Investing in an Inflation Not Quite Over World</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
-        <!-- PDF 4 -->
+        <!-- Article 4 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=daee2f02d48a432d862c42a297304979"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_958e961be9054a0b849eae4a7e791778~mv2.jpg" alt="Financial Anxiety" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">Financial Anxiety Is Real &mdash; But You Don&rsquo;t Have to Face It Alone</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">Financial Anxiety Is Real &mdash; But You Don&rsquo;t Have to Face It Alone</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
-        <!-- PDF 5 -->
+        <!-- Article 5 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=4677417345fe45c2a8b7d0791ccda718"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_cda423e115864315906e6b14a91427c3~mv2.jpg" alt="Inherited IRAs" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">What You Need to Know About the Rules for Inherited IRAs</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">What You Need to Know About the Rules for Inherited IRAs</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
-        <!-- PDF 6 -->
+        <!-- Article 6 -->
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=1d096bab42e44aa49f19f7c36ff51709"
            class="cl-pdf-card" target="_blank" rel="noopener">
-          <div class="cl-pdf-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
+          <div class="cl-pdf-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_05c963e7b67e494ebeb197ecde746a3d~mv2.jpg" alt="Tax Planning" loading="lazy" />
           </div>
-          <div class="cl-pdf-card__title">Tax-Loss Harvesting and Year-End Tax Planning</div>
-          <div class="cl-pdf-card__cta">View PDF <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          <div class="cl-pdf-card__body">
+            <div class="cl-pdf-card__title">Tax-Loss Harvesting and Year-End Tax Planning</div>
+            <div class="cl-pdf-card__cta">Read Article <span class="cl-pdf-card__cta-arrow">&#8594;</span></div>
+          </div>
         </a>
 
       </div>
@@ -559,6 +581,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=30eaadcdece44214ba17e911c4b9d0dd"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_47fd8c600bae4ebea2f5ad9a4f1334a7~mv2.jpg" alt="Not Your Father's Retirement" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -574,6 +597,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=6eca36f713dc42189f8c41d289dc2afd"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_5869e775e1a342cd935d242e15525951~mv2.jpg" alt="Safe and Secure" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -589,6 +613,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=0c127145fd824078b6c4b7f7699cbda6"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_402fe54ea75c4f67a130470152766215~mv2.jpg" alt="Retirement Income Education" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -604,6 +629,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=701d81bdc974437faa41c3e408e3477e"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_57272a9a8b89490ca7d250ab26c3b3e5~mv2.jpg" alt="A Plan for Life" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -619,6 +645,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=d52b6679c3ab4bf69035755bf934e550"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_bee51946485645bcb7999c122d791f8f~mv2.jpg" alt="This is Life" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -634,6 +661,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=a51102ee44404f23abfd87f642994089"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_6d31d0e580a44378a675356dcae7942f~mv2.jpg" alt="Financial Planning" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -649,6 +677,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=f3b92ee7861346b0a8a8e06e6eebf20a"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_a7b5df06e1bc42b3a9570b0ada3c0cd9~mv2.jpg" alt="What It Means to be a Fiduciary" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -664,6 +693,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=4293784b58374874855ff7ca176a8ad9"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_aacfa5714f664a08a5e17386ca12d079~mv2.jpg" alt="Life in a Box" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -679,6 +709,7 @@ html { font-size: 20px; }
         <a href="https://abm.emaplan.com/ABM/MediaServe/MediaLink?token=87251ce4824647a1b1a082f1dd94de62"
            class="cl-video-card" target="_blank" rel="noopener">
           <div class="cl-video-card__thumb">
+            <img src="https://static.wixstatic.com/media/64b604_fcab89f1e6154492835e7f51b0555eb6~mv2.jpg" alt="Speed of Access" loading="lazy" />
             <div class="cl-video-card__play">
               <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
