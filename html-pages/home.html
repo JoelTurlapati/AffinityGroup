@@ -168,6 +168,17 @@ html { font-size: 20px; }
 .ag-btn-gold-outline:hover { background: #C9A84C; color: #fff; transform: translateY(-2px); }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
+/* ── laptop nav tightening (901–1380px) ── */
+@media (min-width: 901px) and (max-width: 1380px) {
+  .ag-nav__inner { padding: 0 16px; gap: 10px; }
+  .ag-nav__links { gap: 0; }
+  .ag-nav__links .ag-nav__label { font-size: 12px; padding: 10px 9px; }
+  .ag-nav__right { gap: 8px; }
+  .ag-nav__phone { display: none; }
+  .ag-nav__portal { font-size: 10.5px; padding: 8px 10px; }
+  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
+}
+
 @media (max-width: 900px) {
   .ag-nav__links, .ag-nav__right { display: none; }
   .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
