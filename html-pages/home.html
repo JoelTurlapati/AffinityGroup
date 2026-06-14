@@ -595,6 +595,69 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   border: none;
 }
+
+/* ── INSIGHT MODAL ── */
+.ins-modal {
+  display: none; position: fixed; inset: 0; z-index: 999998;
+  align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;
+}
+.ins-modal.open { display: flex; }
+.ins-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.82); cursor: pointer; }
+.ins-modal__box {
+  position: relative; z-index: 1; background: #fff;
+  border-radius: 16px; max-width: 760px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 32px 96px rgba(0,0,0,.55);
+}
+.ins-modal__close {
+  position: sticky; top: 16px; float: right; margin: 16px 16px 0 0; z-index: 10;
+  background: rgba(14,61,71,.72); border: none; color: #fff;
+  width: 34px; height: 34px; border-radius: 50%; font-size: 17px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .2s; line-height: 1; flex-shrink: 0;
+}
+.ins-modal__close:hover { background: rgba(14,61,71,1); }
+.ins-modal__hero { width: 100%; height: 260px; object-fit: cover; display: block; border-radius: 16px 16px 0 0; }
+.ins-modal__body { padding: 36px 44px 52px; }
+.ins-modal__cat {
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: .22em; margin-bottom: 14px; display: block;
+}
+.ins-modal__title {
+  font-family: 'Playfair Display', serif; font-size: 1.65rem;
+  font-weight: 700; color: #0c3540; line-height: 1.28; margin-bottom: 22px;
+}
+.ins-modal__rule { width: 48px; height: 2px; background: #C9A84C; margin-bottom: 28px; border-radius: 2px; }
+.ins-modal__text { font-family: 'Inter', sans-serif; font-size: .88rem; color: #2d4a52; line-height: 1.88; }
+.ins-modal__text h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 600;
+  color: #0c3540; margin: 28px 0 10px;
+}
+.ins-modal__text p { margin-bottom: 16px; }
+.ins-modal__text ul { padding-left: 22px; margin-bottom: 16px; }
+.ins-modal__text ul li { margin-bottom: 10px; }
+.ins-modal__text strong { color: #145568; font-weight: 600; }
+.ins-modal__footer {
+  margin-top: 36px; padding-top: 26px; border-top: 1px solid rgba(0,0,0,.1);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+}
+.ins-modal__footer-text { font-family: 'Inter', sans-serif; font-size: .82rem; color: #6a8a92; font-style: italic; }
+.ins-modal__footer-cta {
+  font-family: 'Inter', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+  color: #fff; background: #1D7080; padding: 12px 24px; border-radius: 6px;
+  text-decoration: none; transition: background .2s; white-space: nowrap;
+}
+.ins-modal__footer-cta:hover { background: #145568; }
+.hp-ins-card__cta {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+  color: #C9A84C; letter-spacing: .1em; margin-top: 18px; display: block;
+  transition: color .2s; text-transform: uppercase;
+}
+.hp-ins-card:hover .hp-ins-card__cta { color: #e8c96e; }
+@media (max-width: 560px) {
+  .ins-modal__body { padding: 24px 22px 36px; }
+  .ins-modal__title { font-size: 1.28rem; }
+}
 </style>
 
 <!-- ── NAV ── -->
@@ -898,7 +961,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <div class="hp-insights__rule"></div>
       <div class="hp-insights__grid">
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(0); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_6916c33408194583aff3a7ec71599f27~mv2.jpeg" alt="Investment portfolio diversification" loading="lazy" />
           </div>
@@ -906,10 +969,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Investing</span>
             <h3 class="hp-ins-card__title">True Diversification: What Your Portfolio Might Be Missing</h3>
             <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments — not just the ones we hope for.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(1); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_8e27e863ece14ff2b69f0fe3f5c82850~mv2.jpeg" alt="Estate planning with advisor" loading="lazy" />
           </div>
@@ -917,10 +981,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Estate Planning</span>
             <h3 class="hp-ins-card__title">Estate Planning Essentials for Families With Significant Assets</h3>
             <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth — it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(2); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_2803148bf9384ca985a3095f75bf382a~mv2.jpeg" alt="Retired couple enjoying life" loading="lazy" />
           </div>
@@ -928,10 +993,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">What a Well-Funded Retirement Actually Requires</h3>
             <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone — but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(3); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_19369243416b442fb5c594fd73d27af8~mv2.jpeg" alt="Asset protection and risk management" loading="lazy" />
           </div>
@@ -939,10 +1005,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Risk Management</span>
             <h3 class="hp-ins-card__title">Asset Protection: The Missing Piece in Most Financial Plans</h3>
             <p class="hp-ins-card__excerpt">Building wealth takes decades. Protecting it can take just one well-placed structure. Proper titling, liability coverage, and legal entities are the foundations of a durable financial plan.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(4); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_0d620f880c804eb4a7b70d6390793756~mv2.jpeg" alt="Pre-retirement planning professional" loading="lazy" />
           </div>
@@ -950,10 +1017,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">The 5-to-10 Year Window That Shapes Your Retirement</h3>
             <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now — around tax positioning, Social Security timing, and savings rates — have an outsized impact on outcomes.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
-        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+        <a class="hp-ins-card" href="#" onclick="openInsModal(5); return false;">
           <div class="hp-ins-card__img-wrap">
             <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_6c98157d09ec4917a7826c717777676f~mv2.jpeg" alt="Midlife financial planning couple" loading="lazy" />
           </div>
@@ -961,6 +1029,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             <span class="hp-ins-card__cat">Financial Planning</span>
             <h3 class="hp-ins-card__title">Is Your Financial Plan Still Aligned With Your Life?</h3>
             <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed — or what you've built.</p>
+            <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
 
@@ -1030,6 +1099,15 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   </div>
 </div>
 
+<!-- ── INSIGHT MODAL ── -->
+<div id="insModal" class="ins-modal" role="dialog" aria-modal="true" aria-label="Article">
+  <div class="ins-modal__backdrop" onclick="closeInsModal()"></div>
+  <div class="ins-modal__box">
+    <button class="ins-modal__close" onclick="closeInsModal()" aria-label="Close article">&#10005;</button>
+    <div id="insModalContent"></div>
+  </div>
+</div>
+
 <script>
 function openYtModal() {
   var modal = document.getElementById('ytModal');
@@ -1044,8 +1122,71 @@ function closeYtModal() {
   frame.src = '';
 }
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeYtModal();
+  if (e.key === 'Escape') { closeYtModal(); closeInsModal(); }
 });
+
+var insightArticles = [
+  {
+    cat: 'Investing',
+    title: 'True Diversification: What Your Portfolio Might Be Missing',
+    img: 'https://static.wixstatic.com/media/64b604_6916c33408194583aff3a7ec71599f27~mv2.jpeg',
+    body: '<h3>Why Most Portfolios Aren\'t as Diversified as They Look</h3><p>Ask most investors how diversified their portfolio is and they\'ll point to a mix of stocks and bonds. It seems logical &#8212; bonds tend to rise when stocks fall, right? The problem is that relationship doesn\'t always hold. In 2022, both stocks and bonds fell sharply in the same year. In the 1970s, inflation eroded the real value of both. True diversification means building a portfolio that can generate returns across multiple economic environments &#8212; not just the one we\'re currently in.</p><h3>Four Economic Environments, One Portfolio</h3><p>At any given moment the economy is operating in one of four broad regimes:</p><ul><li><strong>Disinflationary growth</strong> &#8212; rising GDP, falling inflation (stocks and bonds both tend to perform well)</li><li><strong>Deflationary bust</strong> &#8212; falling GDP, falling inflation (long-duration bonds shine; equities struggle)</li><li><strong>Stagflation</strong> &#8212; falling growth, rising inflation (commodities and inflation-linked bonds provide protection)</li><li><strong>Inflationary boom</strong> &#8212; rising GDP, rising inflation (real assets and short-duration holdings lead)</li></ul><p>A portfolio built only for disinflationary growth &#8212; the dominant environment of the 2010s &#8212; is exposed to serious drawdowns when the environment shifts. Recognizing this is the first step toward building a genuinely resilient portfolio.</p><h3>What True Diversification Looks Like in Practice</h3><p>Expanding beyond the traditional 60/40 doesn\'t mean adding complexity for its own sake. It means intentionally selecting asset classes that respond differently to the same economic forces:</p><ul><li><strong>Geographic diversification</strong> &#8212; international developed and emerging markets often behave differently from U.S. equities, and their economic cycles rarely move in lockstep</li><li><strong>Style diversification</strong> &#8212; growth, value, small-cap, and quality factors each have distinct return drivers that behave differently over full market cycles</li><li><strong>Alternative assets</strong> &#8212; real estate, infrastructure, commodities, and private credit can reduce correlation to public markets and improve risk-adjusted returns</li><li><strong>Duration management</strong> &#8212; mixing short- and long-duration bonds rather than defaulting to intermediate-only exposure gives you more control over interest rate sensitivity</li></ul><h3>The Goal: Reduce Catastrophic Risk</h3><p>Diversification isn\'t about maximizing returns in any single year &#8212; it\'s about avoiding the large losses that set long-term wealth building back by years. A 50% portfolio loss requires a 100% gain just to break even. Proper diversification can\'t eliminate volatility, but it can dramatically reduce the probability of a catastrophic outcome that permanently impairs your financial plan.</p><p>At The Affinity Group, we build portfolios calibrated to your specific goals, time horizon, and risk tolerance &#8212; not to a generic model that treats every investor the same.</p>'
+  },
+  {
+    cat: 'Estate Planning',
+    title: 'Estate Planning Essentials for Families With Significant Assets',
+    img: 'https://static.wixstatic.com/media/64b604_8e27e863ece14ff2b69f0fe3f5c82850~mv2.jpeg',
+    body: '<h3>Why Estate Planning Is More Than Writing a Will</h3><p>Many people think of estate planning as something they\'ll deal with later &#8212; or as a simple matter of writing a will. But for families who have accumulated significant assets, the stakes are much higher. Without a thoughtful plan, wealth built over decades can be eroded by taxes, tied up in probate, or distributed in ways that don\'t reflect your actual wishes.</p><h3>The Foundation: More Than a Will</h3><p>A will only controls assets that pass through probate &#8212; and that excludes retirement accounts, life insurance, jointly held property, and anything held in a trust. A complete estate plan coordinates all of these:</p><ul><li><strong>Revocable Living Trust</strong> &#8212; keeps your estate out of probate, provides continuity if you become incapacitated, and allows specific instructions for how assets are managed and distributed after you pass</li><li><strong>Beneficiary Designations</strong> &#8212; often overlooked, but they override your will. An outdated beneficiary designation can direct assets to an ex-spouse or a deceased family member regardless of what your will says</li><li><strong>Powers of Attorney</strong> &#8212; a durable financial POA and healthcare proxy ensure someone you trust can act on your behalf if you\'re ever unable to act for yourself</li></ul><h3>Advanced Strategies for Significant Estates</h3><p>As your estate grows, proactive tax strategies become increasingly important &#8212; especially with federal estate tax exemptions potentially declining after 2025:</p><ul><li><strong>Irrevocable Trusts (SLATs, ILITs, CRTs)</strong> &#8212; remove assets from your taxable estate while preserving benefits for your family or a charitable cause</li><li><strong>GRATs and Installment Sales</strong> &#8212; transfer future appreciation out of your estate with minimal gift tax impact</li><li><strong>Annual Gifting</strong> &#8212; the annual exclusion ($18,000 per recipient in 2024) compounds meaningfully over time when used consistently and strategically</li></ul><h3>Business Owners: Plan for Succession Too</h3><p>If you own a business, your estate plan must address what happens to it. A buy-sell agreement funded by life insurance, combined with a clear succession plan, prevents your business from becoming a liability &#8212; or a source of conflict &#8212; for your heirs.</p><p>Estate planning isn\'t a one-time event. It\'s an ongoing process that should be reviewed after major life changes, tax law shifts, and significant changes to your asset base. Our team coordinates directly with your estate attorney to keep your plan current, comprehensive, and aligned with your goals.</p>'
+  },
+  {
+    cat: 'Retirement',
+    title: 'What a Well-Funded Retirement Actually Requires',
+    img: 'https://static.wixstatic.com/media/64b604_2803148bf9384ca985a3095f75bf382a~mv2.jpeg',
+    body: '<h3>The Milestone vs. The Plan</h3><p>Reaching retirement with significant savings is something most people never achieve. But arriving at that milestone is only half the challenge. The other half &#8212; making sure your wealth lasts, supports the life you want, and transfers efficiently &#8212; requires a fundamentally different kind of planning than what got you here.</p><h3>Income Sequencing: Which Accounts to Tap and When</h3><p>One of the most impactful decisions in retirement is the order in which you draw down assets. The wrong sequence can trigger unnecessary taxes, accelerate Medicare premium surcharges (IRMAA), and reduce the tax-free legacy you leave behind:</p><ul><li><strong>Roth conversions in low-income years</strong> &#8212; converting traditional IRA assets to Roth during the gap between retirement and Social Security onset can substantially reduce lifetime taxes</li><li><strong>Social Security timing</strong> &#8212; each year you delay claiming past full retirement age increases your benefit by approximately 8%. For a healthy high-earning individual, delaying to age 70 can represent $100,000 or more in additional lifetime income</li><li><strong>Taxable accounts first (sometimes)</strong> &#8212; strategic sequencing allows tax-advantaged accounts to continue compounding while managing your current-year tax bracket</li></ul><h3>Managing Required Minimum Distributions</h3><p>Starting at age 73 (or 75 depending on your birth year under SECURE 2.0), you must begin taking Required Minimum Distributions from traditional IRAs and 401(k)s. These are fully taxable and can push you into higher brackets or increase Medicare premiums. Strategies like Qualified Charitable Distributions (QCDs) and pre-RMD Roth conversions can meaningfully reduce this burden when planned in advance.</p><h3>Healthcare and Inflation: The Two Silent Risks</h3><p>Healthcare is consistently one of the largest expenses in retirement. Bridging to Medicare if you retire before age 65, selecting the right supplement coverage, and planning for potential long-term care needs are all part of a complete retirement plan. Inflation &#8212; even at a modest 3% annually &#8212; cuts your purchasing power in half over 24 years. Your income plan must account for it from day one.</p><p>A well-funded retirement doesn\'t just happen. It\'s designed, reviewed regularly, and adjusted as life evolves. That\'s exactly what our planning process is built to do.</p>'
+  },
+  {
+    cat: 'Risk Management',
+    title: 'Asset Protection: The Missing Piece in Most Financial Plans',
+    img: 'https://static.wixstatic.com/media/64b604_19369243416b442fb5c594fd73d27af8~mv2.jpeg',
+    body: '<h3>What Asset Protection Actually Means</h3><p>Asset protection planning isn\'t about hiding money or evading obligations. It\'s about putting legal structures and strategies in place &#8212; before a problem arises &#8212; so that your wealth isn\'t unnecessarily exposed to lawsuits, creditor claims, or business liability. For physicians, business owners, real estate investors, and high-net-worth individuals, the exposure is real. A single judgment can undo decades of careful accumulation if the right protections aren\'t in place.</p><h3>The Foundations of Protection</h3><p>Asset protection starts with the basics that many people overlook:</p><ul><li><strong>Proper titling</strong> &#8212; how assets are titled determines how they\'re treated in a legal dispute. Tenancy by the entirety (in states that allow it) provides meaningful protection for married couples. Joint tenancy does not.</li><li><strong>Homestead exemption</strong> &#8212; many states protect your primary residence from creditor claims up to a certain value. In Florida and Texas, this protection is unlimited.</li><li><strong>Retirement accounts</strong> &#8212; ERISA-qualified plans such as 401(k)s and pension plans have strong federal creditor protection. IRA protection varies significantly by state.</li><li><strong>Umbrella insurance</strong> &#8212; a $1&#8211;5M personal umbrella policy is one of the most cost-effective forms of asset protection available, covering a wide range of personal liability above your auto and homeowner\'s policies.</li></ul><h3>Entity Structures for Business and Real Estate</h3><p>If you own a business or investment real estate, operating through the right legal entity is essential:</p><ul><li><strong>LLCs</strong> &#8212; limit personal liability for claims arising from the entity\'s operations. Each property should generally be held in its own LLC to prevent cross-liability between assets.</li><li><strong>Corporations (S or C)</strong> &#8212; provide strong protection when properly maintained. The key is avoiding "piercing the corporate veil" by keeping separate accounts, records, and corporate formalities.</li></ul><h3>Advanced Strategies for Significant Wealth</h3><p>For higher levels of wealth, more sophisticated structures may be appropriate &#8212; Domestic Asset Protection Trusts (DAPTs), Family Limited Partnerships (FLPs), or carefully structured offshore arrangements for international exposure. These require coordinated legal and tax analysis.</p><p>Asset protection planning is most effective when done proactively &#8212; before any threat materializes. Our team works alongside your legal counsel to review your exposure and recommend appropriate structures that fit your situation.</p>'
+  },
+  {
+    cat: 'Retirement',
+    title: 'The 5-to-10 Year Window That Shapes Your Retirement',
+    img: 'https://static.wixstatic.com/media/64b604_0d620f880c804eb4a7b70d6390793756~mv2.jpeg',
+    body: '<h3>The Decade That Defines Your Retirement</h3><p>The five to ten years before retirement &#8212; what some planners call the "gray zone" &#8212; are the most financially consequential stretch of your working life. The decisions made during this window can dramatically improve or diminish the retirement you\'ve spent decades building. This is also one of the most dangerous periods in your financial life, because you have the most to lose from poor planning or a poorly timed market downturn.</p><h3>Sequence of Returns Risk: The Silent Threat</h3><p>If the market drops sharply in your first year of retirement &#8212; or in the years immediately before &#8212; and you\'re simultaneously withdrawing from your portfolio, the math turns against you in a way it wouldn\'t have 20 years earlier. This is called sequence of returns risk, and it\'s why the timing of returns matters so much near retirement. Key strategies to manage it:</p><ul><li><strong>Building a cash and bond buffer</strong> &#8212; holding 2&#8211;3 years of planned spending in stable assets means you\'re not forced to sell equities at depressed prices during a market downturn</li><li><strong>Gradual allocation shift</strong> &#8212; slowly transitioning your portfolio from growth-focused to distribution-focused as retirement approaches</li><li><strong>Flexibility in early retirement spending</strong> &#8212; the ability to reduce discretionary withdrawals for even one or two years during a market decline can dramatically improve long-term outcomes</li></ul><h3>Tax Positioning Before the Clock Runs Out</h3><p>The pre-retirement window is often the last real opportunity for meaningful Roth conversions &#8212; before Social Security income and Required Minimum Distributions inflate your taxable income in retirement. It\'s also the right time to:</p><ul><li>Max out catch-up contributions ($7,500 additional for 401(k) participants age 50 and older)</li><li>Model different Social Security claiming strategies and understand the trade-offs</li><li>Evaluate long-term care insurance while still likely insurable at favorable rates</li><li>Plan healthcare coverage for any gap between your last day of work and Medicare eligibility at 65</li></ul><h3>Building Your Retirement Paycheck</h3><p>One of the biggest psychological and practical shifts in retirement is moving from receiving a paycheck to creating one. Starting to map out your income sources, drawdown sequence, and spending plan 5&#8211;10 years early gives you the flexibility to adjust before the decisions become permanent. If you\'re in this window, now is the time to get serious &#8212; before the flexibility closes.</p>'
+  },
+  {
+    cat: 'Financial Planning',
+    title: 'Is Your Financial Plan Still Aligned With Your Life?',
+    img: 'https://static.wixstatic.com/media/64b604_6c98157d09ec4917a7826c717777676f~mv2.jpeg',
+    body: '<h3>The Midlife Financial Inflection Point</h3><p>For most people, the years between 40 and 55 represent the peak of earning power, family obligation, and financial complexity &#8212; all at once. You may be at the height of your career, still raising children or helping them launch, potentially supporting aging parents, and watching retirement shift from a distant concept to something approaching on the horizon. This is also, for many, the last window to course-correct before the runway to retirement shortens significantly.</p><h3>Is Your Plan Still Relevant?</h3><p>A financial plan written at 35 may be based on assumptions that no longer apply. Career paths shift. Families evolve. Goals change. If your plan hasn\'t been meaningfully reviewed in the last two to three years, there\'s a good chance it\'s no longer aligned with where you\'re headed &#8212; or what you\'ve already built. Key questions to ask at midlife:</p><ul><li>Has your income changed significantly &#8212; up or down &#8212; since your last plan review?</li><li>Do your current life and disability insurance policies still reflect your actual financial exposure?</li><li>Is your estate plan current? Does it reflect your family structure, asset base, and wishes today?</li><li>Are you on track to retire when you want to &#8212; or has the target shifted without your plan adjusting?</li><li>Are you maximizing available tax-advantaged savings, including catch-up contributions after age 50?</li></ul><h3>Time and Money: Aligning the Two</h3><p>At midlife, the question often shifts from "how do I accumulate more?" to "am I spending my money and my time on things that actually matter to me?" Financial planning at this stage isn\'t only about hitting numbers &#8212; it\'s about making sure the life your money is funding is genuinely the life you want to be living.</p><p>Some clients discover they\'re over-saving for a distant traditional retirement while under-investing in experiences now. Others find their savings rate is misaligned with their actual timeline. A midlife financial review surfaces these disconnects and creates a clear, actionable plan to address them.</p><h3>Don\'t Wait for a Trigger</h3><p>Most people revisit their financial plan only when something forces them to &#8212; a job change, a divorce, a health scare, a market downturn. But the most effective planning happens proactively, before circumstances change. A midlife reset isn\'t about starting over. It\'s about making sure everything you\'ve built is pointed in the right direction &#8212; with enough time left to adjust if it isn\'t.</p><p>Our team specializes in helping clients navigate exactly this stage: cutting through complexity, aligning priorities, and building a clear path forward.</p>'
+  }
+];
+
+function openInsModal(idx) {
+  var art = insightArticles[idx];
+  document.getElementById('insModalContent').innerHTML =
+    '<img class="ins-modal__hero" src="' + art.img + '" alt="' + art.title + '" />' +
+    '<div class="ins-modal__body">' +
+      '<span class="ins-modal__cat">' + art.cat + '</span>' +
+      '<h2 class="ins-modal__title">' + art.title + '</h2>' +
+      '<div class="ins-modal__rule"></div>' +
+      '<div class="ins-modal__text">' + art.body + '</div>' +
+      '<div class="ins-modal__footer">' +
+        '<p class="ins-modal__footer-text">Have questions? We\'re here to help.</p>' +
+        '<a class="ins-modal__footer-cta" href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Schedule a Consultation &rarr;</a>' +
+      '</div>' +
+    '</div>';
+  var box = document.getElementById('insModal');
+  box.classList.add('open');
+  box.querySelector('.ins-modal__box').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function closeInsModal() {
+  document.getElementById('insModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
 </script>
 
 <script>
