@@ -190,12 +190,20 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
 /* ── HERO ── */
 .hp-hero {
-  position: relative; height: 100vh; min-height: 600px;
+  display: flex;
+  height: calc(100vh - 72px);
+  min-height: 560px;
+  margin-top: 72px;
   overflow: hidden;
-  display: flex; align-items: flex-end; justify-content: center;
-  background: linear-gradient(160deg, #0e3d47 0%, #1D7080 55%, #2a8a9c 100%);
 }
-.hp-hero video {
+.hp-hero__video-side {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0e3d47 0%, #1D7080 55%, #2a8a9c 100%);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.hp-hero__video-side video {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
 }
@@ -205,7 +213,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-hero__definition-wrap {
   position: absolute;
-  top: 88px;
+  top: 20px;
   left: 0; right: 0;
   text-align: center;
   padding: 28px 32px 0;
@@ -214,12 +222,12 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-hero__text {
   position: relative; z-index: 2;
-  text-align: center; padding: 64px 32px;
-  color: #fff; max-width: 900px; width: 100%;
+  text-align: center; padding: 48px 28px;
+  color: #fff; max-width: 680px; width: 100%;
 }
 .hp-hero__definition {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.75rem);
   font-weight: 700;
   font-style: italic;
   line-height: 1.55;
@@ -229,19 +237,88 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-hero__tagline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.71rem, 3.78vw, 3.24rem);
+  font-size: clamp(1.35rem, 2.8vw, 2.6rem);
   font-weight: 700; color: #C9A84C; font-style: italic;
-  margin: 24px 0 20px; line-height: 1.15;
+  margin: 18px 0 14px; line-height: 1.15;
   text-shadow: 0 3px 32px rgba(0,0,0,.55);
   letter-spacing: -0.01em;
 }
 .hp-hero__subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
   font-weight: 300; line-height: 1.82;
-  opacity: 0.88; max-width: 620px; margin: 0 auto;
+  opacity: 0.88; max-width: 500px; margin: 0 auto;
   text-shadow: 0 1px 14px rgba(0,0,0,.45);
 }
+
+/* ── HERO PANELS ── */
+.hp-hero__panels {
+  flex: 0 0 360px;
+  display: flex;
+  flex-direction: column;
+  background: #0c3540;
+  border-left: 1px solid rgba(255,255,255,.06);
+}
+.hp-hero__panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background .2s;
+  position: relative;
+  overflow: hidden;
+}
+.hp-hero__panel:last-child { border-bottom: none; }
+.hp-hero__panel::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: #C9A84C;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .25s ease;
+}
+.hp-hero__panel:hover { background: rgba(29,112,128,.28); }
+.hp-hero__panel:hover::before { transform: scaleY(1); }
+.hp-hero__panel-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: rgba(201,168,76,.25);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 30px;
+  transition: color .2s;
+}
+.hp-hero__panel:hover .hp-hero__panel-num { color: rgba(201,168,76,.55); }
+.hp-hero__panel-body { flex: 1; min-width: 0; }
+.hp-hero__panel-title {
+  font-family: 'Inter', sans-serif;
+  font-size: .86rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+.hp-hero__panel-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: .7rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.45);
+  line-height: 1.5;
+}
+.hp-hero__panel-arrow {
+  color: #C9A84C;
+  font-size: 1rem;
+  opacity: .4;
+  flex-shrink: 0;
+  transition: opacity .2s, transform .2s;
+}
+.hp-hero__panel:hover .hp-hero__panel-arrow { opacity: 1; transform: translateX(4px); }
 
 /* ── PREMIUM FIRM SECTION ── */
 .hp-firm {
@@ -285,44 +362,6 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-firm__body p + p { margin-top: 22px; }
 
-/* ── PERSONAS ── */
-.hp-personas { display: grid; grid-template-columns: repeat(3, 1fr); }
-.hp-persona {
-  position: relative; height: 500px; overflow: hidden;
-  text-decoration: none; display: block; cursor: pointer;
-}
-.hp-persona img {
-  width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease;
-}
-.hp-persona:hover img { transform: scale(1.06); }
-.hp-persona__overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 25%, rgba(12,53,64,.9) 100%);
-  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
-  padding: 28px 32px; transition: background .3s;
-}
-.hp-persona:hover .hp-persona__overlay {
-  background: linear-gradient(to bottom, transparent 10%, rgba(12,53,64,.96) 100%);
-}
-.hp-persona__badge {
-  display: inline-block; background: rgba(201,168,76,.9); color: #fff;
-  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .14em;
-  padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
-}
-.hp-persona__text {
-  color: #fff; font-family: 'Playfair Display', serif;
-  font-size: 1.22rem; font-weight: 700; line-height: 1.4;
-  text-shadow: 0 2px 10px rgba(0,0,0,.35); margin-bottom: 16px;
-}
-.hp-persona__cta {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.45);
-  color: #fff; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
-  padding: 8px 18px; border-radius: 4px; letter-spacing: .05em; text-transform: uppercase;
-  transition: background .25s, border-color .25s; backdrop-filter: blur(4px);
-}
-.hp-persona:hover .hp-persona__cta { background: rgba(201,168,76,.85); border-color: #C9A84C; }
 
 /* ── CIRCLE — pure white ── */
 .hp-circle {
@@ -441,9 +480,17 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   color: #145568; margin-bottom: 32px; font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .hp-personas { grid-template-columns: 1fr; }
-  .hp-persona { height: 320px; }
+@media (max-width: 900px) {
+  .hp-hero { flex-direction: column; height: auto; }
+  .hp-hero__video-side { min-height: 55vh; }
+  .hp-hero__panels { flex: none; display: grid; grid-template-columns: 1fr 1fr; border-left: none; border-top: 1px solid rgba(255,255,255,.06); }
+  .hp-hero__panel { flex: none; min-height: 100px; border-right: 1px solid rgba(255,255,255,.06); }
+  .hp-hero__panel:nth-child(even) { border-right: none; }
+  .hp-hero__panel-num { font-size: 1.1rem; min-width: 24px; }
+}
+@media (max-width: 560px) {
+  .hp-hero__panels { grid-template-columns: 1fr; }
+  .hp-hero__panel { border-right: none; }
   .hp-fid-cta__btns { flex-direction: column; align-items: center; }
   .hp-firm__body { padding-left: 20px; }
 }
@@ -503,7 +550,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
             </div>
             <div class="ag-nav__drop-col">
               <span class="ag-nav__drop-heading">Services for Businesses</span>
-              <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
+              <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
               <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
@@ -550,7 +597,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-mob__sub-heading">For Businesses</span>
-          <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Outsourced CFO</a>
+          <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
@@ -632,24 +679,60 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 <main style="padding-top:0">
 
   <section class="hp-hero">
-    <video autoplay muted loop playsinline>
-      <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/2160p/mp4/file.mp4" type="video/mp4" />
-      <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/1080p/mp4/file.mp4" type="video/mp4" />
-    </video>
-    <div class="hp-hero__overlay"></div>
-    <div class="hp-hero__definition-wrap">
-      <p class="hp-hero__definition">
-        A&middot;ffin&middot;i&middot;ty Group
-        <span style="font-weight:600; opacity:.88;">(noun):</span>
-        <br/>
-        <span style="font-style:normal; font-weight:700;">A group of people linked by a common interest or goal.</span>
-      </p>
+    <div class="hp-hero__video-side">
+      <video autoplay muted loop playsinline>
+        <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/2160p/mp4/file.mp4" type="video/mp4" />
+        <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/1080p/mp4/file.mp4" type="video/mp4" />
+      </video>
+      <div class="hp-hero__overlay"></div>
+      <div class="hp-hero__definition-wrap">
+        <p class="hp-hero__definition">
+          A&middot;ffin&middot;i&middot;ty Group
+          <span style="font-weight:600; opacity:.88;">(noun):</span>
+          <br/>
+          <span style="font-style:normal; font-weight:700;">A group of people linked by a common interest or goal.</span>
+        </p>
+      </div>
+      <div class="hp-hero__text">
+        <div class="hp-hero__tagline">Where Purpose Meets Planning</div>
+        <p class="hp-hero__subtitle">
+          Helping successful families and business owners turn complexity into clarity, decisions into direction, and wealth into a life well planned — through coordinated guidance across every major area of their financial life.
+        </p>
+      </div>
     </div>
-    <div class="hp-hero__text">
-      <div class="hp-hero__tagline">Where Purpose Meets Planning</div>
-      <p class="hp-hero__subtitle">
-        Helping successful families and business owners turn complexity into clarity, decisions into direction, and wealth into a life well planned — through coordinated guidance across every major area of their financial life.
-      </p>
+    <div class="hp-hero__panels">
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/business-owners" target="_top">
+        <span class="hp-hero__panel-num">01</span>
+        <div class="hp-hero__panel-body">
+          <div class="hp-hero__panel-title">Business Owners &amp; Entrepreneurs</div>
+          <div class="hp-hero__panel-sub">Running a business and building personal wealth</div>
+        </div>
+        <span class="hp-hero__panel-arrow">&#8594;</span>
+      </a>
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
+        <span class="hp-hero__panel-num">02</span>
+        <div class="hp-hero__panel-body">
+          <div class="hp-hero__panel-title">Retirees &amp; Pre-Retirees</div>
+          <div class="hp-hero__panel-sub">Planning for or living in retirement</div>
+        </div>
+        <span class="hp-hero__panel-arrow">&#8594;</span>
+      </a>
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners" target="_top">
+        <span class="hp-hero__panel-num">03</span>
+        <div class="hp-hero__panel-body">
+          <div class="hp-hero__panel-title">High Earners &amp; Wealth Accumulators</div>
+          <div class="hp-hero__panel-sub">High income, complex taxes, serious wealth building</div>
+        </div>
+        <span class="hp-hero__panel-arrow">&#8594;</span>
+      </a>
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">
+        <span class="hp-hero__panel-num">04</span>
+        <div class="hp-hero__panel-body">
+          <div class="hp-hero__panel-title">Businesses &amp; Organizations</div>
+          <div class="hp-hero__panel-sub">Comprehensive financial management for companies, nonprofits, and retirement plans</div>
+        </div>
+        <span class="hp-hero__panel-arrow">&#8594;</span>
+      </a>
     </div>
   </section>
 
@@ -665,32 +748,6 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     </div>
   </section>
 
-  <section class="hp-personas">
-    <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="hp-persona" target="_top">
-      <img src="https://static.wixstatic.com/media/64b604_05447413995e4b64bcc2b3667ff4095a~mv2.avif" alt="Business Owners" />
-      <div class="hp-persona__overlay">
-        <div class="hp-persona__badge">Business Owners</div>
-        <div class="hp-persona__text">If You Are A Business Owner</div>
-        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
-      </div>
-    </a>
-    <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="hp-persona" target="_top">
-      <img src="https://static.wixstatic.com/media/64b604_0461148705564117be558ea52d014f47~mv2.avif" alt="Pre-Retirees &amp; Retirees" />
-      <div class="hp-persona__overlay">
-        <div class="hp-persona__badge">Retirees &amp; Pre-Retirees</div>
-        <div class="hp-persona__text">If You Are A Retiree Or Pre-Retiree</div>
-        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
-      </div>
-    </a>
-    <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="hp-persona" target="_top">
-      <img src="https://static.wixstatic.com/media/64b604_d5b584a07328475d8f593eac489d43c1~mv2.avif" alt="High Earners &amp; Wealth Accumulators" />
-      <div class="hp-persona__overlay">
-        <div class="hp-persona__badge">High Earners</div>
-        <div class="hp-persona__text">If You Are A High Earner / Wealth Accumulator</div>
-        <div class="hp-persona__cta">Explore Your Path &#8594;</div>
-      </div>
-    </a>
-  </section>
 
   <section class="hp-circle">
     <img src="https://static.wixstatic.com/media/64b604_45881a61db9e499ba88a90c3f7648078~mv2.png" alt="Total Wealth Management Circle" />

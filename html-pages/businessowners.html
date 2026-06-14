@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Affinity Group | Business Owners</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+html { font-size: 20px; }
+
+/* NAV */
+.ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+.ag-nav__inner { width: 100%; height: 100%; display: flex; align-items: center; padding: 0 28px 0 10px; gap: 16px; }
+.ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
+.ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
+.ag-nav__item { position: relative; }
+.ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
+.ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
+.ag-nav__links .ag-nav__label { font-size: 15px; }
+.ag-caret { font-size: 10px; opacity: .7; }
+.ag-nav__drop { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 480px; box-shadow: 0 12px 40px rgba(0,0,0,0.13); border-top: 3px solid #1D7080; border-radius: 0 0 8px 8px; padding: 8px 0; z-index: 10000; }
+.ag-nav__item--drop:hover .ag-nav__drop { display: block; }
+.ag-nav__drop a { display: block; padding: 9px 20px; font-family: 'Inter', sans-serif; font-size: 13px; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s; }
+.ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading { display: block; padding: 10px 20px 5px; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; border-top: 1px solid #f0f0f0; margin-top: 4px; }
+.ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
+.ag-nav__right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.ag-nav__portal { display: inline-block; padding: 9px 15px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
+.ag-nav__portal:hover { background: #145568; }
+.ag-nav__phone { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap; }
+.ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+.ag-nav__burger { display: none; }
+
+/* FOOTER */
+.ag-footer { background: #0c3540; color: #8fb8c0; padding: 56px 28px 28px; font-family: 'Inter', sans-serif; }
+.ag-footer__inner { max-width: 1200px; margin: 0 auto; }
+.ag-footer__top { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ag-footer__doc-links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.ag-footer__doc-links a { color: #C9A84C; text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
+.ag-footer__doc-links a:hover { color: #e8c96e; }
+.ag-footer__social { display: flex; gap: 12px; margin-bottom: 20px; }
+.ag-footer__social a { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: background .2s; }
+.ag-footer__social a:hover { background: #1D7080; }
+.ag-footer__address { font-size: 12.5px; line-height: 1.8; color: #6a9ca5; }
+.ag-footer__disclaimer { font-size: 12px; line-height: 1.9; color: #6a9ca5; }
+.ag-footer__sitemap-heading { font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 12px; }
+.ag-footer__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.ag-footer__sitemap a { color: #8fb8c0; text-decoration: none; font-size: 12.5px; transition: color .2s; }
+.ag-footer__sitemap a:hover { color: #fff; }
+.ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
+
+/* SHARED */
+.ag-btn-primary { display: inline-block; padding: 16px 38px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
+.ag-btn-gold { display: inline-block; padding: 16px 38px; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.ag-btn-gold:hover { background: #a8853a; transform: translateY(-2px); }
+.ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
+.ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
+
+/* ── laptop nav tightening ── */
+@media (min-width: 901px) and (max-width: 1380px) {
+  .ag-nav__inner { padding: 0 16px; gap: 10px; }
+  .ag-nav__links { gap: 0; }
+  .ag-nav__links .ag-nav__label { font-size: 12px; padding: 10px 9px; }
+  .ag-nav__right { gap: 8px; }
+  .ag-nav__phone { display: none; }
+  .ag-nav__portal { font-size: 10.5px; padding: 8px 10px; }
+  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
+}
+@media (max-width: 900px) {
+  .ag-nav__links, .ag-nav__right { display: none; }
+  .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
+  .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ════════════════════════════════
+   BUSINESS OWNERS PAGE
+════════════════════════════════ */
+
+/* HERO */
+.bo-hero {
+  position: relative; height: 78vh; min-height: 520px;
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background: #0e3d47; margin-top: 72px;
+}
+.bo-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.bo-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,43,56,0.88) 0%, rgba(30,95,116,0.72) 100%); }
+.bo-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; max-width: 900px; }
+.bo-hero__badge { display: inline-block; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 8px 22px; border-radius: 40px; margin-bottom: 26px; }
+.bo-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 700; text-shadow: 0 2px 24px rgba(0,0,0,.4); margin-bottom: 18px; line-height: 1.2; }
+.bo-hero__text p { font-family: 'Inter', sans-serif; font-size: clamp(.9rem, 1.5vw, 1.05rem); font-weight: 300; opacity: .92; max-width: 680px; margin: 0 auto 36px; line-height: 1.75; }
+.bo-hero__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.bo-btn-outline { display: inline-block; padding: 15px 36px; background: transparent; color: #fff; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .06em; border: 2px solid rgba(255,255,255,.75); transition: all .2s; text-transform: uppercase; }
+.bo-btn-outline:hover { background: rgba(255,255,255,.12); }
+
+/* INTRO */
+.bo-intro { padding: 80px 32px; background: #fff; text-align: center; }
+.bo-intro__inner { max-width: 820px; margin: 0 auto; }
+.bo-intro p { font-family: 'Inter', sans-serif; font-size: 1.08rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; }
+
+/* ALTERNATING SECTIONS */
+.bo-section { padding: 72px 32px; }
+.bo-section--light { background: #F0F8FA; }
+.bo-section--white { background: #fff; }
+.bo-section__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.bo-section__inner--rev > :first-child { order: 2; }
+.bo-section__inner--rev > :last-child  { order: 1; }
+.bo-section__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.bo-section__img img { width: 100%; height: auto; display: block; }
+.bo-section__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.85rem); color: #145568; margin-bottom: 16px; font-weight: 600; }
+.bo-section__text p { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 14px; }
+.bo-section__text p:last-child { margin-bottom: 0; }
+
+/* CHALLENGES GRID */
+.bo-challenges { padding: 80px 32px; background: #fff; }
+.bo-challenges__inner { max-width: 1100px; margin: 0 auto; }
+.bo-challenges h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); color: #145568; margin-bottom: 12px; font-weight: 600; text-align: center; }
+.bo-challenges__sub { font-family: 'Inter', sans-serif; font-size: .95rem; color: #5a7a80; text-align: center; max-width: 600px; margin: 0 auto 48px; line-height: 1.75; }
+.bo-challenges__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.bo-card { background: #F0F8FA; border-radius: 8px; padding: 28px 24px; border-top: 3px solid #1D7080; transition: transform .25s, box-shadow .25s; }
+.bo-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(29,112,128,.12); }
+.bo-card__icon { width: 42px; height: 42px; background: rgba(29,112,128,.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.bo-card__icon svg { width: 20px; height: 20px; stroke: #1D7080; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.bo-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: #145568; margin-bottom: 10px; font-weight: 600; }
+.bo-card p  { font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.8; color: #4a6a72; }
+
+/* VIDEO */
+.bo-video { padding: 80px 32px; background: #145568; text-align: center; }
+.bo-video__inner { max-width: 860px; margin: 0 auto; }
+.bo-video h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.4vw, 2.1rem); color: #fff; margin-bottom: 16px; font-weight: 600; }
+.bo-video p  { font-family: 'Inter', sans-serif; font-size: .95rem; color: rgba(255,255,255,.8); margin-bottom: 40px; line-height: 1.75; max-width: 620px; margin-left: auto; margin-right: auto; }
+.bo-video__box { border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; position: relative; border: 1px solid rgba(255,255,255,.15); }
+.bo-video__box img { width: 100%; height: 100%; object-fit: cover; opacity: .35; display: block; }
+.bo-video__overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+.bo-play { width: 76px; height: 76px; border-radius: 50%; background: #C9A84C; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform .2s, background .2s; }
+.bo-play:hover { transform: scale(1.08); background: #a8853a; }
+.bo-play svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
+.bo-video__note { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,.55); font-style: italic; }
+.bo-video__embed { border-radius: 10px; overflow: hidden; background: rgba(0,0,0,.2); }
+
+/* SERVICES */
+.bo-services { padding: 80px 32px; background: linear-gradient(160deg, rgba(8,20,35,0.62) 0%, rgba(15,40,60,0.55) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover fixed; }
+.bo-services__inner { max-width: 1100px; margin: 0 auto; }
+.bo-services h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); color: #fff; margin-bottom: 12px; font-weight: 600; text-align: center; }
+.bo-services__sub { font-family: 'Inter', sans-serif; font-size: .95rem; color: rgba(255,255,255,.75); text-align: center; max-width: 620px; margin: 0 auto 48px; line-height: 1.75; }
+.bo-services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.bo-svc { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 28px 24px; text-decoration: none; display: flex; flex-direction: column; transition: background .2s, transform .2s; }
+.bo-svc:hover { background: rgba(255,255,255,.12); transform: translateY(-4px); }
+.bo-svc h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #C9A84C; margin-bottom: 10px; font-weight: 600; }
+.bo-svc p  { font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.8; color: #cce6ec; flex: 1; }
+.bo-svc__link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; letter-spacing: 1px; text-transform: uppercase; margin-top: 16px; }
+.bo-svc__link svg { width: 12px; height: 12px; stroke: #C9A84C; fill: none; stroke-width: 2; }
+
+/* SCOTT */
+.bo-scott { padding: 80px 32px; background: #F0F8FA; }
+.bo-scott__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bo-scott__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+.bo-scott__img img { width: 100%; height: 500px; object-fit: cover; object-position: top; display: block; }
+.bo-scott__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 20px; font-weight: 600; }
+.bo-blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #145568; line-height: 1.65; border-left: 4px solid #C9A84C; padding-left: 22px; margin: 0 0 22px; border-radius: 0; }
+.bo-scott__text p { font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 14px; }
+.bo-chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 28px; }
+.bo-chip { background: #145568; color: rgba(255,255,255,.95); font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 40px; }
+
+/* BUSINESS FINANCIAL MANAGEMENT */
+.bo-bfm { padding: 80px 32px; background: #fff; border-top: 4px solid #C9A84C; }
+.bo-bfm__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.bo-bfm__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.2vw, 1.9rem); color: #145568; margin-bottom: 16px; font-weight: 600; }
+.bo-bfm__left p  { font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 20px; }
+.bo-bfm__list { list-style: none; }
+.bo-bfm__list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(29,112,128,.1); font-family: 'Inter', sans-serif; font-size: .9rem; color: #2d4a52; }
+.bo-bfm__list li:last-child { border-bottom: none; }
+.bo-bfm__list li svg { width: 16px; height: 16px; stroke: #1D7080; fill: none; stroke-width: 2.5; flex-shrink: 0; margin-top: 3px; }
+.bo-bfm__cta { background: #0c3540; border-radius: 10px; padding: 44px 36px; text-align: center; }
+.bo-bfm__cta-icon { width: 56px; height: 56px; background: rgba(201,168,76,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+.bo-bfm__cta-icon svg { width: 26px; height: 26px; stroke: #C9A84C; fill: none; stroke-width: 1.75; }
+.bo-bfm__cta h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #fff; margin-bottom: 14px; font-weight: 600; }
+.bo-bfm__cta p  { font-family: 'Inter', sans-serif; font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.8; margin-bottom: 28px; }
+.bo-bfm__sub { display: block; margin-top: 16px; font-family: 'Inter', sans-serif; font-size: 11.5px; color: rgba(255,255,255,.5); font-style: italic; }
+.bo-bfm__sub a { color: #C9A84C; text-decoration: none; }
+
+/* STATS */
+.bo-stats { padding: 64px 32px; background: #0e3d47; }
+.bo-stats__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; text-align: center; }
+.bo-stat__val { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.2rem); color: #C9A84C; font-weight: 700; line-height: 1; margin-bottom: 10px; }
+.bo-stat__lbl { font-family: 'Inter', sans-serif; font-size: .82rem; color: rgba(255,255,255,.72); line-height: 1.55; }
+
+/* CTA */
+.bo-cta { padding: 72px 32px; background: #E6F4F7; text-align: center; }
+.bo-cta__inner { max-width: 640px; margin: 0 auto; }
+.bo-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 16px; font-weight: 600; }
+.bo-cta p  { font-family: 'Inter', sans-serif; font-size: .95rem; color: #3a3a3a; line-height: 1.85; margin-bottom: 32px; font-weight: 300; }
+.bo-cta__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.bo-btn-outline-teal { display: inline-block; padding: 15px 32px; background: transparent; color: #145568; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .06em; border: 2px solid #145568; transition: all .2s; text-transform: uppercase; }
+.bo-btn-outline-teal:hover { background: #145568; color: #fff; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .bo-section__inner, .bo-scott__inner, .bo-bfm__inner { grid-template-columns: 1fr; gap: 36px; }
+  .bo-section__inner--rev > :first-child { order: 0; }
+  .bo-section__inner--rev > :last-child  { order: 0; }
+  .bo-challenges__grid, .bo-services__grid { grid-template-columns: 1fr 1fr; }
+  .bo-stats__inner { grid-template-columns: repeat(2,1fr); gap: 32px; }
+}
+@media (max-width: 640px) {
+  .bo-challenges__grid, .bo-services__grid { grid-template-columns: 1fr; }
+  .bo-stats__inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .bo-hero__btns { flex-direction: column; align-items: center; }
+  .bo-cta__btns { flex-direction: column; align-items: center; }
+}
+@media (min-width: 1600px) {
+  main div[class*="__inner"], .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
+}
+@media (min-width: 1920px) {
+  main div[class*="__inner"], .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
+}
+</style>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <div class="ag-nav__drop-cols">
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services For Individuals</span>
+              <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+              <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+            </div>
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services for Businesses</span>
+              <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">SCHEDULE CONSULTATION</a>
+    </div>
+    <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="ag-mobile-nav" id="agMobileNav" aria-hidden="true">
+    <div class="ag-mobile-nav__inner">
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-services">SERVICES <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-services">
+          <span class="ag-mob__sub-heading">For Individuals</span>
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+          <span class="ag-mob__sub-heading">For Businesses</span>
+          <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+        </div>
+      </div>
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-about">ABOUT US <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-about">
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-mob__section">
+        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS AND TOOLS <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-insights">
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
+        </div>
+      </div>
+      <div class="ag-mob__bottom">
+        <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">SCHEDULE CONSULTATION</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+.ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
+.ag-mobile-nav.open{display:block}
+.ag-mobile-nav__inner{padding:4px 0 20px}
+.ag-mob__section{border-bottom:1px solid rgba(29,112,128,.1)}
+.ag-mob__heading{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;background:none;border:none;cursor:pointer;text-align:left}
+.ag-mob__heading:active{background:#f0f8fa}
+.ag-mob__caret{font-size:10px;opacity:.7;transition:transform .2s}
+.ag-mob__heading.open .ag-mob__caret{transform:rotate(180deg)}
+.ag-mob__sub{display:none;background:#f7fbfc;padding:0 0 8px}
+.ag-mob__sub.open{display:block}
+.ag-mob__sub-heading{display:block;padding:10px 28px 4px;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em}
+.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:13.5px;color:#2d2d2d;text-decoration:none}
+.ag-mob__sub a:active{background:#E6F4F7;color:#1D7080}
+.ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
+.ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
+.ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
+.ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}.ag-nav__burger:active{background:#f0f8fa}}
+</style>
+
+<script>
+(function(){
+  var burger=document.getElementById('agBurger');
+  var drawer=document.getElementById('agMobileNav');
+  if(!burger||!drawer)return;
+  burger.addEventListener('click',function(){
+    var open=drawer.classList.toggle('open');
+    burger.setAttribute('aria-expanded',String(open));
+    burger.setAttribute('aria-label',open?'Close Menu':'Open Menu');
+    burger.innerHTML=open?'&#10005;':'&#9776;';
+    drawer.setAttribute('aria-hidden',String(!open));
+  });
+  drawer.querySelectorAll('[data-toggle]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.getAttribute('data-toggle');
+      var sub=document.getElementById(id);
+      if(!sub)return;
+      var isOpen=sub.classList.toggle('open');
+      btn.classList.toggle('open',isOpen);
+    });
+  });
+})();
+</script>
+
+<!-- ══════════════════ PAGE CONTENT ══════════════════ -->
+<main>
+
+  <!-- §1 HERO -->
+  <section class="bo-hero">
+    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1600&q=85" alt="Business owner" />
+    <div class="bo-hero__overlay"></div>
+    <div class="bo-hero__text">
+      <span class="bo-hero__badge">For Business Owners</span>
+      <h1>Your Business Built Your Wealth.<br>Let Us Help You Protect It.</h1>
+      <p>You&rsquo;ve poured your life into building something remarkable. As a fellow founder and owner, Scott Lowe understands the unique financial complexities business owners face &mdash; and built a team to address every dimension of your financial life.</p>
+      <div class="bo-hero__btns">
+        <a href="#bo-services" class="bo-btn-outline">Explore Your Path &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §2 INTRO -->
+  <section class="bo-intro">
+    <div class="bo-intro__inner">
+      <div class="ag-gold-bar"></div>
+      <p>We manage and protect what you&rsquo;ve built, so you can focus on what you do best. We build an intentional, coordinated financial plan that ensures your business is a support system for the life you want to live &mdash; not a master that controls every thought and action.</p>
+    </div>
+  </section>
+
+  <!-- §3 PERSONAL SERVICES (right after intro) -->
+  <section class="bo-services" id="bo-services">
+    <div class="bo-services__inner">
+      <div class="ag-section-label" style="text-align:center;color:#C9A84C">Your Personal Financial Picture</div>
+      <h2>Services Tailored to Business Owners</h2>
+      <p class="bo-services__sub">As a business owner, your personal financial needs are unique. Here&rsquo;s how we help you protect, grow, and transfer your wealth &mdash; on every front.</p>
+      <div class="bo-services__grid">
+
+        <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="bo-svc" target="_top">
+          <h3>Total Wealth Management</h3>
+          <p>A concierge-level, multi-disciplined approach integrating every area of your financial life &mdash; investments, taxes, estate planning, insurance, and real estate &mdash; into one coordinated strategy.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+        <a href="https://tagplanning.wixstudio.com/demo/estate-planning" class="bo-svc" target="_top">
+          <h3>Estate Planning</h3>
+          <p>For business owners, estate planning isn&rsquo;t optional &mdash; it&rsquo;s urgent. We coordinate on wills, trusts, account titling, beneficiary updates, and business succession to protect your family and legacy.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+        <a href="https://tagplanning.wixstudio.com/demo/investment-management" class="bo-svc" target="_top">
+          <h3>Investment Management</h3>
+          <p>As a fiduciary RIA, we manage your investment portfolio with zero third-party compensation or conflicts &mdash; ensuring your business income translates into a strategically built portfolio.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+        <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" class="bo-svc" target="_top">
+          <h3>Real Estate Investing</h3>
+          <p>Scott Lowe has 18+ years of personal real estate investment experience. We help you evaluate properties, structure investment LLCs, and diversify your wealth well beyond your business.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+        <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" class="bo-svc" target="_top">
+          <h3>Insurance Strategies</h3>
+          <p>Your income, your life, and your business all need protection. We analyze life, disability, long-term care, and key-person insurance so you and your family are never left exposed.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+        <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" class="bo-svc" target="_top">
+          <h3>Tax Planning</h3>
+          <p>Year-round, proactive tax planning and preparation for those with complexity. We use Holistiplan to ensure every opportunity to reduce your personal tax burden is captured &mdash; all year long.</p>
+          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §4 SECTION: The Challenge -->
+  <section class="bo-section bo-section--light">
+    <div class="bo-section__inner">
+      <div class="bo-section__img">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=85" alt="Business owners reviewing finances" />
+      </div>
+      <div class="bo-section__text">
+        <div class="ag-section-label">The Reality</div>
+        <h2>Founding a Business Is One of the Greatest Accomplishments &mdash; and One of the Greatest Financial Risks.</h2>
+        <p>Founding a successful and thriving business is one of the greatest accomplishments a business owner can achieve. It will also be one of their greatest assets. However, owners may find that the demands of the business dictate their personal lives.</p>
+        <p>For most business owners, wealth is concentrated in a single asset &mdash; the business itself &mdash; leaving personal finances, estate plans, and retirement goals perpetually on the backburner.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §5 SECTION: Personal Planning -->
+  <section class="bo-section bo-section--white">
+    <div class="bo-section__inner bo-section__inner--rev">
+      <div class="bo-section__img">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=85" alt="Estate and legacy planning" />
+      </div>
+      <div class="bo-section__text">
+        <div class="ag-section-label">Why Personal Planning Matters</div>
+        <h2>Your Business and Personal Financial Life Are Inseparable. Your Planning Should Be Too.</h2>
+        <p>Business owners are individuals first. Estate planning, investment management, insurance protection, and retirement planning don&rsquo;t become less important because you run a company &mdash; they become more important.</p>
+        <p>We help you understand that what you do with your business finances can directly impact your personal financial picture, and our team of experts helps you manage both simultaneously so you can worry less and spend more time enjoying other aspects of your busy life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §6 CHALLENGES -->
+  <section class="bo-challenges">
+    <div class="bo-challenges__inner">
+      <div class="ag-section-label" style="text-align:center">What Keeps Business Owners Up at Night</div>
+      <h2>We&rsquo;ve Heard These Concerns Hundreds of Times.</h2>
+      <p class="bo-challenges__sub">Our role is to solve them &mdash; comprehensively, proactively, and all in one coordinated relationship.</p>
+      <div class="bo-challenges__grid">
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>No Estate Plan in Place</h3>
+          <p>What happens to your business and your family if something happens to you? Without proper estate planning, the answer is uncertainty. We put protection in place before it&rsquo;s ever needed.</p>
+        </div>
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Business &amp; Personal Finances Blurred</h3>
+          <p>Most business owners have personal wealth tied directly to their business. We clearly separate, protect, and grow both &mdash; simultaneously.</p>
+        </div>
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>No Time for Financial Planning</h3>
+          <p>You&rsquo;re running a business. Your time is your most valuable asset. We act as your Family CFO &mdash; coordinating every professional so you only show up for key decisions.</p>
+        </div>
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Investments Sitting Idle</h3>
+          <p>Business income demands attention, leaving investment portfolios on autopilot. Our fiduciary team optimizes every dollar with zero conflicts of interest.</p>
+        </div>
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Real Estate Potential Untapped</h3>
+          <p>Many business owners are sitting on significant real estate opportunity. Scott has 18+ years as a personal real estate investor and helps you evaluate and structure deals intelligently.</p>
+        </div>
+
+        <div class="bo-card">
+          <div class="bo-card__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>No Exit Strategy</h3>
+          <p>Whether you plan to sell, transfer, or pass on your business, your exit needs planning years in advance. We help you maximize the value of everything you&rsquo;ve built.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §7 VIDEO (eMoney) -->
+  <section class="bo-video">
+    <div class="bo-video__inner">
+      <div class="ag-section-label" style="color:#C9A84C">Watch &amp; Learn</div>
+      <h2>Why Business Owners Need a Different Kind of Advisor</h2>
+      <p>Scott walks through the unique financial planning challenges business owners face &mdash; and how The Affinity Group&rsquo;s coordinated approach addresses every one of them.</p>
+      <div class="bo-video__embed">
+        <div><div id='video-player-3005'></div><div id='video-player-disclaimer-part-3005' style='position:relative'></div></div>
+        <script src='https://content.jwplatform.com/libraries/ljXVSIQY.js'></script>
+        <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=60ec53b48a494c4786e798719e41f33b'></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- §8 STATS -->
+  <section class="bo-stats">
+    <div class="bo-stats__inner">
+      <div>
+        <div class="bo-stat__val">20+</div>
+        <div class="bo-stat__lbl">Years of Fiduciary Financial Experience</div>
+      </div>
+      <div>
+        <div class="bo-stat__val">360&deg;</div>
+        <div class="bo-stat__lbl">Total Wealth Management Approach</div>
+      </div>
+      <div>
+        <div class="bo-stat__val">100%</div>
+        <div class="bo-stat__lbl">Fiduciary &mdash; We Always Work for You</div>
+      </div>
+      <div>
+        <div class="bo-stat__val">1</div>
+        <div class="bo-stat__lbl">Coordinated Relationship for Every Area of Your Financial Life</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §9 SCOTT — single combined section -->
+  <section class="bo-scott">
+    <div class="bo-scott__inner">
+      <div class="bo-scott__img">
+        <img src="https://static.wixstatic.com/media/64b604_a69e7526ae4e42a3b44b6832154137e3~mv2.avif" alt="Scott Lowe &mdash; Founder, The Affinity Group" />
+      </div>
+      <div>
+        <div class="ag-section-label">Your Advisor</div>
+        <h2>Imagine Having an Advisor Who Is a Founder and Owner &mdash; Just Like You.</h2>
+        <blockquote class="bo-blockquote">
+          &ldquo;I built The Affinity Group from the ground up. I know what it feels like to have your personal financial future tied to the success of a business &mdash; and I know exactly how to help you protect both.&rdquo;
+        </blockquote>
+        <p>Scott Lowe built The Affinity Group from the ground up. He knows exactly what it feels like to have a personal financial future tied to the success of a business &mdash; and he knows how to protect both. With a career in financial planning dating back to 2003, Scott ranked as the second-best first-year advisor in the country at Northwestern Mutual.</p>
+        <p>As an 18+ year real estate investor and business owner himself, Scott built The Affinity Group to solve the exact problems business owners experience firsthand &mdash; and assembled a team capable of managing every dimension of your financial life under one coordinated relationship.</p>
+        <div class="bo-chips">
+          <span class="bo-chip">SEC-Licensed Investment Advisor</span>
+          <span class="bo-chip">Ohio Life &amp; Health Licensed</span>
+          <span class="bo-chip">18+ Year Real Estate Investor</span>
+          <span class="bo-chip">Fiduciary</span>
+        </div>
+        <a href="https://tagplanning.wixstudio.com/demo/our-team" class="ag-btn-primary" target="_top">Meet the Team &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §10 BUSINESS FINANCIAL MANAGEMENT -->
+  <section class="bo-bfm">
+    <div class="bo-bfm__inner">
+      <div class="bo-bfm__left">
+        <div class="ag-section-label">Also Available for Your Business</div>
+        <h2>Looking for Business Financial Management Services?</h2>
+        <p>In addition to managing your personal wealth, The Affinity Group offers a comprehensive Business Financial Management service &mdash; a year-round solution that handles the financial operations of your business so you can focus on growing it.</p>
+        <ul class="bo-bfm__list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> QuickBooks Online Bookkeeping</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Business Tax Planning &amp; Preparation</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Payroll Services</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 401K &amp; Retirement Plan Setup</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Legal Structure &amp; Business Agreements</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Executive Benefit Planning</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Business Sale Planning</li>
+        </ul>
+      </div>
+      <div class="bo-bfm__cta">
+        <div class="bo-bfm__cta-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Business Financial Management</h3>
+        <p>A year-round service combining QuickBooks Online bookkeeping, business tax planning, business tax preparation, and one coordinated relationship &mdash; for business owners who want everything handled in one place.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="ag-btn-gold" target="_top">Explore the Service</a>
+        <span class="bo-bfm__sub">Many of our business clients also enjoy individual tax planning. <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Learn more &rarr;</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- §11 FINAL CTA -->
+  <section class="bo-cta">
+    <div class="bo-cta__inner">
+      <h2>Ready to Build a Financial Plan as Ambitious as Your Business?</h2>
+      <p>Let&rsquo;s start with a conversation. No pressure. No pitch. Just an honest discussion about where you are and where you want to be.</p>
+      <div class="bo-cta__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Free Conversation</a>
+        <a href="https://tagplanning.wixstudio.com/demo/our-team" class="ag-btn-gold" target="_top">Meet Our Team</a>
+        <a href="https://tagplanning.wixstudio.com/demo/faqs" class="bo-btn-outline-teal" target="_top">Why Affinity?</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div class="ag-footer__col">
+        <div class="ag-footer__doc-links">
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_d76b3e98e958484c8a5074a88aef9d5e.pdf" target="_blank">Privacy Policy</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_90fd5a779d224c12bcf411abd245e453.pdf" target="_blank">CRS</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_33996409bbfa48599a354141d29073d0.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p>
+      </div>
+      <div class="ag-footer__col">
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
+          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &ndash; Your Financial GPS</a>
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function r(){
+    var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);
+    window.parent.postMessage(JSON.stringify({type:"iFrameHeight",height:h}),"*");
+    window.parent.postMessage(JSON.stringify({type:"iFrameReady",height:h}),"*");
+    window.parent.postMessage({height:h},"*");
+  }
+  ["load","resize","DOMContentLoaded"].forEach(function(e){window.addEventListener(e,r);});
+  setInterval(r,200);
+})();
+</script>
+
+</body>
+</html>
