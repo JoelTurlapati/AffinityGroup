@@ -281,62 +281,30 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   background: rgba(29,112,128,.18);
   box-shadow: inset 4px 0 0 #C9A84C;
 }
-/* top row: icon */
-.hp-hero__panel-top {
-  display: flex; align-items: center;
+/* heading row: title + arrow */
+.hp-hero__panel-heading {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
   margin-bottom: 10px;
 }
-.hp-hero__panel-icon {
-  width: 28px; height: 28px;
-  color: rgba(201,168,76,.65);
-  flex-shrink: 0;
-  transition: color .3s, transform .3s;
-}
-.hp-hero__panel:hover .hp-hero__panel-icon { color: #C9A84C; transform: scale(1.1); }
-/* gold rule under icon */
-.hp-hero__panel-rule {
-  width: 32px; height: 1px;
-  background: linear-gradient(90deg, #C9A84C, transparent);
-  margin-bottom: 14px;
-  opacity: .5;
-  transition: width .3s, opacity .3s;
-}
-.hp-hero__panel:hover .hp-hero__panel-rule { width: 52px; opacity: .85; }
-/* title */
 .hp-hero__panel-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.3;
-  margin-bottom: 8px;
-  letter-spacing: -.01em;
+  font-size: 1.08rem; font-weight: 600;
+  color: #fff; line-height: 1.3; letter-spacing: -.01em;
 }
+.hp-hero__panel-arrow {
+  width: 18px; height: 18px; flex-shrink: 0;
+  color: rgba(201,168,76,.45);
+  transition: color .3s, transform .3s;
+}
+.hp-hero__panel:hover .hp-hero__panel-arrow { color: #C9A84C; transform: translateX(4px); }
 /* subtitle */
 .hp-hero__panel-sub {
   font-family: 'Inter', sans-serif;
   font-size: .76rem; font-weight: 300;
-  color: rgba(255,255,255,.58);
-  line-height: 1.55;
+  color: rgba(255,255,255,.55); line-height: 1.55;
   transition: color .3s;
 }
 .hp-hero__panel:hover .hp-hero__panel-sub { color: rgba(255,255,255,.82); }
-/* CTA — always faintly visible, brightens on hover */
-.hp-hero__panel-cta {
-  display: flex; align-items: center; gap: 7px;
-  margin-top: 14px;
-  font-family: 'Inter', sans-serif;
-  font-size: .63rem; font-weight: 700;
-  color: rgba(201,168,76,.55); letter-spacing: .15em; text-transform: uppercase;
-  opacity: 1; transform: translateY(0);
-  transition: color .25s;
-}
-.hp-hero__panel:hover .hp-hero__panel-cta { color: #C9A84C; }
-.hp-hero__panel-cta svg {
-  width: 13px; height: 13px;
-  transition: transform .2s;
-}
-.hp-hero__panel:hover .hp-hero__panel-cta svg { transform: translateX(3px); }
 
 /* ── PREMIUM FIRM SECTION ── */
 .hp-firm {
@@ -835,63 +803,35 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <div class="hp-hero__panels">
 
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/business-owners" target="_top">
-        <div class="hp-hero__panel-top">
-          <svg class="hp-hero__panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
-          </svg>
+        <div class="hp-hero__panel-heading">
+          <div class="hp-hero__panel-title">Business Owners &amp; Entrepreneurs</div>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
-        <div class="hp-hero__panel-rule"></div>
-        <div class="hp-hero__panel-title">Business Owners &amp; Entrepreneurs</div>
         <div class="hp-hero__panel-sub">Running a business and building personal wealth</div>
-        <div class="hp-hero__panel-cta">
-          Explore your path
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </div>
       </a>
 
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
-        <div class="hp-hero__panel-top">
-          <svg class="hp-hero__panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
+        <div class="hp-hero__panel-heading">
+          <div class="hp-hero__panel-title">Retirees &amp; Pre-Retirees</div>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
-        <div class="hp-hero__panel-rule"></div>
-        <div class="hp-hero__panel-title">Retirees &amp; Pre-Retirees</div>
         <div class="hp-hero__panel-sub">Planning for or living in retirement</div>
-        <div class="hp-hero__panel-cta">
-          Explore your path
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </div>
       </a>
 
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners" target="_top">
-        <div class="hp-hero__panel-top">
-          <svg class="hp-hero__panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
-          </svg>
+        <div class="hp-hero__panel-heading">
+          <div class="hp-hero__panel-title">High Earners &amp; Wealth Accumulators</div>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
-        <div class="hp-hero__panel-rule"></div>
-        <div class="hp-hero__panel-title">High Earners &amp; Wealth Accumulators</div>
         <div class="hp-hero__panel-sub">High income, complex taxes, serious wealth building</div>
-        <div class="hp-hero__panel-cta">
-          Explore your path
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </div>
       </a>
 
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">
-        <div class="hp-hero__panel-top">
-          <svg class="hp-hero__panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
+        <div class="hp-hero__panel-heading">
+          <div class="hp-hero__panel-title">Businesses &amp; Organizations</div>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
-        <div class="hp-hero__panel-rule"></div>
-        <div class="hp-hero__panel-title">Businesses &amp; Organizations</div>
         <div class="hp-hero__panel-sub">Comprehensive financial management for companies, nonprofits, and retirement plans</div>
-        <div class="hp-hero__panel-cta">
-          Explore your path
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </div>
       </a>
 
     </div>
