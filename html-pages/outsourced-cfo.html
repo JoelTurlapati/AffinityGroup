@@ -147,6 +147,7 @@ html { font-size: 20px; }
 
 /* 4. PARTNERSHIP */
 .cfo-partner { padding: 96px 32px; background: linear-gradient(160deg, #0c3540 0%, #145568 100%); }
+
 .cfo-partner__inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: start; }
 .cfo-partner__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: #fff; font-weight: 700; margin-bottom: 28px; line-height: 1.25; }
 .cfo-partner__left p { font-size: .97rem; line-height: 1.9; color: rgba(255,255,255,.75); margin-bottom: 18px; }
@@ -156,6 +157,7 @@ html { font-size: 20px; }
 .cfo-partner__block p { font-size: .9rem; line-height: 1.7; color: rgba(255,255,255,.78); }
 .cfo-partner__result { padding: 24px 26px; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.3); border-radius: 10px; }
 .cfo-partner__result p { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-style: italic; color: #C9A84C; line-height: 1.7; }
+.cfo-partner__img { width: 100%; height: 230px; object-fit: cover; border-radius: 12px; margin-top: 32px; display: block; }
 
 /* 5. ORBIT DIAGRAM */
 .cfo-orbit-section { padding: 96px 32px; background: #fff; }
@@ -264,6 +266,8 @@ html { font-size: 20px; }
 .cfo-bionic__check-icon { width: 26px; height: 26px; border-radius: 50%; background: #1D7080; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
 .cfo-bionic__check-icon svg { width: 13px; height: 13px; color: #fff; }
 .cfo-bionic__check-text { font-size: .91rem; line-height: 1.65; color: #3d5560; }
+.cfo-bionic__right-col { display: flex; flex-direction: column; gap: 24px; }
+.cfo-bionic__img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,.1); display: block; }
 .cfo-bionic__why { background: #F0F8FA; border-radius: 14px; padding: 36px 32px; }
 .cfo-bionic__why h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #145568; font-weight: 700; margin-bottom: 18px; }
 .cfo-bionic__why p { font-size: .92rem; line-height: 1.8; color: #4a5a5e; margin-bottom: 16px; }
@@ -685,6 +689,7 @@ html { font-size: 20px; }
         <p>Business owners often need guidance that extends beyond a single discipline. Financial decisions, tax considerations, business growth objectives, and personal goals are interconnected and should be viewed through a coordinated lens.</p>
         <p>That is why Affinity operates through two specialized firms working together within a unified client experience.</p>
         <p>Rather than operating in separate silos, the two firms collaborate to provide a more connected experience&mdash;allowing clients to benefit from broader perspective, improved coordination, and advice that reflects the complete picture.</p>
+        <img class="cfo-partner__img" src="https://static.wixstatic.com/media/64b604_bc96f9c30d45467dbdabb3b34f983fde~mv2.jpeg" alt="Affinity Wealth and Affinity Private Tax working together" />
       </div>
       <div class="cfo-partner__right">
         <div class="cfo-partner__block">
@@ -945,11 +950,14 @@ html { font-size: 20px; }
             <span class="cfo-bionic__check-text">Review of books to identify potential tax-planning opportunities and improve financial visibility</span>
           </div>
         </div>
-        <div class="cfo-bionic__why">
-          <h3>Why It Matters</h3>
-          <p>The goal is not simply accurate books. The goal is books that support better tax planning, cleaner tax preparation, stronger cash-flow management, and more informed business decisions throughout the year.</p>
-          <p>Because Bionic Bookkeeping&trade; is reviewed through both a bookkeeping and tax-planning lens, transactions are categorized with greater attention to how they may impact deductions, tax strategy, and financial reporting. This integrated approach helps reduce errors, minimize missed opportunities, and keep your books tax-ready year-round.</p>
-          <p>With accurate, up-to-date financial records, our team can provide more effective tax planning guidance, better cash-flow insights, and a stronger foundation for business tax return preparation and long-term decision-making.</p>
+        <div class="cfo-bionic__right-col">
+          <img class="cfo-bionic__img" src="https://static.wixstatic.com/media/64b604_9dae5a34cbaf409fb33e4b9e79bb5365~mv2.jpeg" alt="Financial data and reporting dashboard" />
+          <div class="cfo-bionic__why">
+            <h3>Why It Matters</h3>
+            <p>The goal is not simply accurate books. The goal is books that support better tax planning, cleaner tax preparation, stronger cash-flow management, and more informed business decisions throughout the year.</p>
+            <p>Because Bionic Bookkeeping&trade; is reviewed through both a bookkeeping and tax-planning lens, transactions are categorized with greater attention to how they may impact deductions, tax strategy, and financial reporting. This integrated approach helps reduce errors, minimize missed opportunities, and keep your books tax-ready year-round.</p>
+            <p>With accurate, up-to-date financial records, our team can provide more effective tax planning guidance, better cash-flow insights, and a stronger foundation for business tax return preparation and long-term decision-making.</p>
+          </div>
         </div>
       </div>
     </div>

@@ -122,7 +122,9 @@ html { font-size: 20px; }
   width: 500px; height: 500px; border-radius: 50%;
   border: 1px solid rgba(201,168,76,.12); pointer-events: none;
 }
-.tp-hero__inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.tp-hero__inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
+.tp-hero__right { position: relative; }
+.tp-hero__img { width: 100%; height: 500px; object-fit: cover; border-radius: 16px; box-shadow: 0 28px 72px rgba(0,0,0,.45); display: block; }
 .tp-hero__brand {
   font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
   letter-spacing: .22em; text-transform: uppercase;
@@ -143,7 +145,7 @@ html { font-size: 20px; }
 /* Hero pillar pills */
 .tp-hero__pillars {
   display: flex; flex-wrap: wrap; gap: 10px;
-  justify-content: center; margin-bottom: 40px;
+  justify-content: flex-start; margin-bottom: 40px;
 }
 .tp-hero__pillar {
   display: inline-block; padding: 8px 18px;
@@ -154,8 +156,8 @@ html { font-size: 20px; }
 
 /* Hero metric callouts */
 .tp-hero__metrics {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  max-width: 840px; margin: 0 auto 40px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin: 0 0 40px;
 }
 .tp-hero__metric {
   background: rgba(255,255,255,.08); border: 1px solid rgba(201,168,76,.25);
@@ -170,7 +172,7 @@ html { font-size: 20px; }
   color: rgba(255,255,255,.72); text-transform: uppercase; letter-spacing: .08em;
   line-height: 1.4;
 }
-.tp-hero__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.tp-hero__btns { display: flex; gap: 14px; justify-content: flex-start; flex-wrap: wrap; }
 
 /* ELIGIBILITY SECTION */
 .tp-eligible { padding: 72px 32px; background: #fff; }
@@ -225,6 +227,12 @@ html { font-size: 20px; }
   color: #1D7080; border-left: 3px solid #C9A84C; padding-left: 20px;
   margin: 0 auto 40px; text-align: left; max-width: 700px;
 }
+.tp-yearround__feature-img {
+  max-width: 1100px; margin: 0 auto 52px; border-radius: 14px;
+  overflow: hidden; height: 300px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
+}
+.tp-yearround__feature-img img { width: 100%; height: 100%; object-fit: cover; }
 .tp-yearround__grid {
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
@@ -553,6 +561,11 @@ html { font-size: 20px; }
   .tp-process__steps { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
+  .tp-hero__inner { grid-template-columns: 1fr; gap: 0; }
+  .tp-hero__right { display: none; }
+  .tp-hero__pillars { justify-content: center; }
+  .tp-hero__btns { justify-content: center; }
+  .tp-hero__metrics { margin: 0 auto 40px; max-width: 500px; }
   .tp-eligible__cols,
   .tp-tech__body { grid-template-columns: 1fr; }
   .tp-yearround__grid,
@@ -728,37 +741,42 @@ html { font-size: 20px; }
 <!-- HERO -->
 <section class="tp-hero" id="tp-overview">
   <div class="tp-hero__inner">
-    <p class="tp-hero__brand">Affinity Private Tax &mdash; Individual &amp; Family Planning</p>
-    <h1>Strategic Tax Planning &amp; Preparation<br>for Individuals &amp; Families</h1>
-    <p class="tp-hero__sub">Affinity Private Tax provides year-round, proactive tax planning for individuals, families, retirees, and business owners connected to the Affinity Wealth planning relationship.</p>
+    <div class="tp-hero__left">
+      <p class="tp-hero__brand">Affinity Private Tax &mdash; Individual &amp; Family Planning</p>
+      <h1>Strategic Tax Planning &amp; Preparation<br>for Individuals &amp; Families</h1>
+      <p class="tp-hero__sub">Affinity Private Tax provides year-round, proactive tax planning for individuals, families, retirees, and business owners connected to the Affinity Wealth planning relationship.</p>
 
-    <div class="tp-hero__pillars">
-      <span class="tp-hero__pillar">Year-Round Tax Planning</span>
-      <span class="tp-hero__pillar">Retirement Tax Optimization</span>
-      <span class="tp-hero__pillar">Roth Conversion Analysis</span>
-      <span class="tp-hero__pillar">Tax-Efficient Wealth Planning</span>
-      <span class="tp-hero__pillar">Integrated Financial Coordination</span>
-      <span class="tp-hero__pillar">Proactive Tax Guidance</span>
+      <div class="tp-hero__pillars">
+        <span class="tp-hero__pillar">Year-Round Tax Planning</span>
+        <span class="tp-hero__pillar">Retirement Tax Optimization</span>
+        <span class="tp-hero__pillar">Roth Conversion Analysis</span>
+        <span class="tp-hero__pillar">Tax-Efficient Wealth Planning</span>
+        <span class="tp-hero__pillar">Integrated Financial Coordination</span>
+        <span class="tp-hero__pillar">Proactive Tax Guidance</span>
+      </div>
+
+      <div class="tp-hero__metrics">
+        <div class="tp-hero__metric">
+          <span class="tp-hero__metric-value">12</span>
+          <span class="tp-hero__metric-label">Months of Planning</span>
+        </div>
+        <div class="tp-hero__metric">
+          <span class="tp-hero__metric-value">Proactive</span>
+          <span class="tp-hero__metric-label">Not Reactive</span>
+        </div>
+        <div class="tp-hero__metric">
+          <span class="tp-hero__metric-value">Integrated</span>
+          <span class="tp-hero__metric-label">Wealth &amp; Tax</span>
+        </div>
+      </div>
+
+      <div class="tp-hero__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Consultation</a>
+        <a href="#tp-receive" class="ag-btn-outline ag-btn-outline--white">Explore What You Receive</a>
+      </div>
     </div>
-
-    <div class="tp-hero__metrics">
-      <div class="tp-hero__metric">
-        <span class="tp-hero__metric-value">12</span>
-        <span class="tp-hero__metric-label">Months of Planning</span>
-      </div>
-      <div class="tp-hero__metric">
-        <span class="tp-hero__metric-value">Proactive</span>
-        <span class="tp-hero__metric-label">Not Reactive</span>
-      </div>
-      <div class="tp-hero__metric">
-        <span class="tp-hero__metric-value">Integrated</span>
-        <span class="tp-hero__metric-label">Wealth &amp; Tax</span>
-      </div>
-    </div>
-
-    <div class="tp-hero__btns">
-      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Consultation</a>
-      <a href="#tp-receive" class="ag-btn-outline ag-btn-outline--white">Explore What You Receive</a>
+    <div class="tp-hero__right">
+      <img class="tp-hero__img" src="https://static.wixstatic.com/media/64b604_b69d3db843124b72975998fb7ab9abee~mv2.jpeg" alt="Financial advisor with clients" />
     </div>
   </div>
 </section>
@@ -808,6 +826,9 @@ html { font-size: 20px; }
   <blockquote class="tp-yearround__quote">
     &#8220;Planning before decisions are made creates better outcomes than reacting after the year is over.&#8221;
   </blockquote>
+  <div class="tp-yearround__feature-img">
+    <img src="https://static.wixstatic.com/media/64b604_bbf832283f15475c9290396e9837b100~mv2.jpeg" alt="Tax planning documents and analysis" />
+  </div>
   <div class="tp-yearround__grid">
     <div class="tp-yr-card">
       <span class="tp-yr-card__icon">&#9654;</span>
