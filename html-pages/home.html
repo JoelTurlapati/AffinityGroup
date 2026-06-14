@@ -458,9 +458,9 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
 /* ── INSIGHTS ── */
 .hp-insights {
-  padding: 100px 32px;
+  padding: 90px 32px 110px;
   background: linear-gradient(148deg, #071e24 0%, #0e3d47 52%, #0c3540 100%);
-  text-align: center; position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
 }
 .hp-insights::before {
   content: '';
@@ -472,22 +472,73 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.28) 50%, transparent 100%);
 }
-.hp-insights__inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+.hp-insights__inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.hp-insights__header {
+  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 10px;
+}
+.hp-insights__header-left { text-align: left; }
 .hp-insights__eyebrow {
   font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-  color: #C9A84C; text-transform: uppercase; letter-spacing: 0.24em; margin-bottom: 20px;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: 0.24em; margin-bottom: 14px;
 }
 .hp-insights__heading {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 2.8vw, 2.4rem);
-  color: #fff; font-weight: 600; line-height: 1.28; margin-bottom: 18px;
+  color: #fff; font-weight: 600; line-height: 1.28; margin-bottom: 0;
 }
+.hp-insights__see-all {
+  font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600;
+  color: #C9A84C; text-decoration: none; letter-spacing: .06em;
+  white-space: nowrap; padding-bottom: 4px;
+  border-bottom: 1px solid rgba(201,168,76,.35);
+  transition: border-color .2s, color .2s;
+}
+.hp-insights__see-all:hover { color: #e8c96e; border-color: #e8c96e; }
 .hp-insights__rule {
-  width: 56px; height: 2px; background: #C9A84C; margin: 0 auto 28px; border-radius: 2px;
+  width: 56px; height: 2px; background: #C9A84C; margin: 22px 0 44px; border-radius: 2px;
 }
-.hp-insights__sub {
-  font-family: 'Inter', sans-serif; font-size: 1.05rem;
-  line-height: 1.82; color: #8fc4cc; font-weight: 300; margin-bottom: 44px;
+.hp-insights__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+}
+.hp-ins-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+  border-radius: 12px; overflow: hidden; text-decoration: none;
+  display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.hp-ins-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(0,0,0,.38);
+  border-color: rgba(201,168,76,.28);
+}
+.hp-ins-card__img-wrap { height: 195px; overflow: hidden; flex-shrink: 0; }
+.hp-ins-card__img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .45s ease;
+}
+.hp-ins-card:hover .hp-ins-card__img { transform: scale(1.06); }
+.hp-ins-card__body {
+  padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column;
+}
+.hp-ins-card__cat {
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  color: #C9A84C; text-transform: uppercase; letter-spacing: .2em;
+  margin-bottom: 11px; display: block;
+}
+.hp-ins-card__title {
+  font-family: 'Playfair Display', serif; font-size: .97rem;
+  font-weight: 600; color: #fff; line-height: 1.4; margin-bottom: 12px;
+}
+.hp-ins-card__excerpt {
+  font-family: 'Inter', sans-serif; font-size: .77rem;
+  color: rgba(255,255,255,.5); line-height: 1.75; font-weight: 300; flex: 1;
+}
+@media (max-width: 900px) {
+  .hp-insights__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .hp-insights__grid { grid-template-columns: 1fr; }
+  .hp-insights__header { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
 /* ── SCHEDULE ── */
@@ -837,11 +888,83 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
   <section class="hp-insights">
     <div class="hp-insights__inner">
-      <div class="hp-insights__eyebrow">Content Library</div>
-      <h2 class="hp-insights__heading">Insights for Smarter Financial Decisions</h2>
+      <div class="hp-insights__header">
+        <div class="hp-insights__header-left">
+          <div class="hp-insights__eyebrow">Content Library</div>
+          <h2 class="hp-insights__heading">Insights for Smarter Financial Decisions</h2>
+        </div>
+        <a class="hp-insights__see-all" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">See All Insights &rarr;</a>
+      </div>
       <div class="hp-insights__rule"></div>
-      <p class="hp-insights__sub">Stay informed with educational content covering investing, retirement, taxes, and wealth management.</p>
-      <a class="ag-btn-gold-outline" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Explore &#8594;</a>
+      <div class="hp-insights__grid">
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_6916c33408194583aff3a7ec71599f27~mv2.jpeg" alt="Investment portfolio diversification" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Investing</span>
+            <h3 class="hp-ins-card__title">True Diversification: What Your Portfolio Might Be Missing</h3>
+            <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments — not just the ones we hope for.</p>
+          </div>
+        </a>
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_8e27e863ece14ff2b69f0fe3f5c82850~mv2.jpeg" alt="Estate planning with advisor" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Estate Planning</span>
+            <h3 class="hp-ins-card__title">Estate Planning Essentials for Families With Significant Assets</h3>
+            <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth — it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
+          </div>
+        </a>
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_2803148bf9384ca985a3095f75bf382a~mv2.jpeg" alt="Retired couple enjoying life" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Retirement</span>
+            <h3 class="hp-ins-card__title">What a Well-Funded Retirement Actually Requires</h3>
+            <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone — but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
+          </div>
+        </a>
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_19369243416b442fb5c594fd73d27af8~mv2.jpeg" alt="Asset protection and risk management" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Risk Management</span>
+            <h3 class="hp-ins-card__title">Asset Protection: The Missing Piece in Most Financial Plans</h3>
+            <p class="hp-ins-card__excerpt">Building wealth takes decades. Protecting it can take just one well-placed structure. Proper titling, liability coverage, and legal entities are the foundations of a durable financial plan.</p>
+          </div>
+        </a>
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_0d620f880c804eb4a7b70d6390793756~mv2.jpeg" alt="Pre-retirement planning professional" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Retirement</span>
+            <h3 class="hp-ins-card__title">The 5-to-10 Year Window That Shapes Your Retirement</h3>
+            <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now — around tax positioning, Social Security timing, and savings rates — have an outsized impact on outcomes.</p>
+          </div>
+        </a>
+
+        <a class="hp-ins-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="hp-ins-card__img-wrap">
+            <img class="hp-ins-card__img" src="https://static.wixstatic.com/media/64b604_6c98157d09ec4917a7826c717777676f~mv2.jpeg" alt="Midlife financial planning couple" loading="lazy" />
+          </div>
+          <div class="hp-ins-card__body">
+            <span class="hp-ins-card__cat">Financial Planning</span>
+            <h3 class="hp-ins-card__title">Is Your Financial Plan Still Aligned With Your Life?</h3>
+            <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed — or what you've built.</p>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
