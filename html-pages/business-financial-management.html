@@ -70,9 +70,18 @@ html{font-size:20px}
 }
 
 /* STICKY SIDE-NAV */
-.bfm-sidenav{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:800;background:rgba(255,255,255,.88);border-radius:8px;padding:8px 0;border:1px solid rgba(201,168,76,.35);border-right:3px solid #C9A84C;box-shadow:0 4px 20px rgba(0,0,0,.1);backdrop-filter:blur(12px)}
+.bfm-sidenav{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:800;background:rgba(255,255,255,.88);border-radius:8px;padding:6px 0 8px;border:1px solid rgba(201,168,76,.35);border-right:3px solid #C9A84C;box-shadow:0 4px 20px rgba(0,0,0,.1);backdrop-filter:blur(12px);transition:padding .25s ease}
+.bfm-sidenav__toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:calc(100% - 12px);margin:0 6px 6px;padding:7px 10px;background:rgba(201,168,76,.14);border:none;border-radius:6px;font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1D7080;cursor:pointer;transition:background .2s}
+.bfm-sidenav__toggle:hover{background:rgba(201,168,76,.26)}
+.bfm-sidenav__toggle-icon{font-size:13px;line-height:1;transition:transform .3s}
+.bfm-sidenav__links{display:flex;flex-direction:column}
 .bfm-sidenav a{display:block;padding:7px 16px 7px 13px;font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:#2d5a65;white-space:nowrap;transition:color .2s,background .2s}
 .bfm-sidenav a:hover,.bfm-sidenav a.active{color:#C9A84C;background:rgba(201,168,76,.08)}
+.bfm-sidenav--collapsed{padding:0}
+.bfm-sidenav--collapsed .bfm-sidenav__links{display:none}
+.bfm-sidenav--collapsed .bfm-sidenav__toggle{margin:0;width:auto}
+.bfm-sidenav--collapsed .bfm-sidenav__toggle-text{display:none}
+.bfm-sidenav--collapsed .bfm-sidenav__toggle-icon{transform:rotate(180deg)}
 @media(max-width:1100px){.bfm-sidenav{display:none}}
 
 /* SHARED */
@@ -571,18 +580,24 @@ html{font-size:20px}
 </script>
 
 <!-- STICKY SIDE-NAV -->
-<nav class="bfm-sidenav" aria-label="Page sections">
-  <a href="#bfm-serve">Who We Serve</a>
-  <a href="#bfm-why6">Why 6 Services</a>
-  <a href="#bfm-how">How It Works</a>
-  <a href="#bfm-compare">APT vs CPA</a>
-  <a href="#bfm-reality">Reality Check</a>
-  <a href="#bfm-bionic">Bionic Bookkeeping</a>
-  <a href="#bfm-cashflow">Financial Reporting</a>
-  <a href="#bfm-tax">Business Tax</a>
-  <a href="#bfm-indv">Owner Tax</a>
-  <a href="#bfm-other">More Services</a>
-  <a href="#bfm-eco">Our Ecosystem</a>
+<nav class="bfm-sidenav" id="bfmSidenav" aria-label="Page sections">
+  <button class="bfm-sidenav__toggle" id="bfmSidenavToggle" type="button" aria-expanded="true" aria-controls="bfmSidenavLinks" aria-label="Hide section menu">
+    <span class="bfm-sidenav__toggle-text">Sections</span>
+    <span class="bfm-sidenav__toggle-icon" aria-hidden="true">&#10095;</span>
+  </button>
+  <div class="bfm-sidenav__links" id="bfmSidenavLinks">
+    <a href="#bfm-serve">Who We Serve</a>
+    <a href="#bfm-why6">Why 6 Services</a>
+    <a href="#bfm-how">How It Works</a>
+    <a href="#bfm-compare">APT vs CPA</a>
+    <a href="#bfm-reality">Reality Check</a>
+    <a href="#bfm-bionic">Bionic Bookkeeping</a>
+    <a href="#bfm-cashflow">Financial Reporting</a>
+    <a href="#bfm-tax">Business Tax</a>
+    <a href="#bfm-indv">Owner Tax</a>
+    <a href="#bfm-other">More Services</a>
+    <a href="#bfm-eco">Our Ecosystem</a>
+  </div>
 </nav>
 
 <main style="padding-top:72px">
@@ -1248,6 +1263,15 @@ html{font-size:20px}
 
 <script>
 (function(){
+  var sidenav=document.getElementById('bfmSidenav');
+  var toggle=document.getElementById('bfmSidenavToggle');
+  if(toggle&&sidenav){
+    toggle.addEventListener('click',function(){
+      var collapsed=sidenav.classList.toggle('bfm-sidenav--collapsed');
+      toggle.setAttribute('aria-expanded',String(!collapsed));
+      toggle.setAttribute('aria-label',collapsed?'Show section menu':'Hide section menu');
+    });
+  }
   var links=document.querySelectorAll('.bfm-sidenav a');
   var ids=['bfm-serve','bfm-why6','bfm-how','bfm-compare','bfm-reality','bfm-bionic','bfm-cashflow','bfm-tax','bfm-indv','bfm-other','bfm-eco'];
   function onScroll(){
