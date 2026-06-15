@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -92,7 +95,7 @@ html { font-size: 20px; }
   background: #0e3d47; margin-top: 72px;
 }
 .bo-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.bo-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,43,56,0.88) 0%, rgba(30,95,116,0.72) 100%); }
+.bo-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,43,56,0.86) 0%, rgba(13,43,56,0.60) 100%); }
 .bo-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; max-width: 900px; }
 .bo-hero__badge { display: inline-block; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 8px 22px; border-radius: 40px; margin-bottom: 26px; }
 .bo-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 700; text-shadow: 0 2px 24px rgba(0,0,0,.4); margin-bottom: 18px; line-height: 1.2; }
@@ -161,9 +164,9 @@ html { font-size: 20px; }
 
 /* SCOTT */
 .bo-scott { padding: 80px 32px; background: #F0F8FA; }
-.bo-scott__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bo-scott__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
 .bo-scott__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
-.bo-scott__img img { width: 100%; height: 500px; object-fit: cover; object-position: top; display: block; }
+.bo-scott__img img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; object-position: top; display: block; }
 .bo-scott__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 20px; font-weight: 600; }
 .bo-blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #145568; line-height: 1.65; border-left: 4px solid #C9A84C; padding-left: 22px; margin: 0 0 22px; border-radius: 0; }
 .bo-scott__text p { font-family: 'Inter', sans-serif; font-size: .95rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 14px; }
@@ -242,6 +245,7 @@ html { font-size: 20px; }
               <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
               <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
             </div>
             <div class="ag-nav__drop-col">
@@ -290,6 +294,7 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-mob__sub-heading">For Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
@@ -374,7 +379,7 @@ html { font-size: 20px; }
 
   <!-- §1 HERO -->
   <section class="bo-hero">
-    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1600&q=85" alt="Business owner" />
+    <img src="https://static.wixstatic.com/media/64b604_b45afaeb769841258ce15cd1cb3369e1~mv2.jpg" alt="Business owner" />
     <div class="bo-hero__overlay"></div>
     <div class="bo-hero__text">
       <span class="bo-hero__badge">For Business Owners</span>

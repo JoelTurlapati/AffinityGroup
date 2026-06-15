@@ -46,6 +46,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* ── NAV ── */
 .ag-nav {
@@ -366,8 +369,9 @@ html { font-size: 20px; }
 .rl-card__cover img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+  object-fit: contain; object-position: center center;
   display: block;
+  padding: 6px;
 }
 .rl-cover__fallback {
   display: flex; flex-direction: column;
@@ -561,6 +565,7 @@ html { font-size: 20px; }
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
         </div>
       </div>
     </div>
@@ -605,6 +610,7 @@ html { font-size: 20px; }
         <div class="ag-mob__sub" id="mob-insights">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
         </div>
       </div>
       <div class="ag-mob__bottom">
