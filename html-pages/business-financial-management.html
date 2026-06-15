@@ -1,0 +1,1266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Business Financial Management | Affinity Private Tax</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+html{font-size:20px}
+
+/* NAV */
+.ag-nav{position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,.12);box-shadow:0 2px 24px rgba(0,0,0,.07)}
+.ag-nav__inner{width:100%;height:100%;display:flex;align-items:center;padding:0 28px 0 10px;gap:16px}
+.ag-nav__logo img{height:66px;width:auto;object-fit:contain;display:block}
+.ag-nav__links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center}
+.ag-nav__item{position:relative}
+.ag-nav__label{display:block;padding:10px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-decoration:none;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .2s;border:none;background:none;font-style:normal}
+.ag-nav__label:hover,.ag-nav__item:hover .ag-nav__label{color:#C9A84C}
+.ag-nav__links .ag-nav__label{font-size:15px}
+.ag-caret{font-size:10px;opacity:.7}
+.ag-nav__drop{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:480px;box-shadow:0 12px 40px rgba(0,0,0,.13);border-top:3px solid #1D7080;border-radius:0 0 8px 8px;padding:8px 0;z-index:10000}
+.ag-nav__item--drop:hover .ag-nav__drop{display:block}
+.ag-nav__drop a{display:block;padding:9px 20px;font-family:'Inter',sans-serif;font-size:13px;color:#2d2d2d;text-decoration:none;transition:background .15s,color .15s}
+.ag-nav__drop a:hover{background:#E6F4F7;color:#1D7080}
+.ag-nav__drop-heading{display:block;padding:10px 20px 5px;font-size:10.5px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #f0f0f0;margin-top:4px}
+.ag-nav__drop-heading:first-child{border-top:none;margin-top:0}
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
+.ag-nav__right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.ag-nav__portal{display:inline-block;padding:9px 15px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;text-decoration:none;border-radius:4px;white-space:nowrap;letter-spacing:.03em;transition:background .2s}
+.ag-nav__portal:hover{background:#145568}
+.ag-nav__phone{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#145568;white-space:nowrap}
+.ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}
+.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+.ag-nav__burger{display:none}
+
+/* FOOTER */
+.ag-footer{background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif}
+.ag-footer__inner{max-width:1200px;margin:0 auto}
+.ag-footer__top{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ag-footer__doc-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.ag-footer__doc-links a{color:#C9A84C;text-decoration:none;font-size:13px;font-weight:500}
+.ag-footer__social{display:flex;gap:12px;margin-bottom:20px}
+.ag-footer__social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .2s}
+.ag-footer__social a:hover{background:#1D7080}
+.ag-footer__address{font-size:12.5px;line-height:1.8;color:#6a9ca5}
+.ag-footer__disclaimer{font-size:12px;line-height:1.9;color:#6a9ca5}
+.ag-footer__sitemap-heading{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.ag-footer__sitemap{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.ag-footer__sitemap a{color:#8fb8c0;text-decoration:none;font-size:12.5px;transition:color .2s}
+.ag-footer__sitemap a:hover{color:#fff}
+.ag-footer__bottom{padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center}
+
+@media(min-width:901px) and (max-width:1380px){
+  .ag-nav__inner{padding:0 16px;gap:10px}.ag-nav__links{gap:0}
+  .ag-nav__links .ag-nav__label{font-size:12px;padding:10px 9px}
+  .ag-nav__right{gap:8px}.ag-nav__phone{display:none}
+  .ag-nav__portal{font-size:10.5px;padding:8px 10px}
+  .ag-nav__cta-btn{padding:7px 12px!important;font-size:10.5px}
+}
+@media(max-width:900px){
+  .ag-nav__links,.ag-nav__right{display:none}
+  .ag-nav__burger{display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer}
+  .ag-footer__top{grid-template-columns:1fr;gap:28px}
+}
+
+/* STICKY SIDE-NAV */
+.bfm-sidenav{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:800;background:rgba(255,255,255,.88);border-radius:8px;padding:8px 0;border:1px solid rgba(201,168,76,.35);border-right:3px solid #C9A84C;box-shadow:0 4px 20px rgba(0,0,0,.1);backdrop-filter:blur(12px)}
+.bfm-sidenav a{display:block;padding:7px 16px 7px 13px;font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:#2d5a65;white-space:nowrap;transition:color .2s,background .2s}
+.bfm-sidenav a:hover,.bfm-sidenav a.active{color:#C9A84C;background:rgba(201,168,76,.08)}
+@media(max-width:1100px){.bfm-sidenav{display:none}}
+
+/* SHARED */
+.bfm-lbl{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.25em;display:block;margin-bottom:12px}
+.bfm-lbl--teal{color:#1D7080}
+.bfm-lbl--white{color:rgba(255,255,255,.6)}
+.bfm-bar{width:44px;height:2px;background:#C9A84C;margin-bottom:22px}
+.bfm-bar--c{margin-left:auto;margin-right:auto}
+.bfm-btn{display:inline-block;padding:14px 34px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em;transition:background .2s,transform .15s}
+.bfm-btn:hover{background:#145568;transform:translateY(-2px)}
+.bfm-btn--gold{background:#C9A84C}
+.bfm-btn--gold:hover{background:#a8873d}
+.bfm-btn--outline{background:transparent;border:2px solid rgba(255,255,255,.7)}
+.bfm-btn--outline:hover{background:rgba(255,255,255,.1)}
+
+/* 1. HERO */
+.bfm-hero{display:grid;grid-template-columns:1fr 1fr;min-height:94vh;margin-top:72px}
+.bfm-hero__left{background:linear-gradient(150deg,#080e12 0%,#0c3540 60%,#145568 100%);display:flex;flex-direction:column;justify-content:center;padding:72px 56px;position:relative}
+.bfm-hero__badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px}
+.bfm-hero__badge-line{width:28px;height:2px;background:#C9A84C}
+.bfm-hero__badge span{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A84C}
+.bfm-hero__left h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.6vw,3rem);color:#fff;font-weight:700;line-height:1.15;margin-bottom:12px}
+.bfm-hero__tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.1rem);color:#C9A84C;margin-bottom:22px;line-height:1.5}
+.bfm-hero__left p{font-family:'Inter',sans-serif;font-size:.85rem;line-height:1.9;color:rgba(255,255,255,.72);font-weight:300;max-width:480px;margin-bottom:32px}
+.bfm-hero__btns{display:flex;gap:12px;flex-wrap:wrap}
+.bfm-hero__right{position:relative;overflow:hidden;background:#0c3540;display:flex;align-items:center;justify-content:center;padding:40px 36px}
+.bfm-hero__card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:32px 28px;backdrop-filter:blur(10px);width:100%}
+.bfm-hero__card-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.18em;margin-bottom:18px}
+.bfm-hero__card ul{list-style:none}
+.bfm-hero__card ul li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-family:'Inter',sans-serif;font-size:.85rem;color:rgba(255,255,255,.82);display:flex;align-items:flex-start;gap:10px;line-height:1.55}
+.bfm-hero__card ul li::before{content:'\2713';color:#C9A84C;font-weight:700;flex-shrink:0;margin-top:1px}
+.bfm-hero__card ul li:last-child{border-bottom:none}
+
+/* 2. SERVICES STRIP */
+.bfm-strip{background:#E6F4F7}
+.bfm-strip__inner{display:grid;grid-template-columns:repeat(6,1fr)}
+.bfm-svc-tile{padding:24px 16px;border-right:1px solid rgba(29,112,128,.15);text-align:center}
+.bfm-svc-tile:last-child{border-right:none}
+.bfm-svc-tile__icon{font-size:1.4rem;display:block;margin-bottom:8px}
+.bfm-svc-tile__name{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:#145568;line-height:1.45}
+
+/* 3. WHY 6 IN ONE FIRM */
+.bfm-why6{background:#fff;padding:88px 56px}
+.bfm-why6__inner{max-width:1120px;margin:0 auto}
+.bfm-why6__head{text-align:center;margin-bottom:56px}
+.bfm-why6__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);color:#0d1b2a;font-weight:700;margin-bottom:12px}
+.bfm-why6__head p{font-family:'Inter',sans-serif;font-size:.88rem;color:#5a6a7a;line-height:1.85;max-width:680px;margin:0 auto}
+.bfm-why6__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+.bfm-why6__card{border-radius:10px;padding:28px 24px;border:1px solid rgba(29,112,128,.13);transition:box-shadow .25s,transform .25s}
+.bfm-why6__card:hover{box-shadow:0 8px 28px rgba(29,112,128,.12);transform:translateY(-3px)}
+.bfm-why6__card-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:rgba(201,168,76,.35);line-height:1;margin-bottom:10px}
+.bfm-why6__card h3{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;color:#0d1b2a;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.bfm-why6__card p{font-family:'Inter',sans-serif;font-size:.8rem;color:#5a6a7a;line-height:1.75}
+.bfm-why6__band{background:linear-gradient(135deg,#0c3540,#1D7080);border-radius:12px;padding:36px 40px;display:flex;align-items:center;gap:32px}
+.bfm-why6__band-icon{font-size:2.4rem;flex-shrink:0}
+.bfm-why6__band-text h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;font-weight:700;margin-bottom:8px}
+.bfm-why6__band-text p{font-family:'Inter',sans-serif;font-size:.85rem;color:rgba(255,255,255,.78);line-height:1.8}
+.bfm-why6__band-btn{flex-shrink:0}
+
+/* 4. ORBIT / HUB DIAGRAM */
+.bfm-orbit{background:#F9F6F1;padding:88px 56px}
+.bfm-orbit__inner{max-width:1120px;margin:0 auto}
+.bfm-orbit__head{text-align:center;margin-bottom:52px}
+.bfm-orbit__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#0d1b2a;font-weight:700;margin-bottom:12px}
+.bfm-orbit__head p{font-family:'Inter',sans-serif;font-size:.88rem;color:#5a6a7a;line-height:1.8;max-width:640px;margin:0 auto}
+.bfm-hub-wrap{display:grid;grid-template-columns:1fr 200px 1fr;gap:28px;align-items:center;max-width:960px;margin:0 auto;position:relative}
+.bfm-hub__col{display:flex;flex-direction:column;gap:14px}
+.bfm-hub__center-col{display:flex;align-items:center;justify-content:center}
+.bfm-hub-center{width:170px;height:170px;border-radius:50%;background:linear-gradient(145deg,#0c3540,#1D7080);border:3px solid #C9A84C;box-shadow:0 0 0 14px rgba(201,168,76,.08),0 0 0 28px rgba(201,168,76,.04),0 8px 32px rgba(29,112,128,.3);display:flex;align-items:center;justify-content:center;z-index:2;flex-shrink:0}
+.bfm-hub-center img{width:138px;height:auto;object-fit:contain;border-radius:4px}
+.bfm-hub__node{background:#fff;border:1px solid #dde8eb;border-radius:10px;padding:16px 18px;text-align:center;box-shadow:0 3px 14px rgba(29,112,128,.07);transition:box-shadow .2s,transform .2s;position:relative;z-index:2}
+.bfm-hub__col--left .bfm-hub__node{border-right:3px solid #1D7080;border-radius:10px 4px 4px 10px}
+.bfm-hub__col--right .bfm-hub__node{border-left:3px solid #1D7080;border-radius:4px 10px 10px 4px}
+.bfm-hub__node:hover{box-shadow:0 8px 24px rgba(29,112,128,.14);transform:translateY(-2px)}
+.bfm-hub__node__icon{font-size:1.3rem;display:block;margin-bottom:6px}
+.bfm-hub__node__label{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;color:#145568;text-transform:uppercase;letter-spacing:.05em;line-height:1.4}
+.bfm-hub-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+@media(max-width:768px){
+  .bfm-hub-wrap{grid-template-columns:1fr;gap:10px}
+  .bfm-hub__center-col{margin:12px auto}
+  .bfm-hub__col--left .bfm-hub__node,.bfm-hub__col--right .bfm-hub__node{border-radius:10px;border-right:1px solid #dde8eb;border-left:3px solid #1D7080}
+}
+
+/* 5. HOW IT WORKS */
+.bfm-how{background:#fff;padding:88px 56px}
+.bfm-how__inner{max-width:1100px;margin:0 auto}
+.bfm-how__head{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;margin-bottom:56px;align-items:end}
+.bfm-how__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#0d1b2a;font-weight:700;line-height:1.2}
+.bfm-how__head p{font-family:'Inter',sans-serif;font-size:.86rem;line-height:1.9;color:#5a6a7a}
+.bfm-how__steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.bfm-how__steps::before{content:'';position:absolute;top:29px;left:calc(10% + 8px);right:calc(10% + 8px);height:2px;background:linear-gradient(90deg,#C9A84C,#1D7080);z-index:0}
+.bfm-step{text-align:center;position:relative;z-index:1;padding:0 10px}
+.bfm-step__num{width:58px;height:58px;border-radius:50%;background:linear-gradient(145deg,#0c3540,#1D7080);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 0 0 6px #fff,0 4px 16px rgba(29,112,128,.22)}
+.bfm-step__num span{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff}
+.bfm-step h3{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;color:#0d1b2a;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+.bfm-step p{font-family:'Inter',sans-serif;font-size:.73rem;line-height:1.7;color:#5a6a7a}
+
+/* 6. COMPARISON TABLE â€” dark image bg */
+.bfm-compare{position:relative;padding:88px 56px;overflow:hidden}
+.bfm-compare__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=70') center/cover no-repeat;filter:brightness(.18)}
+.bfm-compare__inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.bfm-compare__head{text-align:center;margin-bottom:44px}
+.bfm-compare__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);color:#fff;font-weight:700;margin-bottom:12px}
+.bfm-compare__head p{font-family:'Inter',sans-serif;font-size:.86rem;color:rgba(255,255,255,.65);line-height:1.8;max-width:600px;margin:0 auto}
+.bfm-tbl-wrap{border-radius:12px;overflow:hidden;box-shadow:0 16px 56px rgba(0,0,0,.45)}
+.bfm-tbl{width:100%;border-collapse:collapse}
+.bfm-tbl thead tr{background:#0d1b2a}
+.bfm-tbl thead th{padding:16px 22px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+.bfm-tbl thead th:first-child{color:rgba(255,255,255,.45);text-align:left;width:30%}
+.bfm-tbl thead th:nth-child(2){color:#ff9a9a;text-align:center;width:30%}
+.bfm-tbl thead th:nth-child(3){color:#5edfb8;text-align:center;background:#1a5f6e}
+.bfm-tbl tbody tr{border-bottom:1px solid #eef3f5}
+.bfm-tbl tbody tr:nth-child(even){background:#f8fbfc}
+.bfm-tbl tbody tr:nth-child(odd){background:#fff}
+.bfm-tbl tbody tr:last-child{border-bottom:none}
+.bfm-tbl tbody td{padding:13px 22px;font-family:'Inter',sans-serif;font-size:.82rem;line-height:1.5;vertical-align:middle}
+.bfm-tbl tbody td:first-child{font-weight:600;color:#2d4e55}
+.bfm-tbl tbody td:nth-child(2){text-align:center;color:#c04040;background:rgba(255,235,235,.5)!important}
+.bfm-tbl tbody td:nth-child(3){text-align:center;color:#1a5f6e;font-weight:500;background:rgba(29,112,128,.06)!important}
+.bfm-compare__cta{text-align:center;margin-top:40px}
+
+/* 7. REALITY CHECK */
+.bfm-reality{background:#0d1b2a;padding:88px 56px}
+.bfm-reality__inner{max-width:1100px;margin:0 auto}
+.bfm-reality__head{text-align:center;margin-bottom:48px}
+.bfm-reality__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);color:#fff;font-weight:700;margin-bottom:10px}
+.bfm-reality__head p{font-family:'Inter',sans-serif;font-size:.86rem;color:rgba(255,255,255,.58);line-height:1.8;max-width:560px;margin:0 auto}
+.bfm-reality__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bfm-reality__col h3{font-family:'Inter',sans-serif;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.bfm-reality__col h3.pain{color:#f08080}
+.bfm-reality__col h3.apt{color:#5edfb8}
+.bfm-r-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:8px;margin-bottom:10px}
+.bfm-r-item--pain{background:rgba(240,128,128,.07);border-left:3px solid #f08080}
+.bfm-r-item--apt{background:rgba(94,223,184,.07);border-left:3px solid #5edfb8}
+.bfm-r-item p{font-family:'Inter',sans-serif;font-size:.8rem;line-height:1.7;color:rgba(255,255,255,.78)}
+.bfm-reality__cta{text-align:center;margin-top:44px}
+
+/* 8. BIONIC BOOKKEEPING */
+.bfm-bionic{background:#fff;padding:88px 56px}
+.bfm-bionic__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.bfm-bionic__left h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,2.1rem);color:#0d1b2a;font-weight:700;margin-bottom:14px;line-height:1.25}
+.bfm-bionic__quote{font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;color:#1D7080;border-left:3px solid #C9A84C;padding:13px 18px;background:#E6F4F7;border-radius:0 6px 6px 0;line-height:1.75;margin:18px 0 24px}
+.bfm-bionic__left p{font-family:'Inter',sans-serif;font-size:.83rem;line-height:1.9;color:#5a6a7a;margin-bottom:12px}
+.bfm-check-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #eef3f5}
+.bfm-check-item:first-child{border-top:1px solid #eef3f5}
+.bfm-check-icon{width:22px;height:22px;border-radius:50%;background:#1D7080;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.bfm-check-icon svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.bfm-check-text{font-family:'Inter',sans-serif;font-size:.8rem;line-height:1.65;color:#3d5560}
+
+/* 9. BUSINESS TAX */
+.bfm-tax{background:#F9F6F1;padding:88px 56px}
+.bfm-tax__inner{max-width:1100px;margin:0 auto}
+.bfm-tax__head{margin-bottom:44px}
+.bfm-tax__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#0d1b2a;font-weight:700;margin-bottom:10px}
+.bfm-tax__head p{font-family:'Inter',sans-serif;font-size:.86rem;color:#5a6a7a;line-height:1.8;max-width:680px}
+.bfm-tax__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.bfm-tax__card{background:#fff;border-radius:10px;padding:32px 28px;border:1px solid rgba(29,112,128,.13)}
+.bfm-tax__card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:#0d1b2a;font-weight:700;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #C9A84C}
+.bfm-tax__card p{font-family:'Inter',sans-serif;font-size:.8rem;color:#5a6a7a;line-height:1.8;margin-bottom:16px}
+.bfm-tax__list{list-style:none}
+.bfm-tax__list li{font-family:'Inter',sans-serif;font-size:.78rem;color:#3d5560;padding:7px 0;border-bottom:1px solid #f0f4f5;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
+.bfm-tax__list li::before{content:'âœ“';color:#1D7080;font-weight:700;flex-shrink:0}
+.bfm-tax__list li:last-child{border-bottom:none}
+
+/* 10. INDIVIDUAL TAX â€” COORDINATED */
+.bfm-indv{background:#E6F4F7;padding:88px 56px}
+.bfm-indv__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.bfm-indv__left h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,2.1rem);color:#0d1b2a;font-weight:700;margin-bottom:14px;line-height:1.25}
+.bfm-indv__left p{font-family:'Inter',sans-serif;font-size:.83rem;line-height:1.9;color:#4a5a6a;margin-bottom:12px}
+.bfm-indv__alert{background:#fff;border-left:4px solid #C9A84C;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.bfm-indv__alert p{font-family:'Inter',sans-serif;font-size:.8rem;line-height:1.8;color:#2d4e55;margin:0}
+.bfm-indv__alert strong{color:#C9A84C}
+.bfm-indv__right{background:linear-gradient(145deg,#0c3540,#145568);border-radius:12px;padding:36px 30px}
+.bfm-indv__right h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:#C9A84C;font-weight:700;margin-bottom:18px}
+.bfm-indv__right ul{list-style:none}
+.bfm-indv__right ul li{font-family:'Inter',sans-serif;font-size:.8rem;color:rgba(255,255,255,.82);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.bfm-indv__right ul li::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0}
+.bfm-indv__right ul li:last-child{border-bottom:none}
+.bfm-indv__link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;color:#C9A84C;text-decoration:none;letter-spacing:.05em}
+.bfm-indv__link:hover{color:#e8c96e}
+
+/* 11. OTHER BUSINESS SERVICES */
+.bfm-other{background:#fff;padding:88px 56px}
+.bfm-other__inner{max-width:1100px;margin:0 auto}
+.bfm-other__head{margin-bottom:44px}
+.bfm-other__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#0d1b2a;font-weight:700;margin-bottom:10px}
+.bfm-other__head p{font-family:'Inter',sans-serif;font-size:.86rem;color:#5a6a7a;line-height:1.8;max-width:680px}
+.bfm-other__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.bfm-other__card{display:flex;align-items:flex-start;gap:18px;padding:24px 22px;border:1px solid rgba(29,112,128,.14);border-radius:10px;text-decoration:none;transition:box-shadow .25s,border-color .25s,transform .2s}
+.bfm-other__card:hover{box-shadow:0 8px 28px rgba(29,112,128,.1);border-color:rgba(29,112,128,.3);transform:translateY(-2px)}
+.bfm-other__card-icon{font-size:1.6rem;flex-shrink:0}
+.bfm-other__card-body h3{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;color:#0d1b2a;margin-bottom:5px}
+.bfm-other__card-body p{font-family:'Inter',sans-serif;font-size:.77rem;color:#5a6a7a;line-height:1.7}
+.bfm-other__card-arrow{margin-left:auto;font-size:.75rem;color:#1D7080;font-weight:700;flex-shrink:0;align-self:center;opacity:.7}
+
+/* 12. WHO WE SERVE */
+.bfm-serve{background:linear-gradient(150deg,#0c3540 0%,#145568 100%);padding:88px 56px}
+.bfm-serve__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.bfm-serve__left h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,2.1rem);color:#fff;font-weight:700;margin-bottom:14px;line-height:1.25}
+.bfm-serve__left p{font-family:'Inter',sans-serif;font-size:.83rem;color:rgba(255,255,255,.72);line-height:1.9;margin-bottom:12px}
+.bfm-serve__right{display:flex;flex-direction:column;gap:14px}
+.bfm-serve__card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:22px 24px}
+.bfm-serve__card--gold{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.08)}
+.bfm-serve__card h3{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+.bfm-serve__card p{font-family:'Inter',sans-serif;font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.7}
+.bfm-serve__note{margin-top:4px;background:rgba(0,0,0,.2);border-radius:8px;padding:16px 20px;border-left:3px solid rgba(255,255,255,.18)}
+.bfm-serve__note p{font-family:'Inter',sans-serif;font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.75}
+
+/* 13. CTA */
+.bfm-cta{background:#0d1b2a;padding:96px 56px;text-align:center;position:relative;overflow:hidden}
+.bfm-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(201,168,76,.07) 0%,transparent 65%)}
+.bfm-cta__inner{position:relative;max-width:720px;margin:0 auto}
+.bfm-cta__inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.5rem);color:#fff;font-weight:700;margin-bottom:14px;line-height:1.25}
+.bfm-cta__inner p{font-family:'Inter',sans-serif;font-size:.88rem;color:rgba(255,255,255,.68);line-height:1.9;margin-bottom:32px}
+.bfm-cta__btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* HERO STATS */
+.bfm-hero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:28px 0 24px;border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden;background:rgba(255,255,255,.04)}
+.bfm-hero__stat{padding:18px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.bfm-hero__stat:last-child{border-right:none}
+.bfm-hero__stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#C9A84C;line-height:1;display:block;margin-bottom:4px}
+.bfm-hero__stat-label{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.12em;line-height:1.4;display:block}
+
+/* BIONIC REVAMP */
+.bfm-bionic{background:#0d1b2a;padding:0;overflow:hidden}
+.bfm-bionic__wrap{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+.bfm-bionic__img{position:relative;overflow:hidden}
+.bfm-bionic__img img{width:100%;height:100%;object-fit:cover;display:block}
+.bfm-bionic__img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,#0d1b2a 100%)}
+.bfm-bionic__content{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.bfm-bionic__ai-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:20px;padding:6px 14px;margin-bottom:20px;width:fit-content}
+.bfm-bionic__ai-dot{width:8px;height:8px;border-radius:50%;background:#C9A84C;box-shadow:0 0 0 3px rgba(201,168,76,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(201,168,76,.25)}50%{box-shadow:0 0 0 7px rgba(201,168,76,.08)}}
+.bfm-bionic__ai-tag span{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.15em}
+.bfm-bionic__content h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,2.1rem);color:#fff;font-weight:700;line-height:1.2;margin-bottom:16px}
+.bfm-bionic__callout{background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.35);border-left:4px solid #C9A84C;border-radius:0 8px 8px 0;padding:18px 20px;margin:18px 0 20px}
+.bfm-bionic__callout p{font-family:'Inter',sans-serif;font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.9)}
+.bfm-bionic__callout strong{color:#C9A84C}
+.bfm-bionic__content p{font-family:'Inter',sans-serif;font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.68);margin-bottom:10px}
+.bfm-bionic__checks{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:20px}
+.bfm-bionic__check{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.72);line-height:1.5}
+.bfm-bionic__check::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* ECOSYSTEM SECTION */
+.bfm-eco{background:#F9F6F1;padding:88px 56px}
+.bfm-eco__inner{max-width:1100px;margin:0 auto}
+.bfm-eco__head{text-align:center;margin-bottom:52px}
+.bfm-eco__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);color:#0d1b2a;font-weight:700;margin-bottom:12px}
+.bfm-eco__head p{font-family:'Inter',sans-serif;font-size:.88rem;color:#5a6a7a;line-height:1.85;max-width:680px;margin:0 auto}
+.bfm-eco__grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;margin-bottom:40px}
+.bfm-eco__card{border-radius:14px;padding:36px 32px;min-height:340px;display:flex;flex-direction:column}
+.bfm-eco__card--apt{background:linear-gradient(145deg,#0c3540,#145568);border:1px solid rgba(201,168,76,.2)}
+.bfm-eco__card--wealth{background:linear-gradient(145deg,#1D7080,#2a9db0);border:1px solid rgba(255,255,255,.15)}
+.bfm-eco__card-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;border-radius:12px;margin-bottom:16px;width:fit-content}
+.bfm-eco__card--apt .bfm-eco__card-tag{background:rgba(201,168,76,.15);color:#C9A84C;border:1px solid rgba(201,168,76,.3)}
+.bfm-eco__card--wealth .bfm-eco__card-tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2)}
+.bfm-eco__card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:#fff;font-weight:700;margin-bottom:10px;line-height:1.3}
+.bfm-eco__card p{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:16px;flex:1}
+.bfm-eco__card ul{list-style:none;margin-bottom:20px}
+.bfm-eco__card ul li{font-family:'Inter',sans-serif;font-size:.74rem;color:rgba(255,255,255,.72);padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.bfm-eco__card ul li::before{content:'â†’';color:#C9A84C;font-weight:700;flex-shrink:0}
+.bfm-eco__card--wealth ul li::before{color:rgba(255,255,255,.7)}
+.bfm-eco__card a{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;color:#C9A84C;text-decoration:none;letter-spacing:.05em}
+.bfm-eco__card--wealth a{color:rgba(255,255,255,.85)}
+.bfm-eco__connector{width:80px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 4px}
+.bfm-eco__conn-line{flex:1;width:2px;background:linear-gradient(to bottom,rgba(29,112,128,.3),rgba(29,112,128,.6),rgba(29,112,128,.3));min-height:60px}
+.bfm-eco__conn-badge{background:#fff;border:2px solid #1D7080;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(29,112,128,.2)}
+.bfm-eco__conn-badge svg{width:18px;height:18px}
+.bfm-eco__note{background:#fff;border-radius:10px;padding:24px 28px;border:1px solid rgba(29,112,128,.15);display:flex;align-items:flex-start;gap:16px}
+.bfm-eco__note-icon{font-size:1.4rem;flex-shrink:0}
+.bfm-eco__note p{font-family:'Inter',sans-serif;font-size:.82rem;color:#4a5a6a;line-height:1.8}
+.bfm-eco__note strong{color:#145568}
+
+/* WHO WE SERVE â€” REDESIGN */
+.bfm-serve{background:linear-gradient(150deg,#0c3540 0%,#145568 100%);padding:88px 56px}
+.bfm-serve__inner{max-width:1100px;margin:0 auto}
+.bfm-serve__head{text-align:center;margin-bottom:52px}
+.bfm-serve__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);color:#fff;font-weight:700;margin-bottom:12px}
+.bfm-serve__head p{font-family:'Inter',sans-serif;font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.85;max-width:680px;margin:0 auto}
+.bfm-serve__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.bfm-serve__pcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:32px 26px;transition:background .25s,transform .2s}
+.bfm-serve__pcard:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.bfm-serve__pcard--gold{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3)}
+.bfm-serve__pcard__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
+.bfm-serve__pcard--gold .bfm-serve__pcard__icon{background:rgba(201,168,76,.2)}
+.bfm-serve__pcard:not(.bfm-serve__pcard--gold) .bfm-serve__pcard__icon{background:rgba(255,255,255,.08)}
+.bfm-serve__pcard h3{font-family:'Playfair Display',serif;font-size:.95rem;color:#fff;font-weight:700;margin-bottom:8px}
+.bfm-serve__pcard--gold h3{color:#C9A84C}
+.bfm-serve__pcard p{font-family:'Inter',sans-serif;font-size:.76rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:14px}
+.bfm-serve__pcard ul{list-style:none}
+.bfm-serve__pcard ul li{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6);padding:4px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.5}
+.bfm-serve__pcard ul li::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0;font-size:.7rem}
+.bfm-serve__bottom{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bfm-serve__note{background:rgba(0,0,0,.2);border-radius:10px;padding:20px 24px;border-left:3px solid rgba(255,255,255,.15)}
+.bfm-serve__note p{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.75}
+.bfm-serve__cta-box{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:16px}
+.bfm-serve__cta-box p{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.7;flex:1}
+
+/* WHO WE SERVE â€” QUALIFY SECTION */
+.bfm-qualify{background:#fff;padding:88px 56px;border-bottom:1px solid rgba(29,112,128,.1)}
+.bfm-qualify__inner{max-width:1100px;margin:0 auto}
+.bfm-qualify__head{text-align:center;margin-bottom:52px}
+.bfm-qualify__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);color:#0d1b2a;font-weight:700;margin-bottom:12px}
+.bfm-qualify__head p{font-family:'Inter',sans-serif;font-size:.88rem;color:#5a6a7a;line-height:1.85;max-width:700px;margin:0 auto}
+.bfm-qualify__yes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.bfm-qualify__yes-card{background:linear-gradient(145deg,#f0faf7,#e6f7f4);border:1px solid rgba(29,112,128,.2);border-top:4px solid #1D7080;border-radius:12px;padding:32px 28px}
+.bfm-qualify__yes-badge{display:inline-flex;align-items:center;gap:6px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:12px;margin-bottom:14px}
+.bfm-qualify__yes-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:#0c3540;font-weight:700;margin-bottom:6px}
+.bfm-qualify__yes-card h4{font-family:'Inter',sans-serif;font-size:.76rem;font-weight:600;color:#1D7080;margin-bottom:10px}
+.bfm-qualify__yes-card p{font-family:'Inter',sans-serif;font-size:.78rem;color:#3a5a65;line-height:1.8}
+.bfm-qualify__no{background:#fdf6f0;border:1px solid rgba(180,80,40,.15);border-left:4px solid #c0522a;border-radius:12px;padding:32px 36px;margin-bottom:32px}
+.bfm-qualify__no-label{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:#c0522a;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px}
+.bfm-qualify__no-label::before{content:'';display:inline-block;width:20px;height:2px;background:#c0522a;border-radius:2px}
+.bfm-qualify__no h3{font-family:'Playfair Display',serif;font-size:.95rem;color:#2d2d2d;font-weight:700;margin-bottom:14px}
+.bfm-qualify__no-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;list-style:none}
+.bfm-qualify__no-list li{font-family:'Inter',sans-serif;font-size:.76rem;color:#5a3a2a;padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.55;border-bottom:1px solid rgba(180,80,40,.08)}
+.bfm-qualify__no-list li::before{content:'âœ—';color:#c0522a;font-weight:700;flex-shrink:0;font-size:.8rem}
+.bfm-qualify__close{background:linear-gradient(135deg,#0c3540,#145568);border-radius:10px;padding:24px 28px;display:flex;align-items:flex-start;gap:14px}
+.bfm-qualify__close-icon{font-size:1.4rem;flex-shrink:0}
+.bfm-qualify__close p{font-family:'Inter',sans-serif;font-size:.82rem;color:rgba(255,255,255,.82);line-height:1.8}
+.bfm-qualify__close strong{color:#C9A84C}
+
+/* FINANCIAL REPORTING & CASH FLOW */
+.bfm-cashflow{background:#F9F6F1;padding:88px 56px}
+.bfm-cashflow__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.bfm-cashflow__left h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,2rem);color:#0d1b2a;font-weight:700;margin-bottom:16px;line-height:1.25}
+.bfm-cashflow__left p{font-family:'Inter',sans-serif;font-size:.84rem;color:#4a5a6a;line-height:1.85;margin-bottom:14px}
+.bfm-cashflow__insight{background:linear-gradient(135deg,#1D7080,#145568);border-radius:10px;padding:20px 22px;margin:24px 0}
+.bfm-cashflow__insight-tag{font-family:'Inter',sans-serif;font-size:.64rem;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.15em;margin-bottom:8px}
+.bfm-cashflow__insight p{font-family:'Inter',sans-serif;font-size:.82rem;color:#fff;line-height:1.75;margin:0;font-style:italic}
+.bfm-cashflow__list{list-style:none;margin-top:20px}
+.bfm-cashflow__list li{font-family:'Inter',sans-serif;font-size:.8rem;color:#3a4a5a;padding:9px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.6;border-bottom:1px solid rgba(29,112,128,.1)}
+.bfm-cashflow__list li:last-child{border-bottom:none}
+.bfm-cashflow__list li::before{content:'â†’';color:#1D7080;font-weight:700;flex-shrink:0;margin-top:1px}
+.bfm-cashflow__right{display:flex;flex-direction:column;gap:14px}
+.bfm-cf-card{background:#fff;border-radius:12px;padding:22px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(29,112,128,.1)}
+.bfm-cf-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.bfm-cf-card__title{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;color:#5a6a7a;text-transform:uppercase;letter-spacing:.1em}
+.bfm-cf-card__badge{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:10px}
+.bfm-cf-card__badge--warn{background:#fff3e0;color:#e65100}
+.bfm-cf-card__badge--good{background:#e8f5e9;color:#2e7d32}
+.bfm-cf-card__badge--info{background:#e3f2fd;color:#1565c0}
+.bfm-cf-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bfm-cf-bar-label{font-family:'Inter',sans-serif;font-size:.68rem;color:#5a6a7a;width:70px;flex-shrink:0}
+.bfm-cf-bar-track{flex:1;height:8px;background:#f0f0f0;border-radius:4px;overflow:hidden}
+.bfm-cf-bar-fill{height:100%;border-radius:4px;transition:width .4s}
+.bfm-cf-bar-val{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:600;color:#2d2d2d;width:44px;text-align:right}
+.bfm-cf-card__note{font-family:'Inter',sans-serif;font-size:.7rem;color:#e65100;margin-top:8px;font-weight:500}
+.bfm-cf-card__note--good{color:#2e7d32}
+.bfm-cf-donut-row{display:flex;align-items:center;gap:20px}
+.bfm-cf-donut{width:64px;height:64px;flex-shrink:0}
+.bfm-cf-donut-legend{flex:1}
+.bfm-cf-donut-item{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-family:'Inter',sans-serif;font-size:.68rem;color:#4a5a6a}
+.bfm-cf-donut-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .bfm-hero{grid-template-columns:1fr;min-height:auto}
+  .bfm-hero__left{padding:56px 32px;min-height:auto}
+  .bfm-hero__right{padding:32px}
+  .bfm-strip__inner{grid-template-columns:repeat(3,1fr)}
+  .bfm-svc-tile{border-bottom:1px solid rgba(29,112,128,.15)}
+  .bfm-why6__grid{grid-template-columns:1fr 1fr}
+  .bfm-how__head{grid-template-columns:1fr;gap:20px}
+  .bfm-how__steps{grid-template-columns:1fr;gap:24px}
+  .bfm-how__steps::before{display:none}
+  .bfm-indv__inner{grid-template-columns:1fr;gap:40px}
+  .bfm-tax__cols{grid-template-columns:1fr}
+  .bfm-reality__grid{grid-template-columns:1fr}
+  .bfm-why6__band{flex-direction:column;text-align:center}
+  .bfm-bionic__wrap{grid-template-columns:1fr}
+  .bfm-bionic__img{min-height:280px}
+  .bfm-bionic__img::after{background:linear-gradient(to bottom,transparent 40%,#0d1b2a 100%)}
+  .bfm-bionic__content{padding:40px 32px}
+  .bfm-eco__grid{grid-template-columns:1fr;gap:0}
+  .bfm-eco__connector{width:100%;flex-direction:row;height:60px;min-height:unset}
+  .bfm-eco__conn-line{flex:1;height:2px;width:auto;min-height:unset}
+  .bfm-serve__cards{grid-template-columns:1fr}
+  .bfm-serve__bottom{grid-template-columns:1fr}
+  .bfm-serve__cta-box{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  .bfm-why6,.bfm-orbit,.bfm-how,.bfm-compare,.bfm-reality,.bfm-tax,.bfm-indv,.bfm-other,.bfm-eco,.bfm-serve,.bfm-cta{padding:64px 24px}
+  .bfm-why6__grid{grid-template-columns:1fr}
+  .bfm-other__grid{grid-template-columns:1fr}
+  .bfm-strip__inner{grid-template-columns:repeat(2,1fr)}
+  .bfm-cta__btns{flex-direction:column;align-items:center}
+  .bfm-hero__btns{flex-direction:column;align-items:flex-start}
+  .bfm-hero__stats{grid-template-columns:1fr}
+  .bfm-hero__stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .bfm-hero__stat:last-child{border-bottom:none}
+  .bfm-bionic__checks{grid-template-columns:1fr}
+  .bfm-bionic__content{padding:32px 24px}
+}
+</style>
+
+<!-- NAV -->
+<nav class="ag-nav">
+  <div class="ag-nav__inner">
+    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group"/>
+    </a>
+    <div class="ag-nav__links">
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <div class="ag-nav__drop-cols">
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services For Individuals</span>
+              <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+              <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+            </div>
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services for Businesses</span>
+              <a href="https://tagplanning.wixstudio.com/demo/business-organizations" target="_top">Business Financial Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
+        </div>
+      </div>
+      <div class="ag-nav__item ag-nav__item--drop">
+        <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
+        <div class="ag-nav__drop">
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
+          <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-nav__right">
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">SCHEDULE CONSULTATION</a>
+    </div>
+    <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="ag-mobile-nav" id="agMobileNav" aria-hidden="true">
+    <div class="ag-mobile-nav__inner">
+      <div class="ag-mob__section"><button class="ag-mob__heading" data-toggle="mob-svc">SERVICES <span class="ag-mob__caret">&#9662;</span></button>
+        <div class="ag-mob__sub" id="mob-svc">
+          <span class="ag-mob__sub-heading">For Individuals</span>
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+          <span class="ag-mob__sub-heading">For Businesses</span>
+          <a href="https://tagplanning.wixstudio.com/demo/business-organizations" target="_top">Business Financial Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+        </div>
+      </div>
+      <div class="ag-mob__bottom">
+        <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">SCHEDULE CONSULTATION</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<style>
+.ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
+.ag-mobile-nav.open{display:block}.ag-mobile-nav__inner{padding:4px 0 20px}
+.ag-mob__section{border-bottom:1px solid rgba(29,112,128,.1)}
+.ag-mob__heading{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;background:none;border:none;cursor:pointer;text-align:left}
+.ag-mob__caret{font-size:10px;opacity:.7;transition:transform .2s}.ag-mob__heading.open .ag-mob__caret{transform:rotate(180deg)}
+.ag-mob__sub{display:none;background:#f7fbfc;padding:0 0 8px}.ag-mob__sub.open{display:block}
+.ag-mob__sub-heading{display:block;padding:10px 28px 4px;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em}
+.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:13.5px;color:#2d2d2d;text-decoration:none}
+.ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
+.ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
+.ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none}
+.ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('agBurger'),d=document.getElementById('agMobileNav');
+  if(!b||!d)return;
+  b.addEventListener('click',function(){var o=d.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.innerHTML=o?'&#10005;':'&#9776;';d.setAttribute('aria-hidden',String(!o));});
+  d.querySelectorAll('[data-toggle]').forEach(function(btn){btn.addEventListener('click',function(){var s=document.getElementById(btn.getAttribute('data-toggle'));if(s){var o=s.classList.toggle('open');btn.classList.toggle('open',o);}});});
+})();
+</script>
+
+<!-- STICKY SIDE-NAV -->
+<nav class="bfm-sidenav" aria-label="Page sections">
+  <a href="#bfm-serve">Who We Serve</a>
+  <a href="#bfm-why6">Why 6 Services</a>
+  <a href="#bfm-how">How It Works</a>
+  <a href="#bfm-compare">APT vs CPA</a>
+  <a href="#bfm-reality">Reality Check</a>
+  <a href="#bfm-bionic">Bionic Bookkeeping</a>
+  <a href="#bfm-cashflow">Financial Reporting</a>
+  <a href="#bfm-tax">Business Tax</a>
+  <a href="#bfm-indv">Owner Tax</a>
+  <a href="#bfm-other">More Services</a>
+  <a href="#bfm-eco">Our Ecosystem</a>
+</nav>
+
+<main style="padding-top:72px">
+
+<!-- 1. HERO -->
+<section class="bfm-hero">
+  <div class="bfm-hero__left">
+    <div class="bfm-hero__badge"><span class="bfm-hero__badge-line"></span><span>Affinity Private Tax &mdash; For Businesses</span></div>
+    <h1>Private Tax Planning &amp; CFO-Level Financial Organization for Business Owners</h1>
+    <p class="bfm-hero__tagline">Affinity Private Tax combines AI-powered technology with experienced accounting and tax professionals to deliver a bionic approach to business financial management.</p>
+    <div class="bfm-hero__stats">
+      <div class="bfm-hero__stat">
+        <span class="bfm-hero__stat-num">6</span>
+        <span class="bfm-hero__stat-label">Integrated<br/>Services</span>
+      </div>
+      <div class="bfm-hero__stat">
+        <span class="bfm-hero__stat-num">1</span>
+        <span class="bfm-hero__stat-label">Coordinated<br/>Relationship</span>
+      </div>
+      <div class="bfm-hero__stat">
+        <span class="bfm-hero__stat-num">12</span>
+        <span class="bfm-hero__stat-label">Months /<br/>Year</span>
+      </div>
+    </div>
+    <p>We bring bookkeeping, financial reporting, tax planning, tax preparation, and cash-flow guidance together under one coordinated relationship &mdash; so your business always knows where it stands and never scrambles at year-end.</p>
+    <div class="bfm-hero__btns">
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="bfm-btn bfm-btn--gold" target="_top">Schedule a Conversation</a>
+      <a href="#bfm-compare" class="bfm-btn bfm-btn--outline">See How We Compare</a>
+    </div>
+  </div>
+  <div class="bfm-hero__right">
+    <div class="bfm-hero__card">
+      <div class="bfm-hero__card-title">What Business Financial Management Includes</div>
+      <ul>
+        <li>Business bookkeeping using QuickBooks Online with an AI-enhanced overlay</li>
+        <li>Financial reporting, cash-flow monitoring, and data-driven guidance</li>
+        <li>Business tax planning to reduce liabilities and align with business goals</li>
+        <li>Business tax return preparation and year-round compliance support</li>
+        <li>Owner-level individual tax planning &mdash; coordinated with business returns so every decision is viewed as a whole</li>
+        <li>Individual tax return preparation integrated with business tax considerations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SERVICES STRIP -->
+<div class="bfm-strip">
+  <div class="bfm-strip__inner">
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#128218;</span><span class="bfm-svc-tile__name">Bionic&trade; Bookkeeping</span></div>
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#128202;</span><span class="bfm-svc-tile__name">Financial Reporting &amp; Cash Flow</span></div>
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#128196;</span><span class="bfm-svc-tile__name">Business Tax Planning</span></div>
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#128203;</span><span class="bfm-svc-tile__name">Business Tax Preparation</span></div>
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#9881;</span><span class="bfm-svc-tile__name">Owner Tax Planning</span></div>
+    <div class="bfm-svc-tile"><span class="bfm-svc-tile__icon">&#128221;</span><span class="bfm-svc-tile__name">Individual Tax Preparation</span></div>
+  </div>
+</div>
+
+<!-- WHO WE SERVE â€” QUALIFICATION SECTION -->
+<section class="bfm-qualify" id="bfm-serve">
+  <div class="bfm-qualify__inner">
+    <div class="bfm-qualify__head">
+      <span class="bfm-lbl bfm-lbl--teal">Who Affinity Private Tax Serves</span>
+      <div class="bfm-bar bfm-bar--c"></div>
+      <h2>Not a Standalone Tax Service &mdash; A Coordinated Advisory Relationship</h2>
+      <p>Affinity Private Tax is not a standalone tax preparation service for the general public. We work exclusively with clients where tax preparation and tax planning are part of a larger advisory relationship &mdash; so every return we prepare is connected to a financial picture we already know well.</p>
+    </div>
+
+    <div class="bfm-qualify__yes">
+      <div class="bfm-qualify__yes-card">
+        <div class="bfm-qualify__yes-badge">&#10003; &nbsp;Available To</div>
+        <h3>Total Wealth Management Clients</h3>
+        <h4>Individuals &amp; Families</h4>
+        <p>Individuals, families, retirees, executives, and business owners who are engaged in Affinity Wealth&rsquo;s Total Wealth Management relationship. Tax planning and preparation are coordinated alongside investment management, estate planning, and personal financial strategy &mdash; all from one team.</p>
+      </div>
+      <div class="bfm-qualify__yes-card">
+        <div class="bfm-qualify__yes-badge">&#10003; &nbsp;Available To</div>
+        <h3>Business Financial Management Clients</h3>
+        <h4>Business Owners</h4>
+        <p>Business-owner clients who utilize our Business Financial Management service. This means coordinated bookkeeping, business tax preparation, and owner-level tax planning are all handled by the same team &mdash; with both the business return and the personal return in view at once.</p>
+      </div>
+    </div>
+
+    <div class="bfm-qualify__no">
+      <div class="bfm-qualify__no-label">We do not provide tax preparation for</div>
+      <h3>The following are outside the scope of our practice:</h3>
+      <ul class="bfm-qualify__no-list">
+        <li>Individuals who are not Affinity Wealth Total Wealth Management clients</li>
+        <li>Businesses that are not part of our Business Financial Management relationship</li>
+        <li>Clients seeking only a one-time tax return</li>
+        <li>Clients who are not looking for integrated planning</li>
+        <li>Businesses with incomplete or unsupported books unless a cleanup engagement is first completed</li>
+        <li>Walk-in or referral-only clients seeking tax preparation alone</li>
+      </ul>
+    </div>
+
+    <div class="bfm-qualify__close">
+      <span class="bfm-qualify__close-icon">&#127919;</span>
+      <p>This allows our team to remain focused on the clients we are built to serve: <strong>families and business owners who want coordinated advice across their full financial picture</strong> &mdash; not a tax return in isolation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. WHY 6 IN ONE FIRM -->
+<section class="bfm-why6" id="bfm-why6">
+  <div class="bfm-why6__inner">
+    <div class="bfm-why6__head">
+      <span class="bfm-lbl bfm-lbl--teal">The Most Important Question</span>
+      <div class="bfm-bar bfm-bar--c"></div>
+      <h2>Why Do All 6 Services Need to Be in One Firm?</h2>
+      <p>When your bookkeeper, CPA, and financial advisor work in separate firms, your business pays the price. Gaps form between them. Decisions get made in isolation. Tax planning happens after it&rsquo;s too late. Having all six services coordinated by one team changes everything.</p>
+    </div>
+    <div class="bfm-why6__grid">
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">01</div>
+        <h3>Books Inform Tax Strategy</h3>
+        <p>Your bookkeeper categorizes every transaction. When your tax planner reviews those same books, they spot deductions, timing opportunities, and planning moves in real time &mdash; not after year-end when it&rsquo;s too late to act.</p>
+      </div>
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">02</div>
+        <h3>Tax Planning Shapes the Return</h3>
+        <p>When the same team that planned your taxes prepares the return, there are no surprises, no handoffs, no information lost in translation. The return reflects decisions made proactively, not reactively.</p>
+      </div>
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">03</div>
+        <h3>Business &amp; Owner Taxes Are Linked</h3>
+        <p>Every business decision &mdash; compensation structure, distributions, equipment purchases, retirement contributions &mdash; affects both the business return and the owner&rsquo;s personal return. One team seeing both means better outcomes on both.</p>
+      </div>
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">04</div>
+        <h3>Cash Flow Drives Decisions</h3>
+        <p>Real-time financial reporting built into your bookkeeping relationship means you know your actual cash position, not a number from three months ago. Better data leads to better business decisions.</p>
+      </div>
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">05</div>
+        <h3>No Finger-Pointing Between Firms</h3>
+        <p>When books are wrong at tax time, who is responsible? When tax planning is missed, who dropped the ball? One coordinated team means one accountable relationship &mdash; and far fewer gaps.</p>
+      </div>
+      <div class="bfm-why6__card">
+        <div class="bfm-why6__card-num">06</div>
+        <h3>Year-Round, Not Seasonal</h3>
+        <p>A CPA who calls once a year cannot help you make better decisions in July. A year-round relationship that touches all six areas keeps your business financially organized every single month.</p>
+      </div>
+    </div>
+    <div class="bfm-why6__band">
+      <span class="bfm-why6__band-icon">&#128101;</span>
+      <div class="bfm-why6__band-text">
+        <h3>One Relationship. One Accountable Team. All Six Services.</h3>
+        <p>Business Financial Management is built around a simple idea: a business owner should not need three separate firms to manage their books, plan their taxes, and prepare their returns. When it all comes together, the results are measurably better.</p>
+      </div>
+      <div class="bfm-why6__band-btn">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bfm-btn bfm-btn--gold" target="_top">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ORBIT DIAGRAM -->
+<section class="bfm-orbit" id="bfm-orbit">
+  <div class="bfm-orbit__inner">
+    <div class="bfm-orbit__head">
+      <span class="bfm-lbl bfm-lbl--teal">Six Services. One Relationship.</span>
+      <div class="bfm-bar bfm-bar--c"></div>
+      <h2>Everything a Business Needs &mdash; Coordinated by One Team</h2>
+      <p>A business owner who comes to Affinity Private Tax can access all six services from a single coordinated team. No separate firms. No handoffs. No gaps.</p>
+    </div>
+    <div class="bfm-hub-wrap" id="bfmHubWrap">
+      <svg id="bfmHubSvg" class="bfm-hub-svg"></svg>
+      <div class="bfm-hub__col bfm-hub__col--left">
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#128218;</span><span class="bfm-hub__node__label">Business Bookkeeping</span></div>
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#9881;</span><span class="bfm-hub__node__label">Owner Tax Planning</span></div>
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#128221;</span><span class="bfm-hub__node__label">Individual Tax Preparation</span></div>
+      </div>
+      <div class="bfm-hub__center-col">
+        <div class="bfm-hub-center" id="bfmHubCenter">
+          <img src="https://static.wixstatic.com/media/64b604_cf252ea3958d4eee976e677dbe671e38~mv2.jpeg" alt="Affinity Private Tax"/>
+        </div>
+      </div>
+      <div class="bfm-hub__col bfm-hub__col--right">
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#128202;</span><span class="bfm-hub__node__label">Financial Reporting &amp; Cash Flow</span></div>
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#128196;</span><span class="bfm-hub__node__label">Business Tax Planning</span></div>
+        <div class="bfm-hub__node"><span class="bfm-hub__node__icon">&#128203;</span><span class="bfm-hub__node__label">Business Tax Preparation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  function draw(){
+    var wrap=document.getElementById('bfmHubWrap'),svg=document.getElementById('bfmHubSvg'),ctr=document.getElementById('bfmHubCenter');
+    if(!wrap||!svg||!ctr)return;
+    var wr=wrap.getBoundingClientRect(),cr=ctr.getBoundingClientRect();
+    if(wr.width<10)return;
+    var cx=cr.left+cr.width/2-wr.left,cy=cr.top+cr.height/2-wr.top,r=cr.width/2;
+    svg.setAttribute('viewBox','0 0 '+wr.width+' '+wr.height);
+    var h='';
+    wrap.querySelectorAll('.bfm-hub__col--left .bfm-hub__node').forEach(function(n){
+      var nr=n.getBoundingClientRect(),nx=nr.right-wr.left,ny=nr.top+nr.height/2-wr.top,a=Math.atan2(ny-cy,nx-cx);
+      h+='<line x1="'+(cx+r*Math.cos(a)).toFixed(1)+'" y1="'+(cy+r*Math.sin(a)).toFixed(1)+'" x2="'+nx.toFixed(1)+'" y2="'+ny.toFixed(1)+'" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>';
+    });
+    wrap.querySelectorAll('.bfm-hub__col--right .bfm-hub__node').forEach(function(n){
+      var nr=n.getBoundingClientRect(),nx=nr.left-wr.left,ny=nr.top+nr.height/2-wr.top,a=Math.atan2(ny-cy,nx-cx);
+      h+='<line x1="'+(cx+r*Math.cos(a)).toFixed(1)+'" y1="'+(cy+r*Math.sin(a)).toFixed(1)+'" x2="'+nx.toFixed(1)+'" y2="'+ny.toFixed(1)+'" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>';
+    });
+    svg.innerHTML=h;
+  }
+  ['load','resize'].forEach(function(e){window.addEventListener(e,draw);});
+  setTimeout(draw,150);
+})();
+</script>
+
+<!-- 5. HOW IT WORKS -->
+<section class="bfm-how" id="bfm-how">
+  <div class="bfm-how__inner">
+    <div class="bfm-how__head">
+      <div>
+        <span class="bfm-lbl bfm-lbl--teal">The Process</span>
+        <div class="bfm-bar"></div>
+        <h2>How the Relationship Works</h2>
+      </div>
+      <p>A structured process from discovery through year-round oversight &mdash; so your books, tax planning, and tax preparation are always coordinated and never scrambled at year-end.</p>
+    </div>
+    <div class="bfm-how__steps">
+      <div class="bfm-step"><div class="bfm-step__num"><span>1</span></div><h3>Discovery</h3><p>We assess fit for your business structure, goals, and current financial situation.</p></div>
+      <div class="bfm-step"><div class="bfm-step__num"><span>2</span></div><h3>Review</h3><p>We review prior returns, current books, estimated tax position, and cash flow.</p></div>
+      <div class="bfm-step"><div class="bfm-step__num"><span>3</span></div><h3>Organize</h3><p>Books, P&amp;L structure, categories, and cash-flow visibility are organized and clean.</p></div>
+      <div class="bfm-step"><div class="bfm-step__num"><span>4</span></div><h3>Plan</h3><p>Year-round tax and cash-flow planning so you act before year-end &mdash; not after.</p></div>
+      <div class="bfm-step"><div class="bfm-step__num"><span>5</span></div><h3>File &amp; Oversee</h3><p>Returns prepared from clean records and proactive planning, business and personal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. COMPARISON TABLE -->
+<section class="bfm-compare" id="bfm-compare">
+  <div class="bfm-compare__bg"></div>
+  <div class="bfm-compare__inner">
+    <div class="bfm-compare__head">
+      <span class="bfm-lbl bfm-lbl--white">Why Business Financial Management</span>
+      <div class="bfm-bar bfm-bar--c" style="background:rgba(201,168,76,.6)"></div>
+      <h2>The Affinity Advantage vs. a Traditional CPA Firm</h2>
+      <p>Most accounting firms focus on compliance. Business Financial Management focuses on helping you build a more organized, tax-efficient, and financially informed business.</p>
+    </div>
+    <div class="bfm-tbl-wrap">
+      <table class="bfm-tbl">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>&#10060; Traditional CPA Firm</th>
+            <th>&#9989; Business Financial Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Year-Round Relationship</td><td>Usually seasonal</td><td>Year-round, 365 days</td></tr>
+          <tr><td>Tax Planning</td><td>Often happens after the year ends</td><td>Happens before decisions are made</td></tr>
+          <tr><td>Bookkeeping</td><td>Basic or outsourced separately</td><td>Bionic Bookkeeping&trade; â€” AI + human review</td></tr>
+          <tr><td>Financial Visibility</td><td>Limited, often annual</td><td>Real-time reporting &amp; cash-flow visibility</td></tr>
+          <tr><td>Cash Flow Guidance</td><td>Rarely included</td><td>Included year-round</td></tr>
+          <tr><td>Books + Tax Coordination</td><td>Separate firms, no communication</td><td>One team, fully coordinated</td></tr>
+          <tr><td>Business &amp; Owner Tax</td><td>Prepared in isolation</td><td>Viewed and coordinated together</td></tr>
+          <tr><td>Profitability Analysis</td><td>Not typically included</td><td>Ongoing review and discussion</td></tr>
+          <tr><td>Strategic Guidance</td><td>Limited to tax season</td><td>CFO-level oversight, year-round</td></tr>
+          <tr><td>Technology</td><td>Traditional workflows</td><td>AI-enhanced workflows on QuickBooks Online</td></tr>
+          <tr><td>Primary Goal</td><td>File your tax return</td><td>Help you legally keep more of what you earn</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bfm-compare__cta">
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="bfm-btn bfm-btn--gold" target="_top">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. REALITY CHECK -->
+<section class="bfm-reality" id="bfm-reality">
+  <div class="bfm-reality__inner">
+    <div class="bfm-reality__head">
+      <span class="bfm-lbl bfm-lbl--white">Business Owner Reality Check</span>
+      <div class="bfm-bar bfm-bar--c" style="background:rgba(255,255,255,.2)"></div>
+      <h2>Do Any of These Sound Familiar?</h2>
+      <p>These are the most common frustrations we hear from business owners. Business Financial Management was built to solve exactly these problems.</p>
+    </div>
+    <div class="bfm-reality__grid">
+      <div class="bfm-reality__col">
+        <h3 class="pain">&#10060; &nbsp;Common Frustrations</h3>
+        <div class="bfm-r-item bfm-r-item--pain"><p>My CPA only calls me during tax season &mdash; I have no idea where I stand the rest of the year.</p></div>
+        <div class="bfm-r-item bfm-r-item--pain"><p>My bookkeeper and CPA don&rsquo;t communicate with each other.</p></div>
+        <div class="bfm-r-item bfm-r-item--pain"><p>I don&rsquo;t know my actual cash flow position at any given time.</p></div>
+        <div class="bfm-r-item bfm-r-item--pain"><p>I feel like I&rsquo;m paying too much in taxes, but find out too late to do anything about it.</p></div>
+        <div class="bfm-r-item bfm-r-item--pain"><p>My financial reports don&rsquo;t actually help me make better business decisions.</p></div>
+      </div>
+      <div class="bfm-reality__col">
+        <h3 class="apt">&#9989; &nbsp;The BFM Solution</h3>
+        <div class="bfm-r-item bfm-r-item--apt"><p>Year-round visibility into your business finances &mdash; not just a call in April.</p></div>
+        <div class="bfm-r-item bfm-r-item--apt"><p>Books, tax planning, and tax preparation handled by one coordinated team.</p></div>
+        <div class="bfm-r-item bfm-r-item--apt"><p>Real-time cash-flow monitoring built into your bookkeeping relationship.</p></div>
+        <div class="bfm-r-item bfm-r-item--apt"><p>Proactive tax strategy reviewed before decisions are made, not after.</p></div>
+        <div class="bfm-r-item bfm-r-item--apt"><p>Strategic reporting designed to support real business decisions, not just compliance.</p></div>
+      </div>
+    </div>
+    <div class="bfm-reality__cta">
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="bfm-btn bfm-btn--gold" target="_top">Start Working With Affinity Private Tax</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. BIONIC BOOKKEEPING -->
+<section class="bfm-bionic" id="bfm-bionic">
+  <div class="bfm-bionic__wrap">
+    <div class="bfm-bionic__img">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="AI-powered bookkeeping and financial analytics"/>
+    </div>
+    <div class="bfm-bionic__content">
+      <div class="bfm-bionic__ai-tag">
+        <span class="bfm-bionic__ai-dot"></span>
+        <span>AI-Enhanced &bull; Human-Overseen</span>
+      </div>
+      <span class="bfm-lbl bfm-lbl--white" style="margin-bottom:8px">Bionic Bookkeeping&trade;</span>
+      <h2>Your Books. Powered by AI.<br/>Reviewed by Experienced Tax Planners.</h2>
+      <div class="bfm-bionic__callout">
+        <p><strong>The difference that matters:</strong> Our experienced tax planners actively assist in the bookkeeping process &mdash; reviewing your books through a tax lens throughout the year. This means deductions get caught before they&rsquo;re missed, not discovered after filing. A standard bookkeeper records what happened. We record, review, and optimize.</p>
+      </div>
+      <p>Bionic Bookkeeping&trade; combines QuickBooks Online with AI-enhanced automation and human oversight from professionals who understand both bookkeeping <em>and</em> tax strategy. Transactions are categorized with attention to deductions, timing, and financial reporting &mdash; not just compliance.</p>
+      <div class="bfm-bionic__checks">
+        <span class="bfm-bionic__check">AI-powered transaction categorization</span>
+        <span class="bfm-bionic__check">Tax planner review of your books</span>
+        <span class="bfm-bionic__check">QuickBooks Online platform</span>
+        <span class="bfm-bionic__check">Year-round deduction tracking</span>
+        <span class="bfm-bionic__check">P&amp;L &amp; Balance Sheet reporting</span>
+        <span class="bfm-bionic__check">Real-time cash-flow visibility</span>
+        <span class="bfm-bionic__check">Month-end reconciliation</span>
+        <span class="bfm-bionic__check">Tax-ready records, always</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL REPORTING & CASH FLOW -->
+<section class="bfm-cashflow" id="bfm-cashflow">
+  <div class="bfm-cashflow__inner">
+    <div class="bfm-cashflow__left">
+      <span class="bfm-lbl bfm-lbl--teal">Financial Reporting &amp; Cash Flow Guidance</span>
+      <div class="bfm-bar"></div>
+      <h2>Your Tax Planners Are Also Watching Your Numbers Month by Month</h2>
+      <p>Most businesses only see their financial picture once a year &mdash; when the CPA calls to file the return. By then, it&rsquo;s too late to change anything. At Affinity Private Tax, your tax planning team actively maintains and reviews your books, which means they see your financial trends as they happen &mdash; not after the fact.</p>
+
+      <div class="bfm-cashflow__insight">
+        <div class="bfm-cashflow__insight-tag">&#128172; &nbsp;The kind of insight you get</div>
+        <p>&ldquo;Your contractor expenses are up 34% from the same quarter last year. Before we categorize these, let&rsquo;s discuss whether any of these workers should be reclassified &mdash; it affects your deductions and your risk exposure differently.&rdquo;</p>
+      </div>
+
+      <p>Because your bookkeeper and tax planner are the same coordinated team, the conversation goes beyond &ldquo;here are your numbers.&rdquo; It becomes: <em>here&rsquo;s what your numbers mean, here&rsquo;s what changed, and here&rsquo;s what we should do about it.</em></p>
+
+      <ul class="bfm-cashflow__list">
+        <li>Monthly Profit &amp; Loss statements reviewed with a tax planning lens</li>
+        <li>Balance Sheet monitoring for asset, liability, and equity health</li>
+        <li>Cash flow forecasting to anticipate shortfalls before they happen</li>
+        <li>Expense trend alerts &mdash; when a category spikes versus prior month or prior year</li>
+        <li>Quarterly estimated tax projections based on your real-time books</li>
+        <li>Working capital analysis to support business decisions</li>
+        <li>Revenue and margin reporting designed for owner decision-making</li>
+      </ul>
+    </div>
+
+    <div class="bfm-cashflow__right">
+
+      <div class="bfm-cf-card">
+        <div class="bfm-cf-card__header">
+          <span class="bfm-cf-card__title">Expense Trend &mdash; Q3 vs Q3 Prior Year</span>
+          <span class="bfm-cf-card__badge bfm-cf-card__badge--warn">&#9650; Review Needed</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Payroll</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:72%;background:#1D7080"></div></div>
+          <span class="bfm-cf-bar-val">+8%</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Contractors</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:94%;background:#e65100"></div></div>
+          <span class="bfm-cf-bar-val" style="color:#e65100">+34%</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Software</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:55%;background:#1D7080"></div></div>
+          <span class="bfm-cf-bar-val">+12%</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Travel</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:30%;background:#C9A84C"></div></div>
+          <span class="bfm-cf-bar-val">&#8722;18%</span>
+        </div>
+        <div class="bfm-cf-card__note">&#9888;&nbsp; Contractor spend flagged for tax planning review</div>
+      </div>
+
+      <div class="bfm-cf-card">
+        <div class="bfm-cf-card__header">
+          <span class="bfm-cf-card__title">Cash Flow Position &mdash; This Month</span>
+          <span class="bfm-cf-card__badge bfm-cf-card__badge--good">&#10003; Healthy</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Revenue</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:88%;background:#2e7d32"></div></div>
+          <span class="bfm-cf-bar-val">$84,200</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Expenses</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:61%;background:#e65100"></div></div>
+          <span class="bfm-cf-bar-val">$51,800</span>
+        </div>
+        <div class="bfm-cf-bar-row">
+          <span class="bfm-cf-bar-label">Net Cash</span>
+          <div class="bfm-cf-bar-track"><div class="bfm-cf-bar-fill" style="width:77%;background:#1D7080"></div></div>
+          <span class="bfm-cf-bar-val">$32,400</span>
+        </div>
+        <div class="bfm-cf-card__note bfm-cf-card__note--good">&#128200;&nbsp; Est. Q4 tax payment: $8,100 &mdash; already reserved</div>
+      </div>
+
+      <div class="bfm-cf-card">
+        <div class="bfm-cf-card__header">
+          <span class="bfm-cf-card__title">Year-to-Date Tax Planning Status</span>
+          <span class="bfm-cf-card__badge bfm-cf-card__badge--info">On Track</span>
+        </div>
+        <div class="bfm-cf-donut-row">
+          <svg class="bfm-cf-donut" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#f0f0f0" stroke-width="4"/>
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#1D7080" stroke-width="4" stroke-dasharray="66 34" stroke-dashoffset="25" stroke-linecap="round"/>
+            <text x="18" y="21" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#1D7080">66%</text>
+          </svg>
+          <div class="bfm-cf-donut-legend">
+            <div class="bfm-cf-donut-item"><span class="bfm-cf-donut-dot" style="background:#1D7080"></span>Deductions identified YTD</div>
+            <div class="bfm-cf-donut-item"><span class="bfm-cf-donut-dot" style="background:#C9A84C"></span>Planning opportunities still open</div>
+            <div class="bfm-cf-donut-item"><span class="bfm-cf-donut-dot" style="background:#f0f0f0"></span>Q4 review pending</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 9. BUSINESS TAX -->
+<section class="bfm-tax" id="bfm-tax">
+  <div class="bfm-tax__inner">
+    <div class="bfm-tax__head">
+      <span class="bfm-lbl bfm-lbl--teal">Business Tax Services</span>
+      <div class="bfm-bar"></div>
+      <h2>Business Tax Planning &amp; Preparation</h2>
+      <p>Business tax planning and business tax preparation are both included &mdash; handled by the same team that manages your books, so there are no handoffs, no surprises, and no scramble at year-end.</p>
+    </div>
+    <div class="bfm-tax__cols">
+      <div class="bfm-tax__card">
+        <h3>Business Tax Planning</h3>
+        <p>The best tax planning happens before decisions are made &mdash; not after the fiscal year ends. Our team is involved in your business throughout the year, so we identify opportunities before they close.</p>
+        <ul class="bfm-tax__list">
+          <li>Entity structure review and optimization</li>
+          <li>Owner compensation and distribution planning</li>
+          <li>Business deduction and depreciation strategies</li>
+          <li>Qualified Business Income (QBI) deduction planning</li>
+          <li>Retirement plan contributions and selection</li>
+          <li>Year-end tax estimates and projections</li>
+          <li>Planning around major decisions â€” hires, equipment, real estate</li>
+          <li>Coordination between business and owner individual tax planning</li>
+        </ul>
+      </div>
+      <div class="bfm-tax__card">
+        <h3>Business Tax Preparation</h3>
+        <p>The business tax return reflects everything that happened throughout the year. Because we maintain your books and coordinate planning in advance, the filing process is organized, accurate, and aligned with your goals.</p>
+        <ul class="bfm-tax__list">
+          <li>Business entity returns &mdash; S-Corp, C-Corp, Partnership, LLC, Sole Proprietor</li>
+          <li>Coordination with bookkeeping for accurate, tax-ready records</li>
+          <li>Review of deductible expenses, depreciation, and business tax items</li>
+          <li>Coordination between business and owner individual returns</li>
+          <li>IRS and state tax authority communication when needed</li>
+          <li>Extension requests when appropriate</li>
+          <li>Year-round availability for tax questions and coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. OWNER / INDIVIDUAL TAX â€” CLEARLY EXPLAINED -->
+<section class="bfm-indv" id="bfm-indv">
+  <div class="bfm-indv__inner">
+    <div class="bfm-indv__left">
+      <span class="bfm-lbl bfm-lbl--teal">Owner Tax Planning &amp; Individual Tax Preparation</span>
+      <div class="bfm-bar"></div>
+      <h2>Why Individual Tax Planning Appears on a Business Page</h2>
+      <p>You may be wondering why we mention individual tax planning and individual tax preparation in the context of a business service. The answer is simple: <strong>as a business owner, your business taxes and your personal taxes are inseparable.</strong></p>
+      <div class="bfm-indv__alert">
+        <p><strong>What &ldquo;owner tax planning&rdquo; means here:</strong> When we handle your individual tax planning as a business owner, we coordinate it directly with your business returns and business tax strategy. Every decision &mdash; how much to pay yourself, how to structure distributions, what retirement contributions to make, when to take income &mdash; affects both your business return and your personal return at the same time. Having one team see both means better outcomes on both.</p>
+      </div>
+      <p>This is not standalone individual tax planning offered to the general public. It is owner-level tax planning that is built around and coordinated with your business financial picture &mdash; because the two cannot be properly planned in isolation.</p>
+      <p>If you are looking for personal financial planning beyond tax &mdash; investment management, estate planning, or total wealth management &mdash; those services are available through <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Affinity Wealth</a>.</p>
+      <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" class="bfm-indv__link" target="_top">&#8594; &nbsp;Learn more about our Tax Planning &amp; Preparation services</a>
+    </div>
+    <div class="bfm-indv__right">
+      <h3>What Is Included &mdash; Coordinated with Your Business</h3>
+      <ul>
+        <li>Income tax projections that account for both business and personal income</li>
+        <li>Owner compensation and distribution strategy &mdash; structured for tax efficiency</li>
+        <li>Estimated tax planning coordinated with business cash flow</li>
+        <li>Retirement contribution planning across both business and personal accounts</li>
+        <li>Capital gain planning that reflects business activity</li>
+        <li>Individual tax return preparation coordinated with the business return</li>
+        <li>Charitable giving and deduction strategies</li>
+        <li>Year-round support for tax questions that touch both business and personal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. OTHER BUSINESS SERVICES -->
+<section class="bfm-other" id="bfm-other">
+  <div class="bfm-other__inner">
+    <div class="bfm-other__head">
+      <span class="bfm-lbl bfm-lbl--teal">Also Available for Businesses</span>
+      <div class="bfm-bar"></div>
+      <h2>Business Financial Management Is Just the Start</h2>
+      <p>Beyond the six core services of Business Financial Management, Affinity also provides a range of specialized business services. Many of our business clients utilize one or more of the following alongside their BFM relationship.</p>
+    </div>
+    <div class="bfm-other__grid">
+      <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" class="bfm-other__card" target="_top">
+        <span class="bfm-other__card-icon">&#127970;</span>
+        <div class="bfm-other__card-body">
+          <h3>401(k) &amp; Retirement Planning</h3>
+          <p>Design, implement, and manage company retirement plans. Help employees build retirement savings while maximizing business tax benefits.</p>
+        </div>
+        <span class="bfm-other__card-arrow">&#8594;</span>
+      </a>
+      <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" class="bfm-other__card" target="_top">
+        <span class="bfm-other__card-icon">&#128188;</span>
+        <div class="bfm-other__card-body">
+          <h3>Business Sale Planning</h3>
+          <p>When it&rsquo;s time to sell, proper planning can mean significantly more after-tax proceeds. We help structure the transaction for the best possible outcome.</p>
+        </div>
+        <span class="bfm-other__card-arrow">&#8594;</span>
+      </a>
+      <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" class="bfm-other__card" target="_top">
+        <span class="bfm-other__card-icon">&#127941;</span>
+        <div class="bfm-other__card-body">
+          <h3>Executive Benefit Planning</h3>
+          <p>Deferred compensation, supplemental benefits, and key-person strategies designed to attract, retain, and reward top leadership in your business.</p>
+        </div>
+        <span class="bfm-other__card-arrow">&#8594;</span>
+      </a>
+      <a href="https://tagplanning.wixstudio.com/demo/legal-structure" class="bfm-other__card" target="_top">
+        <span class="bfm-other__card-icon">&#128196;</span>
+        <div class="bfm-other__card-body">
+          <h3>Entity Structure &amp; Legal</h3>
+          <p>The right business entity structure affects taxes, liability, and long-term flexibility. We help evaluate structure decisions and coordinate with legal counsel.</p>
+        </div>
+        <span class="bfm-other__card-arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM: APT + AFFINITY WEALTH -->
+<section class="bfm-eco" id="bfm-eco">
+  <div class="bfm-eco__inner">
+    <div class="bfm-eco__head">
+      <span class="bfm-lbl bfm-lbl--teal">The Affinity Ecosystem</span>
+      <div class="bfm-bar bfm-bar--c"></div>
+      <h2>Affinity Private Tax &amp; Affinity Wealth &mdash; Two Firms. One Coordinated Team.</h2>
+      <p>The Affinity Group operates two specialized firms that work side by side. Affinity Private Tax handles everything tax and business-financial. Affinity Wealth handles investment management, estate planning, and personal wealth strategy. Together, they can serve every financial need a business owner has &mdash; from their company&rsquo;s books to their personal investment portfolio.</p>
+    </div>
+    <div class="bfm-eco__grid">
+      <div class="bfm-eco__card bfm-eco__card--apt">
+        <div class="bfm-eco__card-tag">&#128196; Affinity Private Tax</div>
+        <h3>Business Tax &amp; Financial Management</h3>
+        <p>Focused on the accounting, tax, and financial organization side of your business and personal tax picture. If it touches a tax return, a financial statement, or a business book &mdash; this is Affinity Private Tax.</p>
+        <ul>
+          <li>Bionic Bookkeeping&trade; &mdash; AI + human oversight</li>
+          <li>Financial reporting &amp; cash-flow guidance</li>
+          <li>Business tax planning</li>
+          <li>Business tax preparation</li>
+          <li>Owner individual tax planning</li>
+          <li>Individual tax preparation</li>
+        </ul>
+        <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">View Tax Services &#8594;</a>
+      </div>
+      <div class="bfm-eco__connector">
+        <div class="bfm-eco__conn-line"></div>
+        <div class="bfm-eco__conn-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1D7080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="bfm-eco__conn-line"></div>
+      </div>
+      <div class="bfm-eco__card bfm-eco__card--wealth">
+        <div class="bfm-eco__card-tag">&#128200; Affinity Wealth</div>
+        <h3>Investment Management &amp; Personal Wealth Strategy</h3>
+        <p>Focused on building, protecting, and growing your personal wealth over time. Investments, insurance, estate planning, and retirement income strategy &mdash; coordinated alongside your tax picture from Affinity Private Tax.</p>
+        <ul>
+          <li>Total wealth management</li>
+          <li>Investment portfolio management</li>
+          <li>Retirement income planning</li>
+          <li>Estate &amp; legacy planning</li>
+          <li>Life &amp; disability insurance</li>
+          <li>Real estate investing guidance</li>
+        </ul>
+        <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">View Wealth Services &#8594;</a>
+      </div>
+    </div>
+    <div class="bfm-eco__note">
+      <span class="bfm-eco__note-icon">&#128101;</span>
+      <p>Business owners who work with Affinity Private Tax have access to Affinity Wealth services as well &mdash; meaning your tax team and your wealth management team are working from the same financial picture. <strong>This level of coordination between tax and wealth strategy is rare, and it leads to measurably better outcomes for business owners.</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 13. CTA -->
+<section class="bfm-cta">
+  <div class="bfm-cta__inner">
+    <span class="bfm-lbl bfm-lbl--white" style="text-align:center;display:block">Affinity Private Tax</span>
+    <div class="bfm-bar bfm-bar--c" style="background:rgba(255,255,255,.2)"></div>
+    <h2>Most Firms Help You Stay Compliant.<br/>We Help You Build a Better Business.</h2>
+    <p>Business Financial Management brings bookkeeping, financial reporting, business tax planning, and business tax preparation together under one coordinated relationship &mdash; so your finances are organized, your taxes are planned year-round, and you always know where your business stands.</p>
+    <div class="bfm-cta__btns">
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="bfm-btn bfm-btn--gold" target="_top">Schedule a Free Conversation</a>
+      <a href="https://tagplanning.wixstudio.com/demo/our-team" class="bfm-btn bfm-btn--outline" target="_top">Meet Our Team</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="ag-footer">
+  <div class="ag-footer__inner">
+    <div class="ag-footer__top">
+      <div>
+        <div class="ag-footer__doc-links">
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_d76b3e98e958484c8a5074a88aef9d5e.pdf" target="_blank">Privacy Policy</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_90fd5a779d224c12bcf411abd245e453.pdf" target="_blank">CRS</a>
+          <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_33996409bbfa48599a354141d29073d0.pdf" target="_blank">ADV</a>
+        </div>
+        <div class="ag-footer__social">
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
+        </div>
+        <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br/>(330) 526-8412</div>
+      </div>
+      <div><p class="ag-footer__disclaimer">Affinity Wealth LLC is a Registered Investment Advisor and provides financial-planning services. Affinity Private Tax provides tax planning and tax preparation to select clients. Affinity Insurance Strategies LLC is a licensed Insurance Agency and works closely with Affinity Wealth LLC to provide services to our clients. Affinity Wealth LLC does not directly offer legal advice.</p></div>
+      <div>
+        <p class="ag-footer__sitemap-heading">Site Map</p>
+        <div class="ag-footer__sitemap">
+          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+          <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
+          <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
+          <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
+          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
+          <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
+        </div>
+      </div>
+    </div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.bfm-sidenav a');
+  var ids=['bfm-serve','bfm-why6','bfm-how','bfm-compare','bfm-reality','bfm-bionic','bfm-cashflow','bfm-tax','bfm-indv','bfm-other','bfm-eco'];
+  function onScroll(){
+    var top=window.scrollY+140,cur=ids[0];
+    ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop<=top)cur=id;});
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight);window.parent.postMessage(JSON.stringify({type:'iFrameHeight',height:h}),'*');window.parent.postMessage({height:h},'*');}
+  ['load','resize','DOMContentLoaded'].forEach(function(e){window.addEventListener(e,r);});
+  setInterval(r,200);
+})();
+</script>
+</body>
+</html>
