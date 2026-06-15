@@ -372,23 +372,9 @@ html { font-size: 20px; }
   object-fit: contain; object-position: center center;
   display: block;
   padding: 6px;
+  z-index: 1;
 }
-.rl-cover__fallback {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 20px 14px; text-align: center;
-  position: relative; z-index: 0;
-}
-.rl-cover__fallback-letter {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem; font-weight: 700; color: #C9A84C;
-  line-height: 1; margin-bottom: 10px;
-}
-.rl-cover__fallback-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px; font-weight: 500;
-  color: rgba(255,255,255,0.75); line-height: 1.5;
-}
+.rl-cover__fallback { display: none; }
 
 /* ── CARD BODY ── */
 .rl-card__body {
@@ -746,15 +732,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Keys to a Successful Retirement</h3>
               <p class="rl-card__author">by Fritz Gilbert</p>
-              <p class="rl-card__summary">Fritz Gilbert retired at 55 after a 30-year corporate career, and in this remarkably candid book he documents what actually makes retirement work — beyond the balance sheet. Drawing from his popular blog RetirementManifesto.com and interviews with dozens of retirees, Gilbert explores the non-financial dimensions most financial books overlook: finding purpose, managing time, sustaining relationships, maintaining health, and building a meaningful identity outside of work. This is the guide for the whole retirement transition, not just the financial one.</p>
+              <p class="rl-card__summary">Fritz Gilbert retired at 55 after a 30-year career and documents what actually makes retirement work — beyond the balance sheet. He explores purpose, identity, relationships, and how to build a meaningful life outside of work.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Retirement is as much a psychological transition as a financial one</li>
                   <li>Purpose and identity outside of work are essential for long-term fulfillment</li>
-                  <li>Managing unstructured time is a skill retirees must intentionally develop</li>
                   <li>Social connections require deliberate cultivation after leaving the workplace</li>
-                  <li>Health investments made before retirement pay compounding dividends in retirement</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/1250243114" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -780,15 +764,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Die with Zero</h3>
               <p class="rl-card__author">by Bill Perkins</p>
-              <p class="rl-card__summary">Hedge fund manager Bill Perkins challenges one of personal finance's most sacred rules: save as much as possible. His well-argued thesis is that over-saving leads to under-living — and that dying with significant wealth is, paradoxically, a financial failure. Perkins introduces the concept of "memory dividends," argues for strategic giving while alive, and offers a life-stage framework for aligning spending with your health and energy. A paradigm-shifting read for anyone nearing or already in retirement who wants to rethink what their wealth is truly for.</p>
+              <p class="rl-card__summary">Bill Perkins argues that over-saving leads to under-living — and that dying with significant wealth is, paradoxically, a financial failure. He introduces "memory dividends" and a life-stage framework for aligning your spending with your health and energy across retirement.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Optimize for life experiences, not maximum wealth accumulation</li>
                   <li>"Memory dividends" compound — invest in experiences while you're healthy enough to enjoy them</li>
                   <li>Strategic giving to heirs while alive is more impactful than post-death inheritance</li>
-                  <li>Align your spending with your health and energy across life stages</li>
-                  <li>The goal is zero regrets at end of life, not just a zero bank balance</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/0358099765" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -814,15 +796,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">The Power of Zero</h3>
               <p class="rl-card__author">by David McKnight</p>
-              <p class="rl-card__summary">Financial advisor David McKnight makes an urgent, well-supported case that tax rates in the United States are historically low and headed significantly higher — and that most Americans' retirement accounts are entirely unprepared for this shift. He outlines a practical strategy for repositioning money from taxable and tax-deferred accounts into tax-free vehicles, guiding readers toward the "0% tax bracket" in retirement through Roth IRAs, Roth conversions, and other tax-advantaged strategies. Clear, direct, and genuinely actionable for anyone within 10-15 years of retirement.</p>
+              <p class="rl-card__summary">David McKnight makes the case that U.S. tax rates are historically low and headed significantly higher — and that most retirement accounts are unprepared. He outlines a practical path to the "0% tax bracket" in retirement through Roth IRAs, Roth conversions, and other tax-advantaged strategies.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Tax rates are near historic lows and likely to increase — plan accordingly today</li>
-                  <li>The 0% tax bracket in retirement is an achievable, specific, plannable target</li>
+                  <li>The 0% tax bracket in retirement is an achievable, plannable target</li>
                   <li>Roth IRAs and Roth conversions are the most accessible tax-free retirement tools</li>
-                  <li>Life insurance can play a legitimate, tax-advantaged role in retirement income</li>
-                  <li>The window for beneficial Roth conversions may narrow as tax law evolves</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/1984822306" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -861,14 +841,12 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Atomic Habits</h3>
               <p class="rl-card__author">by James Clear</p>
-              <p class="rl-card__summary">Drawing on cognitive science, biology, and behavioral psychology, James Clear delivers the most practical guide to habit formation ever written. His "Four Laws of Behavior Change" framework — make it obvious, make it attractive, make it easy, make it satisfying — provides an actionable blueprint for building any positive routine. Whether you're building disciplined savings habits, systematizing business operations, or improving personal performance, Atomic Habits gives you tools to make lasting change feel effortless rather than forced.</p>
+              <p class="rl-card__summary">James Clear delivers the most practical guide to habit formation ever written, with a four-law framework — make it obvious, attractive, easy, and satisfying — that makes lasting change feel effortless. Whether building savings discipline or systematizing business operations, the tools here apply across every dimension of financial and personal life.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>A 1% daily improvement compounds to 37× better results over a year</li>
                   <li>Identity-based habits ("I am a saver") are more durable than outcome-based goals</li>
-                  <li>Environment design influences behavior far more than willpower or motivation</li>
-                  <li>Habit stacking attaches new behaviors to existing routines for easier adoption</li>
                   <li>Systems and processes — not goals alone — determine long-term outcomes</li>
                 </ul>
               </div>
@@ -895,15 +873,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">The Psychology of Money</h3>
               <p class="rl-card__author">by Morgan Housel</p>
-              <p class="rl-card__summary">Through 19 short, incisive essays, Morgan Housel explores the often irrational, deeply personal ways people think about money — and why behavior matters infinitely more than knowledge when building wealth. He argues that financial success is less about intelligence or strategy and more about temperament, patience, and avoiding catastrophic mistakes. Covering compounding, the role of luck and risk, and the psychology of "enough," this is the most readable and genuinely human personal finance book written in the last decade.</p>
+              <p class="rl-card__summary">Through 19 short essays, Morgan Housel explores why behavior matters infinitely more than knowledge when building wealth. Financial success is less about intelligence or strategy and more about temperament, patience, and avoiding catastrophic mistakes.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Behavior and emotional temperament matter more than financial knowledge or IQ</li>
                   <li>Wealth is what you don't spend — income and net worth are fundamentally different</li>
                   <li>Compounding demands patience and time — never interrupt it unnecessarily</li>
-                  <li>Reasonable financial plans you can stick to beat theoretically optimal ones you can't</li>
-                  <li>Luck and risk are invisible forces that shape every financial outcome — stay humble</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/0857197681" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -928,14 +904,12 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Just Keep Buying</h3>
               <p class="rl-card__author">by Nick Maggiulli</p>
-              <p class="rl-card__summary">Data scientist Nick Maggiulli applies rigorous quantitative research to answer two fundamental personal finance questions: how much should you save, and how should you invest? His counterintuitive, data-backed conclusion is both simple and powerful: just keep buying diversified assets on a consistent schedule, regardless of market conditions. Maggiulli dismantles popular myths around timing the market, optimal savings rates, and investment selection — and replaces anxiety with a clear, evidence-based path to long-term wealth accumulation.</p>
+              <p class="rl-card__summary">Data scientist Nick Maggiulli applies rigorous research to answer two fundamental questions: how much should you save, and how should you invest? His data-backed conclusion is simple and powerful: consistently buy diversified assets on a schedule, regardless of market conditions.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Consistent, automated investing outperforms market timing in nearly every historical scenario</li>
                   <li>Early in your career, increasing income matters more than optimizing investment returns</li>
-                  <li>Lump-sum investing historically beats dollar-cost averaging in most market conditions</li>
-                  <li>Broad diversification across asset classes reduces both volatility and decision regret</li>
                   <li>The greatest wealth-building advantage is simply starting early and never stopping</li>
                 </ul>
               </div>
@@ -962,14 +936,12 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Money for Couples</h3>
               <p class="rl-card__author">by Ramit Sethi</p>
-              <p class="rl-card__summary">Personal finance expert Ramit Sethi turns his attention to one of the most avoided conversations in relationships: money. Based on thousands of interviews with couples across all income levels, he provides a practical framework for discussing finances openly, identifying shared values, and building a joint "Rich Life" together. This is not a budgeting manual — it's a guide to aligning on money as a couple, eliminating financial conflict, and creating shared wealth without sacrificing the relationship in the process.</p>
+              <p class="rl-card__summary">Based on thousands of interviews with couples, Ramit Sethi provides a practical framework for discussing finances openly and building a joint "Rich Life" together. This is not a budgeting manual — it's a guide to aligning on money, eliminating financial conflict, and creating shared wealth without sacrificing the relationship.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
-                  <li>Most couples avoid money conversations — learning to engage transforms both relationship and finances</li>
                   <li>Define your shared "Rich Life" together before building any financial system around it</li>
                   <li>Align on values first; the specific tactics — accounts, budgets — are secondary</li>
-                  <li>Automation and shared financial systems dramatically reduce daily friction and conflict</li>
                   <li>Money disagreements are rarely about money — they're about values, security, and control</li>
                 </ul>
               </div>
@@ -996,14 +968,12 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Die with Zero</h3>
               <p class="rl-card__author">by Bill Perkins</p>
-              <p class="rl-card__summary">Hedge fund manager Bill Perkins challenges one of personal finance's most sacred rules: save as much as possible. His well-argued thesis is that over-saving leads to under-living — and that dying with significant wealth is, paradoxically, a financial failure. Perkins introduces the concept of "memory dividends," argues for strategic giving while alive, and offers a life-stage framework for aligning spending with your health and energy. Equally vital for high-earners and accumulators who may be sacrificing present living for future wealth they'll never fully enjoy.</p>
+              <p class="rl-card__summary">Bill Perkins challenges the rule to save as much as possible, arguing that over-saving leads to under-living and dying with significant wealth is a financial failure. For high earners and business owners, his life-stage spending framework is especially vital — the wealth you accumulate should fund a life fully lived.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Optimize for life experiences, not maximum wealth accumulation</li>
                   <li>"Memory dividends" compound — invest in experiences while you're healthy enough to enjoy them</li>
-                  <li>Strategic giving to heirs while alive is more impactful than post-death inheritance</li>
-                  <li>Align your spending with your health and energy across life stages</li>
                   <li>The goal is zero regrets at end of life, not just a zero bank balance</li>
                 </ul>
               </div>
@@ -1030,14 +1000,12 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Unreasonable Hospitality</h3>
               <p class="rl-card__author">by Will Guidara</p>
-              <p class="rl-card__summary">Will Guidara co-owned Eleven Madison Park, rated the world's best restaurant in 2017, and this book reveals the philosophy that made it extraordinary. His concept of "unreasonable hospitality" — proactively giving people more than they expect, in moments they'll never forget — is a masterclass in building client loyalty through genuine human connection. For business owners and service professionals, this book redefines what world-class client experience looks like and provides a practical leadership framework for creating it at every level of an organization.</p>
+              <p class="rl-card__summary">Will Guidara co-owned Eleven Madison Park — rated the world's best restaurant — and reveals the philosophy behind it: proactively giving people more than they expect. For business owners, this book redefines what world-class client experience looks like and how to build it at every level of an organization.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Legendary service is the result of intentional, creative acts of generosity — not accidents</li>
-                  <li>Culture is built through the specific, deliberate behaviors leadership models daily</li>
                   <li>Details that seem small to the business are often enormous to the client</li>
-                  <li>Empowering your team to make clients feel truly seen creates irreplaceable loyalty</li>
                   <li>Business differentiation comes from emotional connection, not just quality of product</li>
                 </ul>
               </div>
@@ -1064,15 +1032,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Good to Great</h3>
               <p class="rl-card__author">by Jim Collins</p>
-              <p class="rl-card__summary">After a rigorous five-year study comparing 28 companies, Jim Collins and his research team identified exactly what separates truly enduring, great businesses from merely good ones. Their findings — Level 5 Leadership, the Hedgehog Concept, the Flywheel Effect, and the discipline of "first who, then what" — remain the most cited and applied business research of the past 25 years. For business owners and executives building organizations meant to last, this is the essential foundational read on what sustainable greatness actually requires.</p>
+              <p class="rl-card__summary">After a five-year study of 28 companies, Jim Collins identified exactly what separates truly great businesses from merely good ones. His findings — Level 5 Leadership, the Hedgehog Concept, and the Flywheel Effect — remain the most cited business research of the past 25 years.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Level 5 Leaders combine fierce professional will with deep personal humility</li>
                   <li>Great companies find their Hedgehog Concept: passion + skill + economic engine</li>
-                  <li>"Who before what": get the right people in place before determining strategy</li>
                   <li>Disciplined thought and action — not dramatic moves — create compounding results</li>
-                  <li>The Flywheel Effect: consistent effort in the right direction builds unstoppable momentum</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/0066620996" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -1098,15 +1064,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">The AI-Driven Leader</h3>
               <p class="rl-card__author">by Geoff Woods</p>
-              <p class="rl-card__summary">As former President of The ONE Thing Company, Geoff Woods has advised some of the world's most effective leaders — and in this forward-thinking book he argues that AI is the most powerful leadership multiplier ever created. But only for leaders who know how to use it. Woods provides a practical framework for treating AI not as a task-automation tool but as a strategic thinking partner — one that helps leaders prioritize ruthlessly, make better decisions faster, and achieve leverage that once required entire teams. Essential for any business leader navigating the AI era.</p>
+              <p class="rl-card__summary">Geoff Woods argues that AI is the most powerful leadership multiplier ever created — but only for leaders who know how to use it strategically. He provides a practical framework for treating AI as a thinking partner that helps leaders prioritize ruthlessly, decide faster, and achieve leverage.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>AI is a leadership multiplier for those who ask it the right strategic questions</li>
                   <li>Treat AI as a thinking partner, not merely a content or task-automation tool</li>
-                  <li>Effective AI collaboration requires clarity of purpose and strong self-awareness as a leader</li>
                   <li>Leaders who master AI leverage will compound advantages over those who don't — within years</li>
-                  <li>AI augments human judgment and strategy — it cannot replace strong leadership values</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/1394281951" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -1132,15 +1096,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">The 7 Habits of Highly Effective People</h3>
               <p class="rl-card__author">by Stephen R. Covey</p>
-              <p class="rl-card__summary">With over 40 million copies sold, Stephen Covey's landmark work remains one of the most transformative leadership and personal development books ever written. The seven habits — from "Be Proactive" and "Begin with the End in Mind" to "Think Win-Win" and "Sharpen the Saw" — are grounded in principle-centered character ethics rather than personality techniques or shortcuts. Covey's framework provides a complete approach to moving from dependence to independence to genuine interdependence across work and life.</p>
+              <p class="rl-card__summary">Stephen Covey's landmark work grounds leadership and personal effectiveness in principle-centered character ethics rather than personality shortcuts. The seven habits — from "Begin with the End in Mind" to "Think Win-Win" — provide a complete framework for moving from dependence to genuine interdependence.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>Effectiveness begins with private victory: mastering yourself before leading others</li>
                   <li>Begin with the end in mind — clarity of purpose is the foundation of meaningful action</li>
-                  <li>Put first things first — prioritize by importance, not urgency, to achieve what truly matters</li>
                   <li>Think win-win in every negotiation and relationship — abundance replaces scarcity thinking</li>
-                  <li>Continuous self-renewal ("sharpen the saw") sustains high performance in all life dimensions</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/1982137274" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -1166,15 +1128,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">How to Win Friends and Influence People</h3>
               <p class="rl-card__author">by Dale Carnegie</p>
-              <p class="rl-card__summary">First published in 1936 and still a consistent bestseller nearly 90 years later, Dale Carnegie's guide to human relations has influenced more leaders, salespeople, and business professionals than perhaps any other book ever written. Carnegie's core insight — that people are primarily motivated by their desire to feel important and valued — translates into timeless principles for building trust, leading teams, winning clients, and navigating conflict. The techniques are elegantly simple; the results, across generations, have been profound.</p>
+              <p class="rl-card__summary">Nearly 90 years after publication, Carnegie's guide to human relations remains essential for leaders, business owners, and sales professionals. His core insight — that people are motivated by the desire to feel valued — translates into timeless principles for building trust, leading teams, and winning clients.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
-                  <li>People care far more about their own interests than yours — lead with genuine curiosity about them</li>
                   <li>Sincere appreciation — not flattery — is the most powerful relationship-building tool available</li>
-                  <li>Criticism and complaint rarely produce lasting behavior change; encouragement always works better</li>
                   <li>Listening actively and making others feel heard is the foundation of all genuine influence</li>
-                  <li>You can change others' behavior most effectively by changing your own approach and attitude first</li>
+                  <li>Criticism rarely produces lasting change; encouragement always works better</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/0671027034" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
@@ -1200,15 +1160,13 @@ html { font-size: 20px; }
               </div>
               <h3 class="rl-card__title">Think and Grow Rich</h3>
               <p class="rl-card__author">by Napoleon Hill</p>
-              <p class="rl-card__summary">Published in 1937 after 20 years studying over 500 of America's most successful people — including Andrew Carnegie, Henry Ford, and Thomas Edison — Napoleon Hill distilled his findings into 13 principles of personal achievement. From definiteness of purpose and burning desire to the role of the mastermind alliance and the power of the subconscious mind, this book established the philosophical foundation of virtually all modern success literature. Nearly 90 years later it remains one of the best-selling books of all time, and for good reason.</p>
+              <p class="rl-card__summary">After studying over 500 of America's most successful people, Napoleon Hill distilled 13 principles of personal achievement. From definiteness of purpose to the mastermind alliance, this book established the philosophical foundation of virtually all modern success literature.</p>
               <div class="rl-card__takeaways">
                 <p class="rl-takeaways__label">Key Takeaways</p>
                 <ul class="rl-takeaways__list">
                   <li>A definiteness of purpose combined with burning desire is the starting point of all achievement</li>
-                  <li>Faith and a positive mental attitude directly influence the quality of your outcomes</li>
                   <li>Mastermind alliances multiply individual intelligence and dramatically accelerate success</li>
                   <li>Specialized knowledge, organized planning, and decisive action create lasting wealth</li>
-                  <li>The subconscious mind works continuously — consciously feed it purposeful, constructive thought</li>
                 </ul>
               </div>
               <a href="https://www.amazon.com/dp/1585424331" class="rl-card__amazon" target="_blank" rel="noopener noreferrer">
