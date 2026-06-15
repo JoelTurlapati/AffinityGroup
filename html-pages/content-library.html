@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* ── NAV ── */
 .ag-nav {

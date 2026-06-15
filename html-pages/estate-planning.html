@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -65,7 +68,7 @@ html { font-size: 20px; }
 .ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -276,7 +279,7 @@ html { font-size: 20px; }
 
 <main>
 
-  <!-- §1 Hero -->
+  <!-- Â§1 Hero -->
   <section class="ep-hero">
     <img src="https://static.wixstatic.com/media/64b604_12f1a31b0fff48be9d276b6d3520e193~mv2.avif" alt="Estate Planning" />
     <div class="ep-hero__overlay"></div>
@@ -286,7 +289,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §1b Intro -->
+  <!-- Â§1b Intro -->
   <section class="ep-intro">
     <div class="ep-intro__inner">
       <div class="ag-gold-bar"></div>
@@ -294,7 +297,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §2 Setting Up Correct Documents -->
+  <!-- Â§2 Setting Up Correct Documents -->
   <section class="ep-section ep-section--light">
     <div class="ep-section__inner">
       <div class="ep-section__img">
@@ -308,7 +311,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §2b Second image -->
+  <!-- Â§2b Second image -->
   <section class="ep-section ep-section--white">
     <div class="ep-section__inner ep-section__inner--rev">
       <div class="ep-section__img">
@@ -323,7 +326,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §4 Taking Care of Everything -->
+  <!-- Â§4 Taking Care of Everything -->
   <section class="ep-section ep-section--white">
     <div class="ep-section__inner ep-section__inner--rev">
       <div class="ep-section__img">
@@ -337,7 +340,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §5 Services Grid -->
+  <!-- Â§5 Services Grid -->
   <section class="ep-services">
     <div class="ep-services__inner">
       <h2>Our Estate Planning Services</h2>
@@ -378,7 +381,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §6 CTA -->
+  <!-- Â§6 CTA -->
   <section class="ep-cta">
     <div class="ep-cta__inner">
       <h2>Ready to Protect Your Legacy?</h2>
@@ -413,7 +416,6 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -441,7 +443,7 @@ html { font-size: 20px; }
 })();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

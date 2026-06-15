@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -55,7 +55,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-btn-primary:hover{background:#145568;transform:translateY(-2px)}
 .ag-gold-bar{width:56px;height:3px;background:#C9A84C;margin:0 0 28px}
 .ag-section-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -89,6 +89,9 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .tm-cta h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#145568;margin-bottom:24px;font-weight:600}
 .tm-cta__btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 @media(max-width:800px){.tm-profile__inner{grid-template-columns:1fr}.tm-profile__photo{max-width:300px}}
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){body{zoom:1.08}}
+@media(min-width:1920px){body{zoom:1.13}}
 </style>
 
 <nav class="ag-nav">
@@ -204,7 +207,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
 .ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
 .ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -318,7 +321,6 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -336,7 +338,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 (function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

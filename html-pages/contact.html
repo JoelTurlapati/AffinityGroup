@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -14,10 +14,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
-/* â”€â”€ NAV â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ NAV Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ag-nav { position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07); }
 .ag-nav__inner { width:100%;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px; }
 .ag-nav__logo img { height:66px;width:auto;object-fit:contain;display:block; }
@@ -43,7 +46,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
 .ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
 .ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
 
-/* â”€â”€ FOOTER â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ FOOTER Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ag-footer { background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif; }
 .ag-footer__inner { max-width:1200px;margin:0 auto; }
 .ag-footer__top { display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08); }
@@ -61,7 +64,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
 .ag-footer__sitemap a:hover { color:#fff; }
 .ag-footer__bottom { padding-top:28px;font-size:11.5px;color:#4f7f89;text-align:center; }
 
-/* â”€â”€ CONTACT PAGE â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ CONTACT PAGE Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 /* Hero with video */
 .cp-hero {
@@ -136,7 +139,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
   text-align: center;
 }
 
-/* Section 2 â€“ Process info */
+/* Section 2 Ã¢â‚¬â€œ Process info */
 .cp-info {
   padding: 96px 32px; background: #fff;
 }
@@ -190,7 +193,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
   font-size: .95rem; line-height: 1.85; color: #3a4a4e;
 }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -352,7 +355,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
 
 <main>
 
-  <!-- Â§ 1: Hero Video + Form -->
+  <!-- Ã‚Â§ 1: Hero Video + Form -->
   <section class="cp-hero">
     <video autoplay muted loop playsinline>
       <source src="https://video.wixstatic.com/video/64b604_ed8e93a7bc8d42cd8e57dc8f39725259/file" type="video/mp4" />
@@ -391,7 +394,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
     </div>
   </section>
 
-  <!-- Â§ 2: Process Info -->
+  <!-- Ã‚Â§ 2: Process Info -->
   <section class="cp-info">
     <div class="cp-info__inner">
       <h2 class="cp-info__headline">No Cost. No Pressure. Always Transparent.</h2>
@@ -454,7 +457,6 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -472,10 +474,10 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   // TODO: Replace the three placeholders below with your EmailJS credentials.
-  // Sign up free at https://www.emailjs.com — setup steps are in the EMAILJS_SETUP.md doc.
-  var EMAILJS_PUBLIC_KEY  = 'QRtqPRHpS_tumJx0r';   // Account → API Keys → Public Key
-  var EMAILJS_SERVICE_ID  = 'service_284taex';   // Email Services → your connected service ID
-  var EMAILJS_TEMPLATE_ID = 'template_dhskerl';  // Email Templates → your template ID
+  // Sign up free at https://www.emailjs.com â€” setup steps are in the EMAILJS_SETUP.md doc.
+  var EMAILJS_PUBLIC_KEY  = 'QRtqPRHpS_tumJx0r';   // Account â†’ API Keys â†’ Public Key
+  var EMAILJS_SERVICE_ID  = 'service_284taex';   // Email Services â†’ your connected service ID
+  var EMAILJS_TEMPLATE_ID = 'template_dhskerl';  // Email Templates â†’ your template ID
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -484,18 +486,18 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = contactForm.querySelector('.cp-form__submit');
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Sendingâ€¦';
       btn.disabled = true;
 
       emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
         .then(function() {
-          btn.textContent = "Thank you! We’ll be in touch within 24 hours.";
+          btn.textContent = "Thank you! Weâ€™ll be in touch within 24 hours.";
           btn.style.background = '#145568';
           contactForm.reset();
         }, function() {
           btn.textContent = 'SUBMIT';
           btn.disabled = false;
-          alert('Something went wrong. Please call us at (330) 526-8412 or try again.');
+          alert('Something went wrong. Please call us at (330)Â 526-8412 or try again.');
         });
     });
   }
@@ -504,7 +506,7 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
 (function(){function r(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage(JSON.stringify({height:h}),"*");}["load","resize"].forEach(function(e){window.addEventListener(e,r);});setInterval(r,300);})();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

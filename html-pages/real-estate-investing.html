@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -65,7 +68,7 @@ html { font-size: 20px; }
 .ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -258,7 +261,7 @@ html { font-size: 20px; }
 
 <main>
 
-  <!-- §1 Hero -->
+  <!-- Â§1 Hero -->
   <section class="rei-hero">
     <video autoplay muted loop playsinline>
       <source src="https://video.wixstatic.com/video/64b604_849b08565d5e4e2a9aeb08ae5d1b0e36/file" type="video/mp4" />
@@ -269,12 +272,12 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §2 Stat Banner -->
+  <!-- Â§2 Stat Banner -->
   <section class="rei-stat">
     <h2>90% of All Millionaires Are Made Through Real Estate</h2>
   </section>
 
-  <!-- §3 Body Text -->
+  <!-- Â§3 Body Text -->
   <section class="rei-body">
     <div class="rei-body__inner">
       <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
@@ -283,7 +286,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §4 Two-Column Services -->
+  <!-- Â§4 Two-Column Services -->
   <section class="rei-services">
     <div class="rei-services__inner">
       <h2>How We Help You Invest in Real Estate</h2>
@@ -312,7 +315,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- §5 Video + CTA -->
+  <!-- Â§5 Video + CTA -->
   <section class="rei-video">
     <div class="rei-video__inner">
       <div class="rei-video__embed">
@@ -349,7 +352,6 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -377,7 +379,7 @@ html { font-size: 20px; }
 })();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -72,7 +75,7 @@ html { font-size: 20px; }
 .ag-section-label--gold { color: #C9A84C; }
 .ag-section-label--white { color: rgba(255,255,255,.65); }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -211,7 +214,7 @@ html { font-size: 20px; }
   color: #6a6a6a;
 }
 .tp-eligible__col--no li::before {
-  content: '—'; position: absolute; left: 0; top: 0;
+  content: 'â€”'; position: absolute; left: 0; top: 0;
   font-size: .8rem; color: #aaa; font-weight: 600;
 }
 
@@ -1122,13 +1125,13 @@ html { font-size: 20px; }
     <tbody>
       <tr>
         <td>Timing</td>
-        <td>Reactive — review happens after year-end</td>
-        <td>Proactive — planning happens throughout the year</td>
+        <td>Reactive â€” review happens after year-end</td>
+        <td>Proactive â€” planning happens throughout the year</td>
       </tr>
       <tr>
         <td>Engagement Frequency</td>
         <td>Once per year at tax filing time</td>
-        <td>Ongoing — planning meetings, reviews, and updates year-round</td>
+        <td>Ongoing â€” planning meetings, reviews, and updates year-round</td>
       </tr>
       <tr>
         <td>Scope</td>
@@ -1137,7 +1140,7 @@ html { font-size: 20px; }
       </tr>
       <tr>
         <td>Coordination</td>
-        <td>Isolated — no connection to financial plan</td>
+        <td>Isolated â€” no connection to financial plan</td>
         <td>Coordinated with Affinity Wealth investment and planning team</td>
       </tr>
       <tr>
@@ -1220,7 +1223,7 @@ html { font-size: 20px; }
     <div class="tp-process-step">
       <div class="tp-process-step__num">2</div>
       <h3>Integrated Planning &amp; Filing</h3>
-      <p>Year-round planning conversations inform the return — deductions, estimates, Roth conversions, and timing decisions are reviewed proactively.</p>
+      <p>Year-round planning conversations inform the return â€” deductions, estimates, Roth conversions, and timing decisions are reviewed proactively.</p>
     </div>
     <div class="tp-process-step">
       <div class="tp-process-step__num">3</div>
@@ -1274,7 +1277,6 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -1308,7 +1310,7 @@ html { font-size: 20px; }
 })();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

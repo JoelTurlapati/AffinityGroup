@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* ═══ NAV ═══ */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -844,7 +847,7 @@ html { font-size: 20px; }
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
-      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group"/>
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
     </a>
     <div class="ag-nav__links">
       <div class="ag-nav__item ag-nav__item--drop">
@@ -855,10 +858,10 @@ html { font-size: 20px; }
               <span class="ag-nav__drop-heading">Services For Individuals</span>
               <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
               <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-              <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
               <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
               <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
             </div>
             <div class="ag-nav__drop-col">
@@ -881,7 +884,7 @@ html { font-size: 20px; }
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
-        <span class="ag-nav__label">INSIGHTS &amp; TOOLS <span class="ag-caret">&#9662;</span></span>
+        <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
@@ -904,10 +907,10 @@ html { font-size: 20px; }
           <span class="ag-mob__sub-heading">For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-mob__sub-heading">For Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">Business Financial Management</a>
@@ -926,7 +929,7 @@ html { font-size: 20px; }
         </div>
       </div>
       <div class="ag-mob__section">
-        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS &amp; TOOLS <span class="ag-mob__caret">&#9662;</span></button>
+        <button class="ag-mob__heading" data-toggle="mob-insights">INSIGHTS AND TOOLS <span class="ag-mob__caret">&#9662;</span></button>
         <div class="ag-mob__sub" id="mob-insights">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>

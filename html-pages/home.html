@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -15,8 +15,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 .ag-nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: 72px; z-index: 9999;
@@ -91,7 +94,7 @@ html { font-size: 20px; }
 .ag-nav__burger { display: none; }
 .ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 .ag-footer {
   background: #0c3540; color: #8fb8c0;
   padding: 56px 28px 28px; font-family: 'Inter', sans-serif;
@@ -130,7 +133,7 @@ html { font-size: 20px; }
   padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center;
 }
 
-/* ── SHARED COMPONENTS ── */
+/* â”€â”€ SHARED COMPONENTS â”€â”€ */
 .ag-btn-primary {
   display: inline-block; padding: 16px 38px;
   background: #1D7080; color: #fff;
@@ -168,7 +171,7 @@ html { font-size: 20px; }
 .ag-btn-gold-outline:hover { background: #C9A84C; color: #fff; transform: translateY(-2px); }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -185,10 +188,10 @@ html { font-size: 20px; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* ── HOME-PAGE ── */
+/* â”€â”€ HOME-PAGE â”€â”€ */
 home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .hp-hero {
   display: flex;
   height: 640px;
@@ -251,14 +254,14 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   text-shadow: 0 1px 14px rgba(0,0,0,.45);
 }
 
-/* ── HERO PANELS ── */
+/* â”€â”€ HERO PANELS â”€â”€ */
 .hp-hero__panels {
   flex: 0 0 460px;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  gap: 0;
-  padding: 0;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px 24px;
   background: linear-gradient(160deg, #09111d 0%, #0f1d2e 55%, #0c1828 100%);
   border-left: 1px solid rgba(201,168,76,.15);
 }
@@ -267,46 +270,46 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 28px 32px 28px 36px;
+  padding: 20px 20px 20px 18px;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  background: transparent;
-  box-shadow: inset 4px 0 0 rgba(201,168,76,0);
-  transition: background .3s, box-shadow .3s;
+  background: rgba(255,255,255,0.93);
+  border-left: 3px solid #C9A84C;
+  border-radius: 0 6px 6px 0;
+  transition: background .25s, border-color .25s, transform .25s;
   position: relative;
   cursor: pointer;
 }
-.hp-hero__panel:last-child { border-bottom: none; }
+.hp-hero__panel:last-child { }
 .hp-hero__panel:hover {
-  background: rgba(29,112,128,.18);
-  box-shadow: inset 4px 0 0 #C9A84C;
+  background: #fff;
+  border-left-color: #e8c96e;
+  transform: translateX(3px);
 }
 /* heading row: title + arrow */
 .hp-hero__panel-heading {
   display: flex; align-items: center; justify-content: space-between; gap: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 .hp-hero__panel-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.08rem; font-weight: 600;
-  color: #fff; line-height: 1.3; letter-spacing: -.01em;
+  font-size: 1.0rem; font-weight: 700;
+  color: #145568; line-height: 1.3;
 }
 .hp-hero__panel-arrow {
-  width: 18px; height: 18px; flex-shrink: 0;
-  color: rgba(201,168,76,.45);
-  transition: color .3s, transform .3s;
+  width: 16px; height: 16px; flex-shrink: 0;
+  color: #C9A84C;
+  transition: transform .25s;
 }
-.hp-hero__panel:hover .hp-hero__panel-arrow { color: #C9A84C; transform: translateX(4px); }
+.hp-hero__panel:hover .hp-hero__panel-arrow { transform: translateX(4px); }
 /* subtitle */
 .hp-hero__panel-sub {
   font-family: 'Inter', sans-serif;
-  font-size: .76rem; font-weight: 300;
-  color: rgba(255,255,255,.55); line-height: 1.55;
-  transition: color .3s;
+  font-size: .75rem; font-weight: 400;
+  color: #4a5568; line-height: 1.5;
 }
-.hp-hero__panel:hover .hp-hero__panel-sub { color: rgba(255,255,255,.82); }
+.hp-hero__panel:hover .hp-hero__panel-sub { color: #2d3748; }
 
-/* ── PREMIUM FIRM SECTION ── */
+/* â”€â”€ PREMIUM FIRM SECTION â”€â”€ */
 .hp-firm {
   padding: 108px 48px;
   background: #fafeff;
@@ -351,7 +354,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .hp-firm__body p + p { margin-top: 22px; }
 
 
-/* ── CIRCLE — pure white ── */
+/* â”€â”€ CIRCLE â€” pure white â”€â”€ */
 .hp-circle {
   padding: 80px 32px;
   background: #ffffff;
@@ -359,7 +362,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-circle img { max-width: 720px; width: 100%; height: auto; }
 
-/* ── TWM SECTION ── */
+/* â”€â”€ TWM SECTION â”€â”€ */
 .hp-twm {
   padding: 80px 32px 96px;
   background: #F0F8FA;
@@ -391,7 +394,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   text-align: left;
 }
 
-/* ── FIDUCIARY — video section ── */
+/* â”€â”€ FIDUCIARY â€” video section â”€â”€ */
 .hp-fid-cta {
   padding: 96px 32px;
   background: linear-gradient(180deg, #eef8fa 0%, #e4f4f7 100%);
@@ -431,7 +434,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
 }
 
-/* ── INSIGHTS ── */
+/* â”€â”€ INSIGHTS â”€â”€ */
 .hp-insights {
   padding: 90px 32px 110px;
   background: linear-gradient(148deg, #071e24 0%, #0e3d47 52%, #0c3540 100%);
@@ -516,7 +519,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   .hp-insights__header { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
-/* ── SCHEDULE ── */
+/* â”€â”€ SCHEDULE â”€â”€ */
 .hp-schedule {
   padding: 110px 32px;
   background: linear-gradient(148deg, #07161e 0%, #0d2d3a 52%, #0b2633 100%);
@@ -552,9 +555,9 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 @media (max-width: 900px) {
   .hp-hero { flex-direction: column; height: auto; }
   .hp-hero__video-side { min-height: 52vh; }
-  .hp-hero__panels { flex: none; display: grid; grid-template-columns: 1fr 1fr; border-left: none; border-top: 1px solid rgba(201,168,76,.12); gap: 0; padding: 0; }
-  .hp-hero__panel { flex: none; min-height: 130px; padding: 20px 18px 20px 22px; border-bottom: 1px solid rgba(255,255,255,.06); border-right: 1px solid rgba(255,255,255,.06); }
-  .hp-hero__panel:nth-child(even) { border-right: none; }
+  .hp-hero__panels { flex: none; display: grid; grid-template-columns: 1fr 1fr; border-left: none; border-top: 1px solid rgba(201,168,76,.12); gap: 8px; padding: 16px; }
+  .hp-hero__panel { flex: none; min-height: 110px; padding: 16px 16px 16px 14px; border-radius: 0 6px 6px 0; }
+  .hp-hero__panel:hover { transform: none; }
   .hp-hero__panel-cta { display: none; }
   .hp-firm { padding: 72px 32px; }
   .hp-firm__inner { grid-template-columns: 1fr; gap: 36px; }
@@ -568,7 +571,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 
 
-/* ── YOUTUBE MODAL ── */
+/* â”€â”€ YOUTUBE MODAL â”€â”€ */
 .yt-modal {
   display: none; position: fixed; inset: 0; z-index: 999999;
   align-items: center; justify-content: center;
@@ -598,7 +601,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   border: none;
 }
 
-/* ── INSIGHT MODAL ── */
+/* â”€â”€ INSIGHT MODAL â”€â”€ */
 .ins-modal {
   display: none; position: fixed; inset: 0; z-index: 999998;
   align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;
@@ -662,7 +665,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 </style>
 
-<!-- ── NAV ── -->
+<!-- â”€â”€ NAV â”€â”€ -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
@@ -816,8 +819,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   <section class="hp-hero">
     <div class="hp-hero__video-side">
       <video autoplay muted loop playsinline>
-        <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/2160p/mp4/file.mp4" type="video/mp4" />
-        <source src="https://video.wixstatic.com/video/64b604_758a47cf9c4e4894b59bbcbeae9a7e9f/1080p/mp4/file.mp4" type="video/mp4" />
+        <source src="https://video.wixstatic.com/video/64b604_59b1508d8750406d837018f0636b3fec/1080p/mp4/file.mp4" type="video/mp4" />
       </video>
       <div class="hp-hero__overlay"></div>
       <div class="hp-hero__definition-wrap">
@@ -831,7 +833,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <div class="hp-hero__text">
         <div class="hp-hero__tagline">Where Purpose Meets Planning</div>
         <p class="hp-hero__subtitle">
-          Helping successful families and business owners turn complexity into clarity, decisions into direction, and wealth into a life well planned — through coordinated guidance across every major area of their financial life.
+          Helping successful families and business owners turn complexity into clarity, decisions into direction, and wealth into a life well planned â€” through coordinated guidance across every major area of their financial life.
         </p>
       </div>
     </div>
@@ -861,7 +863,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="hp-hero__panel-sub">High income, complex taxes, serious wealth building</div>
       </a>
 
-      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" target="_top">
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/business-organizations" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">Businesses &amp; Organizations</div>
           <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
@@ -946,7 +948,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Investing</span>
             <h3 class="hp-ins-card__title">True Diversification: What Your Portfolio Might Be Missing</h3>
-            <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments — not just the ones we hope for.</p>
+            <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments â€” not just the ones we hope for.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -958,7 +960,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Estate Planning</span>
             <h3 class="hp-ins-card__title">Estate Planning Essentials for Families With Significant Assets</h3>
-            <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth — it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
+            <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth â€” it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -970,7 +972,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">What a Well-Funded Retirement Actually Requires</h3>
-            <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone — but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
+            <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone â€” but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -994,7 +996,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">The 5-to-10 Year Window That Shapes Your Retirement</h3>
-            <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now — around tax positioning, Social Security timing, and savings rates — have an outsized impact on outcomes.</p>
+            <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now â€” around tax positioning, Social Security timing, and savings rates â€” have an outsized impact on outcomes.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -1006,7 +1008,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Financial Planning</span>
             <h3 class="hp-ins-card__title">Is Your Financial Plan Still Aligned With Your Life?</h3>
-            <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed — or what you've built.</p>
+            <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed â€” or what you've built.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -1049,12 +1051,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
-          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney – Your Financial GPS</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney â€“ Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ's</a>
         </div>
@@ -1064,7 +1065,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   </div>
 </footer>
 
-<!-- ── YOUTUBE MODAL ── -->
+<!-- â”€â”€ YOUTUBE MODAL â”€â”€ -->
 <div id="ytModal" class="yt-modal" role="dialog" aria-modal="true" aria-label="Video Player">
   <div class="yt-modal__backdrop" onclick="closeYtModal()"></div>
   <div class="yt-modal__box">
@@ -1077,7 +1078,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   </div>
 </div>
 
-<!-- ── INSIGHT MODAL ── -->
+<!-- â”€â”€ INSIGHT MODAL â”€â”€ -->
 <div id="insModal" class="ins-modal" role="dialog" aria-modal="true" aria-label="Article">
   <div class="ins-modal__backdrop" onclick="closeInsModal()"></div>
   <div class="ins-modal__box">
@@ -1181,7 +1182,7 @@ function closeInsModal() {
 </script>
 
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }

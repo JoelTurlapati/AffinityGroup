@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -14,6 +14,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
+/* MON-SCALE: larger text on big monitors */
+@media(min-width:1600px){html{font-size:22px}}
+@media(min-width:1920px){html{font-size:23px}}
 
 /* NAV */
 .ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
@@ -66,21 +69,39 @@ html { font-size: 20px; }
 /* STICKY SIDE-NAV */
 .cfo-sidenav {
   position: fixed; right: 12px; top: 50%; transform: translateY(-50%);
-  z-index: 800; background: rgba(255,255,255,.82); border-radius: 8px;
-  padding: 8px 0; border-right: 3px solid #C9A84C;
+  z-index: 800; background: rgba(255,255,255,.88); border-radius: 8px;
+  padding: 6px 0 8px; border-right: 3px solid #C9A84C;
   border: 1px solid rgba(201,168,76,.35); border-right: 3px solid #C9A84C;
-  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
   backdrop-filter: blur(12px);
+  transition: padding .25s ease;
 }
-.cfo-sidenav a {
-  display: block; padding: 8px 16px 8px 13px;
+.cfo-sidenav__toggle {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  width: calc(100% - 12px); margin: 0 6px 6px; padding: 7px 10px;
+  background: rgba(201,168,76,.14); border: none; border-radius: 6px;
   font-family: 'Inter', sans-serif; font-size: 9.5px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: #1D7080;
+  cursor: pointer; transition: background .2s;
+}
+.cfo-sidenav__toggle:hover { background: rgba(201,168,76,.26); }
+.cfo-sidenav__toggle-icon { font-size: 13px; line-height: 1; transition: transform .3s; }
+.cfo-sidenav__links { display: flex; flex-direction: column; }
+.cfo-sidenav a {
+  display: block; padding: 9px 18px 9px 15px;
+  font-family: 'Inter', sans-serif; font-size: 11.4px; font-weight: 700;
   letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
   color: #2d5a65; white-space: nowrap;
   transition: color .2s, background .2s;
 }
 .cfo-sidenav a:hover,
 .cfo-sidenav a.cfo-sidenav__active { color: #C9A84C; background: rgba(201,168,76,.08); }
+/* collapsed state */
+.cfo-sidenav--collapsed { padding: 0; }
+.cfo-sidenav--collapsed .cfo-sidenav__links { display: none; }
+.cfo-sidenav--collapsed .cfo-sidenav__toggle { margin: 0; width: auto; }
+.cfo-sidenav--collapsed .cfo-sidenav__toggle-text { display: none; }
+.cfo-sidenav--collapsed .cfo-sidenav__toggle-icon { transform: rotate(180deg); }
 @media (max-width: 1100px) { .cfo-sidenav { display: none; } }
 
 /* SHARED */
@@ -389,7 +410,7 @@ html { font-size: 20px; }
 .cfo-final p { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.9; margin-bottom: 14px; }
 .cfo-final p:last-of-type { margin-bottom: 40px; }
 
-/* ── laptop nav tightening (901–1380px) ── */
+/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -556,18 +577,24 @@ html { font-size: 20px; }
 </script>
 
 <!-- STICKY SIDE-NAV -->
-<nav class="cfo-sidenav" aria-label="Page sections">
-  <a href="#cfo-serves">Who We Serve</a>
-  <a href="#cfo-partner">AW &amp; APT</a>
-  <a href="#cfo-compare">APT</a>
-  <a href="#cfo-reality">Why APT</a>
-  <a href="#cfo-bionic">Bookkeeping</a>
-  <a href="#cfo-records">Financial Records</a>
-  <a href="#cfo-taxprep">Indv. Tax Prep</a>
-  <a href="#cfo-biztaxprep">Bus. Tax Prep</a>
-  <a href="#cfo-taxplan">Indv. Tax Plan</a>
-  <a href="#cfo-biztaxplan">Bus. Tax Plan</a>
-  <a href="#cfo-process">How It Works</a>
+<nav class="cfo-sidenav" id="cfoSidenav" aria-label="Page sections">
+  <button class="cfo-sidenav__toggle" id="cfoSidenavToggle" type="button" aria-expanded="true" aria-controls="cfoSidenavLinks" aria-label="Hide section menu">
+    <span class="cfo-sidenav__toggle-text">Sections</span>
+    <span class="cfo-sidenav__toggle-icon" aria-hidden="true">&#10095;</span>
+  </button>
+  <div class="cfo-sidenav__links" id="cfoSidenavLinks">
+    <a href="#cfo-serves">Who We Serve</a>
+    <a href="#cfo-partner">AW &amp; APT</a>
+    <a href="#cfo-compare">APT</a>
+    <a href="#cfo-reality">Why APT</a>
+    <a href="#cfo-bionic">Bookkeeping</a>
+    <a href="#cfo-records">Financial Records</a>
+    <a href="#cfo-taxprep">Indv. Tax Prep</a>
+    <a href="#cfo-biztaxprep">Bus. Tax Prep</a>
+    <a href="#cfo-taxplan">Indv. Tax Plan</a>
+    <a href="#cfo-biztaxplan">Bus. Tax Plan</a>
+    <a href="#cfo-process">How It Works</a>
+  </div>
 </nav>
 
 <main style="padding-top:72px">
@@ -794,7 +821,7 @@ html { font-size: 20px; }
 })();
 </script>
 
-  <!-- COMPARISON TABLE — KEEP EXACT -->
+  <!-- COMPARISON TABLE â€” KEEP EXACT -->
   <section class="cfo-compare" id="cfo-compare">
     <div class="cfo-compare__inner">
       <div class="cfo-compare__header">
@@ -838,7 +865,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- REALITY CHECK — KEEP EXACT -->
+  <!-- REALITY CHECK â€” KEEP EXACT -->
   <section class="cfo-reality" id="cfo-reality">
     <div class="cfo-reality__inner">
       <div class="cfo-reality__header">
@@ -870,7 +897,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- SCOREBOARD — KEEP EXACT -->
+  <!-- SCOREBOARD â€” KEEP EXACT -->
   <section class="cfo-score" id="cfo-score">
     <div class="cfo-score__inner">
       <div class="cfo-score__header">
@@ -951,7 +978,7 @@ html { font-size: 20px; }
           </div>
         </div>
         <div class="cfo-bionic__right-col">
-          <img class="cfo-bionic__img" src="https://static.wixstatic.com/media/64b604_9dae5a34cbaf409fb33e4b9e79bb5365~mv2.jpeg" alt="Financial data and reporting dashboard" />
+          <img class="cfo-bionic__img" src="https://static.wixstatic.com/media/64b604_d4cfe27e1c884b329559f74cbe2e5cd3~mv2.jpg" alt="Financial data and reporting dashboard" />
           <div class="cfo-bionic__why">
             <h3>Why It Matters</h3>
             <p>The goal is not simply accurate books. The goal is books that support better tax planning, cleaner tax preparation, stronger cash-flow management, and more informed business decisions throughout the year.</p>
@@ -1278,7 +1305,6 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
-          <a href="https://tagplanning.wixstudio.com/demo/blog" target="_top">Blog Articles</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
@@ -1295,6 +1321,15 @@ html { font-size: 20px; }
 
 <script>
 (function(){
+  var sidenav = document.getElementById('cfoSidenav');
+  var toggle = document.getElementById('cfoSidenavToggle');
+  if(toggle && sidenav){
+    toggle.addEventListener('click', function(){
+      var collapsed = sidenav.classList.toggle('cfo-sidenav--collapsed');
+      toggle.setAttribute('aria-expanded', String(!collapsed));
+      toggle.setAttribute('aria-label', collapsed ? 'Show section menu' : 'Hide section menu');
+    });
+  }
   var links = document.querySelectorAll('.cfo-sidenav a');
   var ids = ['cfo-serves','cfo-partner','cfo-compare','cfo-reality','cfo-bionic','cfo-records','cfo-taxprep','cfo-biztaxprep','cfo-taxplan','cfo-biztaxplan','cfo-process'];
   function onScroll(){
@@ -1316,7 +1351,7 @@ html { font-size: 20px; }
 })();
 </script>
 <style>
-/* ── wide-screen gap fix ── */
+/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
@@ -1328,7 +1363,7 @@ html { font-size: 20px; }
 </style>
 
 <style>
-/* ── comparison table: stacked cards on mobile ── */
+/* â”€â”€ comparison table: stacked cards on mobile â”€â”€ */
 @media (max-width: 700px) {
   .cfo-compare { padding: 64px 16px; }
   .cfo-table-wrap { border-radius: 10px; overflow: visible; box-shadow: none; border: none; background: transparent; }
@@ -1351,7 +1386,7 @@ html { font-size: 20px; }
     text-align: left !important;
     background: transparent !important;
   }
-  /* Category row — dark header */
+  /* Category row â€” dark header */
   .cfo-table tbody td:first-child {
     background: #0c3540 !important;
     color: #fff !important;
@@ -1368,7 +1403,7 @@ html { font-size: 20px; }
     border-bottom: 1px solid #f0d5d5;
   }
   .cfo-table tbody td:nth-child(2)::before {
-    content: "❌ Traditional CPA: ";
+    content: "âŒ Traditional CPA: ";
     font-weight: 700;
     font-size: .75rem;
     display: block;
@@ -1380,7 +1415,7 @@ html { font-size: 20px; }
     color: #1a5f6e;
   }
   .cfo-table tbody td:nth-child(3)::before {
-    content: "✅ Affinity Private Tax: ";
+    content: "âœ… Affinity Private Tax: ";
     font-weight: 700;
     font-size: .75rem;
     display: block;
