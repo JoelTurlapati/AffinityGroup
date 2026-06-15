@@ -81,7 +81,7 @@ html { font-size: 20px; }
 
 /* 1. SPLIT HERO */
 .he-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; margin-top: 72px; }
-.he-hero__left { background: #F9F6F1; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; position: relative; }
+.he-hero__left { background: #F9F6F1; display: flex; flex-direction: column; justify-content: center; padding: 20px 64px; position: relative; }
 .he-hero__left::after { content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px; background: linear-gradient(to bottom, transparent, #C9A84C 30%, #C9A84C 70%, transparent); }
 .he-hero__badge { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 32px; }
 .he-hero__badge-line { width: 32px; height: 2px; background: #C9A84C; }
@@ -109,14 +109,14 @@ html { font-size: 20px; }
 .he-stat__lbl { font-family: 'Inter', sans-serif; font-size: .75rem; color: rgba(255,255,255,.6); line-height: 1.55; text-transform: uppercase; letter-spacing: .08em; }
 
 /* 3. IMPACT STATEMENT */
-.he-impact { background: #1D7080; padding: 80px 64px; }
+.he-impact { background: #1D7080; padding: 20px 64px; }
 .he-impact__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
 .he-impact__label { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.55); }
 .he-impact__quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #fff; line-height: 1.55; }
 .he-impact__quote strong { font-style: normal; color: #C9A84C; }
 
 /* 4. SERVICES â€” numbered list */
-.he-services { background: #F9F6F1; padding: 100px 64px; }
+.he-services { background: #F9F6F1; padding: 25px 64px; }
 .he-services__inner { max-width: 1100px; margin: 0 auto; }
 .he-services__head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 64px; align-items: end; }
 .he-services__head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: #0d1b2a; font-weight: 700; line-height: 1.2; }
@@ -136,7 +136,7 @@ html { font-size: 20px; }
 .he-svc-row:hover .he-svc-row__arrow svg { stroke: #fff; }
 
 /* 5. TAX SPOTLIGHT */
-.he-tax { background: #0d1b2a; padding: 100px 64px; position: relative; overflow: hidden; }
+.he-tax { background: #0d1b2a; padding: 25px 64px; position: relative; overflow: hidden; }
 .he-tax__bg-num { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: 28rem; font-weight: 700; color: rgba(255,255,255,.03); line-height: 1; pointer-events: none; user-select: none; }
 .he-tax__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
 .he-tax__left { }
@@ -151,7 +151,7 @@ html { font-size: 20px; }
 .he-tax__link svg { width: 14px; height: 14px; stroke: #C9A84C; fill: none; stroke-width: 2.5; }
 
 /* 6. CHALLENGES â€” horizontal rows */
-.he-challenges { background: #fff; padding: 100px 64px; }
+.he-challenges { background: #fff; padding: 25px 64px; }
 .he-challenges__inner { max-width: 1100px; margin: 0 auto; }
 .he-challenges__head { margin-bottom: 56px; }
 .he-challenges__head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 2.8vw, 2.4rem); color: #0d1b2a; font-weight: 700; margin-bottom: 12px; }
@@ -165,7 +165,7 @@ html { font-size: 20px; }
 .he-ch-card__body p { font-family: 'Inter', sans-serif; font-size: .82rem; color: #5a6a7a; line-height: 1.75; }
 
 /* 7. TOOLS */
-.he-tools { background: #F9F6F1; padding: 100px 64px; }
+.he-tools { background: #F9F6F1; padding: 25px 64px; }
 .he-tools__inner { max-width: 1100px; margin: 0 auto; }
 .he-tools__head { text-align: center; margin-bottom: 56px; }
 .he-tools__head h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.6vw, 2.2rem); color: #0d1b2a; font-weight: 700; margin-bottom: 12px; }
@@ -204,14 +204,14 @@ html { font-size: 20px; }
   .he-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
   .he-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.08); }
   .he-impact__inner { grid-template-columns: 1fr; gap: 24px; }
-  .he-services { padding: 72px 32px; }
+  .he-services { padding: 18px 32px; }
   .he-services__head { grid-template-columns: 1fr; gap: 24px; }
-  .he-tax { padding: 72px 32px; }
+  .he-tax { padding: 18px 32px; }
   .he-tax__inner { grid-template-columns: 1fr; gap: 48px; }
   .he-tax__bg-num { display: none; }
-  .he-challenges { padding: 72px 32px; }
+  .he-challenges { padding: 18px 32px; }
   .he-challenges__grid { grid-template-columns: 1fr; }
-  .he-tools { padding: 72px 32px; }
+  .he-tools { padding: 18px 32px; }
   .he-tools__grid { grid-template-columns: 1fr 1fr; }
   .he-svc-row { grid-template-columns: 44px 1fr; }
   .he-svc-row__arrow { display: none; }
