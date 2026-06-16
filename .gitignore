@@ -8,3 +8,7 @@ jsconfig.json
 Resources.zip
 asset-upload-tracker.csv
 Resources/
+
+# Scratch video working folders (raw MP4 candidates / ffmpeg output)
+html-pages/_videocand/
+html-pages/homepagevideo/
