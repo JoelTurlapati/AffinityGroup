@@ -117,6 +117,19 @@ html { font-size: 20px; }
   .sub-split__inner { grid-template-columns: 1fr; gap: 32px; }
   .sub-areas__grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -291,6 +304,19 @@ html { font-size: 20px; }
     </div>
   </section>
 
+  <!-- people imagery: split -->
+  <section class="ag-split ag-split--alt">
+    <div class="ag-split__inner ag-split__inner--rev">
+      <div class="ag-split__body">
+        <h2>Reward and Retain Your Key People</h2>
+        <p>The executives who drive your growth deserve benefits that reflect their value. We design flexible, customized programs that help you attract top talent and keep your most important people for the long run.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_3ffbae7e04cb4f51a31990008ef05d99~mv2.jpeg" alt="Executives collaborating at work" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <section class="sub-areas">
     <div class="sub-areas__inner">
       <h2>Areas Our Team Can Help You Evaluate</h2>
@@ -305,6 +331,19 @@ html { font-size: 20px; }
         <div class="sub-area-card"><h3>Life Insurance</h3></div>
         <div class="sub-area-card"><h3>Performance Pay &amp; Incentives</h3></div>
       </div>
+    </div>
+  </section>
+
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_4b8b580f475c4e52b67abae4135e8f2c~mv2.jpeg" alt="A leadership team working together" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_75d8c6cbeb364a7b8020b5e4ad8bb651~mv2.jpeg" alt="A key executive at work" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_b05507c2351b4fd7b67035b5d28a5dcb~mv2.jpeg" alt="Professionals reviewing a benefits plan" loading="lazy" />
     </div>
   </section>
 
