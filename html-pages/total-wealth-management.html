@@ -14,16 +14,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
 html { font-size: 20px; }
-/* MON-SCALE: larger text on big monitors */
 @media(min-width:1600px){html{font-size:22px}}
 @media(min-width:1920px){html{font-size:23px}}
 
-/* NAV */
-.ag-nav {
-  position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-}
+/* ── NAV ── */
+.ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
 .ag-nav__inner { width: 100%; height: 100%; display: flex; align-items: center; padding: 0 28px 0 10px; gap: 16px; }
 .ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
@@ -34,7 +29,7 @@ html { font-size: 20px; }
 .ag-caret { font-size: 10px; opacity: .7; }
 .ag-nav__drop { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 480px; box-shadow: 0 12px 40px rgba(0,0,0,0.13); border-top: 3px solid #1D7080; border-radius: 0 0 8px 8px; padding: 8px 0; z-index: 10000; }
 .ag-nav__item--drop:hover .ag-nav__drop { display: block; }
-.ag-nav__drop a { display: block; padding: 9px 20px; font-family: 'Inter', sans-serif; font-size: 15.6px; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s; }
+.ag-nav__drop a { display: block; padding: 9px 20px; font-family: 'Inter', sans-serif; font-size: 13px; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s; }
 .ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
 .ag-nav__drop-heading { display: block; padding: 10px 20px 5px; font-size: 10.5px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; border-top: 1px solid #f0f0f0; margin-top: 4px; }
 .ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
@@ -43,12 +38,10 @@ html { font-size: 20px; }
 .ag-nav__portal { display: inline-block; padding: 9px 15px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
 .ag-nav__portal:hover { background: #145568; }
 .ag-nav__phone { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap; }
-.ag-nav__careers { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: #145568; text-decoration: none; text-transform: uppercase; letter-spacing: .07em; transition: color .2s; }
-.ag-nav__careers:hover { color: #C9A84C; }
 .ag-nav__burger { display: none; }
 .ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
 
-/* FOOTER */
+/* ── FOOTER ── */
 .ag-footer { background: #0c3540; color: #8fb8c0; padding: 56px 28px 28px; font-family: 'Inter', sans-serif; }
 .ag-footer__inner { max-width: 1200px; margin: 0 auto; }
 .ag-footer__top { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -66,15 +59,15 @@ html { font-size: 20px; }
 .ag-footer__sitemap a:hover { color: #fff; }
 .ag-footer__bottom { padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center; }
 
-/* SHARED */
+/* ── SHARED ── */
 .ag-btn-primary { display: inline-block; padding: 16px 38px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
 .ag-btn-primary:hover { background: #145568; transform: translateY(-2px); }
-.ag-btn-gold { display: inline-block; padding: 14px 32px; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s; }
-.ag-btn-gold:hover { background: #a8873d; }
-.ag-section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 14px; }
+.ag-btn-gold { display: inline-block; padding: 14px 32px; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; border: none; cursor: pointer; transition: background .2s, transform .15s; }
+.ag-btn-gold:hover { background: #a8873d; transform: translateY(-2px); }
+.ag-btn-outline-teal { display: inline-block; padding: 14px 32px; background: transparent; border: 2px solid #1D7080; color: #1D7080; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: .04em; cursor: pointer; transition: background .2s, color .2s, transform .15s; }
+.ag-btn-outline-teal:hover { background: #1D7080; color: #fff; transform: translateY(-2px); }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -82,93 +75,245 @@ html { font-size: 20px; }
   .ag-nav__right { gap: 8px; }
   .ag-nav__phone { display: none; }
   .ag-nav__portal { font-size: 10.5px; padding: 8px 10px; }
-  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
+  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; }
 }
-
 @media (max-width: 900px) {
   .ag-nav__links, .ag-nav__right { display: none; }
   .ag-nav__burger { display: block; font-size: 22px; background: none; border: none; color: #145568; cursor: pointer; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE: TOTAL WEALTH MANAGEMENT */
+/* ══════════════════════════════════════
+   TWM PAGE STYLES
+══════════════════════════════════════ */
+
+/* § HERO */
 .twm-hero {
-  position: relative; height: 70vh; min-height: 480px;
+  position: relative; height: 72vh; min-height: 520px;
   overflow: hidden; display: flex; align-items: flex-end; justify-content: center;
   background: #0e3d47; margin-top: 72px;
 }
 .twm-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.twm-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(14,61,71,.78) 100%); }
-.twm-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; }
-.twm-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 600; margin-bottom: 16px; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
-.twm-hero__text p { font-family: 'Inter', sans-serif; font-size: 1.1rem; opacity: .88; font-weight: 300; }
+.twm-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(14,61,71,.82) 100%); }
+.twm-hero__text { position: relative; z-index: 2; text-align: center; padding: 32px 32px; color: #fff; max-width: 800px; }
+.twm-hero__eyebrow { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .26em; margin-bottom: 16px; }
+.twm-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 600; margin-bottom: 16px; line-height: 1.18; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+.twm-hero__text p { font-family: 'Inter', sans-serif; font-size: 1.05rem; opacity: .88; font-weight: 300; line-height: 1.75; max-width: 600px; margin: 0 auto; }
+.twm-hero__badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+.twm-hero__badge { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .14em; padding: 6px 18px; border: 1px solid rgba(255,255,255,.3); border-radius: 20px; backdrop-filter: blur(4px); background: rgba(255,255,255,.08); }
 
-.twm-intro { padding: 20px 32px; background: #fff; }
-.twm-intro__inner { max-width: 900px; margin: 0 auto; }
-.twm-intro h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.1rem); color: #145568; margin-bottom: 20px; font-weight: 600; }
-.twm-intro p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 16px; }
-
-.twm-deliverables { padding: 18px 32px; background: #F0F8FA; }
-.twm-deliverables__inner { max-width: 900px; margin: 0 auto; }
-.twm-deliverables h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #145568; margin-bottom: 8px; font-weight: 600; }
-.twm-deliverables > .twm-deliverables__inner > p { font-size: 1rem; color: #3a3a3a; line-height: 1.8; margin-bottom: 28px; }
-.twm-deliverables__list { list-style: none; }
-.twm-deliverables__list li { padding: 14px 0 14px 28px; position: relative; font-size: .98rem; line-height: 1.75; color: #2a2a2a; border-bottom: 1px solid rgba(29,112,128,.1); }
-.twm-deliverables__list li:last-child { border-bottom: none; }
-.twm-deliverables__list li::before { content: '\2713'; position: absolute; left: 0; color: #1D7080; font-weight: 700; font-size: 1rem; top: 15px; }
-.twm-deliverables__sub { list-style: none; margin-top: 10px; padding-left: 8px; }
-.twm-deliverables__sub li { padding: 6px 0 6px 20px; font-size: .94rem; color: #444; border-bottom: none; }
-.twm-deliverables__sub li::before { content: '\2022'; color: #C9A84C; font-size: 1rem; top: 7px; }
-
-.twm-pricing {
-  padding: 52px 32px; text-align: center;
-  background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%);
+/* § STAT STRIP */
+.twm-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  background: linear-gradient(135deg, #0c3540 0%, #1D7080 100%);
+  border-bottom: 3px solid #C9A84C;
 }
-.twm-pricing p { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2vw, 1.6rem); color: #fff; font-style: italic; }
+.twm-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,.1); }
+.twm-stat:last-child { border-right: none; }
+.twm-stat__num { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 700; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
+.twm-stat__label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .14em; }
 
-.twm-circle { padding: 18px 32px; background: #fff; text-align: center; }
+/* § INTRO */
+.twm-intro { padding: 52px 48px; background: #fff; }
+.twm-intro__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+.twm-intro__left { position: sticky; top: 90px; }
+.twm-intro__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 16px; }
+.twm-intro__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 20px; }
+.twm-intro__rule { width: 52px; height: 3px; background: linear-gradient(90deg, #C9A84C, #e8c96e); border-radius: 2px; margin-bottom: 24px; }
+.twm-intro__quote { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: #1D7080; line-height: 1.7; padding-left: 18px; border-left: 3px solid #C9A84C; }
+.twm-intro__img-wrap { margin-top: 24px; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,.11); }
+.twm-intro__img-wrap img { width: 100%; height: auto; display: block; }
+.twm-intro__right p { font-family: 'Inter', sans-serif; font-size: 1.02rem; line-height: 2; color: #3a3a3a; font-weight: 300; margin-bottom: 20px; }
+.twm-intro__right p:last-child { margin-bottom: 0; }
+.twm-intro__right strong { color: #145568; font-weight: 600; }
+
+/* § WHO WE SERVE */
+.twm-personas { padding: 48px 48px; background: #f5f9fc; position: relative; }
+.twm-personas::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent); }
+.twm-personas__inner { max-width: 1100px; margin: 0 auto; }
+.twm-personas__header { text-align: center; margin-bottom: 24px; }
+.twm-personas__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-personas__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; line-height: 1.3; }
+.twm-personas__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.twm-persona-card { position: relative; border-radius: 12px; overflow: hidden; min-height: 340px; display: flex; flex-direction: column; justify-content: flex-end; text-decoration: none; }
+.twm-persona-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.twm-persona-card:hover img { transform: scale(1.06); }
+.twm-persona-card__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.08) 0%, rgba(12,53,64,.92) 100%); transition: background .3s; }
+.twm-persona-card:hover .twm-persona-card__overlay { background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(12,53,64,.96) 100%); }
+.twm-persona-card__body { position: relative; z-index: 1; padding: 24px; }
+.twm-persona-card__badge { display: inline-block; background: rgba(201,168,76,.9); color: #fff; font-family: 'Inter', sans-serif; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+.twm-persona-card__title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.35; margin-bottom: 10px; }
+.twm-persona-card__desc { font-family: 'Inter', sans-serif; font-size: .75rem; color: rgba(255,255,255,.75); line-height: 1.6; margin-bottom: 14px; font-weight: 300; }
+.twm-persona-card__cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; letter-spacing: .06em; text-transform: uppercase; transition: gap .2s; }
+.twm-persona-card:hover .twm-persona-card__cta { gap: 10px; }
+
+/* § SIX PILLARS */
+.twm-pillars { padding: 48px 48px; background: #fff; }
+.twm-pillars__inner { max-width: 1100px; margin: 0 auto; }
+.twm-pillars__header { text-align: center; margin-bottom: 28px; }
+.twm-pillars__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-pillars__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 12px; }
+.twm-pillars__sub { font-family: 'Inter', sans-serif; font-size: .92rem; color: #5a7a84; line-height: 1.7; max-width: 620px; margin: 0 auto; }
+.twm-pillars__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.twm-pillar { position: relative; overflow: hidden; background: #0c3540; border: none; border-radius: 12px; padding: 30px 26px; text-decoration: none; display: flex; flex-direction: column; min-height: 280px; transition: transform .25s, box-shadow .25s; }
+.twm-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 52px rgba(0,0,0,.28); }
+.twm-pillar__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .55s ease; }
+.twm-pillar:hover .twm-pillar__bg { transform: scale(1.08); }
+.twm-pillar__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(9,40,50,.68) 0%, rgba(9,40,50,.94) 100%); z-index: 1; transition: background .3s; }
+.twm-pillar:hover .twm-pillar__overlay { background: linear-gradient(to bottom, rgba(9,40,50,.62) 0%, rgba(9,40,50,.97) 100%); }
+.twm-pillar__icon { position: relative; z-index: 2; width: 48px; height: 48px; background: rgba(201,168,76,.18); border: 1.5px solid rgba(201,168,76,.55); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; flex-shrink: 0; }
+.twm-pillar__title { position: relative; z-index: 2; font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.3; }
+.twm-pillar__desc { position: relative; z-index: 2; font-family: 'Inter', sans-serif; font-size: .76rem; color: rgba(255,255,255,.72); line-height: 1.75; font-weight: 300; flex: 1; }
+.twm-pillar__link { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 5px; font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .08em; margin-top: 18px; transition: gap .2s; }
+.twm-pillar:hover .twm-pillar__link { gap: 9px; }
+
+/* § DELIVERABLES */
+.twm-deliverables { padding: 48px 48px; background: #f5f9fc; }
+.twm-deliverables__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.twm-deliverables__left { position: sticky; top: 100px; }
+.twm-deliverables__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-deliverables__left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 16px; }
+.twm-deliverables__left p { font-family: 'Inter', sans-serif; font-size: .95rem; color: #4a6a74; line-height: 1.85; font-weight: 300; }
+.twm-deliverables__rule { width: 52px; height: 3px; background: #C9A84C; border-radius: 2px; margin: 20px 0; }
+.twm-deliverables__freq { display: inline-flex; align-items: center; gap: 8px; background: rgba(29,112,128,.08); border: 1px solid rgba(29,112,128,.18); border-radius: 8px; padding: 10px 16px; }
+.twm-deliverables__freq-icon { width: 28px; height: 28px; background: #1D7080; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.twm-deliverables__freq-text { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: #145568; line-height: 1.4; }
+.twm-deliverables__list { list-style: none; }
+.twm-deliverables__item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(29,112,128,.09); }
+.twm-deliverables__item:last-child { border-bottom: none; }
+.twm-deliverables__check { width: 22px; height: 22px; background: linear-gradient(135deg, #1D7080, #2a9aad); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.twm-deliverables__item-text { font-family: 'Inter', sans-serif; font-size: .88rem; color: #2a2a2a; line-height: 1.75; font-weight: 400; }
+.twm-deliverables__item-text strong { color: #145568; font-weight: 600; }
+
+/* § PRICING */
+.twm-pricing { padding: 36px 32px; text-align: center; background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%); position: relative; overflow: hidden; }
+.twm-pricing::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent); }
+.twm-pricing__label { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: rgba(201,168,76,.8); text-transform: uppercase; letter-spacing: .22em; margin-bottom: 16px; }
+.twm-pricing__amount { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); color: #fff; font-weight: 700; margin-bottom: 8px; }
+.twm-pricing__amount span { font-size: .45em; font-weight: 400; color: rgba(255,255,255,.7); vertical-align: middle; }
+.twm-pricing__note { font-family: 'Inter', sans-serif; font-size: .88rem; color: rgba(255,255,255,.7); line-height: 1.6; font-style: italic; }
+
+/* § CIRCLE */
+.twm-circle { padding: 44px 48px; background: #fff; text-align: center; }
 .twm-circle__inner { max-width: 760px; margin: 0 auto; }
-.twm-circle img { width: 100%; height: auto; display: block; }
+.twm-circle__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-circle__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #0c3540; font-weight: 600; margin-bottom: 20px; }
+.twm-circle img { width: 100%; height: auto; display: block; border-radius: 12px; }
 
-.twm-video { padding: 18px 32px; background: #F0F8FA; text-align: center; }
+/* § EMONEY TECHNOLOGY */
+.twm-emoney { padding: 52px 48px; background: linear-gradient(150deg, #071e24 0%, #0d3a48 50%, #0c3540 100%); position: relative; }
+.twm-emoney::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent); }
+.twm-emoney__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+.twm-emoney__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-emoney__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #fff; font-weight: 600; line-height: 1.28; margin-bottom: 16px; }
+.twm-emoney__rule { width: 52px; height: 2px; background: #C9A84C; border-radius: 2px; margin-bottom: 24px; }
+.twm-emoney__desc { font-family: 'Inter', sans-serif; font-size: .95rem; color: rgba(255,255,255,.75); line-height: 1.9; font-weight: 300; margin-bottom: 32px; }
+.twm-emoney__features { list-style: none; }
+.twm-emoney__feature { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+.twm-emoney__feature:last-child { border-bottom: none; }
+.twm-emoney__feature-dot { width: 8px; height: 8px; border-radius: 50%; background: #C9A84C; flex-shrink: 0; }
+.twm-emoney__feature-text { font-family: 'Inter', sans-serif; font-size: .85rem; color: rgba(255,255,255,.75); font-weight: 300; }
+.twm-emoney__img-wrap { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.twm-emoney__img-wrap img { width: 100%; height: auto; display: block; }
+.twm-emoney__cta { margin-top: 28px; }
+
+/* § VIDEO */
+.twm-video { padding: 44px 48px; background: #f5f9fc; text-align: center; }
 .twm-video__inner { max-width: 820px; margin: 0 auto; }
-.twm-video h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 32px; font-weight: 600; }
-.twm-video__embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+.twm-video__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-video h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; margin-bottom: 8px; font-weight: 600; }
+.twm-video__sub { font-family: 'Inter', sans-serif; font-size: .9rem; color: #5a7a84; margin-bottom: 20px; }
+.twm-video__embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 12px 48px rgba(0,0,0,.14); }
 .twm-video__embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-.twm-process { padding: 20px 32px; background: #fff; }
+/* § HOW IT WORKS */
+.twm-process { padding: 52px 48px; background: #fff; }
 .twm-process__inner { max-width: 1100px; margin: 0 auto; }
-.twm-process h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); color: #145568; margin-bottom: 48px; font-weight: 600; text-align: center; }
+.twm-process__header { text-align: center; margin-bottom: 28px; }
+.twm-process__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-process h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; }
 .twm-process__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.twm-process__col h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1D7080; margin-bottom: 24px; font-weight: 600; border-bottom: 2px solid #C9A84C; padding-bottom: 10px; }
-.twm-process__item { margin-bottom: 28px; }
-.twm-process__item h4 { font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 8px; }
-.twm-process__item p { font-size: .97rem; line-height: 1.85; color: #3a3a3a; }
+.twm-process__col-head { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid #C9A84C; }
+.twm-process__col-num { width: 36px; height: 36px; background: linear-gradient(135deg, #0c3540, #1D7080); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.twm-process__col h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1D7080; font-weight: 600; }
+.twm-process__steps { display: flex; flex-direction: column; gap: 24px; }
+.twm-process__step { display: flex; gap: 16px; }
+.twm-process__step-line { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.twm-process__step-dot { width: 12px; height: 12px; border-radius: 50%; background: #C9A84C; margin-top: 4px; flex-shrink: 0; }
+.twm-process__step-connector { width: 2px; flex: 1; background: rgba(201,168,76,.25); margin-top: 4px; }
+.twm-process__step:last-child .twm-process__step-connector { display: none; }
+.twm-process__step-body { padding-bottom: 4px; }
+.twm-process__step h4 { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 7px; }
+.twm-process__step p { font-family: 'Inter', sans-serif; font-size: .88rem; line-height: 1.85; color: #3a3a3a; font-weight: 300; }
 
-.twm-im-cta { padding: 16px 32px; background: #F0F8FA; text-align: center; }
-.twm-im-cta__inner { max-width: 700px; margin: 0 auto; }
-.twm-im-cta p { font-size: 1.05rem; line-height: 1.85; color: #3a3a3a; margin-bottom: 28px; }
+/* § EXPLORE ALL SERVICES */
+.twm-services { padding: 48px 48px; background: #f5f9fc; position: relative; }
+.twm-services::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent); }
+.twm-services__inner { max-width: 1100px; margin: 0 auto; }
+.twm-services__header { text-align: center; margin-bottom: 24px; }
+.twm-services__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-services__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+.twm-services__sub { font-family: 'Inter', sans-serif; font-size: .9rem; color: #5a7a84; line-height: 1.7; }
+.twm-services__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.twm-services__panel { background: #fff; border-radius: 12px; border: 1px solid rgba(29,112,128,.11); border-top: 3px solid #1D7080; box-shadow: 0 4px 20px rgba(29,112,128,.07); overflow: hidden; }
+.twm-services__panel-head { background: linear-gradient(135deg, #0c3540 0%, #1D7080 100%); padding: 16px 22px; display: flex; align-items: center; gap: 12px; }
+.twm-services__panel-icon { width: 30px; height: 30px; background: rgba(201,168,76,.2); border: 1.5px solid rgba(201,168,76,.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.twm-services__panel-title { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .18em; }
+.twm-services__link { display: flex; align-items: center; justify-content: space-between; padding: 12px 22px; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500; color: #2d4a52; text-decoration: none; border-bottom: 1px solid rgba(29,112,128,.07); transition: background .15s, color .15s, padding-left .15s; }
+.twm-services__link:last-child { border-bottom: none; }
+.twm-services__link:hover { background: rgba(29,112,128,.05); color: #0c3540; padding-left: 28px; }
+.twm-services__link-arrow { color: #C9A84C; font-size: 14px; flex-shrink: 0; transition: transform .2s; opacity: .6; }
+.twm-services__link:hover .twm-services__link-arrow { transform: translateX(4px); opacity: 1; }
 
-@media (max-width: 768px) {
+/* § TOOLS & RESOURCES */
+.twm-tools { padding: 48px 48px; background: #fff; }
+.twm-tools__inner { max-width: 1100px; margin: 0 auto; }
+.twm-tools__header { text-align: center; margin-bottom: 24px; }
+.twm-tools__eyebrow { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 14px; }
+.twm-tools__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; }
+.twm-tools__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.twm-tool-card { background: #f5f9fc; border: 1px solid rgba(29,112,128,.1); border-radius: 12px; padding: 32px 28px; text-decoration: none; display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.twm-tool-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(29,112,128,.12); border-color: rgba(201,168,76,.3); }
+.twm-tool-card__icon { width: 52px; height: 52px; background: linear-gradient(135deg, #0c3540, #1D7080); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.twm-tool-card__title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #0c3540; margin-bottom: 10px; }
+.twm-tool-card__desc { font-family: 'Inter', sans-serif; font-size: .78rem; color: #5a7a84; line-height: 1.75; font-weight: 300; flex: 1; margin-bottom: 20px; }
+.twm-tool-card__cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: .08em; transition: gap .2s; }
+.twm-tool-card:hover .twm-tool-card__cta { gap: 10px; }
+
+/* § INVESTMENT MANAGEMENT CTA */
+.twm-im-cta { padding: 64px 48px; background: #f5f9fc; }
+.twm-im-cta__inner { max-width: 820px; margin: 0 auto; background: #fff; border-radius: 12px; border: 1px solid rgba(29,112,128,.12); border-left: 4px solid #C9A84C; padding: 36px 40px; display: flex; gap: 28px; align-items: center; }
+.twm-im-cta__icon { width: 44px; height: 44px; background: linear-gradient(135deg, #0c3540, #1D7080); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.twm-im-cta__body p { font-family: 'Inter', sans-serif; font-size: .9rem; line-height: 1.85; color: #3a3a3a; margin-bottom: 18px; }
+.twm-im-cta__body strong { color: #145568; }
+
+/* § SCHEDULE */
+.twm-schedule { padding: 60px 32px; background: linear-gradient(148deg, #07161e 0%, #0d2d3a 52%, #0b2633 100%); text-align: center; position: relative; }
+.twm-schedule::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent); }
+.twm-schedule h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); color: #fff; margin-bottom: 10px; font-weight: 600; line-height: 1.25; }
+.twm-schedule p { font-family: 'Inter', sans-serif; font-size: .9rem; color: rgba(255,255,255,.65); margin-bottom: 28px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .twm-intro__inner, .twm-deliverables__inner, .twm-emoney__inner { grid-template-columns: 1fr; gap: 32px; }
+  .twm-intro__left, .twm-deliverables__left { position: static; }
+  .twm-personas__grid { grid-template-columns: 1fr; }
+  .twm-pillars__grid { grid-template-columns: 1fr 1fr; }
   .twm-process__grid { grid-template-columns: 1fr; gap: 32px; }
+  .twm-services__cols { grid-template-columns: 1fr; }
+  .twm-tools__grid { grid-template-columns: 1fr; }
+  .twm-stats { grid-template-columns: 1fr; }
+  .twm-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .twm-stat:last-child { border-bottom: none; }
+  .twm-im-cta__inner { flex-direction: column; }
 }
-
-/* PEOPLE IMAGERY â€” clean, no dark/green tint */
-.twm-split { padding: 30px 32px; background: #fff; }
-.twm-split--alt { background: #F0F8FA; }
-.twm-split__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
-.twm-split__media img { width: 100%; height: 100%; max-height: 440px; object-fit: cover; border-radius: 14px; display: block; box-shadow: 0 14px 40px rgba(14,61,71,.16); }
-.twm-split__inner--rev .twm-split__media { order: -1; }
-.twm-split__body h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.6vw, 2.1rem); color: #145568; margin-bottom: 20px; font-weight: 600; }
-.twm-split__body p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 22px; }
-.twm-band img { width: 100%; height: 480px; object-fit: cover; object-position: center 35%; display: block; }
-@media (max-width: 820px) {
-  .twm-split__inner { grid-template-columns: 1fr; gap: 26px; }
-  .twm-split__inner--rev .twm-split__media { order: 0; }
-  .twm-band img { height: 300px; }
+@media (max-width: 600px) {
+  .twm-pillars__grid { grid-template-columns: 1fr; }
+  .twm-intro, .twm-personas, .twm-pillars, .twm-deliverables, .twm-emoney, .twm-video, .twm-process, .twm-services, .twm-tools, .twm-im-cta { padding-left: 24px; padding-right: 24px; }
 }
 </style>
 
+<!-- ── NAV ── -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
@@ -178,20 +323,26 @@ html { font-size: 20px; }
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
         <div class="ag-nav__drop">
-          <div class="ag-nav__drop-cols"><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
-          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
-          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
-          </div><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
-          <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a></div></div>
+          <div class="ag-nav__drop-cols">
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services For Individuals</span>
+              <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+              <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+            </div>
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services for Businesses</span>
+              <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
@@ -212,9 +363,9 @@ html { font-size: 20px; }
       </div>
     </div>
     <div class="ag-nav__right">
-      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Client Login</a>
       <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
-      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">SCHEDULE CONSULTATION</a>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">CONTACT</a>
     </div>
     <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
   </div>
@@ -257,12 +408,13 @@ html { font-size: 20px; }
       </div>
       <div class="ag-mob__bottom">
         <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
-        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Total Wealth Management Portal</a>
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">SCHEDULE CONSULTATION</a>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Client Login</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">CONTACT</a>
       </div>
     </div>
   </div>
 </nav>
+
 <style>
 .ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
 .ag-mobile-nav.open{display:block}
@@ -275,16 +427,15 @@ html { font-size: 20px; }
 .ag-mob__sub{display:none;background:#f7fbfc;padding:0 0 8px}
 .ag-mob__sub.open{display:block}
 .ag-mob__sub-heading{display:block;padding:10px 28px 4px;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em}
-.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:16.2px;color:#2d2d2d;text-decoration:none}
+.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:13.5px;color:#2d2d2d;text-decoration:none}
 .ag-mob__sub a:active{background:#E6F4F7;color:#1D7080}
-.ag-mob__link{display:block;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(29,112,128,.1)}
-.ag-mob__link:active{color:#C9A84C}
 .ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
 .ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
 .ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
 .ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
 @media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}.ag-nav__burger:active{background:#f0f8fa}}
 </style>
+
 <script>
 (function(){
   var burger=document.getElementById('agBurger');
@@ -311,135 +462,465 @@ html { font-size: 20px; }
 
 <main>
 
-  <!-- Â§1 Hero Video -->
+  <!-- §1 HERO -->
   <section class="twm-hero">
     <video autoplay muted loop playsinline>
       <source src="https://video.wixstatic.com/video/64b604_88a54465b1604e8bada16b4a68716a05/file" type="video/mp4" />
     </video>
     <div class="twm-hero__overlay"></div>
     <div class="twm-hero__text">
+      <div class="twm-hero__eyebrow">The Affinity Group</div>
       <h1>Total Wealth Management</h1>
-      <p>A concierge approach to every dimension of your financial life</p>
-    </div>
-  </section>
-
-  <!-- Â§2 TWM Relationship -->
-  <section class="twm-split">
-    <div class="twm-split__inner">
-      <div class="twm-split__body">
-        <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
-        <h2>The Total Wealth Management Relationship</h2>
-        <p>For those that have accumulated sizable assets, business owners, or are high income earners, managing the many aspects of your complete financial picture is complex. Total Wealth Management is designed for those that appreciate a concierge approach to addressing these complexities and the required integration of all professionals that is essential, such as income tax planning, investments, insurance, banking, and more.</p>
-      </div>
-      <div class="twm-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_2a30872f2b9a41bbad9df78dcb89b098~mv2.jpeg" alt="A couple reviewing their financial plan together" loading="lazy" />
+      <p>A concierge, multi-disciplined approach to every dimension of your financial life &mdash; investments, taxes, estate, insurance, real estate, and beyond.</p>
+      <div class="twm-hero__badges">
+        <span class="twm-hero__badge">Independent</span>
+        <span class="twm-hero__badge">Fiduciary</span>
+        <span class="twm-hero__badge">SEC Registered</span>
+        <span class="twm-hero__badge">Canton &amp; Akron, Ohio</span>
       </div>
     </div>
   </section>
 
-  <!-- Â§2b Annual Deliverables -->
+  <!-- §2 STAT STRIP -->
+  <div class="twm-stats">
+    <div class="twm-stat">
+      <div class="twm-stat__num">180&#8209;Day</div>
+      <div class="twm-stat__label">Review Cycle &mdash; Spring &amp; Fall</div>
+    </div>
+    <div class="twm-stat">
+      <div class="twm-stat__num">12+</div>
+      <div class="twm-stat__label">Areas of Wealth Coordinated</div>
+    </div>
+    <div class="twm-stat">
+      <div class="twm-stat__num">Starts at $350</div>
+      <div class="twm-stat__label">Monthly Retainer</div>
+    </div>
+  </div>
+
+  <!-- §3 INTRODUCTION -->
+  <section class="twm-intro">
+    <div class="twm-intro__inner">
+      <div class="twm-intro__left">
+        <div class="twm-intro__eyebrow">What It Is</div>
+        <h2 class="twm-intro__left">The Total Wealth Management Relationship</h2>
+        <div class="twm-intro__rule"></div>
+        <p class="twm-intro__quote">&ldquo;Success brings complexity. Total Wealth Management is designed to own that complexity on your behalf.&rdquo;</p>
+        <div class="twm-intro__img-wrap">
+          <img src="https://static.wixstatic.com/media/64b604_ac1d843d02344ead96a9bb303923d58a~mv2.png" alt="Total Wealth Management" />
+        </div>
+      </div>
+      <div class="twm-intro__right">
+        <p>For those who have accumulated sizable assets, own a business, or are high-income earners, managing the many moving parts of your complete financial picture is genuinely complex. Your investment portfolio, tax strategy, estate documents, insurance coverage, real estate holdings, cash flow, and retirement timeline are all interconnected &mdash; yet most clients find that each professional they work with operates in isolation.</p>
+        <p>Total Wealth Management is our answer to that problem. It is designed for those who appreciate a <strong>concierge, fully integrated</strong> approach to financial planning &mdash; where a multi-disciplined team at The Affinity Group takes ownership of coordinating every area of your financial life and every professional in your orbit.</p>
+        <p>Rather than one-off advice on individual topics, our clients experience an <strong>ongoing, living strategy</strong> that evolves with them &mdash; reviewed twice each year, refined continuously, and executed by a dedicated team that knows your entire financial picture as well as you do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §4 WHO THIS IS FOR -->
+  <section class="twm-personas">
+    <div class="twm-personas__inner">
+      <div class="twm-personas__header">
+        <div class="twm-personas__eyebrow">Who We Serve</div>
+        <h2 class="twm-personas__heading">Total Wealth Management Is Built For</h2>
+      </div>
+      <div class="twm-personas__grid">
+        <a class="twm-persona-card" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
+          <img src="https://static.wixstatic.com/media/64b604_0461148705564117be558ea52d014f47~mv2.avif" alt="Retirees and Pre-Retirees" />
+          <div class="twm-persona-card__overlay"></div>
+          <div class="twm-persona-card__body">
+            <span class="twm-persona-card__badge">Retirees &amp; Pre-Retirees</span>
+            <div class="twm-persona-card__title">Planning For or Living in Retirement</div>
+            <div class="twm-persona-card__desc">Income sequencing, RMD strategy, Social Security optimization, and healthcare coordination &mdash; built to sustain wealth across a 20&ndash;30 year horizon.</div>
+            <span class="twm-persona-card__cta">Explore &#8594;</span>
+          </div>
+        </a>
+        <a class="twm-persona-card" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">
+          <img src="https://static.wixstatic.com/media/64b604_05447413995e4b64bcc2b3667ff4095a~mv2.avif" alt="Business Owners" />
+          <div class="twm-persona-card__overlay"></div>
+          <div class="twm-persona-card__body">
+            <span class="twm-persona-card__badge">Business Owners</span>
+            <div class="twm-persona-card__title">Running a Business &amp; Building Personal Wealth</div>
+            <div class="twm-persona-card__desc">Entity structure, sale planning, 401(k) design, executive benefits, and the integration of your business wealth with your personal financial plan.</div>
+            <span class="twm-persona-card__cta">Explore &#8594;</span>
+          </div>
+        </a>
+        <a class="twm-persona-card" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">
+          <img src="https://static.wixstatic.com/media/64b604_d5b584a07328475d8f593eac489d43c1~mv2.avif" alt="High Earners" />
+          <div class="twm-persona-card__overlay"></div>
+          <div class="twm-persona-card__body">
+            <span class="twm-persona-card__badge">High Earners &amp; Wealth Accumulators</span>
+            <div class="twm-persona-card__title">High Income, Complex Taxes, Serious Wealth Building</div>
+            <div class="twm-persona-card__desc">Tax-efficient investing, Roth conversion strategy, estate reduction planning, and real asset diversification for those with growing financial complexity.</div>
+            <span class="twm-persona-card__cta">Explore &#8594;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §5 SIX PILLARS -->
+  <section class="twm-pillars">
+    <div class="twm-pillars__inner">
+      <div class="twm-pillars__header">
+        <div class="twm-pillars__eyebrow">What's Covered</div>
+        <h2 class="twm-pillars__heading">Six Core Pillars of Your Wealth Strategy</h2>
+        <p class="twm-pillars__sub">Every Total Wealth Management relationship is built around these six integrated disciplines. Click any pillar to learn more.</p>
+      </div>
+      <div class="twm-pillars__grid">
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_d5b584a07328475d8f593eac489d43c1~mv2.avif" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="twm-pillar__title">Investment Management</div>
+          <div class="twm-pillar__desc">Customized, diversified portfolio construction calibrated to your goals, time horizon, and risk tolerance &mdash; reviewed and rebalanced continuously.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_8e27e863ece14ff2b69f0fe3f5c82850~mv2.jpeg" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="12" y2="18"/></svg>
+          </div>
+          <div class="twm-pillar__title">Tax Planning &amp; Preparation</div>
+          <div class="twm-pillar__desc">Year-round integrated tax strategy through Affinity Private Tax &mdash; Roth conversions, income timing, deduction optimization, and annual preparation.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_2803148bf9384ca985a3095f75bf382a~mv2.jpeg" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="twm-pillar__title">Estate Planning</div>
+          <div class="twm-pillar__desc">Coordinating with your estate attorney on trusts, titling, beneficiary designations, and legacy strategy to protect and transfer your wealth intentionally.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_05447413995e4b64bcc2b3667ff4095a~mv2.avif" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="twm-pillar__title">Insurance Planning</div>
+          <div class="twm-pillar__desc">Life, disability, long-term care, and liability coverage reviewed and optimized annually to ensure your risk exposure is properly managed.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_0461148705564117be558ea52d014f47~mv2.avif" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="twm-pillar__title">Retirement Planning</div>
+          <div class="twm-pillar__desc">Income sequencing, Social Security optimization, Medicare planning, and distribution strategies built to sustain your lifestyle for decades.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+        <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">
+          <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_19369243416b442fb5c594fd73d27af8~mv2.jpeg" alt="" />
+          <div class="twm-pillar__overlay"></div>
+          <div class="twm-pillar__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="twm-pillar__title">Real Estate Investing</div>
+          <div class="twm-pillar__desc">Investment property evaluation, 1031 exchanges, REIT allocation, and real estate as a strategic component of your diversified wealth picture.</div>
+          <span class="twm-pillar__link">Learn More &#8594;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §6 ANNUAL DELIVERABLES -->
   <section class="twm-deliverables">
     <div class="twm-deliverables__inner">
-      <h2>Some of the Many Annual Deliverables</h2>
-      <p>With a Total Wealth Management Relationship &mdash; a Spring and Fall Total Wealth review meeting. With each of these every-180-day interactions, clients receive:</p>
-      <ul class="twm-deliverables__list">
-        <li>Hand-curated 4&#8211;5 page &ldquo;Summary of Recommendations&rdquo; which highlight all of our best thinking and specific action items that our team will be taking on your behalf.</li>
-        <li>Full detailed 65-page financial plan with cash-flow analysis, retirement projections, investment strategy, tax analysis, estate planning analysis, and insurance analysis.</li>
-        <li>CPA, insurance agents, and estate planning attorneys integrated into meetings.</li>
-        <li>Annual tax preparation and tax planning, provided by one of the several network CPAs of The Affinity Group.</li>
-        <li>Assigned Senior Wealth Advisor along with dedicated Relationship Manager and two Financial Planners.</li>
-        <li>Unlimited and ongoing coordination/collaboration with our or the client&rsquo;s attorneys, insurance specialists, and banking professionals.</li>
-        <li>eMoney personal financial website &mdash; providing real-time connectivity and updating your total financial picture (investments, spending, goal tracking, tax analysis) daily.</li>
-        <li>No per-engagement interaction costs. Calls, emails, screenshare, or face-to-face meetings are always available as needed outside of Spring and Fall Review Meetings.</li>
-      </ul>
+      <div class="twm-deliverables__left">
+        <div class="twm-deliverables__eyebrow">What You Receive</div>
+        <h2>Annual Deliverables &amp; Ongoing Service</h2>
+        <div class="twm-deliverables__rule"></div>
+        <p>With a Total Wealth Management Relationship, clients receive a Spring and Fall Total Wealth Review meeting &mdash; every 180 days &mdash; plus unlimited access to the team in between.</p>
+        <div style="margin-top:24px;">
+          <div class="twm-deliverables__freq">
+            <div class="twm-deliverables__freq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="twm-deliverables__freq-text">Spring &amp; Fall Reviews<br/><span style="font-weight:400;color:#5a7a84;">Every 180 days, with unlimited access in between</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="twm-deliverables__right">
+        <ul class="twm-deliverables__list">
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Hand-curated Summary of Recommendations</strong> &mdash; a 4&ndash;5 page summary highlighting our best thinking and specific action items our team will execute on your behalf.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Full 65-Page Financial Plan</strong> &mdash; detailed cash-flow analysis, retirement projections, investment strategy, tax analysis, estate planning analysis, and insurance analysis.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>CPA, Insurance &amp; Estate Attorney Integration</strong> &mdash; outside specialists join review meetings to coordinate cross-discipline strategy in real time.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Annual Tax Preparation &amp; Planning</strong> &mdash; provided by one of the several network CPAs within The Affinity Group, fully integrated with your wealth strategy.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Dedicated Multi-Person Team</strong> &mdash; assigned Senior Wealth Advisor, Relationship Manager, and two Financial Planners who know your complete picture.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>eMoney Personal Financial Website</strong> &mdash; real-time connectivity aggregating all your accounts, spending, goals, and tax data in one secure personal dashboard, updated daily.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Unlimited Engagement &mdash; No Per-Call Costs</strong> &mdash; calls, emails, screenshares, and face-to-face meetings are always available as needed, at no additional charge.</div>
+          </li>
+          <li class="twm-deliverables__item">
+            <div class="twm-deliverables__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="twm-deliverables__item-text"><strong>Nationwide Service</strong> &mdash; although based in Canton and Akron, Ohio, we serve clients coast to coast using world-class technology and virtual meeting capabilities.</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- people imagery: the life your plan supports (single full-width band) -->
-  <section class="twm-band">
-    <img src="https://static.wixstatic.com/media/64b604_27d60772313e477481ca7320799134df~mv2.jpeg" alt="A happy retired couple enjoying the life their financial plan supports" loading="lazy" />
-  </section>
-
-  <!-- Â§3 Pricing Banner -->
+  <!-- §7 PRICING -->
   <section class="twm-pricing">
-    <p>TWM monthly retainers begin at $350 per month. Pricing is based upon net-worth, complexity, and investment management assets.</p>
+    <div class="twm-pricing__label">Transparent Pricing</div>
+    <div class="twm-pricing__amount"><span>Starting at </span>$350<span> / month</span></div>
+    <p class="twm-pricing__note">Monthly retainers are based on net worth, complexity, and investment management assets. Schedule a consultation to discuss your situation.</p>
   </section>
 
-  <!-- Â§4 Circle Image -->
+  <!-- §8 CIRCLE IMAGE -->
   <section class="twm-circle">
     <div class="twm-circle__inner">
-      <div class="ag-gold-bar"></div>
+      <div class="twm-circle__eyebrow">The Wealth Management Circle</div>
+      <h2 class="twm-circle__heading">Every Area of Your Financial Life, Coordinated</h2>
       <img src="https://static.wixstatic.com/media/64b604_45881a61db9e499ba88a90c3f7648078~mv2.png" alt="Total Wealth Management Circle" />
     </div>
   </section>
 
-  <!-- Â§5 YouTube Video -->
+  <!-- §9 EMONEY TECHNOLOGY -->
+  <section class="twm-emoney">
+    <div class="twm-emoney__inner">
+      <div>
+        <div class="twm-emoney__eyebrow">Your Financial GPS</div>
+        <h2 class="twm-emoney__heading">eMoney &mdash; A Living, Breathing View of Your Entire Financial Life</h2>
+        <div class="twm-emoney__rule"></div>
+        <p class="twm-emoney__desc">Every Total Wealth Management client receives access to a private, secure, and all-encompassing personal financial website powered by eMoney. Think of it as a GPS for your financial life &mdash; aggregating every account, tracking every goal, and giving you a real-time pulse on where you stand financially at any moment.</p>
+        <ul class="twm-emoney__features">
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Real-time aggregation of all bank, investment, and retirement accounts</span></li>
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Interactive cash-flow and spending analysis updated daily</span></li>
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Goal tracking for retirement, education, major purchases, and legacy</span></li>
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Live net worth dashboard across all assets and liabilities</span></li>
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Secure vault for storing key financial documents</span></li>
+          <li class="twm-emoney__feature"><span class="twm-emoney__feature-dot"></span><span class="twm-emoney__feature-text">Shared advisor access so your team always works from the same data</span></li>
+        </ul>
+        <div class="twm-emoney__cta">
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" class="ag-btn-gold" target="_top">Explore the eMoney Platform &#8594;</a>
+        </div>
+      </div>
+      <div class="twm-emoney__img-wrap">
+        <img src="https://static.wixstatic.com/media/64b604_e33ae2a5588a48f4b154f961646c1a4a~mv2.png" alt="eMoney Financial Dashboard" />
+      </div>
+    </div>
+  </section>
+
+  <!-- §10 YOUTUBE VIDEO -->
   <section class="twm-video">
     <div class="twm-video__inner">
+      <div class="twm-video__eyebrow">Watch &amp; Learn</div>
       <h2>Total Wealth Management Explained</h2>
+      <p class="twm-video__sub">Hear directly from our team on what Total Wealth Management means in practice.</p>
       <div class="twm-video__embed">
         <iframe src="https://www.youtube.com/embed/Jye1GOrWSJg" title="Total Wealth Management Explained" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- people imagery: partnership (contained split) -->
-  <section class="twm-split">
-    <div class="twm-split__inner twm-split__inner--rev">
-      <div class="twm-split__body">
-        <h2>A Partnership Built Around You</h2>
-        <p>From your first discovery meeting through every spring and fall review, you work with a dedicated team that coordinates every moving part of your financial life &mdash; so your plan keeps pace with the life you&rsquo;re living.</p>
-      </div>
-      <div class="twm-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_85bbdcee6f68497685ff8e5a4aec95c5~mv2.jpeg" alt="A couple planning their finances together at home" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Â§6 Onboarding & Ongoing Process -->
+  <!-- §11 HOW IT WORKS -->
   <section class="twm-process">
     <div class="twm-process__inner">
-      <h2>How It Works</h2>
+      <div class="twm-process__header">
+        <div class="twm-process__eyebrow">The Process</div>
+        <h2>How a Total Wealth Management Relationship Works</h2>
+      </div>
       <div class="twm-process__grid">
-        <div class="twm-process__col">
-          <h3>Onboarding Process</h3>
-          <div class="twm-process__item">
-            <h4>Discovery</h4>
-            <p>Who you are and what&rsquo;s most important to you is where it all begins. Our firm&rsquo;s Senior Wealth Advisor Scott Lowe sits down for a discovery session. We want to understand who you are and what&rsquo;s most important to you. Personal financial planning must be personal.</p>
+        <div>
+          <div class="twm-process__col-head">
+            <div class="twm-process__col-num">1</div>
+            <h3 class="twm-process__col">Onboarding Process</h3>
           </div>
-          <div class="twm-process__item">
-            <h4>Recommendations &amp; Specialists</h4>
-            <p>Our team delivers the completed financial plan as well as summary recommendations. Outside specialists join this meeting to provide a second opinion in the areas of tax planning and estate planning. In 60 days following the Recommendation meeting our team rolls up our sleeves and quarterbacks the implementation of the agreed-upon recommendations.</p>
+          <div class="twm-process__steps">
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div><div class="twm-process__step-connector"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Discovery Meeting</h4>
+                <p>Who you are and what&rsquo;s most important to you is where it all begins. Our Senior Wealth Advisor sits down for an in-depth discovery session &mdash; understanding your values, goals, concerns, and complete financial picture. Personal financial planning must be truly personal.</p>
+              </div>
+            </div>
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div><div class="twm-process__step-connector"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Plan Delivery &amp; Specialists</h4>
+                <p>Our team delivers the completed financial plan alongside a hand-curated Summary of Recommendations. Outside specialists in tax planning and estate planning join this meeting to review findings and provide a coordinated second opinion.</p>
+              </div>
+            </div>
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div><div class="twm-process__step-connector"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Implementation</h4>
+                <p>Within 60 days following the Recommendations Meeting, our team rolls up their sleeves and quarterbacks the implementation of every agreed-upon action item &mdash; from account transitions to insurance applications to attorney referrals.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="twm-process__col">
-          <h3>Ongoing Process</h3>
-          <div class="twm-process__item">
-            <h4>Relationship</h4>
-            <p>Proper planning is not a single event &mdash; it&rsquo;s an ongoing, never-ending process. Clients will have a wealth plan review every spring and every fall, with access to anytime communication in between these meetings.</p>
+        <div>
+          <div class="twm-process__col-head">
+            <div class="twm-process__col-num">2</div>
+            <h3 class="twm-process__col">Ongoing Relationship</h3>
           </div>
-          <div class="twm-process__item">
-            <h4>Technology</h4>
-            <p>Although we are located in Canton, Ohio, as a Fiduciary financial advisor we serve clients across the nation with the same personal touch as clients down the street because of the world-class technology we incorporate. Every Total Wealth Management client is provided access to a personal, private, secure, and all-encompassing financial website &mdash; a living, breathing GPS that aggregates all your personal data with daily updates.</p>
+          <div class="twm-process__steps">
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div><div class="twm-process__step-connector"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Spring &amp; Fall Reviews</h4>
+                <p>Proper planning is not a single event &mdash; it&rsquo;s an ongoing, never-ending process. Clients receive a full Wealth Plan Review every spring and every fall, with updated recommendations, revised projections, and fresh specialist input.</p>
+              </div>
+            </div>
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div><div class="twm-process__step-connector"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Unlimited In-Between Access</h4>
+                <p>Life doesn&rsquo;t wait for scheduled reviews. Your team is always reachable between meetings for questions, major financial decisions, market events, job changes, inheritances, or any situation that requires attention.</p>
+              </div>
+            </div>
+            <div class="twm-process__step">
+              <div class="twm-process__step-line"><div class="twm-process__step-dot"></div></div>
+              <div class="twm-process__step-body">
+                <h4>Technology &amp; Transparency</h4>
+                <p>As a Registered Investment Advisor serving clients nationwide, we leverage world-class technology to deliver the same personal touch virtually as we do in person. Every client receives full portal access, real-time reporting, and complete transparency on fees and holdings.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Â§7 Investment Management CTA -->
-  <section class="twm-split twm-split--alt">
-    <div class="twm-split__inner twm-split__inner--rev">
-      <div class="twm-split__body">
-        <p style="font-size:1.05rem;line-height:1.85;color:#3a3a3a;margin-bottom:28px;">For clients who prefer a more singular focus on their investment planning, Total Wealth Management is not suitable and they should consider our Investment-only offering.</p>
-        <a href="https://tagplanning.wixstudio.com/demo/investment-management" class="ag-btn-primary" target="_top">
-          Click Here for More Details on Our Investment Management Only Offering
-        </a>
+  <!-- §12 EXPLORE ALL SERVICES -->
+  <section class="twm-services">
+    <div class="twm-services__inner">
+      <div class="twm-services__header">
+        <div class="twm-services__eyebrow">Explore More</div>
+        <h2 class="twm-services__heading">All Services Offered by The Affinity Group</h2>
+        <p class="twm-services__sub">Total Wealth Management integrates all of these disciplines. Explore each service area to learn what&rsquo;s included.</p>
       </div>
-      <div class="twm-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_d05465c6600d40bf8f98dbc06589ecfa~mv2.jpeg" alt="A happy couple at home" loading="lazy" />
+      <div class="twm-services__cols">
+
+        <div class="twm-services__panel">
+          <div class="twm-services__panel-head">
+            <div class="twm-services__panel-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="twm-services__panel-title">Services For Individuals</span>
+          </div>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation <span class="twm-services__link-arrow">&#8594;</span></a>
+        </div>
+
+        <div class="twm-services__panel">
+          <div class="twm-services__panel-head">
+            <div class="twm-services__panel-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <span class="twm-services__panel-title">Services For Businesses</span>
+          </div>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning <span class="twm-services__link-arrow">&#8594;</span></a>
+          <a class="twm-services__link" href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal <span class="twm-services__link-arrow">&#8594;</span></a>
+        </div>
+
       </div>
     </div>
+  </section>
+
+  <!-- §13 TOOLS & RESOURCES -->
+  <section class="twm-tools">
+    <div class="twm-tools__inner">
+      <div class="twm-tools__header">
+        <div class="twm-tools__eyebrow">Tools &amp; Resources</div>
+        <h2 class="twm-tools__heading">Explore Our Financial Tools &amp; Content</h2>
+      </div>
+      <div class="twm-tools__grid">
+
+        <a class="twm-tool-card" href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">
+          <div class="twm-tool-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/></svg>
+          </div>
+          <div class="twm-tool-card__title">Financial Calculators</div>
+          <div class="twm-tool-card__desc">Retirement income projections, Roth conversion analysis, Social Security break-even, required minimum distributions, and more &mdash; interactive calculators to model your financial future.</div>
+          <span class="twm-tool-card__cta">Open Calculators &#8594;</span>
+        </a>
+
+        <a class="twm-tool-card" href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">
+          <div class="twm-tool-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="twm-tool-card__title">Content Library</div>
+          <div class="twm-tool-card__desc">In-depth articles on investing, retirement, tax strategy, estate planning, and wealth protection &mdash; written by our team to help you make smarter financial decisions.</div>
+          <span class="twm-tool-card__cta">Browse Articles &#8594;</span>
+        </a>
+
+        <a class="twm-tool-card" href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">
+          <div class="twm-tool-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="twm-tool-card__title">Recommended Reading</div>
+          <div class="twm-tool-card__desc">Curated books on personal finance, investing, business, and wealth mindset &mdash; hand-picked by the Affinity Group team as essential reading for our clients.</div>
+          <span class="twm-tool-card__cta">View Reading List &#8594;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §14 INVESTMENT MANAGEMENT CTA -->
+  <section class="twm-im-cta" style="padding:28px 48px;">
+    <div class="twm-im-cta__inner">
+      <div class="twm-im-cta__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="twm-im-cta__body">
+        <p>For clients who prefer a more singular focus on portfolio management without the full wealth coordination, Total Wealth Management may not be the right fit. Consider our <strong>Investment Management only</strong> offering instead.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/investment-management" class="ag-btn-outline-teal" target="_top">Learn About Investment Management Only &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- §15 SCHEDULE CTA -->
+  <section class="twm-schedule">
+    <h2>Ready to Take the First Step?</h2>
+    <p>Schedule a no-obligation 15-minute introduction to learn if Total Wealth Management is the right fit for you.</p>
+    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-gold" target="_top">Schedule a Free 15-Minute Introduction</a>
   </section>
 
 </main>
@@ -454,15 +935,9 @@ html { font-size: 20px; }
           <a href="https://64b604f9-a8db-45a7-8f00-142add02d8f8.usrfiles.com/ugd/64b604_33996409bbfa48599a354141d29073d0.pdf" target="_blank">ADV</a>
         </div>
         <div class="ag-footer__social">
-          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg>
-          </a>
+          <a href="https://www.facebook.com/TAGplanning" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-affinity-group-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCEWvjYuO47uzLSznDZrn4bA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0e3d47"/></svg></a>
         </div>
         <div class="ag-footer__address">4481 Munson St NW Ste 302, Canton OH, 44718<br />(330) 526-8412</div>
       </div>
@@ -479,12 +954,13 @@ html { font-size: 20px; }
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &ndash; Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
-          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ&rsquo;s</a>
+          <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ's</a>
         </div>
       </div>
     </div>
-    <div class="ag-footer__bottom">Copyright &copy; 2026 The Affinity Group. All rights reserved.</div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
   </div>
 </footer>
 
@@ -500,15 +976,13 @@ html { font-size: 20px; }
   setInterval(r,200);
 })();
 </script>
+
 <style>
-/* â”€â”€ wide-screen gap fix â”€â”€ */
 @media (min-width: 1600px) {
-  main div[class*="__inner"],
-  .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
+  main div[class*="__inner"], .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
 }
 @media (min-width: 1920px) {
-  main div[class*="__inner"],
-  .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
+  main div[class*="__inner"], .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
 }
 </style>
 </body>
