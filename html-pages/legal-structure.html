@@ -85,55 +85,101 @@ html { font-size: 20px; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE */
-.sub-hero {
-  position: relative; height: 55vh; min-height: 400px;
-  overflow: hidden; display: flex; align-items: center; justify-content: center;
-  background: #0e3d47; margin-top: 72px;
-}
-.sub-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.sub-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, rgba(14,61,71,.82) 100%); }
-.sub-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; }
-.sub-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+/* PAGE: PREMIUM REDESIGN */
+.re-eyebrow { font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.22em; margin-bottom:16px; }
+.re-h2 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.4rem); color:#145568; font-weight:600; line-height:1.25; margin-bottom:18px; }
+.re-lead { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.9; color:#445; font-weight:400; }
+.re-rule { width:54px; height:3px; background:#C9A84C; border-radius:2px; margin:0 0 26px; }
+.re-btn { display:inline-flex; align-items:center; gap:9px; padding:15px 34px; background:#1D7080; color:#fff; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; text-decoration:none; border-radius:5px; letter-spacing:.03em; border:none; cursor:pointer; transition:background .2s, transform .15s, box-shadow .2s; }
+.re-btn:hover { background:#145568; transform:translateY(-2px); box-shadow:0 10px 26px rgba(20,85,104,.28); }
+.re-btn--gold { background:#C9A84C; }
+.re-btn--gold:hover { background:#a8873d; box-shadow:0 10px 26px rgba(201,168,76,.34); }
+.re-btn--ghost { background:transparent; border:2px solid rgba(255,255,255,.65); color:#fff; padding:13px 32px; }
+.re-btn--ghost:hover { background:#fff; color:#145568; }
 
-.sub-body { padding: 20px 32px; background: #fff; }
-.sub-body__inner { max-width: 900px; margin: 0 auto; }
-.sub-body p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 20px; }
+/* Hero */
+.re-hero { position: relative; min-height: 600px; height: 78vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #0e3d47; margin-top: 72px; }
+.re-hero video, .re-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.re-hero__overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(7,30,36,.82) 0%, rgba(14,61,71,.66) 50%, rgba(12,53,64,.78) 100%); }
+.re-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; max-width: 920px; }
+.re-hero__eyebrow { font-family:'Inter',sans-serif; font-size:13px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.26em; margin-bottom:20px; }
+.re-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.6vw, 4rem); font-weight: 700; line-height:1.12; margin-bottom: 22px; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+.re-hero__sub { font-family:'Inter',sans-serif; font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.7; color:rgba(255,255,255,.92); font-weight:300; max-width:680px; margin:0 auto 34px; }
+.re-hero__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
 
-.sub-entities { padding: 16px 32px; background: #F0F8FA; }
-.sub-entities__inner { max-width: 900px; margin: 0 auto; }
-.sub-entities h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #145568; margin-bottom: 28px; font-weight: 600; }
-.sub-entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
-.sub-entity-card { background: #fff; border: 2px solid rgba(29,112,128,.15); border-radius: 8px; padding: 20px 18px; text-align: center; }
-.sub-entity-card h3 { font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700; color: #145568; text-transform: uppercase; letter-spacing: .08em; }
+/* Stat strip */
+.re-stats { padding: clamp(40px,5vw,60px) 32px; background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%); }
+.re-stats__inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+.re-stat__num { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.2vw,2.8rem); color:#C9A84C; font-weight:700; line-height:1.05; margin-bottom:10px; }
+.re-stat__label { font-family:'Inter',sans-serif; font-size:.86rem; line-height:1.55; color:rgba(255,255,255,.86); font-weight:400; }
+.re-stat + .re-stat { border-left:1px solid rgba(255,255,255,.14); }
 
-.sub-split { padding: 18px 32px; background: #fff; }
-.sub-split__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.sub-split__img { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
-.sub-split__img img { width: 100%; height: auto; display: block; }
-.sub-split__text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.75rem); color: #145568; margin-bottom: 18px; font-weight: 600; }
-.sub-split__text p { font-size: 1rem; line-height: 1.9; color: #3a3a3a; margin-bottom: 14px; }
+/* generic section shell */
+.re-sec { padding: clamp(44px,6vw,76px) 32px; background:#fff; }
+.re-sec--alt { background:#F0F8FA; }
+.re-sec--dark { background:linear-gradient(148deg,#071e24 0%,#0e3d47 55%,#0c3540 100%); }
+.re-wrap { max-width:1140px; margin:0 auto; }
+.re-head { text-align:center; max-width:760px; margin:0 auto clamp(34px,4vw,52px); }
+.re-head .re-rule { margin:0 auto 22px; }
+.re-head .re-lead { color:#556; }
 
-.sub-cta { padding: 16px 32px; background: #145568; text-align: center; }
-.sub-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #fff; margin-bottom: 28px; font-weight: 600; }
-
-@media (max-width: 768px) {
-  .sub-entity-grid { grid-template-columns: repeat(2, 1fr); }
-  .sub-split__inner { grid-template-columns: 1fr; gap: 32px; }
-}
-/* AGIMG people imagery - clean, no dark/green tint */
-.ag-split{padding:30px 32px;background:#fff}
+/* intro split */
+.ag-split{padding:clamp(44px,6vw,76px) 32px;background:#fff}
 .ag-split--alt{background:#F0F8FA}
-.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:470px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 22px 50px rgba(14,61,71,.20)}
 .ag-split__inner--rev .ag-split__media{order:-1}
-.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
-.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
-.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
-.ag-duo{padding:30px 32px;background:#fff}
-.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
-@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
+.ag-split__body p{font-size:1.05rem;line-height:1.9;color:#445;font-weight:400;margin-bottom:16px}
+.ag-split__body .re-btn{margin-top:12px}
+
+/* compact chips */
+.re-chips { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.re-chip { display:flex; align-items:center; gap:12px; background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:12px; padding:18px 20px; transition:border-color .2s, box-shadow .2s; }
+.re-chip:hover { border-color:rgba(201,168,76,.45); box-shadow:0 10px 26px rgba(14,61,71,.1); }
+.re-chip svg { width:20px; height:20px; stroke:#C9A84C; fill:none; stroke-width:2.2; flex-shrink:0; }
+.re-chip span { font-family:'Inter',sans-serif; font-size:.95rem; font-weight:500; color:#234; line-height:1.4; }
+
+/* band */
+.ag-band img{width:100%;height:460px;object-fit:cover;object-position:center 40%;display:block}
+
+/* video */
+.re-video__inner { max-width:880px; margin:0 auto; }
+.re-video__frame { background:#0c3540; border-radius:14px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.18); }
+.re-video__frame > div { border-radius:8px; overflow:hidden; }
+.re-video__frame + .re-video__frame { margin-top:22px; }
+
+/* related services */
+.re-rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.re-rel-card { display:block; background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:14px; padding:26px 26px 24px; text-decoration:none; transition:transform .22s, box-shadow .22s, border-color .22s; }
+.re-rel-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,61,71,.13); border-color:rgba(201,168,76,.45); }
+.re-rel-card h3 { font-family:'Playfair Display',serif; font-size:1.12rem; color:#145568; font-weight:600; margin-bottom:8px; }
+.re-rel-card p { font-family:'Inter',sans-serif; font-size:.9rem; line-height:1.6; color:#667; margin-bottom:14px; }
+.re-rel-card__link { font-family:'Inter',sans-serif; font-size:12.5px; font-weight:700; color:#1D7080; text-transform:uppercase; letter-spacing:.08em; }
+.re-rel-card:hover .re-rel-card__link { color:#C9A84C; }
+
+/* final CTA */
+.re-cta { padding: clamp(52px,6vw,84px) 32px; background:linear-gradient(135deg,#0e3d47 0%,#1D7080 100%); text-align:center; position:relative; overflow:hidden; }
+.re-cta::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,#C9A84C,transparent); }
+.re-cta__inner { max-width:760px; margin:0 auto; position:relative; z-index:1; }
+.re-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,3vw,2.6rem); color:#fff; font-weight:600; margin-bottom:18px; line-height:1.22; }
+.re-cta p { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,.85); font-weight:300; margin-bottom:30px; }
+.re-cta__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; align-items:center; }
+.re-cta__phone { font-family:'Inter',sans-serif; font-size:15px; font-weight:600; color:#fff; }
+
+@media (max-width: 980px) {
+  .re-chips { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 820px) {
+  .ag-split__inner{grid-template-columns:1fr;gap:30px}
+  .ag-split__inner--rev .ag-split__media{order:0}
+  .ag-band img{height:280px}
+  .re-stats__inner{grid-template-columns:1fr 1fr;gap:30px 24px}
+  .re-stat + .re-stat{border-left:none}
+  .re-rel-grid{grid-template-columns:1fr}
+}
+@media (max-width: 560px) {
+  .re-chips{grid-template-columns:1fr}
+}
 </style>
 
 <nav class="ag-nav">
@@ -278,80 +324,139 @@ html { font-size: 20px; }
 
 <main>
 
-  <section class="sub-hero">
-    <img src="https://static.wixstatic.com/media/64b604_c880cf568ee548c18063b4df112827ca~mv2.avif" alt="Legal Structure" />
-    <div class="sub-hero__overlay"></div>
-    <div class="sub-hero__text">
-      <h1>Legal Structure</h1>
+  <!-- Hero -->
+  <section class="re-hero">
+    <img src="https://static.wixstatic.com/media/64b604_c880cf568ee548c18063b4df112827ca~mv2.avif" alt="Entity Structure &amp; Legal" />
+    <div class="re-hero__overlay"></div>
+    <div class="re-hero__text">
+      <div class="re-hero__eyebrow">Built to Protect &amp; Endure</div>
+      <h1>Entity Structure &amp; Legal</h1>
+      <p class="re-hero__sub">The way your business is structured shapes how it&rsquo;s taxed, protected, and eventually sold. We work alongside CPAs and attorneys to choose the structure that fits your goals today &mdash; and your exit tomorrow.</p>
+      <div class="re-hero__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Structure Your Business</a>
+        <a href="#re-options" class="re-btn re-btn--ghost">Entity Options</a>
+      </div>
     </div>
   </section>
 
-  <section class="sub-body">
-    <div class="sub-body__inner">
-      <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
-      <p>Every business owner must determine what is the proper legal structure for their entity. Each of these different entity structures changes how the IRS views your business &mdash; and specific to your situation, some structures provide more advantageous taxation of the business&rsquo;s annual profits.</p>
-      <p>Once a legal structure is chosen, you then want to ensure that the proper operating agreements pursuant to your legal structure are drafted by qualified attorneys.</p>
+  <!-- Stat strip -->
+  <section class="re-stats">
+    <div class="re-stats__inner">
+      <div class="re-stat"><div class="re-stat__num">6</div><div class="re-stat__label">entity structures we help you evaluate</div></div>
+      <div class="re-stat"><div class="re-stat__num">1</div><div class="re-stat__label">structure aligned to both today and your future exit</div></div>
+      <div class="re-stat"><div class="re-stat__num">360&deg;</div><div class="re-stat__label">legal and tax perspectives in one coordinated plan</div></div>
+      <div class="re-stat"><div class="re-stat__num">+</div><div class="re-stat__label">a team of CPAs and attorneys working alongside you</div></div>
     </div>
   </section>
 
-  <!-- people imagery: split -->
+  <!-- Intro split -->
   <section class="ag-split">
     <div class="ag-split__inner">
       <div class="ag-split__body">
-        <h2>The Right Structure for Your Business</h2>
-        <p>The way your business is structured shapes how it&rsquo;s taxed, protected, and eventually sold. We work alongside our CPAs and attorneys to choose the structure that fits your goals today &mdash; and your exit tomorrow.</p>
+        <div class="re-eyebrow">Why It Matters</div>
+        <h2 class="re-h2">The Right Structure for Your Business</h2>
+        <div class="re-rule"></div>
+        <p>Every business owner must determine the proper legal structure for their entity. Each structure changes how the IRS views your business &mdash; and depending on your situation, some provide more advantageous taxation of the business&rsquo;s annual profits.</p>
+        <p>Once a structure is chosen, you want to ensure the proper operating agreements are drafted by qualified attorneys. We coordinate the entire process so nothing falls through the cracks.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Talk to an Advisor</a>
       </div>
       <div class="ag-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_f5b79ee06b7f41c6b268b0e841de8318~mv2.jpeg" alt="A business owner meeting with their advisors" loading="lazy" />
+        <img src="https://static.wixstatic.com/media/64b604_af34063fd4d04e3b9cad258662f777d6~mv2.jpeg" alt="A business owner meeting with their advisors" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <section class="sub-entities">
-    <div class="sub-entities__inner">
-      <h2>Entity Structure Options</h2>
-      <div class="sub-entity-grid">
-        <div class="sub-entity-card"><h3>Sole Proprietorship</h3></div>
-        <div class="sub-entity-card"><h3>S Corporation</h3></div>
-        <div class="sub-entity-card"><h3>C Corporation</h3></div>
-        <div class="sub-entity-card"><h3>LLC</h3></div>
-        <div class="sub-entity-card"><h3>Taxed as S Corporation</h3></div>
-        <div class="sub-entity-card"><h3>Partnership</h3></div>
+  <!-- Entity options -->
+  <section class="re-sec re-sec--alt" id="re-options">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">Your Options</div>
+        <h2 class="re-h2">Entity Structure Options</h2>
+        <div class="re-rule"></div>
+        <p class="re-lead">We help you weigh each structure&rsquo;s tax treatment, liability protection, and fit for your long-term goals.</p>
       </div>
-      <p style="font-size:1rem; line-height:1.9; color:#3a3a3a;">We work with our business owner clients to not only help them determine the proper structure but also pull in our team of CPAs and attorneys to provide their added feedback, and to draft the necessary documents as well as assign the appropriate election to the business moving forward.</p>
+      <div class="re-chips">
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Sole Proprietorship</span></div>
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>S Corporation</span></div>
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>C Corporation</span></div>
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>LLC</span></div>
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>LLC Taxed as S Corporation</span></div>
+        <div class="re-chip"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Partnership</span></div>
+      </div>
+      <p class="re-lead" style="max-width:900px;margin:34px auto 0;text-align:center;">We help our business-owner clients determine the proper structure &mdash; then pull in our team of CPAs and attorneys to add their feedback, draft the necessary documents, and assign the appropriate election to the business going forward.</p>
     </div>
   </section>
 
-  <section class="sub-split">
-    <div class="sub-split__inner">
-      <div class="sub-split__img">
-        <img src="https://static.wixstatic.com/media/64b604_4ead5592bb894a3c8ddf3700cdc494ff~mv2.avif" alt="Legal Structure Planning" />
+  <!-- eMoney video -->
+  <section class="re-sec">
+    <div class="re-video__inner">
+      <div class="re-head">
+        <div class="re-eyebrow">Watch &amp; Learn</div>
+        <h2 class="re-h2">Entity Structure, Explained</h2>
+        <div class="re-rule" style="margin:0 auto 22px;"></div>
       </div>
-      <div class="sub-split__text">
-        <div class="ag-section-label">Our Collaborative Approach</div>
-        <h2>Building the Right Foundation</h2>
-        <p>We pull together our network specialists and your existing team of professionals in order to create a collaborative and interactive team, looking at all legal and tax perspectives.</p>
-        <p>Most importantly, we incorporate your future business goals regarding the future succession or sale of the business to identify the optimal structure that supports both today&rsquo;s operations and tomorrow&rsquo;s exit strategy.</p>
+      <div class="re-video__frame">
+        <div><div id='video-player-44'></div><div id='video-player-disclaimer-part-44' style='position:relative'></div></div>
+        <script src='https://content.jwplatform.com/libraries/ljXVSIQY.js'></script>
+        <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=d750499c12c441e8814a36f94c322eba'></script>
+      </div>
+      <div style="text-align:center; margin-top:34px;">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Schedule a Call</a>
       </div>
     </div>
   </section>
 
-  <!-- people imagery: band -->
+  <!-- Band image -->
   <section class="ag-band">
-    <img src="https://static.wixstatic.com/media/64b604_d3e7a375221f4e248af5b71df028570d~mv2.jpeg" alt="A business team planning together" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/64b604_ad4789cb27fd43129065e7b939763091~mv2.jpeg" alt="A business team planning together" loading="lazy" />
   </section>
 
-  <!-- people imagery: duo -->
-  <section class="ag-duo">
-    <div class="ag-duo__inner">
-      <img src="https://static.wixstatic.com/media/64b604_01ad5f856c1548b3a69b40bbc9381a37~mv2.jpeg" alt="A business owner reviewing entity options" loading="lazy" />
-      <img src="https://static.wixstatic.com/media/64b604_d1dafd196a4645bc90bd445fe4923ca6~mv2.jpeg" alt="Advisors and a client collaborating" loading="lazy" />
+  <!-- Collaborative approach split -->
+  <section class="ag-split ag-split--alt">
+    <div class="ag-split__inner ag-split__inner--rev">
+      <div class="ag-split__body">
+        <div class="re-eyebrow">Our Collaborative Approach</div>
+        <h2 class="re-h2">Building the Right Foundation</h2>
+        <div class="re-rule"></div>
+        <p>We bring together our network specialists and your existing team of professionals to create a collaborative, interactive team that examines every legal and tax perspective.</p>
+        <p>Most importantly, we incorporate your future goals around the succession or sale of the business &mdash; identifying the optimal structure that supports both today&rsquo;s operations and tomorrow&rsquo;s exit strategy.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Start the Conversation</a>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_3da3790f740f49db8a3caa3f8fca9a8b~mv2.jpeg" alt="Advisors and a client collaborating" loading="lazy" />
+      </div>
     </div>
   </section>
 
-  <section class="sub-cta">
-    <h2>Ready to Structure Your Business for Success?</h2>
-    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
+  <!-- Related services -->
+  <section class="re-sec">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">Related Services</div>
+        <h2 class="re-h2">Structure Is the Foundation of the Plan</h2>
+        <div class="re-rule"></div>
+      </div>
+      <div class="re-rel-grid">
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top"><h3>Business Financial Management</h3><p>Bookkeeping, accounting, and reporting that match your entity structure.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top"><h3>Tax Planning &amp; Preparation</h3><p>Capture the tax advantages your structure makes possible.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top"><h3>Business Sale Planning</h3><p>Structure today for a clean, tax-efficient sale tomorrow.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top"><h3>Estate Planning</h3><p>Align ownership structures with your legacy and succession goals.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top"><h3>Real Estate Investing</h3><p>Hold and protect investment property through the right LLC structures.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top"><h3>401(k) &amp; Retirement Planning</h3><p>Build a retirement plan that fits your business entity and goals.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="re-cta">
+    <div class="re-cta__inner">
+      <h2>Ready to Structure Your Business for Success?</h2>
+      <p>Let&rsquo;s evaluate your entity structure with our team of CPAs and attorneys &mdash; and build a foundation that protects your business today and your exit tomorrow.</p>
+      <div class="re-cta__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Schedule Your Consultation</a>
+        <span class="re-cta__phone">or call (330)&nbsp;526-8412</span>
+      </div>
+    </div>
   </section>
 
 </main>
