@@ -85,57 +85,124 @@ html { font-size: 20px; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE: 401k / RETIREMENT */
-.ret-hero {
-  position: relative; height: 60vh; min-height: 440px;
-  overflow: hidden; display: flex; align-items: center; justify-content: center;
-  background: #0e3d47; margin-top: 72px;
-}
-.ret-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.ret-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(14,61,71,.8) 100%); }
-.ret-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; }
-.ret-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 600; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+/* PAGE: PREMIUM REDESIGN */
+.re-eyebrow { font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.22em; margin-bottom:16px; }
+.re-h2 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.4rem); color:#145568; font-weight:600; line-height:1.25; margin-bottom:18px; }
+.re-lead { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.9; color:#445; font-weight:400; }
+.re-rule { width:54px; height:3px; background:#C9A84C; border-radius:2px; margin:0 0 26px; }
+.re-btn { display:inline-flex; align-items:center; gap:9px; padding:15px 34px; background:#1D7080; color:#fff; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; text-decoration:none; border-radius:5px; letter-spacing:.03em; border:none; cursor:pointer; transition:background .2s, transform .15s, box-shadow .2s; }
+.re-btn:hover { background:#145568; transform:translateY(-2px); box-shadow:0 10px 26px rgba(20,85,104,.28); }
+.re-btn--gold { background:#C9A84C; }
+.re-btn--gold:hover { background:#a8873d; box-shadow:0 10px 26px rgba(201,168,76,.34); }
+.re-btn--ghost { background:transparent; border:2px solid rgba(255,255,255,.65); color:#fff; padding:13px 32px; }
+.re-btn--ghost:hover { background:#fff; color:#145568; }
 
-.ret-intro { padding: 20px 32px; background: #fff; }
-.ret-intro__inner { max-width: 900px; margin: 0 auto; }
-.ret-intro p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; margin-bottom: 16px; }
+/* Hero */
+.re-hero { position: relative; min-height: 600px; height: 78vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #0e3d47; margin-top: 72px; }
+.re-hero video, .re-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.re-hero__overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(7,30,36,.82) 0%, rgba(14,61,71,.66) 50%, rgba(12,53,64,.78) 100%); }
+.re-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; max-width: 920px; }
+.re-hero__eyebrow { font-family:'Inter',sans-serif; font-size:13px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.26em; margin-bottom:20px; }
+.re-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.6vw, 4rem); font-weight: 700; line-height:1.12; margin-bottom: 22px; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+.re-hero__sub { font-family:'Inter',sans-serif; font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.7; color:rgba(255,255,255,.92); font-weight:300; max-width:680px; margin:0 auto 34px; }
+.re-hero__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
 
-.ret-responsibilities { padding: 18px 32px; background: #F0F8FA; }
-.ret-responsibilities__inner { max-width: 900px; margin: 0 auto; }
-.ret-responsibilities h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #145568; margin-bottom: 24px; font-weight: 600; }
-.ret-responsibilities p { font-size: 1rem; line-height: 1.85; color: #3a3a3a; margin-bottom: 16px; }
-.ret-responsibilities ul { list-style: none; margin-bottom: 20px; }
-.ret-responsibilities ul li { padding: 10px 0 10px 28px; position: relative; font-size: .97rem; line-height: 1.7; color: #2a2a2a; border-bottom: 1px solid rgba(29,112,128,.1); }
-.ret-responsibilities ul li:last-child { border-bottom: none; }
-.ret-responsibilities ul li::before { content: '\2022'; position: absolute; left: 0; color: #C9A84C; font-size: 1.3rem; top: 8px; }
+/* Stat strip */
+.re-stats { padding: clamp(40px,5vw,60px) 32px; background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%); }
+.re-stats__inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+.re-stat__num { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.2vw,2.8rem); color:#C9A84C; font-weight:700; line-height:1.05; margin-bottom:10px; }
+.re-stat__label { font-family:'Inter',sans-serif; font-size:.86rem; line-height:1.55; color:rgba(255,255,255,.86); font-weight:400; }
+.re-stat + .re-stat { border-left:1px solid rgba(255,255,255,.14); }
 
-.ret-partnership { padding: 20px 32px; background: #145568; }
-.ret-partnership__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.ret-partnership h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #C9A84C; margin-bottom: 24px; font-weight: 600; grid-column: 1 / -1; }
-.ret-partnership__col ul { list-style: none; }
-.ret-partnership__col ul li { padding: 10px 0 10px 28px; position: relative; font-size: .96rem; line-height: 1.75; color: #cce6ec; border-bottom: 1px solid rgba(255,255,255,.08); }
-.ret-partnership__col ul li:last-child { border-bottom: none; }
-.ret-partnership__col ul li::before { content: '\2713'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; top: 11px; }
+/* generic section shell */
+.re-sec { padding: clamp(44px,6vw,76px) 32px; background:#fff; }
+.re-sec--alt { background:#F0F8FA; }
+.re-sec--dark { background:linear-gradient(148deg,#071e24 0%,#0e3d47 55%,#0c3540 100%); }
+.re-wrap { max-width:1140px; margin:0 auto; }
+.re-head { text-align:center; max-width:760px; margin:0 auto clamp(34px,4vw,52px); }
+.re-head .re-rule { margin:0 auto 22px; }
+.re-head .re-lead { color:#556; }
 
-.ret-cta { padding: 16px 32px; background: #E6F4F7; text-align: center; }
-
-@media (max-width: 768px) {
-  .ret-partnership__inner { grid-template-columns: 1fr; gap: 32px; }
-  .ret-partnership h2 { grid-column: 1; }
-}
-/* AGIMG people imagery - clean, no dark/green tint */
-.ag-split{padding:30px 32px;background:#fff}
+/* intro split */
+.ag-split{padding:clamp(44px,6vw,76px) 32px;background:#fff}
 .ag-split--alt{background:#F0F8FA}
-.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:470px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 22px 50px rgba(14,61,71,.20)}
 .ag-split__inner--rev .ag-split__media{order:-1}
-.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
-.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
-.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
-.ag-duo{padding:30px 32px;background:#fff}
-.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
-@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
+.ag-split__body p{font-size:1.05rem;line-height:1.9;color:#445;font-weight:400;margin-bottom:16px}
+.ag-split__body .re-btn{margin-top:12px}
+
+/* icon cards */
+.re-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.re-card { background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:14px; padding:32px 28px; transition:transform .25s, box-shadow .25s, border-color .25s; }
+.re-card:hover { transform:translateY(-5px); box-shadow:0 20px 44px rgba(14,61,71,.14); border-color:rgba(201,168,76,.4); }
+.re-card__ico { width:52px; height:52px; border-radius:12px; background:#E6F4F7; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.re-card__ico svg { width:26px; height:26px; stroke:#1D7080; fill:none; stroke-width:1.8; }
+.re-card__n { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:#E6F4F7; color:#1D7080; font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; margin-bottom:18px; }
+.re-card h3 { font-family:'Playfair Display',serif; font-size:1.18rem; color:#145568; font-weight:600; margin-bottom:10px; }
+.re-card p { font-family:'Inter',sans-serif; font-size:.95rem; line-height:1.7; color:#556; }
+
+/* two paths */
+.re-paths { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.re-path { background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:16px; padding:38px 34px; box-shadow:0 14px 38px rgba(14,61,71,.07); }
+.re-path__tag { display:inline-flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#1D7080; text-transform:uppercase; letter-spacing:.14em; background:#E6F4F7; padding:7px 14px; border-radius:30px; margin-bottom:18px; }
+.re-path h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:#145568; font-weight:600; margin-bottom:18px; }
+.re-path ul { list-style:none; }
+.re-path li { position:relative; padding:11px 0 11px 30px; font-family:'Inter',sans-serif; font-size:.97rem; line-height:1.6; color:#374; border-bottom:1px solid rgba(29,112,128,.08); }
+.re-path li:last-child { border-bottom:none; }
+.re-path li::before { content:''; position:absolute; left:2px; top:16px; width:8px; height:8px; border-radius:50%; background:#C9A84C; }
+
+/* process steps */
+.re-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.re-step__n { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:rgba(201,168,76,.42); line-height:1; margin-bottom:12px; }
+.re-step h3 { font-family:'Inter',sans-serif; font-size:1.02rem; font-weight:600; color:#fff; margin-bottom:9px; }
+.re-step p { font-family:'Inter',sans-serif; font-size:.9rem; line-height:1.65; color:rgba(255,255,255,.66); }
+.re-sec--dark .re-head .re-h2, .re-sec--dark .re-h2 { color:#fff; }
+.re-sec--dark .re-head .re-lead { color:rgba(255,255,255,.74); }
+
+/* band */
+.ag-band img{width:100%;height:460px;object-fit:cover;object-position:center 40%;display:block}
+
+/* video */
+.re-video__inner { max-width:880px; margin:0 auto; }
+.re-video__frame { background:#0c3540; border-radius:14px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.18); }
+.re-video__frame > div { border-radius:8px; overflow:hidden; }
+.re-video__frame + .re-video__frame { margin-top:22px; }
+
+/* related services */
+.re-rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.re-rel-card { display:block; background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:14px; padding:26px 26px 24px; text-decoration:none; transition:transform .22s, box-shadow .22s, border-color .22s; }
+.re-rel-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,61,71,.13); border-color:rgba(201,168,76,.45); }
+.re-rel-card h3 { font-family:'Playfair Display',serif; font-size:1.12rem; color:#145568; font-weight:600; margin-bottom:8px; }
+.re-rel-card p { font-family:'Inter',sans-serif; font-size:.9rem; line-height:1.6; color:#667; margin-bottom:14px; }
+.re-rel-card__link { font-family:'Inter',sans-serif; font-size:12.5px; font-weight:700; color:#1D7080; text-transform:uppercase; letter-spacing:.08em; }
+.re-rel-card:hover .re-rel-card__link { color:#C9A84C; }
+
+/* final CTA */
+.re-cta { padding: clamp(52px,6vw,84px) 32px; background:linear-gradient(135deg,#0e3d47 0%,#1D7080 100%); text-align:center; position:relative; overflow:hidden; }
+.re-cta::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,#C9A84C,transparent); }
+.re-cta__inner { max-width:760px; margin:0 auto; position:relative; z-index:1; }
+.re-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,3vw,2.6rem); color:#fff; font-weight:600; margin-bottom:18px; line-height:1.22; }
+.re-cta p { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,.85); font-weight:300; margin-bottom:30px; }
+.re-cta__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; align-items:center; }
+.re-cta__phone { font-family:'Inter',sans-serif; font-size:15px; font-weight:600; color:#fff; }
+
+@media (max-width: 980px) {
+  .re-cards { grid-template-columns:1fr 1fr; }
+  .re-steps { grid-template-columns:1fr 1fr; gap:30px 24px; }
+}
+@media (max-width: 820px) {
+  .ag-split__inner{grid-template-columns:1fr;gap:30px}
+  .ag-split__inner--rev .ag-split__media{order:0}
+  .ag-band img{height:280px}
+  .re-stats__inner{grid-template-columns:1fr 1fr;gap:30px 24px}
+  .re-stat + .re-stat{border-left:none}
+  .re-paths{grid-template-columns:1fr}
+  .re-rel-grid{grid-template-columns:1fr}
+}
+@media (max-width: 560px) {
+  .re-cards{grid-template-columns:1fr}
+}
 </style>
 
 <nav class="ag-nav">
@@ -280,88 +347,168 @@ html { font-size: 20px; }
 
 <main>
 
-  <!-- Â§1 Hero -->
-  <section class="ret-hero">
-    <img src="https://static.wixstatic.com/media/64b604_dd794575b91445ed880df4f3301795d1~mv2.avif" alt="401k Retirement Plan Services" />
-    <div class="ret-hero__overlay"></div>
-    <div class="ret-hero__text">
-      <h1>401k / Retirement Plan Services</h1>
+  <!-- Hero -->
+  <section class="re-hero">
+    <img src="https://static.wixstatic.com/media/64b604_dd794575b91445ed880df4f3301795d1~mv2.avif" alt="401(k) &amp; Retirement Plan Services" />
+    <div class="re-hero__overlay"></div>
+    <div class="re-hero__text">
+      <div class="re-hero__eyebrow">For Businesses &amp; Non-Profits</div>
+      <h1>401(k) &amp; Retirement Plan Services</h1>
+      <p class="re-hero__sub">A fee-based, open-architecture retirement plan with a personal touch &mdash; designed to reduce your fiduciary risk and give every employee a trusted advisor they can rely on for the long run.</p>
+      <div class="re-hero__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Review Your Plan</a>
+        <a href="#re-responsibilities" class="re-btn re-btn--ghost">Plan Sponsor Duties</a>
+      </div>
     </div>
   </section>
 
-  <!-- Â§1 Intro -->
-  <section class="ret-intro">
-    <div class="ret-intro__inner">
-      <div class="ag-gold-bar" style="margin:0 0 28px;"></div>
-      <p>We assist businesses and non-profit organizations with their defined contribution retirement plans. As a Registered Investment Advisor (RIA), we work for our clients and do not receive compensation from any third parties. We utilize only fee-based, open architecture plan design, free of proprietary funds or investment requirements.</p>
-      <p>We are proud to specialize in working with retirement plans with $25 million and less in assets. A hallmark of our firm is the personalized approach and attention we give each organization and each employee. We desire a meaningful relationship with the organization as well as the employee. When retirement is one day realized for employees, we want them to already have a trusted advisor relationship to work with.</p>
+  <!-- Stat strip -->
+  <section class="re-stats">
+    <div class="re-stats__inner">
+      <div class="re-stat"><div class="re-stat__num">$25M</div><div class="re-stat__label">and under &mdash; the plan size we proudly specialize in</div></div>
+      <div class="re-stat"><div class="re-stat__num">$0</div><div class="re-stat__label">third-party compensation &mdash; we&rsquo;re a fee-based RIA</div></div>
+      <div class="re-stat"><div class="re-stat__num">1:1</div><div class="re-stat__label">annual meetings with every plan participant</div></div>
+      <div class="re-stat"><div class="re-stat__num">100%</div><div class="re-stat__label">open architecture &mdash; no proprietary funds</div></div>
     </div>
   </section>
 
-  <!-- Â§2 Responsibilities -->
-  <!-- people imagery: split -->
+  <!-- Intro split -->
   <section class="ag-split">
     <div class="ag-split__inner">
       <div class="ag-split__body">
-        <h2>Retirement Plans Built Around Your People</h2>
-        <p>A great 401(k) is one your employees actually understand and use. We act as an extension of your HR team &mdash; meeting one-on-one with participants every year so your people walk into retirement already working with an advisor they trust.</p>
+        <div class="re-eyebrow">Why Affinity</div>
+        <h2 class="re-h2">Retirement Plans Built Around Your People</h2>
+        <div class="re-rule"></div>
+        <p>We assist businesses and non-profit organizations with their defined-contribution retirement plans. As a Registered Investment Advisor, we work for our clients and receive no compensation from third parties &mdash; using only fee-based, open-architecture plan design, free of proprietary funds or investment requirements.</p>
+        <p>We proudly specialize in plans with $25 million and under in assets, giving each organization and employee a personalized level of attention &mdash; so that when retirement arrives, your people already have a trusted advisor to work with.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Talk to Our Team</a>
       </div>
       <div class="ag-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_912710482a4a416a908c9ca607fb60b5~mv2.jpeg" alt="A happy team at work" loading="lazy" />
+        <img src="https://static.wixstatic.com/media/64b604_ad4789cb27fd43129065e7b939763091~mv2.jpeg" alt="A professional team in the workplace" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <section class="ret-responsibilities">
-    <div class="ret-responsibilities__inner">
-      <p style="font-style:italic; font-size:1.05rem; color:#145568; margin-bottom:28px;">Offering a retirement plan legitimizes an organization&rsquo;s employee benefit package; however, it does come with important responsibilities&hellip;</p>
-      <h2>Plan Sponsor Responsibilities</h2>
-      <ul>
-        <li>Providing diversified investment options</li>
-        <li>Educating employees about the plan, their contribution options, and their retirement readiness</li>
-        <li>Annually reviewing the plan&rsquo;s investment options, the fees charged by the funds &amp; service providers, and their returns to ensure options are reasonably priced and performing well compared to benchmarks</li>
-      </ul>
-      <p>Today there is a good deal of government scrutiny on 401k retirement plans to ensure that they are paying close attention to the investment options they offer their employees, as each employee is entrusting the company with their retirement assets and to look after their best interest. More than ever, working with an expert who specializes in plan design, compliance, and fiduciary requirements is a key in reducing the company fiduciary risk.</p>
+  <!-- Plan sponsor responsibilities -->
+  <section class="re-sec re-sec--alt" id="re-responsibilities">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">What&rsquo;s at Stake</div>
+        <h2 class="re-h2">Plan Sponsor Responsibilities</h2>
+        <div class="re-rule"></div>
+        <p class="re-lead">Offering a retirement plan strengthens your benefits package &mdash; but it comes with real fiduciary responsibilities. We help you meet them.</p>
+      </div>
+      <div class="re-cards">
+        <div class="re-card">
+          <div class="re-card__ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10M12 2v10l7 3M12 2a10 10 0 0 1 10 10"/></svg></div>
+          <h3>Diversified Options</h3>
+          <p>Providing a well-constructed menu of diversified investment options for every type of participant.</p>
+        </div>
+        <div class="re-card">
+          <div class="re-card__ico"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></div>
+          <h3>Employee Education</h3>
+          <p>Educating employees about the plan, their contribution choices, and their overall retirement readiness.</p>
+        </div>
+        <div class="re-card">
+          <div class="re-card__ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+          <h3>Annual Review</h3>
+          <p>Reviewing investment options, fund and provider fees, and returns each year against appropriate benchmarks.</p>
+        </div>
+      </div>
+      <p class="re-lead" style="max-width:900px;margin:34px auto 0;text-align:center;">There is significant government scrutiny on 401(k) plans to ensure sponsors pay close attention to the options they offer. Working with an expert in plan design, compliance, and fiduciary requirements is key to reducing your company&rsquo;s fiduciary risk.</p>
     </div>
   </section>
 
-  <!-- Â§3 Partnership Benefits -->
-  <!-- people imagery: band -->
+  <!-- eMoney videos (two) -->
+  <section class="re-sec">
+    <div class="re-video__inner">
+      <div class="re-head">
+        <div class="re-eyebrow">Watch &amp; Learn</div>
+        <h2 class="re-h2">Retirement Planning, Explained</h2>
+        <div class="re-rule" style="margin:0 auto 22px;"></div>
+        <p class="re-lead">Two short videos on building and managing a retirement plan that works for your organization and its people.</p>
+      </div>
+      <div class="re-video__frame">
+        <div><div id='video-player-106'></div><div id='video-player-disclaimer-part-106' style='position:relative'></div></div>
+      </div>
+      <div class="re-video__frame">
+        <div><div id='video-player-95'></div><div id='video-player-disclaimer-part-95' style='position:relative'></div></div>
+      </div>
+      <script src='https://content.jwplatform.com/libraries/ljXVSIQY.js'></script>
+      <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=6fd2afc6062c4fe9b021fd525db545c4'></script>
+      <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=60329072822a4c01a19c5bf5d6e4dd8e'></script>
+    </div>
+  </section>
+
+  <!-- Band image -->
   <section class="ag-band">
-    <img src="https://static.wixstatic.com/media/64b604_9910a35511784d2daabb273145c205e2~mv2.jpeg" alt="A team collaborating in the workplace" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/64b604_4aff471d93be4e4aa4bbe2f181566e0c~mv2.jpeg" alt="A team collaborating in the workplace" loading="lazy" />
   </section>
 
-  <section class="ret-partnership">
-    <div class="ret-partnership__inner">
-      <h2>What Partnering With Affinity Wealth Means for Organizations</h2>
-      <div class="ret-partnership__col">
-        <ul>
-          <li>The ability to outsource virtually all everyday service or management components of the company 401k plan</li>
-          <li>We function as an extension of your HR team, here to answer all employee questions and handle common maintenance issues such as enrolling new employees and completing plan service items</li>
-          <li>Each year we sit down with all plan participants one-on-one to talk about their specific situation and help them achieve their retirement goals</li>
-        </ul>
+  <!-- Partnership: two columns -->
+  <section class="re-sec re-sec--alt">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">The Partnership</div>
+        <h2 class="re-h2">What Partnering With Affinity Wealth Means</h2>
+        <div class="re-rule"></div>
+        <p class="re-lead">We function as an extension of your HR team &mdash; with a concierge level of service, in writing.</p>
       </div>
-      <div class="ret-partnership__col">
-        <ul>
-          <li>One of our main goals is ensuring that the 401k plan is meaningful to all eligible employees &mdash; we implement strategies to increase overall plan participation</li>
-          <li>Each organization receives an &ldquo;Annual Service Agreement&rdquo; outlining the service-based items the plan will receive from us each calendar year</li>
-          <li>We want to deliver a concierge level of service and feel it is important to put into writing what you should expect from us</li>
-        </ul>
+      <div class="re-paths">
+        <div class="re-path">
+          <span class="re-path__tag">Outsourced Service</span>
+          <h3>We Handle the Day-to-Day</h3>
+          <ul>
+            <li>Outsource virtually all everyday service and management of the company 401(k) plan</li>
+            <li>We act as an extension of your HR team &mdash; answering employee questions and handling maintenance like enrolling new hires and completing plan service items</li>
+            <li>Each year we sit down one-on-one with every participant to discuss their situation and retirement goals</li>
+          </ul>
+        </div>
+        <div class="re-path">
+          <span class="re-path__tag">Concierge Commitment</span>
+          <h3>Meaningful, Measurable Outcomes</h3>
+          <ul>
+            <li>We implement strategies to increase overall plan participation so the plan is meaningful to all eligible employees</li>
+            <li>Each organization receives an &ldquo;Annual Service Agreement&rdquo; outlining the services your plan will receive each year</li>
+            <li>We deliver a concierge level of service &mdash; and put in writing exactly what you should expect from us</li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Request a Plan Consultation</a>
       </div>
     </div>
   </section>
 
-  <!-- people imagery: duo -->
-  <section class="ag-duo">
-    <div class="ag-duo__inner">
-      <img src="https://static.wixstatic.com/media/64b604_77be548e79524356984e521f9cd39e87~mv2.jpeg" alt="A business owner reviewing the company retirement plan" loading="lazy" />
-      <img src="https://static.wixstatic.com/media/64b604_29eea1e687ed43bc8d9461cca2301b7c~mv2.jpeg" alt="Employees meeting with their retirement plan advisor" loading="lazy" />
+  <!-- Related services -->
+  <section class="re-sec">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">Related Services</div>
+        <h2 class="re-h2">More Ways We Support Your Business</h2>
+        <div class="re-rule"></div>
+      </div>
+      <div class="re-rel-grid">
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top"><h3>Business Financial Management</h3><p>Outsourced bookkeeping, accounting, and CFO-level reporting for your organization.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top"><h3>Executive Benefit Planning</h3><p>Reward and retain key people with benefit packages beyond the 401(k).</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top"><h3>Business Sale Planning</h3><p>Plan a successful, tax-efficient exit when the time comes.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top"><h3>Entity Structure &amp; Legal</h3><p>Structure your business to protect owners and operate efficiently.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top"><h3>Investment Management</h3><p>Disciplined, fiduciary investment management for the plan and beyond.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top"><h3>Total Wealth Management</h3><p>Personal wealth planning for owners and executives, fully coordinated.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+      </div>
     </div>
   </section>
 
-  <!-- Â§4 CTA -->
-  <section class="ret-cta">
-    <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="ag-btn-primary" target="_top">Business Financial Management</a>
+  <!-- Final CTA -->
+  <section class="re-cta">
+    <div class="re-cta__inner">
+      <h2>Strengthen Your Company Retirement Plan</h2>
+      <p>Let&rsquo;s review your current plan, reduce your fiduciary risk, and give your employees the personalized guidance they deserve.</p>
+      <div class="re-cta__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Schedule a Plan Review</a>
+        <span class="re-cta__phone">or call (330)&nbsp;526-8412</span>
+      </div>
+    </div>
   </section>
 
 </main>
