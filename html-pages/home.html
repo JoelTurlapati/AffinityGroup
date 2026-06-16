@@ -424,12 +424,33 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   width: 52px; height: 2px; background: #C9A84C; margin: 0 auto 42px; border-radius: 2px;
 }
 .fid-video-wrap {
+  position: relative;
   max-width: 820px; margin: 0 auto 38px;
   border-radius: 10px; overflow: hidden;
   box-shadow: 0 12px 50px rgba(0,0,0,.16);
 }
 .fid-video-wrap video {
   width: 100%; height: auto; display: block;
+}
+.fid-video-play {
+  position: absolute; inset: 0; margin: 0; padding: 0; border: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; cursor: pointer; background: rgba(12,53,64,.30);
+  transition: background .25s;
+}
+.fid-video-play:hover { background: rgba(12,53,64,.46); }
+.fid-video-play__circle {
+  width: 74px; height: 74px; border-radius: 50%;
+  background: #C9A84C; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+  transition: transform .25s, background .25s;
+}
+.fid-video-play:hover .fid-video-play__circle { transform: scale(1.08); background: #d8b95e; }
+.fid-video-play__circle svg { width: 30px; height: 30px; margin-left: 4px; fill: #0c3540; }
+.fid-video-play__label {
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+  color: #fff; text-transform: uppercase; letter-spacing: .14em;
+  text-shadow: 0 1px 6px rgba(0,0,0,.55);
 }
 .hp-fid-cta__btns {
   display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
@@ -929,11 +950,15 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <video autoplay muted loop playsinline>
           <source src="https://video.wixstatic.com/video/64b604_4e329482b26442cc90939d6f4bf7d7ce/360p/mp4/file.mp4" type="video/mp4" />
         </video>
+        <button type="button" class="fid-video-play" onclick="openYtModal()" aria-label="Watch video">
+          <span class="fid-video-play__circle"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg></span>
+          <span class="fid-video-play__label">Watch Video</span>
+        </button>
       </div>
       <div class="hp-fid-cta__btns">
-        <button class="ag-btn-gold" onclick="openYtModal()">
+        <a class="ag-btn-gold" href="https://tagplanning.wixstudio.com/demo/contact" target="_top">
          Schedule a 15-Minute Personalized Virtual Introduction Here
-        </button>
+        </a>
         <a class="ag-btn-outline" href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Learn More</a>
       </div>
     </div>
