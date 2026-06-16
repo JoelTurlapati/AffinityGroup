@@ -587,6 +587,19 @@ html { font-size: 20px; }
   .tp-audience__grid { grid-template-columns: 1fr; }
   .tp-process__steps { grid-template-columns: 1fr; }
 }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <!-- NAV -->
@@ -819,6 +832,19 @@ html { font-size: 20px; }
   </div>
 </section>
 
+<!-- people imagery: split -->
+<section class="ag-split">
+  <div class="ag-split__inner">
+    <div class="ag-split__body">
+      <h2>Tax Planning That Works for Your Whole Life</h2>
+      <p>Great tax work isn&rsquo;t a once-a-year scramble. We coordinate planning and preparation year-round so you keep more of what you earn &mdash; with no surprises at filing time.</p>
+    </div>
+    <div class="ag-split__media">
+      <img src="https://static.wixstatic.com/media/64b604_3f8d4d00299b44e0b7d027f67a7e6904~mv2.jpeg" alt="A couple reviewing their tax documents together at home" loading="lazy" />
+    </div>
+  </div>
+</section>
+
 <!-- YEAR-ROUND TAX PLANNING -->
 <section class="tp-yearround" id="tp-planning">
   <div class="tp-yearround__head">
@@ -1002,6 +1028,11 @@ html { font-size: 20px; }
       </div>
     </div>
   </div>
+</section>
+
+<!-- people imagery: band -->
+<section class="ag-band">
+  <img src="https://static.wixstatic.com/media/64b604_ab59e8c951464f0c8dbf5d37e5f8330e~mv2.jpeg" alt="A couple organizing their finances together" loading="lazy" />
 </section>
 
 <!-- INTEGRATED FINANCIAL COORDINATION -->
@@ -1235,6 +1266,14 @@ html { font-size: 20px; }
       <h3>Strategic Coordination</h3>
       <p>Tax planning decisions are communicated to the Affinity Wealth team so investment, retirement, and estate decisions are aligned.</p>
     </div>
+  </div>
+</section>
+
+<!-- people imagery: duo -->
+<section class="ag-duo">
+  <div class="ag-duo__inner">
+    <img src="https://static.wixstatic.com/media/64b604_73a3747ca55443b297c51563460666e1~mv2.jpeg" alt="A couple planning their taxes with confidence" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/64b604_b37161400fcd4b8bbf39be566da97e6e~mv2.jpeg" alt="A couple reviewing their finances at home" loading="lazy" />
   </div>
 </section>
 

@@ -117,6 +117,19 @@ html { font-size: 20px; }
 @media (max-width: 768px) {
   .rei-services__grid { grid-template-columns: 1fr; }
 }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -287,6 +300,19 @@ html { font-size: 20px; }
   </section>
 
   <!-- Â§4 Two-Column Services -->
+  <!-- people imagery: split -->
+  <section class="ag-split">
+    <div class="ag-split__inner">
+      <div class="ag-split__body">
+        <h2>Build Lasting Wealth Through Real Estate</h2>
+        <p>Real estate is one of the most powerful wealth-building tools available &mdash; and most advisors ignore it. With nearly two decades of hands-on experience, we help you pursue property investing with confidence.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_51842421ebee43a186e1dd847ba7e107~mv2.jpeg" alt="A happy couple celebrating a new property" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <section class="rei-services">
     <div class="rei-services__inner">
       <h2>How We Help You Invest in Real Estate</h2>
@@ -316,6 +342,19 @@ html { font-size: 20px; }
   </section>
 
   <!-- Â§5 Video + CTA -->
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_6ee3c851526541b39e4a62dc43f4b4e0~mv2.jpeg" alt="A couple with the keys to their new investment property" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_49c976aae34f4261b4d7640f04a7a3da~mv2.jpeg" alt="A couple reviewing a property investment" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_0e43aeeb0ffd403c95c398f400fe77cf~mv2.jpeg" alt="A happy couple investing in real estate" loading="lazy" />
+    </div>
+  </section>
+
   <section class="rei-video">
     <div class="rei-video__inner">
       <div class="rei-video__embed">

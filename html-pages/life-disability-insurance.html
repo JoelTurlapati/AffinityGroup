@@ -121,6 +121,19 @@ html { font-size: 20px; }
 @media (max-width: 768px) {
   .ins-panels__inner { grid-template-columns: 1fr; }
 }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -291,6 +304,19 @@ html { font-size: 20px; }
   </section>
 
   <!-- Â§4 Two Panels -->
+  <!-- people imagery: split -->
+  <section class="ag-split">
+    <div class="ag-split__inner">
+      <div class="ag-split__body">
+        <h2>Protecting Your Family&rsquo;s Future</h2>
+        <p>The right coverage means your family stays secure no matter what life brings. We analyze your risks objectively &mdash; with no products to push &mdash; so the people who depend on you are always protected.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_a7b946acd2d441d186ffcfee13bb3f96~mv2.jpeg" alt="A happy family at home" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <section class="ins-panels">
     <div class="ins-panels__inner">
 
@@ -331,6 +357,19 @@ html { font-size: 20px; }
   </section>
 
   <!-- Â§4 Video + CTA -->
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_d1a82ffb1780474fb72964bee91094aa~mv2.jpeg" alt="A family enjoying peace of mind" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_c9f1dbcddf71463c8c80c6668181d707~mv2.jpeg" alt="Parents with their children" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_bb47690642a84ae88ccc98444cded887~mv2.jpeg" alt="A family spending time together" loading="lazy" />
+    </div>
+  </section>
+
   <section class="ins-video">
     <div class="ins-video__inner">
       <p>&ldquo;Watch this Short Video of Financial Advisor Scott Lowe talking about the importance of incorporating insurance into your financial plan&hellip;&rdquo;</p>
