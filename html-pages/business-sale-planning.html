@@ -85,43 +85,124 @@ html { font-size: 20px; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* PAGE */
-.sub-hero { position: relative; height: 55vh; min-height: 400px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #0e3d47; margin-top: 72px; }
-.sub-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.sub-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, rgba(14,61,71,.82) 100%); }
-.sub-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; }
-.sub-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+/* PAGE: PREMIUM REDESIGN */
+.re-eyebrow { font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.22em; margin-bottom:16px; }
+.re-h2 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.4rem); color:#145568; font-weight:600; line-height:1.25; margin-bottom:18px; }
+.re-lead { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.9; color:#445; font-weight:400; }
+.re-rule { width:54px; height:3px; background:#C9A84C; border-radius:2px; margin:0 0 26px; }
+.re-btn { display:inline-flex; align-items:center; gap:9px; padding:15px 34px; background:#1D7080; color:#fff; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; text-decoration:none; border-radius:5px; letter-spacing:.03em; border:none; cursor:pointer; transition:background .2s, transform .15s, box-shadow .2s; }
+.re-btn:hover { background:#145568; transform:translateY(-2px); box-shadow:0 10px 26px rgba(20,85,104,.28); }
+.re-btn--gold { background:#C9A84C; }
+.re-btn--gold:hover { background:#a8873d; box-shadow:0 10px 26px rgba(201,168,76,.34); }
+.re-btn--ghost { background:transparent; border:2px solid rgba(255,255,255,.65); color:#fff; padding:13px 32px; }
+.re-btn--ghost:hover { background:#fff; color:#145568; }
 
-.sub-intro { padding: 20px 32px; background: #fff; text-align: center; }
-.sub-intro__inner { max-width: 820px; margin: 0 auto; }
-.sub-intro p { font-size: 1.05rem; line-height: 1.95; color: #3a3a3a; font-weight: 300; }
+/* Hero */
+.re-hero { position: relative; min-height: 600px; height: 78vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #0e3d47; margin-top: 72px; }
+.re-hero video, .re-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.re-hero__overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(7,30,36,.82) 0%, rgba(14,61,71,.66) 50%, rgba(12,53,64,.78) 100%); }
+.re-hero__text { position: relative; z-index: 2; text-align: center; padding: 48px 32px; color: #fff; max-width: 920px; }
+.re-hero__eyebrow { font-family:'Inter',sans-serif; font-size:13px; font-weight:700; color:#C9A84C; text-transform:uppercase; letter-spacing:.26em; margin-bottom:20px; }
+.re-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.6vw, 4rem); font-weight: 700; line-height:1.12; margin-bottom: 22px; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+.re-hero__sub { font-family:'Inter',sans-serif; font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.7; color:rgba(255,255,255,.92); font-weight:300; max-width:680px; margin:0 auto 34px; }
+.re-hero__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
 
-.sub-steps { padding: 18px 32px; background: #F0F8FA; }
-.sub-steps__inner { max-width: 1000px; margin: 0 auto; }
-.sub-steps h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #145568; margin-bottom: 48px; font-weight: 600; text-align: center; }
-.sub-step { display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: start; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(29,112,128,.12); }
-.sub-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.sub-step__num { width: 56px; height: 56px; border-radius: 50%; background: #1D7080; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; font-weight: 600; flex-shrink: 0; }
-.sub-step__body h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #145568; margin-bottom: 10px; font-weight: 600; }
-.sub-step__body p { font-size: .97rem; line-height: 1.85; color: #3a3a3a; }
+/* Stat strip */
+.re-stats { padding: clamp(40px,5vw,60px) 32px; background: linear-gradient(135deg, #0e3d47 0%, #1D7080 100%); }
+.re-stats__inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+.re-stat__num { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.2vw,2.8rem); color:#C9A84C; font-weight:700; line-height:1.05; margin-bottom:10px; }
+.re-stat__label { font-family:'Inter',sans-serif; font-size:.86rem; line-height:1.55; color:rgba(255,255,255,.86); font-weight:400; }
+.re-stat + .re-stat { border-left:1px solid rgba(255,255,255,.14); }
 
-.sub-cta { padding: 18px 32px; background: #145568; text-align: center; }
-.sub-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: #fff; margin-bottom: 28px; font-weight: 600; }
+/* generic section shell */
+.re-sec { padding: clamp(44px,6vw,76px) 32px; background:#fff; }
+.re-sec--alt { background:#F0F8FA; }
+.re-sec--dark { background:linear-gradient(148deg,#071e24 0%,#0e3d47 55%,#0c3540 100%); }
+.re-wrap { max-width:1140px; margin:0 auto; }
+.re-head { text-align:center; max-width:760px; margin:0 auto clamp(34px,4vw,52px); }
+.re-head .re-rule { margin:0 auto 22px; }
+.re-head .re-lead { color:#556; }
 
-@media (max-width: 480px) { .sub-step { grid-template-columns: 1fr; } .sub-step__num { width: 44px; height: 44px; } }
-/* AGIMG people imagery - clean, no dark/green tint */
-.ag-split{padding:30px 32px;background:#fff}
+/* intro split */
+.ag-split{padding:clamp(44px,6vw,76px) 32px;background:#fff}
 .ag-split--alt{background:#F0F8FA}
-.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:470px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 22px 50px rgba(14,61,71,.20)}
 .ag-split__inner--rev .ag-split__media{order:-1}
-.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
-.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
-.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
-.ag-duo{padding:30px 32px;background:#fff}
-.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
-@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
+.ag-split__body p{font-size:1.05rem;line-height:1.9;color:#445;font-weight:400;margin-bottom:16px}
+.ag-split__body .re-btn{margin-top:12px}
+
+/* icon cards */
+.re-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.re-card { background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:14px; padding:32px 28px; transition:transform .25s, box-shadow .25s, border-color .25s; }
+.re-card:hover { transform:translateY(-5px); box-shadow:0 20px 44px rgba(14,61,71,.14); border-color:rgba(201,168,76,.4); }
+.re-card__ico { width:52px; height:52px; border-radius:12px; background:#E6F4F7; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.re-card__ico svg { width:26px; height:26px; stroke:#1D7080; fill:none; stroke-width:1.8; }
+.re-card__n { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:#E6F4F7; color:#1D7080; font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; margin-bottom:18px; }
+.re-card h3 { font-family:'Playfair Display',serif; font-size:1.18rem; color:#145568; font-weight:600; margin-bottom:10px; }
+.re-card p { font-family:'Inter',sans-serif; font-size:.95rem; line-height:1.7; color:#556; }
+
+/* two paths */
+.re-paths { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.re-path { background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:16px; padding:38px 34px; box-shadow:0 14px 38px rgba(14,61,71,.07); }
+.re-path__tag { display:inline-flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#1D7080; text-transform:uppercase; letter-spacing:.14em; background:#E6F4F7; padding:7px 14px; border-radius:30px; margin-bottom:18px; }
+.re-path h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:#145568; font-weight:600; margin-bottom:18px; }
+.re-path ul { list-style:none; }
+.re-path li { position:relative; padding:11px 0 11px 30px; font-family:'Inter',sans-serif; font-size:.97rem; line-height:1.6; color:#374; border-bottom:1px solid rgba(29,112,128,.08); }
+.re-path li:last-child { border-bottom:none; }
+.re-path li::before { content:''; position:absolute; left:2px; top:16px; width:8px; height:8px; border-radius:50%; background:#C9A84C; }
+
+/* process steps */
+.re-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.re-step__n { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:rgba(201,168,76,.42); line-height:1; margin-bottom:12px; }
+.re-step h3 { font-family:'Inter',sans-serif; font-size:1.02rem; font-weight:600; color:#fff; margin-bottom:9px; }
+.re-step p { font-family:'Inter',sans-serif; font-size:.9rem; line-height:1.65; color:rgba(255,255,255,.66); }
+.re-sec--dark .re-head .re-h2, .re-sec--dark .re-h2 { color:#fff; }
+.re-sec--dark .re-head .re-lead { color:rgba(255,255,255,.74); }
+
+/* band */
+.ag-band img{width:100%;height:460px;object-fit:cover;object-position:center 40%;display:block}
+
+/* video */
+.re-video__inner { max-width:880px; margin:0 auto; }
+.re-video__frame { background:#0c3540; border-radius:14px; padding:18px; box-shadow:0 20px 50px rgba(0,0,0,.18); }
+.re-video__frame > div { border-radius:8px; overflow:hidden; }
+.re-video__frame + .re-video__frame { margin-top:22px; }
+
+/* related services */
+.re-rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.re-rel-card { display:block; background:#fff; border:1px solid rgba(29,112,128,.12); border-radius:14px; padding:26px 26px 24px; text-decoration:none; transition:transform .22s, box-shadow .22s, border-color .22s; }
+.re-rel-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,61,71,.13); border-color:rgba(201,168,76,.45); }
+.re-rel-card h3 { font-family:'Playfair Display',serif; font-size:1.12rem; color:#145568; font-weight:600; margin-bottom:8px; }
+.re-rel-card p { font-family:'Inter',sans-serif; font-size:.9rem; line-height:1.6; color:#667; margin-bottom:14px; }
+.re-rel-card__link { font-family:'Inter',sans-serif; font-size:12.5px; font-weight:700; color:#1D7080; text-transform:uppercase; letter-spacing:.08em; }
+.re-rel-card:hover .re-rel-card__link { color:#C9A84C; }
+
+/* final CTA */
+.re-cta { padding: clamp(52px,6vw,84px) 32px; background:linear-gradient(135deg,#0e3d47 0%,#1D7080 100%); text-align:center; position:relative; overflow:hidden; }
+.re-cta::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,#C9A84C,transparent); }
+.re-cta__inner { max-width:760px; margin:0 auto; position:relative; z-index:1; }
+.re-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.7rem,3vw,2.6rem); color:#fff; font-weight:600; margin-bottom:18px; line-height:1.22; }
+.re-cta p { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,.85); font-weight:300; margin-bottom:30px; }
+.re-cta__btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; align-items:center; }
+.re-cta__phone { font-family:'Inter',sans-serif; font-size:15px; font-weight:600; color:#fff; }
+
+@media (max-width: 980px) {
+  .re-cards { grid-template-columns:1fr 1fr; }
+  .re-steps { grid-template-columns:1fr 1fr; gap:30px 24px; }
+}
+@media (max-width: 820px) {
+  .ag-split__inner{grid-template-columns:1fr;gap:30px}
+  .ag-split__inner--rev .ag-split__media{order:0}
+  .ag-band img{height:280px}
+  .re-stats__inner{grid-template-columns:1fr 1fr;gap:30px 24px}
+  .re-stat + .re-stat{border-left:none}
+  .re-paths{grid-template-columns:1fr}
+  .re-rel-grid{grid-template-columns:1fr}
+}
+@media (max-width: 560px) {
+  .re-cards{grid-template-columns:1fr}
+}
 </style>
 
 <nav class="ag-nav">
@@ -266,97 +347,126 @@ html { font-size: 20px; }
 
 <main>
 
-  <section class="sub-hero">
+  <!-- Hero -->
+  <section class="re-hero">
     <img src="https://static.wixstatic.com/media/64b604_50a6453c55a74127bff86f25517963a0~mv2.avif" alt="Business Sale Planning" />
-    <div class="sub-hero__overlay"></div>
-    <div class="sub-hero__text">
+    <div class="re-hero__overlay"></div>
+    <div class="re-hero__text">
+      <div class="re-hero__eyebrow">Your Exit, Maximized</div>
       <h1>Business Sale Planning</h1>
+      <p class="re-hero__sub">Selling the business you built is one of the most significant &mdash; and emotional &mdash; moments of your career. We guide you through every step so you maximize value and transition on your terms.</p>
+      <div class="re-hero__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Plan Your Exit</a>
+        <a href="#re-approach" class="re-btn re-btn--ghost">Our Five-Step Approach</a>
+      </div>
     </div>
   </section>
 
-  <section class="sub-intro">
-    <div class="sub-intro__inner">
-      <div class="ag-gold-bar"></div>
-      <p>We understand selling a business is a complex and emotional process. We offer personalized service to guide you through each step of the journey, ensuring you maximize value and transition with confidence.</p>
+  <!-- Stat strip -->
+  <section class="re-stats">
+    <div class="re-stats__inner">
+      <div class="re-stat"><div class="re-stat__num">5</div><div class="re-stat__label">step approach from strategy to post-sale transition</div></div>
+      <div class="re-stat"><div class="re-stat__num">1:1</div><div class="re-stat__label">personalized guidance through every stage of the sale</div></div>
+      <div class="re-stat"><div class="re-stat__num">360&deg;</div><div class="re-stat__label">from valuation and due diligence to closing</div></div>
+      <div class="re-stat"><div class="re-stat__num">Max</div><div class="re-stat__label">focused on maximizing the value you walk away with</div></div>
     </div>
   </section>
 
-  <!-- people imagery: split -->
+  <!-- Intro split -->
   <section class="ag-split">
     <div class="ag-split__inner">
       <div class="ag-split__body">
-        <h2>Sell Your Business With Confidence</h2>
-        <p>Selling the business you built is one of the most significant &mdash; and emotional &mdash; moments of your career. We guide you through every step so you maximize value and transition on your terms.</p>
+        <div class="re-eyebrow">Why It Matters</div>
+        <h2 class="re-h2">Sell Your Business With Confidence</h2>
+        <div class="re-rule"></div>
+        <p>We understand that selling a business is a complex and emotional process. We offer personalized service to guide you through each step of the journey &mdash; ensuring you maximize value and transition with confidence.</p>
+        <p>Whether you&rsquo;re selling to an investor, a strategic buyer, or exploring other options, we help you navigate the complexities and protect what you&rsquo;ve built.</p>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Talk to an Advisor</a>
       </div>
       <div class="ag-split__media">
-        <img src="https://static.wixstatic.com/media/64b604_8d36932184ec45fda68afe2dfde360b9~mv2.jpeg" alt="A business owner planning the sale of their company" loading="lazy" />
+        <img src="https://static.wixstatic.com/media/64b604_3da3790f740f49db8a3caa3f8fca9a8b~mv2.jpeg" alt="A business owner planning the sale of their company" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <section class="sub-steps">
-    <div class="sub-steps__inner">
-      <h2>Our Five-Step Approach</h2>
-
-      <div class="sub-step">
-        <div class="sub-step__num">1</div>
-        <div class="sub-step__body">
-          <h3>Strategic Planning</h3>
-          <p>Our team of experts work closely with you to develop a customized business sale strategy tailored to your unique circumstances &amp; objectives. Whether you&rsquo;re looking to sell to an investor, strategic buyer, or explore other options, we will help navigate the complexities.</p>
+  <!-- Five-step approach -->
+  <section class="re-sec re-sec--alt" id="re-approach">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">How We Help</div>
+        <h2 class="re-h2">Our Five-Step Approach</h2>
+        <div class="re-rule"></div>
+        <p class="re-lead">A proven path that takes you from first conversation to a confident, well-negotiated close.</p>
+      </div>
+      <div class="re-cards">
+        <div class="re-card"><div class="re-card__n">1</div><h3>Strategic Planning</h3><p>We work closely with you to develop a customized sale strategy tailored to your circumstances and objectives &mdash; whether selling to an investor, a strategic buyer, or another path.</p></div>
+        <div class="re-card"><div class="re-card__n">2</div><h3>Valuation Services</h3><p>Gain insight into the true value of your business using industry-leading methodologies that identify opportunities to maximize market appeal and sale price.</p></div>
+        <div class="re-card"><div class="re-card__n">3</div><h3>Preparation &amp; Due Diligence</h3><p>From organizing financial records to identifying risks and addressing legal concerns, we ensure your business is well-positioned for a successful sale.</p></div>
+        <div class="re-card"><div class="re-card__n">4</div><h3>Marketing &amp; Negotiation</h3><p>We develop targeted marketing materials, engage qualified buyers, and negotiate on your behalf to secure the best possible terms.</p></div>
+        <div class="re-card"><div class="re-card__n">5</div><h3>Post-Sale Transition</h3><p>We help transfer assets, contracts, and key relationships &mdash; with ongoing support to ensure a seamless transition for all parties.</p></div>
+        <div class="re-card" style="background:#145568;border-color:#145568;display:flex;flex-direction:column;justify-content:center;">
+          <h3 style="color:#fff;">Ready to begin?</h3>
+          <p style="color:#cce6ec;margin-bottom:18px;">Let&rsquo;s build the strategy for your exit.</p>
+          <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top" style="align-self:flex-start;">Get Started</a>
         </div>
       </div>
-
-      <div class="sub-step">
-        <div class="sub-step__num">2</div>
-        <div class="sub-step__body">
-          <h3>Valuation Services</h3>
-          <p>Gain insight into the true value of your business with our comprehensive valuation services. Our experts utilize industry-leading methodologies to assess the value of your business and identify opportunities to maximize market appeal and potential sale price.</p>
-        </div>
-      </div>
-
-      <div class="sub-step">
-        <div class="sub-step__num">3</div>
-        <div class="sub-step__body">
-          <h3>Preparation &amp; Due Diligence</h3>
-          <p>Prepare your business for sale with our thorough due diligence and preparation services. From organizing financial records to identifying potential risks and addressing legal concerns, we ensure your business is well-positioned for a successful sale.</p>
-        </div>
-      </div>
-
-      <div class="sub-step">
-        <div class="sub-step__num">4</div>
-        <div class="sub-step__body">
-          <h3>Marketing &amp; Negotiation</h3>
-          <p>Attract qualified buyers and negotiate favorable terms with our expert marketing &amp; negotiation services. We develop targeted marketing materials, identify and engage potential buyers, and negotiate on your behalf to secure the best possible outcome.</p>
-        </div>
-      </div>
-
-      <div class="sub-step">
-        <div class="sub-step__num">5</div>
-        <div class="sub-step__body">
-          <h3>Post-Sale Transition</h3>
-          <p>Facilitate a smooth transition of ownership with our post-sale transition services. We help you navigate the process, including transferring assets, contracts, and key relationships, and provide ongoing support to ensure a seamless transition for all parties.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- people imagery: band -->
+  <!-- eMoney video -->
+  <section class="re-sec">
+    <div class="re-video__inner">
+      <div class="re-head">
+        <div class="re-eyebrow">Watch &amp; Learn</div>
+        <h2 class="re-h2">Business Sale Planning, Explained</h2>
+        <div class="re-rule" style="margin:0 auto 22px;"></div>
+      </div>
+      <div class="re-video__frame">
+        <div><div id='video-player-36'></div><div id='video-player-disclaimer-part-36' style='position:relative'></div></div>
+        <script src='https://content.jwplatform.com/libraries/ljXVSIQY.js'></script>
+        <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=4f64b86744524fa9aa0e38a95e2a1a8f'></script>
+      </div>
+      <div style="text-align:center; margin-top:34px;">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn" target="_top">Schedule a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band image -->
   <section class="ag-band">
-    <img src="https://static.wixstatic.com/media/64b604_bf0591d7497a46c8a133822c06e313a7~mv2.jpeg" alt="Business partners reviewing a sale agreement" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/64b604_4aff471d93be4e4aa4bbe2f181566e0c~mv2.jpeg" alt="Business partners reviewing a sale agreement" loading="lazy" />
   </section>
 
-  <!-- people imagery: duo -->
-  <section class="ag-duo">
-    <div class="ag-duo__inner">
-      <img src="https://static.wixstatic.com/media/64b604_acf1004930554aa99790729828609a08~mv2.jpeg" alt="A confident business owner" loading="lazy" />
-      <img src="https://static.wixstatic.com/media/64b604_a78bd8466e024fcd9d1a457d60fb3910~mv2.jpeg" alt="A successful business handshake" loading="lazy" />
+  <!-- Related services -->
+  <section class="re-sec re-sec--alt">
+    <div class="re-wrap">
+      <div class="re-head">
+        <div class="re-eyebrow">Related Services</div>
+        <h2 class="re-h2">A Sale Touches Every Part of Your Plan</h2>
+        <div class="re-rule"></div>
+        <p class="re-lead">We coordinate your sale with the financial, tax, and legacy decisions that follow.</p>
+      </div>
+      <div class="re-rel-grid">
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top"><h3>Business Financial Management</h3><p>Clean books and CFO-level reporting that make your business sale-ready.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top"><h3>Tax Planning &amp; Preparation</h3><p>Structure the transaction to minimize taxes on your hard-earned proceeds.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top"><h3>Estate Planning</h3><p>Turn sale proceeds into a lasting legacy for your family and causes.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top"><h3>Entity Structure &amp; Legal</h3><p>Align ownership and entity structure for a clean, efficient sale.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top"><h3>Total Wealth Management</h3><p>Plan your life after the sale &mdash; income, investing, and goals.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+        <a class="re-rel-card" href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top"><h3>Executive Benefit Planning</h3><p>Reward and retain the key people who drive your business value.</p><span class="re-rel-card__link">Learn More &rarr;</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="sub-cta">
-    <h2>Start Planning Your Business Exit Today</h2>
-    <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Call</a>
+  <!-- Final CTA -->
+  <section class="re-cta">
+    <div class="re-cta__inner">
+      <h2>Start Planning Your Business Exit Today</h2>
+      <p>The earlier you plan, the more value you keep. Let&rsquo;s talk about your goals and build a strategy for a confident, well-timed sale.</p>
+      <div class="re-cta__btns">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="re-btn re-btn--gold" target="_top">Schedule Your Consultation</a>
+        <span class="re-cta__phone">or call (330)&nbsp;526-8412</span>
+      </div>
+    </div>
   </section>
 
 </main>
