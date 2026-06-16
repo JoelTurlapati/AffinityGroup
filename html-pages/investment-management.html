@@ -114,6 +114,19 @@ html { font-size: 20px; }
 
 .im-image { padding: 16px 32px; background: #fff; text-align: center; }
 .im-image img { max-width: 900px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -284,6 +297,19 @@ html { font-size: 20px; }
     </div>
   </section>
 
+  <!-- people imagery: split -->
+  <section class="ag-split">
+    <div class="ag-split__inner">
+      <div class="ag-split__body">
+        <h2>Investing With Discipline and Purpose</h2>
+        <p>We make every decision around a deep understanding of what your money is for and exactly when you&rsquo;ll need it &mdash; the same disciplined, time-tested process the world&rsquo;s largest endowments and wealthiest families rely on.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_ad0b994e757b47678bcf3a26cb7b93b1~mv2.jpeg" alt="A couple reviewing their investment strategy with an advisor" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <!-- Â§2b Buffett Quote -->
   <section class="im-quote">
     <blockquote>
@@ -294,7 +320,15 @@ html { font-size: 20px; }
 
   <!-- Â§2c Home Photo -->
   <section class="im-image">
-    <img src="https://static.wixstatic.com/media/64b604_66121b9cfcca49c8abe2e84877f0d3f7~mv2.avif" alt="Investment Management" />
+    <img src="https://static.wixstatic.com/media/64b604_ee96a7bca5a042de983e2399af1550c2~mv2.jpeg" alt="A couple meeting with their fiduciary investment advisor" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_148d56daf16446f298e85faa3cfa44d0~mv2.jpeg" alt="A couple confident about their financial future" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_41214dc9fedf4307b94f6473135dcdfa~mv2.jpeg" alt="A couple discussing their portfolio" loading="lazy" />
+    </div>
   </section>
 
   <!-- Â§3 Video + Buttons -->
