@@ -670,6 +670,19 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   .ins-modal__body { padding: 24px 22px 36px; }
   .ins-modal__title { font-size: 1.28rem; }
 }
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <!-- â”€â”€ NAV â”€â”€ -->
@@ -862,7 +875,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="hp-hero__panel-sub">Planning for or living in retirement</div>
       </a>
 
-      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners" target="_top">
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners-wealth-accumulators" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">High Earners &amp; Wealth Accumulators</div>
           <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
@@ -897,6 +910,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     </div>
   </section>
 
+
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_bc2f4c1310f7425ba9106e7e881864ff~mv2.jpeg" alt="The families and individuals we serve nationwide" loading="lazy" />
+  </section>
 
   <section class="hp-fid-cta">
     <div class="hp-fid-cta__inner">

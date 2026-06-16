@@ -155,6 +155,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 /* MON-SCALE: larger text on big monitors */
 @media(min-width:1600px){body{zoom:1.08}}
 @media(min-width:1920px){body{zoom:1.13}}
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -306,6 +319,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     <p>Get answers to the most common questions we hear from clients and prospective clients.</p>
   </section>
 
+  <!-- people imagery: split -->
+  <section class="ag-split">
+    <div class="ag-split__inner">
+      <div class="ag-split__body">
+        <h2>Have Questions? We Have Answers.</h2>
+        <p>No question is too small. Whether you&rsquo;re just getting started or rethinking an existing plan, our team is here to give you clear, honest answers &mdash; with no pressure and no obligation.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_c28544420eaf4af9be4962b047384845~mv2.jpeg" alt="A client asking questions of their advisor" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <!-- Accordion -->
   <section class="faqs-main">
     <div class="faqs-main__inner">
@@ -386,6 +412,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
   </section>
 
   <!-- CTA -->
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_b6c2df83fd774c2ab9fbd14d0ee65b45~mv2.jpeg" alt="A client and advisor talking things through" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_2382e88976f6417895180e39ebe77c73~mv2.jpeg" alt="A couple getting answers from their advisor" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_ff67faa0b32547b4bab41d9191be88fd~mv2.jpeg" alt="A welcoming conversation with our team" loading="lazy" />
+    </div>
+  </section>
+
   <section class="faqs-cta">
     <h2>Still Have Questions?</h2>
     <p>We&rsquo;re happy to answer anything during a complimentary 15-minute introduction call.</p>

@@ -196,6 +196,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 /* MON-SCALE: larger text on big monitors */
 @media(min-width:1600px){body{zoom:1.08}}
 @media(min-width:1920px){body{zoom:1.13}}
+/* AGIMG people imagery - clean, no dark/green tint */
+.ag-split{padding:30px 32px;background:#fff}
+.ag-split--alt{background:#F0F8FA}
+.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
+.ag-split__inner--rev .ag-split__media{order:-1}
+.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
+.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
+.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
+.ag-duo{padding:30px 32px;background:#fff}
+.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
+@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
 <nav class="ag-nav">
@@ -346,6 +359,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
     <p>Not all financial advisors are created equal. Understanding the difference between a fiduciary and a broker could be the most important financial decision you ever make.</p>
   </section>
 
+  <!-- people imagery: split -->
+  <section class="ag-split">
+    <div class="ag-split__inner">
+      <div class="ag-split__body">
+        <h2>Why the Fiduciary Difference Matters</h2>
+        <p>When the person managing your money is legally bound to put your interests first, everything changes. As an independent fiduciary, every recommendation we make is built around your goals &mdash; never a commission or a quota.</p>
+      </div>
+      <div class="ag-split__media">
+        <img src="https://static.wixstatic.com/media/64b604_70b1733098aa4acf9120d09e885689be~mv2.jpeg" alt="An advisor meeting with the clients they serve" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <section class="fvb-compare">
     <div class="fvb-compare__inner">
       <h2>What is a Fiduciary?</h2>
@@ -423,6 +449,19 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
         <p>Being a Fiduciary means that we take extra steps and go the extra mile to assure that our clients&rsquo; financial issues are being looked after with the care that they deserve, and we are held to the Fiduciary Standard at all times.</p>
         <p>Our independence means no proprietary products, no third-party commissions, and no conflicts. Just expert, objective advice that puts your financial future first.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- people imagery: band -->
+  <section class="ag-band">
+    <img src="https://static.wixstatic.com/media/64b604_e532eaecea9b429ebb2887ffdf604657~mv2.jpeg" alt="An advisor building a relationship of trust with clients" loading="lazy" />
+  </section>
+
+  <!-- people imagery: duo -->
+  <section class="ag-duo">
+    <div class="ag-duo__inner">
+      <img src="https://static.wixstatic.com/media/64b604_a1d3d74f9cd04c1395ee20497fda7c97~mv2.jpeg" alt="A client meeting with a fiduciary advisor" loading="lazy" />
+      <img src="https://static.wixstatic.com/media/64b604_910a18216a7d45608fe90d5876d28b22~mv2.jpeg" alt="An advisor explaining options to clients" loading="lazy" />
     </div>
   </section>
 
