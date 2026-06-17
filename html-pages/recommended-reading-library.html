@@ -56,6 +56,7 @@ html { font-size: 20px; }
 .ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
 .ag-nav__item { position: relative; }
+.ag-nav__item--drop { height: 72px; display: flex; align-items: center; }
 .ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
 .ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
 .ag-nav__links .ag-nav__label { font-size: 15px; }
@@ -374,7 +375,7 @@ html { font-size: 20px; }
   padding-left: 16px; position: relative; margin-bottom: 4px;
 }
 .rl-takeaways__list li::before {
-  content: 'â€º';
+  content: '\203A';
   position: absolute; left: 0; color: #C9A84C;
   font-weight: 700; font-size: 1rem; top: -1px;
 }

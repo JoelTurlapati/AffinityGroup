@@ -20,6 +20,7 @@ html{font-size:20px}
 .ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
 .ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
 .ag-nav__item { position: relative; }
+.ag-nav__item--drop { height: 72px; display: flex; align-items: center; }
 .ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
 .ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
 .ag-nav__links .ag-nav__label { font-size: 15px; }
@@ -252,7 +253,7 @@ html{font-size:20px}
 .bfm-tax__card p{font-family:'Inter',sans-serif;font-size:.8rem;color:#5a6a7a;line-height:1.8;margin-bottom:16px}
 .bfm-tax__list{list-style:none}
 .bfm-tax__list li{font-family:'Inter',sans-serif;font-size:.78rem;color:#3d5560;padding:7px 0;border-bottom:1px solid #f0f4f5;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
-.bfm-tax__list li::before{content:'âœ“';color:#1D7080;font-weight:700;flex-shrink:0}
+.bfm-tax__list li::before{content:'\2713';color:#1D7080;font-weight:700;flex-shrink:0}
 .bfm-tax__list li:last-child{border-bottom:none}
 
 /* 10. INDIVIDUAL TAX â€” COORDINATED */
@@ -267,7 +268,7 @@ html{font-size:20px}
 .bfm-indv__right h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:#C9A84C;font-weight:700;margin-bottom:18px}
 .bfm-indv__right ul{list-style:none}
 .bfm-indv__right ul li{font-family:'Inter',sans-serif;font-size:.8rem;color:rgba(255,255,255,.82);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
-.bfm-indv__right ul li::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0}
+.bfm-indv__right ul li::before{content:'\2713';color:#C9A84C;font-weight:700;flex-shrink:0}
 .bfm-indv__right ul li:last-child{border-bottom:none}
 .bfm-indv__link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;color:#C9A84C;text-decoration:none;letter-spacing:.05em}
 .bfm-indv__link:hover{color:#e8c96e}
@@ -332,7 +333,7 @@ html{font-size:20px}
 .bfm-bionic__content p{font-family:'Inter',sans-serif;font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.68);margin-bottom:10px}
 .bfm-bionic__checks{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:20px}
 .bfm-bionic__check{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.72);line-height:1.5}
-.bfm-bionic__check::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0;margin-top:1px}
+.bfm-bionic__check::before{content:'\2713';color:#C9A84C;font-weight:700;flex-shrink:0;margin-top:1px}
 
 /* ECOSYSTEM SECTION */
 .bfm-eco{background:#F9F6F1;padding:22px 56px}
@@ -351,7 +352,7 @@ html{font-size:20px}
 .bfm-eco__card p{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:16px;flex:1}
 .bfm-eco__card ul{list-style:none;margin-bottom:20px}
 .bfm-eco__card ul li{font-family:'Inter',sans-serif;font-size:.74rem;color:rgba(255,255,255,.72);padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.bfm-eco__card ul li::before{content:'â†’';color:#C9A84C;font-weight:700;flex-shrink:0}
+.bfm-eco__card ul li::before{content:'\2192';color:#C9A84C;font-weight:700;flex-shrink:0}
 .bfm-eco__card--wealth ul li::before{color:rgba(255,255,255,.7)}
 .bfm-eco__card a{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;color:#C9A84C;text-decoration:none;letter-spacing:.05em}
 .bfm-eco__card--wealth a{color:rgba(255,255,255,.85)}
@@ -382,7 +383,7 @@ html{font-size:20px}
 .bfm-serve__pcard p{font-family:'Inter',sans-serif;font-size:.76rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:14px}
 .bfm-serve__pcard ul{list-style:none}
 .bfm-serve__pcard ul li{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6);padding:4px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.5}
-.bfm-serve__pcard ul li::before{content:'âœ“';color:#C9A84C;font-weight:700;flex-shrink:0;font-size:.7rem}
+.bfm-serve__pcard ul li::before{content:'\2713';color:#C9A84C;font-weight:700;flex-shrink:0;font-size:.7rem}
 .bfm-serve__bottom{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .bfm-serve__note{background:rgba(0,0,0,.2);border-radius:10px;padding:20px 24px;border-left:3px solid rgba(255,255,255,.15)}
 .bfm-serve__note p{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.75}
@@ -407,7 +408,7 @@ html{font-size:20px}
 .bfm-qualify__no h3{font-family:'Playfair Display',serif;font-size:.95rem;color:#2d2d2d;font-weight:700;margin-bottom:14px}
 .bfm-qualify__no-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;list-style:none}
 .bfm-qualify__no-list li{font-family:'Inter',sans-serif;font-size:.76rem;color:#5a3a2a;padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.55;border-bottom:1px solid rgba(180,80,40,.08)}
-.bfm-qualify__no-list li::before{content:'âœ—';color:#c0522a;font-weight:700;flex-shrink:0;font-size:.8rem}
+.bfm-qualify__no-list li::before{content:'\2717';color:#c0522a;font-weight:700;flex-shrink:0;font-size:.8rem}
 .bfm-qualify__close{background:linear-gradient(135deg,#0c3540,#145568);border-radius:10px;padding:24px 28px;display:flex;align-items:flex-start;gap:14px}
 .bfm-qualify__close-icon{font-size:1.4rem;flex-shrink:0}
 .bfm-qualify__close p{font-family:'Inter',sans-serif;font-size:.82rem;color:rgba(255,255,255,.82);line-height:1.8}
@@ -424,7 +425,7 @@ html{font-size:20px}
 .bfm-cashflow__list{list-style:none;margin-top:20px}
 .bfm-cashflow__list li{font-family:'Inter',sans-serif;font-size:.8rem;color:#3a4a5a;padding:9px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.6;border-bottom:1px solid rgba(29,112,128,.1)}
 .bfm-cashflow__list li:last-child{border-bottom:none}
-.bfm-cashflow__list li::before{content:'â†’';color:#1D7080;font-weight:700;flex-shrink:0;margin-top:1px}
+.bfm-cashflow__list li::before{content:'\2192';color:#1D7080;font-weight:700;flex-shrink:0;margin-top:1px}
 .bfm-cashflow__right{display:flex;flex-direction:column;gap:14px}
 .bfm-cf-card{background:#fff;border-radius:12px;padding:22px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(29,112,128,.1)}
 .bfm-cf-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
