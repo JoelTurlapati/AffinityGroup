@@ -12,29 +12,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
-.ag-nav{position:fixed;top:0;left:0;right:0;height:72px;z-index:9999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,112,128,0.12);box-shadow:0 2px 24px rgba(0,0,0,0.07)}
-.ag-nav__inner{width:100%;height:100%;display:flex;align-items:center;padding:0 28px;gap:20px}
-.ag-nav__logo img{height:66px;width:auto;object-fit:contain;display:block}
-.ag-nav__links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center}
-.ag-nav__item{position:relative}
-.ag-nav__label{display:block;padding:10px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-decoration:none;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .2s;border:none;background:none}
-.ag-nav__label:hover,.ag-nav__item:hover .ag-nav__label{color:#C9A84C}
-.ag-nav__links .ag-nav__label{font-size:15px}
-.ag-caret{font-size:10px;opacity:.7}
-.ag-nav__drop{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:480px;box-shadow:0 12px 40px rgba(0,0,0,0.13);border-top:3px solid #1D7080;border-radius:0 0 8px 8px;padding:8px 0;z-index:10000}
-.ag-nav__item--drop:hover .ag-nav__drop{display:block}
-.ag-nav__drop a{display:block;padding:9px 20px;font-family:'Inter',sans-serif;font-size:15.6px;color:#2d2d2d;text-decoration:none;transition:background .15s,color .15s}
-.ag-nav__drop a:hover{background:#E6F4F7;color:#1D7080}
-.ag-nav__drop-heading{display:block;padding:10px 20px 5px;font-size:10.5px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #f0f0f0;margin-top:4px}
-.ag-nav__drop-heading:first-child{border-top:none;margin-top:0}.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
-.ag-nav__right{display:flex;align-items:center;gap:14px;flex-shrink:0}
-.ag-nav__portal{display:inline-block;padding:9px 15px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;text-decoration:none;border-radius:4px;white-space:nowrap;letter-spacing:.03em;transition:background .2s}
-.ag-nav__portal:hover{background:#145568}
-.ag-nav__phone{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#145568;white-space:nowrap}
-.ag-nav__careers{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;color:#145568;text-decoration:none;text-transform:uppercase;letter-spacing:.07em;transition:color .2s}
-.ag-nav__careers:hover{color:#C9A84C}
-.ag-nav__burger{display:none}
-.ag-nav__cta-btn{border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+.ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+.ag-nav__inner { width: 100%; height: 100%; display: flex; align-items: center; padding: 0 28px 0 10px; gap: 16px; }
+.ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
+.ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
+.ag-nav__item { position: relative; }
+.ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
+.ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
+.ag-nav__links .ag-nav__label { font-size: 15px; }
+.ag-caret { font-size: 10px; opacity: .7; }
+.ag-nav__drop { display: none; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,0.14); border-top: 3px solid #1D7080; z-index: 10000; }
+.ag-nav__item--drop:hover .ag-nav__drop { display: block; }
+.ag-nav__drop--mini { position: absolute; top: 100%; left: 0; min-width: 330px; border-radius: 0 0 8px 8px; padding: 14px 0; }
+.ag-nav__drop--wide { position: fixed; top: 72px; left: 0; right: 0; width: 100%; padding: 42px 32px 48px; }
+.ag-nav__drop-inner { max-width: 1000px; margin: 0 auto; }
+.ag-nav__drop a { display: block; font-family: 'Inter', sans-serif; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s, padding .15s; }
+.ag-nav__drop--mini a { padding: 12px 26px; font-size: 20px; }
+.ag-nav__drop--mini a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading { display: block; font-family: 'Inter', sans-serif; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; }
+.ag-nav__drop--mini .ag-nav__drop-heading { padding: 12px 26px 6px; font-size: 13.7px; }
+.ag-nav__drop-cols { display: flex; gap: 64px; }
+.ag-nav__drop-col { flex: 1; min-width: 0; }
+.ag-nav__drop--wide .ag-nav__drop-heading { padding: 0 0 14px; margin-bottom: 8px; font-size: 16px; border-bottom: 2px solid #C9A84C; }
+.ag-nav__drop--wide a { padding: 12px 4px; font-size: 20px; border-bottom: 1px solid rgba(29,112,128,.08); }
+.ag-nav__drop--wide a:hover { color: #1D7080; padding-left: 12px; }
+.ag-nav__right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.ag-nav__portal { display: inline-flex; align-items: center; gap: 7px; padding: 10px 17px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
+.ag-nav__portal:hover { background: #145568; }
+.ag-nav__phone { display: inline-flex; align-items: center; gap: 7px; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; color: #145568; white-space: nowrap; }
+.ag-nav__phone svg { color: #C9A84C; flex-shrink: 0; }
+.ag-nav__portal svg, .ag-nav__cta-btn svg { flex-shrink: 0; }
+.ag-nav__careers { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: #145568; text-decoration: none; text-transform: uppercase; letter-spacing: .07em; transition: color .2s; }
+.ag-nav__careers:hover { color: #C9A84C; }
+.ag-nav__burger { display: none; }
+.ag-nav__cta-btn{display:inline-flex!important;align-items:center;gap:7px;border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:9px 20px!important;font-size:16px;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:0}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
 .ag-footer{background:#0c3540;color:#8fb8c0;padding:56px 28px 28px;font-family:'Inter',sans-serif}
 .ag-footer__inner{max-width:1200px;margin:0 auto}
 .ag-footer__top{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -97,39 +108,46 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 
 <nav class="ag-nav">
   <div class="ag-nav__inner">
-    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top"><img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" /></a>
+    <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
+      <img src="https://static.wixstatic.com/media/64b604_e28c90f95f1b4cb2998d59a56eafb1bf~mv2.jpeg" alt="The Affinity Group" />
+    </a>
     <div class="ag-nav__links">
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop">
-          <div class="ag-nav__drop-cols"><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
-          <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
-          <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
-          </div><div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
-          <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a></div></div>
+        <div class="ag-nav__drop ag-nav__drop--wide">
+          <div class="ag-nav__drop-inner">
+            <div class="ag-nav__drop-cols">
+              <div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
+                <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+                <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+                <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
+                <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+                <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+                <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+                <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              </div>
+              <div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
+                <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
+                <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+                <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+                <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+                <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop">
+        <div class="ag-nav__drop ag-nav__drop--mini">
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
         </div>
       </div>
-
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop">
+        <div class="ag-nav__drop ag-nav__drop--mini">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
           <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
@@ -137,25 +155,29 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
       </div>
     </div>
     <div class="ag-nav__right">
-      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener">Client Login</a>
-      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
-      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top">CONTACT</a>
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg>Client Login</a>
+      <span class="ag-nav__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(330)&nbsp;526-8412</span>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg>CONTACT</a>
     </div>
     <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
   </div>
   <div class="ag-mobile-nav" id="agMobileNav" aria-hidden="true">
     <div class="ag-mobile-nav__inner">
+      <div class="ag-mob__top">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg> Contact Us</a>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg> Client Login</a>
+      </div>
       <div class="ag-mob__section">
         <button class="ag-mob__heading" data-toggle="mob-services">SERVICES <span class="ag-mob__caret">&#9662;</span></button>
         <div class="ag-mob__sub" id="mob-services">
           <span class="ag-mob__sub-heading">For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-mob__sub-heading">For Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
@@ -181,9 +203,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
         </div>
       </div>
       <div class="ag-mob__bottom">
-        <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
-        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener">Client Login</a>
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top">CONTACT</a>
+        <span class="ag-mob__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(330)&nbsp;526-8412</span>
       </div>
     </div>
   </div>
@@ -191,7 +211,8 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 <style>
 .ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
 .ag-mobile-nav.open{display:block}
-.ag-mobile-nav__inner{padding:4px 0 20px}
+.ag-mobile-nav__inner{padding:0 0 20px}
+.ag-mob__top{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(29,112,128,.12)}
 .ag-mob__section{border-bottom:1px solid rgba(29,112,128,.1)}
 .ag-mob__heading{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;background:none;border:none;cursor:pointer;text-align:left}
 .ag-mob__heading:active{background:#f0f8fa}
@@ -204,20 +225,12 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
 .ag-mob__sub a:active{background:#E6F4F7;color:#1D7080}
 .ag-mob__link{display:block;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(29,112,128,.1)}
 .ag-mob__link:active{color:#C9A84C}
-.ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
-.ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
-.ag-mob__portal{display:block;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
-.ag-mob__cta{display:block;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
-/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
-@media (min-width: 901px) and (max-width: 1380px) {
-  .ag-nav__inner { padding: 0 16px; gap: 10px; }
-  .ag-nav__links { gap: 0; }
-  .ag-nav__links .ag-nav__label { font-size: 12px; padding: 10px 9px; }
-  .ag-nav__right { gap: 8px; }
-  .ag-nav__phone { display: none; }
-  .ag-nav__portal { font-size: 10.5px; padding: 8px 10px; }
-  .ag-nav__cta-btn { padding: 7px 12px !important; font-size: 10.5px; letter-spacing: .04em; }
-}
+.ag-mob__bottom{padding:18px 24px 8px;display:flex;flex-direction:column;gap:12px}
+.ag-mob__phone{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#145568}
+.ag-mob__phone svg{color:#C9A84C;flex-shrink:0}
+.ag-mob__portal{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;text-align:center;background:#1D7080;color:#fff;border-radius:5px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.03em}
+.ag-mob__cta{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.ag-mob__portal svg,.ag-mob__cta svg{flex-shrink:0}
 @media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}.ag-nav__burger:active{background:#f0f8fa}}
 </style>
 <script>
