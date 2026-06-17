@@ -117,6 +117,28 @@ every URL-embedded page picks them up automatically.)
   This is **already true today** (Wix's HTML embed is itself an iframe), so URL
   mode is **no worse** — but it's a reason to keep real SEO copy/meta in the Wix
   page settings regardless.
-- **Editing header/footer across 46 files** is a separate pain. Ask Claude to set
-  up a shared header/footer build (edit one partial → generate all files), which
-  pairs perfectly with this URL workflow.
+- **Editing header/footer across 46 files** is now solved by `sync-shared.ps1`
+  (see below) — pairs perfectly with this URL workflow.
+
+---
+
+## Edit the header/footer ONCE: `sync-shared.ps1`
+
+The nav and footer are duplicated inside every `html-pages/*.html`. Instead of
+editing 46 files, edit the master copy and run the sync script:
+
+1. Edit `partials/nav.html` and/or `partials/footer.html`.
+2. Run: `powershell -ExecutionPolicy Bypass -File .\sync-shared.ps1`
+   (add `-WhatIf` first to preview which files would change.)
+3. `git add . ; git commit -m "..." ; git push`
+
+What it does:
+- Replaces the `<nav class="ag-nav">…</nav>` and `<footer class="ag-footer">…</footer>`
+  blocks in every page with the master partials. Page-unique content, `<head>`
+  CSS, and scripts are never touched.
+- **home.html is excluded from the nav sync** (older nav structure its own CSS is
+  built for); it still gets the footer sync. Edit home's nav by hand.
+- Preserves each file's BOM and line-ending style.
+
+Note: nav/footer **CSS** still lives in each page's `<head><style>`; the script
+syncs the HTML blocks, not the CSS. CSS changes remain a manual/regex task.
