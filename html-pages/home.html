@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -19,41 +19,83 @@ html { font-size: 20px; }
 @media(min-width:1600px){html{font-size:22px}}
 @media(min-width:1920px){html{font-size:23px}}
 
-/* â”€â”€ NAV â”€â”€ */
-.ag-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 9999; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(29,112,128,0.12); box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
-.ag-nav__inner { width: 100%; height: 100%; display: flex; align-items: center; padding: 0 28px 0 10px; gap: 16px; }
+/* ── NAV ── */
+.ag-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 72px; z-index: 9999;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(29,112,128,0.12);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+}
+.ag-nav__inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  padding: 0 28px; gap: 20px;
+}
 .ag-nav__logo img { height: 66px; width: auto; object-fit: contain; display: block; }
-.ag-nav__links { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
+.ag-nav__links {
+  display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center;
+}
 .ag-nav__item { position: relative; }
-.ag-nav__label { display: block; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; color: #145568; text-decoration: none; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: color .2s; border: none; background: none; font-style: normal; }
+.ag-nav__label {
+  display: block; padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em;
+  color: #145568; text-decoration: none; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap;
+  transition: color .2s;
+  border: none; background: none; font-style: normal;
+}
 .ag-nav__label:hover, .ag-nav__item:hover .ag-nav__label { color: #C9A84C; }
 .ag-nav__links .ag-nav__label { font-size: 15px; }
 .ag-caret { font-size: 10px; opacity: .7; }
-.ag-nav__drop { display: none; background: #fff; box-shadow: 0 18px 44px rgba(0,0,0,0.14); border-top: 3px solid #1D7080; z-index: 10000; }
+.ag-nav__drop {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; min-width: 480px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+  border-top: 3px solid #1D7080;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 0; z-index: 10000;
+}
 .ag-nav__item--drop:hover .ag-nav__drop { display: block; }
-.ag-nav__drop--mini { position: absolute; top: 100%; left: 0; min-width: 330px; border-radius: 0 0 8px 8px; padding: 14px 0; }
-.ag-nav__drop--wide { position: fixed; top: 72px; left: 0; right: 0; width: 100%; padding: 42px 32px 48px; }
-.ag-nav__drop-inner { max-width: 1000px; margin: 0 auto; }
-.ag-nav__drop a { display: block; font-family: 'Inter', sans-serif; color: #2d2d2d; text-decoration: none; transition: background .15s, color .15s, padding .15s; }
-.ag-nav__drop--mini a { padding: 12px 26px; font-size: 20px; }
-.ag-nav__drop--mini a:hover { background: #E6F4F7; color: #1D7080; }
-.ag-nav__drop-heading { display: block; font-family: 'Inter', sans-serif; font-weight: 700; color: #1D7080; text-transform: uppercase; letter-spacing: .12em; }
-.ag-nav__drop--mini .ag-nav__drop-heading { padding: 12px 26px 6px; font-size: 13.7px; }
-.ag-nav__drop-cols { display: flex; gap: 64px; }
-.ag-nav__drop-col { flex: 1; min-width: 0; }
-.ag-nav__drop--wide .ag-nav__drop-heading { padding: 0 0 14px; margin-bottom: 8px; font-size: 16px; border-bottom: 2px solid #C9A84C; }
-.ag-nav__drop--wide a { padding: 12px 4px; font-size: 20px; border-bottom: 1px solid rgba(29,112,128,.08); }
-.ag-nav__drop--wide a:hover { color: #1D7080; padding-left: 12px; }
-.ag-nav__right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-.ag-nav__portal { display: inline-flex; align-items: center; gap: 7px; padding: 10px 17px; background: #1D7080; color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 4px; white-space: nowrap; letter-spacing: .03em; transition: background .2s; }
+.ag-nav__drop a {
+  display: block; padding: 9px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; color: #2d2d2d; text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.ag-nav__drop a:hover { background: #E6F4F7; color: #1D7080; }
+.ag-nav__drop-heading {
+  display: block; padding: 10px 20px 5px;
+  font-size: 10.5px; font-weight: 700; color: #1D7080;
+  text-transform: uppercase; letter-spacing: .12em;
+  border-top: 1px solid #f0f0f0; margin-top: 4px;
+}
+.ag-nav__drop-heading:first-child { border-top: none; margin-top: 0; }
+.ag-nav__drop-cols{display:flex}.ag-nav__drop-col{flex:1;min-width:0}.ag-nav__drop-col+.ag-nav__drop-col{border-left:1px solid rgba(29,112,128,.12)}.ag-nav__drop-col .ag-nav__drop-heading{border-top:none;margin-top:0}
+.ag-nav__right {
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
+}
+.ag-nav__portal {
+  display: inline-flex; align-items: center; gap: 6px; padding: 9px 15px;
+  background: #1D7080; color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px; font-weight: 600;
+  text-decoration: none; border-radius: 4px;
+  white-space: nowrap; letter-spacing: .03em;
+  transition: background .2s;
+}
 .ag-nav__portal:hover { background: #145568; }
-.ag-nav__phone { display: inline-flex; align-items: center; gap: 7px; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; color: #145568; white-space: nowrap; }
-.ag-nav__phone svg { color: #C9A84C; flex-shrink: 0; }
-.ag-nav__portal svg, .ag-nav__cta-btn svg { flex-shrink: 0; }
-.ag-nav__careers { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: #145568; text-decoration: none; text-transform: uppercase; letter-spacing: .07em; transition: color .2s; }
-.ag-nav__careers:hover { color: #C9A84C; }
+.ag-nav__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600; color: #145568; white-space: nowrap;
+}
 .ag-nav__burger { display: none; }
-.ag-nav__cta-btn{display:inline-flex!important;align-items:center;gap:7px;border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:9px 20px!important;font-size:16px;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:0}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+.ag-nav__portal svg, .ag-nav__cta-btn svg { flex-shrink: 0; }
+.ag-nav__cta-btn{display:inline-flex!important;align-items:center;gap:6px;border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:8px 18px!important;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:4px}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
+
+/* ── FOOTER ── */
 .ag-footer {
   background: #0c3540; color: #8fb8c0;
   padding: 56px 28px 28px; font-family: 'Inter', sans-serif;
@@ -92,7 +134,7 @@ html { font-size: 20px; }
   padding-top: 28px; font-size: 11.5px; color: #4f7f89; text-align: center;
 }
 
-/* â”€â”€ SHARED COMPONENTS â”€â”€ */
+/* ── SHARED COMPONENTS ── */
 .ag-btn-primary {
   display: inline-block; padding: 16px 38px;
   background: #1D7080; color: #fff;
@@ -130,7 +172,7 @@ html { font-size: 20px; }
 .ag-btn-gold-outline:hover { background: #C9A84C; color: #fff; transform: translateY(-2px); }
 .ag-gold-bar { width: 56px; height: 3px; background: #C9A84C; margin: 0 auto 28px; }
 
-/* â”€â”€ laptop nav tightening (901â€“1380px) â”€â”€ */
+/* ── laptop nav tightening (901–1380px) ── */
 @media (min-width: 901px) and (max-width: 1380px) {
   .ag-nav__inner { padding: 0 16px; gap: 10px; }
   .ag-nav__links { gap: 0; }
@@ -147,73 +189,97 @@ html { font-size: 20px; }
   .ag-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* â”€â”€ HOME-PAGE â”€â”€ */
+/* ── HOME-PAGE ── */
 home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
-/* â”€â”€ HERO â”€â”€ */
+/* ── HERO ── */
 .hp-hero {
   display: flex;
   height: 640px;
   min-height: 640px;
   margin-top: 72px;
-  overflow: hidden;
+  overflow: visible;
 }
 .hp-hero__video-side {
   flex: 1;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(160deg, #0e3d47 0%, #1D7080 55%, #2a8a9c 100%);
-  display: flex; align-items: flex-end; justify-content: center;
 }
 .hp-hero__video-side video {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
 }
+/* Light vignette only — keeps the video itself clear and unobstructed */
 .hp-hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.08) 42%, rgba(0,0,0,.78) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
 }
+/* Text lives in its own floating card, confined to the video box — never adds extra page height */
 .hp-hero__definition-wrap {
   position: absolute;
-  top: 20px;
+  top: 4px;
   left: 0; right: 0;
-  text-align: center;
-  padding: 28px 32px 0;
+  display: flex; justify-content: center;
+  padding: 0 24px;
   z-index: 2;
+}
+.hp-hero__definition-card {
+  display: inline-block;
+  background: rgba(7,28,34,.52);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 7px 20px;
+  max-width: 92%;
+  text-align: center;
   color: #fff;
 }
 .hp-hero__text {
-  position: relative; z-index: 2;
-  text-align: center; padding: 48px 28px;
-  color: #fff; max-width: 680px; width: 100%;
+  position: absolute;
+  left: 0; right: 0; bottom: 14px;
+  display: flex; justify-content: center;
+  padding: 0 24px;
+  z-index: 2;
+}
+.hp-hero__text-card {
+  display: inline-block;
+  background: rgba(7,28,34,.52);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 10px 24px;
+  max-width: 92%;
+  text-align: center;
+  color: #fff;
 }
 .hp-hero__definition {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.1rem, 2vw, 1.75rem);
+  font-size: clamp(0.7rem, 1.15vw, 0.92rem);
   font-weight: 700;
   font-style: italic;
-  line-height: 1.55;
-  text-shadow: 0 2px 28px rgba(0,0,0,.55);
+  line-height: 1.4;
+  white-space: nowrap;
   opacity: 0.96;
   letter-spacing: 0.01em;
 }
 .hp-hero__tagline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.35rem, 2.8vw, 2.6rem);
+  font-size: clamp(0.85rem, 1.5vw, 1.3rem);
   font-weight: 700; color: #C9A84C; font-style: italic;
-  margin: 18px 0 14px; line-height: 1.15;
-  text-shadow: 0 3px 32px rgba(0,0,0,.55);
+  margin: 0 0 3px; line-height: 1.2;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .hp-hero__subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
-  font-weight: 300; line-height: 1.82;
-  opacity: 0.88; max-width: 500px; margin: 0 auto;
-  text-shadow: 0 1px 14px rgba(0,0,0,.45);
+  font-size: clamp(0.62rem, 0.85vw, 0.74rem);
+  font-weight: 300; line-height: 1.45;
+  opacity: 0.92; max-width: 620px; margin: 0 auto;
 }
 
-/* â”€â”€ HERO PANELS â”€â”€ */
+/* ── HERO PANELS — white background ── */
 .hp-hero__panels {
   flex: 0 0 460px;
   display: flex;
@@ -221,8 +287,8 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   justify-content: center;
   gap: 10px;
   padding: 28px 24px;
-  background: linear-gradient(160deg, #09111d 0%, #0f1d2e 55%, #0c1828 100%);
-  border-left: 1px solid rgba(201,168,76,.15);
+  background: linear-gradient(160deg, #0e3d47 0%, #1D7080 55%, #2a8a9c 100%);
+  border-left: 1px solid rgba(29,112,128,.15);
 }
 .hp-hero__panel {
   flex: 1;
@@ -231,20 +297,18 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   justify-content: center;
   padding: 20px 20px 20px 18px;
   text-decoration: none;
-  background: rgba(255,255,255,0.93);
+  background: #f2f8fb;
   border-left: 3px solid #C9A84C;
   border-radius: 0 6px 6px 0;
   transition: background .25s, border-color .25s, transform .25s;
   position: relative;
   cursor: pointer;
 }
-.hp-hero__panel:last-child { }
 .hp-hero__panel:hover {
-  background: #fff;
+  background: #e6f4f7;
   border-left-color: #e8c96e;
   transform: translateX(3px);
 }
-/* heading row: title + arrow */
 .hp-hero__panel-heading {
   display: flex; align-items: center; justify-content: space-between; gap: 14px;
   margin-bottom: 7px;
@@ -255,12 +319,11 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   color: #145568; line-height: 1.3;
 }
 .hp-hero__panel-arrow {
-  width: 22px; height: 22px; flex-shrink: 0;
+  width: 16px; height: 16px; flex-shrink: 0;
   color: #C9A84C;
   transition: transform .25s;
 }
 .hp-hero__panel:hover .hp-hero__panel-arrow { transform: translateX(4px); }
-/* subtitle */
 .hp-hero__panel-sub {
   font-family: 'Inter', sans-serif;
   font-size: .75rem; font-weight: 400;
@@ -268,9 +331,9 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-hero__panel:hover .hp-hero__panel-sub { color: #2d3748; }
 
-/* â”€â”€ PREMIUM FIRM SECTION â”€â”€ */
+/* ── PREMIUM FIRM SECTION ── */
 .hp-firm {
-  padding: 26px 48px;
+  padding: 56px 48px;
   background: #fafeff;
   position: relative; overflow: hidden;
 }
@@ -286,7 +349,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-firm__inner {
   max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.55fr; gap: 88px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1.55fr; gap: 44px; align-items: center;
 }
 .hp-firm__left { text-align: left; }
 .hp-firm__eyebrow {
@@ -312,50 +375,175 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-firm__body p + p { margin-top: 22px; }
 
+/* ── SERVICES TREE CHART ── */
+.hp-firm__services-wrap {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  padding-top: 40px;
+  border-top: 1px solid rgba(201,168,76,.22);
+}
 
-/* â”€â”€ CIRCLE â€” pure white â”€â”€ */
-.hp-circle {
-  padding: 80px 32px;
-  background: #ffffff;
+/* Root node — central badge */
+.hp-firm__services-root {
   text-align: center;
+  margin-bottom: 0;
 }
-.hp-circle img { max-width: 720px; width: 100%; height: auto; }
-
-/* â”€â”€ TWM SECTION â”€â”€ */
-.hp-twm {
-  padding: 80px 32px 96px;
-  background: #F0F8FA;
-  text-align: center; position: relative;
+.hp-firm__services-root-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #0c3540 0%, #1D7080 100%);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  padding: 11px 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(29,112,128,.25);
 }
-.hp-twm__inner { max-width: 820px; margin: 0 auto; }
-.hp-twm__deco {
-  display: block; max-width: none; width: calc(100% + 64px);
-  height: auto; margin: -80px -32px 48px -32px;
-}
-.hp-twm__badge {
-  display: inline-block;
-  font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-  color: #1D7080; text-transform: uppercase; letter-spacing: 0.22em;
-  padding: 7px 22px; border: 1px solid rgba(29,112,128,0.32);
-  border-radius: 30px; margin-bottom: 24px;
-}
-.hp-twm__heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2.15rem);
-  color: #0c3540; font-weight: 600; line-height: 1.32; margin-bottom: 20px;
-}
-.hp-twm__rule {
-  width: 52px; height: 2px; background: #C9A84C; margin: 0 auto 36px; border-radius: 2px;
-}
-.hp-twm__body {
-  font-size: 1.12rem;
-  line-height: 1.96; color: #3d3d3d; font-weight: 300;
-  text-align: left;
+.hp-firm__services-root-gem {
+  width: 8px; height: 8px;
+  background: #C9A84C;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
-/* â”€â”€ FIDUCIARY â€” video section â”€â”€ */
+/* SVG bridge — draws the Y-fork from root to two branches */
+.hp-firm__services-bridge {
+  display: block;
+  width: 100%; height: 52px;
+}
+
+/* Two-column branch layout */
+.hp-firm__services-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+
+/* Branch header block */
+.hp-firm__services-branch-head {
+  background: linear-gradient(135deg, #0c3540 0%, #1D7080 100%);
+  border-radius: 8px 8px 0 0;
+  padding: 14px 22px 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hp-firm__services-branch-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: rgba(201,168,76,.18);
+  border: 1.5px solid rgba(201,168,76,.5);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.hp-firm__services-branch-icon svg { display: block; }
+.hp-firm__services-branch-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px; font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+/* Leaf list — the vertical spine + rows */
+.hp-firm__services-leaves {
+  border: 1px solid rgba(29,112,128,.14);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+/* Vertical teal spine line */
+.hp-firm__services-leaves::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 26px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(29,112,128,.35) 0%, rgba(29,112,128,.08) 100%);
+  pointer-events: none;
+}
+
+/* Individual service row */
+.hp-firm__services-leaf {
+  display: flex;
+  align-items: center;
+  padding: 11px 18px 11px 52px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px; font-weight: 500;
+  color: #2d4a52;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,112,128,.07);
+  position: relative;
+  transition: background .18s, color .18s, padding-left .18s;
+}
+.hp-firm__services-leaf:last-child { border-bottom: none; }
+
+/* Horizontal connector from spine to text */
+.hp-firm__services-leaf::before {
+  content: '';
+  position: absolute;
+  left: 27px; top: 50%;
+  width: 16px; height: 2px;
+  background: rgba(29,112,128,.2);
+  transition: background .18s, width .18s;
+}
+/* Gold dot node at junction */
+.hp-firm__services-leaf::after {
+  content: '';
+  position: absolute;
+  left: 21px; top: 50%;
+  transform: translateY(-50%);
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(201,168,76,.5);
+  transition: background .18s, border-color .18s, transform .18s;
+  z-index: 1;
+}
+
+.hp-firm__services-leaf:hover {
+  background: linear-gradient(90deg, rgba(29,112,128,.06) 0%, rgba(29,112,128,.01) 100%);
+  color: #0c3540;
+  padding-left: 58px;
+}
+.hp-firm__services-leaf:hover::before {
+  background: rgba(201,168,76,.55);
+  width: 22px;
+}
+.hp-firm__services-leaf:hover::after {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.hp-firm__services-leaf-name { flex: 1; }
+.hp-firm__services-leaf-arrow {
+  color: #C9A84C;
+  font-size: 14px;
+  opacity: 0.5;
+  margin-left: 10px;
+  flex-shrink: 0;
+  transition: transform .2s, opacity .2s;
+}
+.hp-firm__services-leaf:hover .hp-firm__services-leaf-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .hp-firm__services-cols { grid-template-columns: 1fr; gap: 20px; }
+  .hp-firm__services-bridge { display: none; }
+  .hp-firm__services-root { margin-bottom: 20px; }
+}
+
+/* ── FIDUCIARY — video section ── */
 .hp-fid-cta {
-  padding: 26px 32px;
+  padding: 96px 32px;
   background: linear-gradient(180deg, #eef8fa 0%, #e4f4f7 100%);
   text-align: center; position: relative; overflow: hidden;
 }
@@ -414,10 +602,10 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
 }
 
-/* â”€â”€ INSIGHTS â”€â”€ */
+/* ── INSIGHTS — light background ── */
 .hp-insights {
-  padding: 26px 32px 32px;
-  background: linear-gradient(148deg, #071e24 0%, #0e3d47 52%, #0c3540 100%);
+  padding: 90px 32px 110px;
+  background: #f5f9fc;
   position: relative; overflow: hidden;
 }
 .hp-insights::before {
@@ -442,7 +630,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .hp-insights__heading {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 2.8vw, 2.4rem);
-  color: #fff; font-weight: 600; line-height: 1.28; margin-bottom: 0;
+  color: #0c3540; font-weight: 600; line-height: 1.28; margin-bottom: 0;
 }
 .hp-insights__see-all {
   font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600;
@@ -451,7 +639,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   border-bottom: 1px solid rgba(201,168,76,.35);
   transition: border-color .2s, color .2s;
 }
-.hp-insights__see-all:hover { color: #e8c96e; border-color: #e8c96e; }
+.hp-insights__see-all:hover { color: #a8873d; border-color: #a8873d; }
 .hp-insights__rule {
   width: 56px; height: 2px; background: #C9A84C; margin: 22px 0 44px; border-radius: 2px;
 }
@@ -459,15 +647,15 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
 }
 .hp-ins-card {
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+  background: #fff; border: 1px solid rgba(29,112,128,.12);
   border-radius: 12px; overflow: hidden; text-decoration: none;
   display: flex; flex-direction: column;
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
 .hp-ins-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(0,0,0,.38);
-  border-color: rgba(201,168,76,.28);
+  box-shadow: 0 20px 48px rgba(0,0,0,.12);
+  border-color: rgba(201,168,76,.35);
 }
 .hp-ins-card__img-wrap { height: 195px; overflow: hidden; flex-shrink: 0; }
 .hp-ins-card__img {
@@ -480,16 +668,16 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 }
 .hp-ins-card__cat {
   font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-  color: #C9A84C; text-transform: uppercase; letter-spacing: .2em;
+  color: #a8873d; text-transform: uppercase; letter-spacing: .2em;
   margin-bottom: 11px; display: block;
 }
 .hp-ins-card__title {
   font-family: 'Playfair Display', serif; font-size: .97rem;
-  font-weight: 600; color: #fff; line-height: 1.4; margin-bottom: 12px;
+  font-weight: 600; color: #0c3540; line-height: 1.4; margin-bottom: 12px;
 }
 .hp-ins-card__excerpt {
   font-family: 'Inter', sans-serif; font-size: .77rem;
-  color: rgba(255,255,255,.5); line-height: 1.75; font-weight: 300; flex: 1;
+  color: #3d4f57; line-height: 1.75; font-weight: 400; flex: 1;
 }
 @media (max-width: 900px) {
   .hp-insights__grid { grid-template-columns: repeat(2, 1fr); }
@@ -499,9 +687,9 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   .hp-insights__header { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
-/* â”€â”€ SCHEDULE â”€â”€ */
+/* ── SCHEDULE ── */
 .hp-schedule {
-  padding: 28px 32px;
+  padding: 110px 32px;
   background: linear-gradient(148deg, #07161e 0%, #0d2d3a 52%, #0b2633 100%);
   text-align: center; position: relative; overflow: hidden;
 }
@@ -534,20 +722,24 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
 @media (max-width: 900px) {
   .hp-hero { flex-direction: column; height: auto; }
-  /* Stack definition + subtitle top-to-bottom so they never overlap */
-  .hp-hero__video-side { min-height: 52vh; flex-direction: column; justify-content: flex-start; align-items: stretch; }
-  .hp-hero__definition-wrap { position: relative; top: auto; padding: 28px 22px 10px; z-index: 2; }
-  .hp-hero__definition { font-size: clamp(0.88rem, 2.8vw, 1.1rem); }
-  .hp-hero__tagline { display: none; }
-  .hp-hero__text { padding: 10px 22px 28px; text-align: left; margin-top: auto; }
-  .hp-hero__subtitle { font-size: clamp(0.78rem, 2.2vw, 0.88rem); line-height: 1.7; }
-  .hp-hero__panels { flex: none; display: grid; grid-template-columns: 1fr 1fr; border-left: none; border-top: 1px solid rgba(201,168,76,.12); gap: 8px; padding: 16px; }
+  .hp-hero__video-side { height: 64vh; min-height: 440px; max-height: 560px; }
+  .hp-hero__definition-wrap { top: 6px; padding: 0 10px; }
+  .hp-hero__definition-card { padding: 6px 14px; border-radius: 8px; max-width: 100%; }
+  .hp-hero__definition { font-size: clamp(0.55rem, 2.3vw, 0.7rem); line-height: 1.3; white-space: normal; }
+  .hp-hero__text { bottom: 8px; padding: 0 10px; }
+  .hp-hero__text-card { padding: 8px 16px; max-width: 100%; }
+  .hp-hero__tagline { font-size: clamp(0.8rem, 3.4vw, 1.05rem); margin-bottom: 3px; white-space: normal; }
+  .hp-hero__subtitle {
+    font-size: clamp(0.55rem, 1.9vw, 0.68rem); line-height: 1.4;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+  .hp-hero__panels { flex: none; display: grid; grid-template-columns: 1fr 1fr; border-left: none; border-top: 1px solid rgba(29,112,128,.12); gap: 8px; padding: 16px; }
   .hp-hero__panel { flex: none; min-height: 110px; padding: 16px 16px 16px 14px; border-radius: 0 6px 6px 0; }
   .hp-hero__panel:hover { transform: none; }
-  .hp-hero__panel-cta { display: none; }
-  .hp-firm { padding: 20px 32px; }
-  .hp-firm__inner { grid-template-columns: 1fr; gap: 36px; }
+  .hp-firm { padding: 48px 28px; }
+  .hp-firm__inner { grid-template-columns: 1fr; gap: 28px; }
   .hp-firm__heading { font-size: clamp(1.5rem, 4vw, 2rem); }
+  .hp-firm__services-cols { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .hp-hero__panels { grid-template-columns: 1fr; }
@@ -557,8 +749,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   .hp-firm__body p { font-size: 1.007rem; line-height: 1.65; }
 }
 
-
-/* â”€â”€ YOUTUBE MODAL â”€â”€ */
+/* ── YOUTUBE MODAL ── */
 .yt-modal {
   display: none; position: fixed; inset: 0; z-index: 999999;
   align-items: center; justify-content: center;
@@ -588,7 +779,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   border: none;
 }
 
-/* â”€â”€ INSIGHT MODAL â”€â”€ */
+/* ── INSIGHT MODAL ── */
 .ins-modal {
   display: none; position: fixed; inset: 0; z-index: 999998;
   align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;
@@ -645,27 +836,14 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   color: #C9A84C; letter-spacing: .1em; margin-top: 18px; display: block;
   transition: color .2s; text-transform: uppercase;
 }
-.hp-ins-card:hover .hp-ins-card__cta { color: #e8c96e; }
+.hp-ins-card:hover .hp-ins-card__cta { color: #a8873d; }
 @media (max-width: 560px) {
   .ins-modal__body { padding: 24px 22px 36px; }
   .ins-modal__title { font-size: 1.28rem; }
 }
-/* AGIMG people imagery - clean, no dark/green tint */
-.ag-split{padding:30px 32px;background:#fff}
-.ag-split--alt{background:#F0F8FA}
-.ag-split__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.ag-split__media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 14px 40px rgba(14,61,71,.16)}
-.ag-split__inner--rev .ag-split__media{order:-1}
-.ag-split__body h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#145568;margin-bottom:20px;font-weight:600}
-.ag-split__body p{font-size:1.05rem;line-height:1.95;color:#3a3a3a;font-weight:300;margin-bottom:16px}
-.ag-band img{width:100%;height:480px;object-fit:cover;object-position:center 35%;display:block}
-.ag-duo{padding:30px 32px;background:#fff}
-.ag-duo__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ag-duo img{width:100%;height:320px;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(14,61,71,.14);display:block}
-@media(max-width:820px){.ag-split__inner{grid-template-columns:1fr;gap:26px}.ag-split__inner--rev .ag-split__media{order:0}.ag-band img{height:300px}.ag-duo__inner{grid-template-columns:1fr}}
 </style>
 
-<!-- â”€â”€ NAV â”€â”€ -->
+<!-- ── NAV ── -->
 <nav class="ag-nav">
   <div class="ag-nav__inner">
     <a href="https://tagplanning.wixstudio.com/demo/" class="ag-nav__logo" target="_top">
@@ -674,32 +852,32 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     <div class="ag-nav__links">
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">SERVICES <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop ag-nav__drop--wide">
-          <div class="ag-nav__drop-inner">
-            <div class="ag-nav__drop-cols">
-              <div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services For Individuals</span>
-                <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
-                <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-                <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
-                <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
-                <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
-                <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
-                <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
-              </div>
-              <div class="ag-nav__drop-col"><span class="ag-nav__drop-heading">Services for Businesses</span>
-                <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
-                <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
-                <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
-                <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
-                <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
-              </div>
+        <div class="ag-nav__drop">
+          <div class="ag-nav__drop-cols">
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services For Individuals</span>
+              <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
+              <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
+            </div>
+            <div class="ag-nav__drop-col">
+              <span class="ag-nav__drop-heading">Services for Businesses</span>
+              <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
+              <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">Business Sale Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">Executive Benefit Planning</a>
+              <a href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">Entity Structure &amp; Legal</a>
             </div>
           </div>
         </div>
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">ABOUT US <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop ag-nav__drop--mini">
+        <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
           <a href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Fiduciary vs. Broker</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQs</a>
@@ -707,7 +885,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
       <div class="ag-nav__item ag-nav__item--drop">
         <span class="ag-nav__label">INSIGHTS AND TOOLS <span class="ag-caret">&#9662;</span></span>
-        <div class="ag-nav__drop ag-nav__drop--mini">
+        <div class="ag-nav__drop">
           <a href="https://tagplanning.wixstudio.com/demo/content-library" target="_top">Content Library</a>
           <a href="https://tagplanning.wixstudio.com/demo/financial-calculators" target="_top">Financial Calculators</a>
           <a href="https://tagplanning.wixstudio.com/demo/recommended-reading-library" target="_top">Reading Library</a>
@@ -715,29 +893,25 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
     </div>
     <div class="ag-nav__right">
-      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg>Client Login</a>
-      <span class="ag-nav__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(330)&nbsp;526-8412</span>
-      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg>CONTACT</a>
+      <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-nav__portal" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg>Client Login</a>
+      <span class="ag-nav__phone">(330)&nbsp;526-8412</span>
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-nav__label ag-nav__cta-btn" target="_top"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>CONTACT</a>
     </div>
     <button class="ag-nav__burger" id="agBurger" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
   </div>
   <div class="ag-mobile-nav" id="agMobileNav" aria-hidden="true">
     <div class="ag-mobile-nav__inner">
-      <div class="ag-mob__top">
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h6"></path></svg> Contact Us</a>
-        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg> Client Login</a>
-      </div>
       <div class="ag-mob__section">
         <button class="ag-mob__heading" data-toggle="mob-services">SERVICES <span class="ag-mob__caret">&#9662;</span></button>
         <div class="ag-mob__sub" id="mob-services">
           <span class="ag-mob__sub-heading">For Individuals</span>
           <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">Total Wealth Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
-          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
-          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">Real Estate Investing</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance Planning</a>
           <a href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">Estate Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">Retirement Planning</a>
+          <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Tax Planning &amp; Preparation</a>
           <span class="ag-mob__sub-heading">For Businesses</span>
           <a href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">Business Financial Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">401(k) &amp; Retirement Planning</a>
@@ -763,7 +937,9 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         </div>
       </div>
       <div class="ag-mob__bottom">
-        <span class="ag-mob__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(330)&nbsp;526-8412</span>
+        <span class="ag-mob__phone">(330)&nbsp;526-8412</span>
+        <a href="https://wealth.emaplan.com/ema/SignIn?ema%2fria%2ftagplanning" class="ag-mob__portal" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path></svg> Client Login</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-mob__cta" target="_top"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> CONTACT</a>
       </div>
     </div>
   </div>
@@ -772,8 +948,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 <style>
 .ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
 .ag-mobile-nav.open{display:block}
-.ag-mobile-nav__inner{padding:0 0 20px}
-.ag-mob__top{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(29,112,128,.12)}
+.ag-mobile-nav__inner{padding:4px 0 20px}
 .ag-mob__section{border-bottom:1px solid rgba(29,112,128,.1)}
 .ag-mob__heading{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;background:none;border:none;cursor:pointer;text-align:left}
 .ag-mob__heading:active{background:#f0f8fa}
@@ -782,16 +957,14 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .ag-mob__sub{display:none;background:#f7fbfc;padding:0 0 8px}
 .ag-mob__sub.open{display:block}
 .ag-mob__sub-heading{display:block;padding:10px 28px 4px;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;color:#1D7080;text-transform:uppercase;letter-spacing:.12em}
-.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:16.2px;color:#2d2d2d;text-decoration:none}
+.ag-mob__sub a{display:block;padding:10px 36px;font-family:'Inter',sans-serif;font-size:13.5px;color:#2d2d2d;text-decoration:none}
 .ag-mob__sub a:active{background:#E6F4F7;color:#1D7080}
 .ag-mob__link{display:block;padding:15px 24px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.09em;color:#145568;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(29,112,128,.1)}
 .ag-mob__link:active{color:#C9A84C}
-.ag-mob__bottom{padding:18px 24px 8px;display:flex;flex-direction:column;gap:12px}
-.ag-mob__phone{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#145568}
-.ag-mob__phone svg{color:#C9A84C;flex-shrink:0}
-.ag-mob__portal{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;text-align:center;background:#1D7080;color:#fff;border-radius:5px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.03em}
-.ag-mob__cta{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
-.ag-mob__portal svg,.ag-mob__cta svg{flex-shrink:0}
+.ag-mob__bottom{padding:20px 24px 8px;display:flex;flex-direction:column;gap:12px}
+.ag-mob__phone{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#145568}
+.ag-mob__portal{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;text-align:center;background:#1D7080;color:#fff;border-radius:4px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;letter-spacing:.03em}
+.ag-mob__cta{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 18px;text-align:center;border:2px solid #C9A84C;color:#C9A84C;border-radius:5px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
 @media(max-width:900px){.ag-nav__burger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;font-size:22px;background:none;border:none;color:#145568;cursor:pointer;border-radius:4px;margin-left:auto}.ag-nav__burger:active{background:#f0f8fa}}
 </style>
 
@@ -821,33 +994,40 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
 <main style="padding-top:0">
 
+  <!-- HERO -->
   <section class="hp-hero">
     <div class="hp-hero__video-side">
       <video autoplay muted loop playsinline>
-        <source src="https://video.wixstatic.com/video/64b604_6f6ea2b74ae44f548e20e843d02eac8a/1080p/mp4/file.mp4" type="video/mp4" />
+        <source src="https://video.wixstatic.com/video/64b604_1bc2c69a925c47569bb9eb51fd938f6b/1080p/mp4/file.mp4" type="video/mp4" />
       </video>
       <div class="hp-hero__overlay"></div>
       <div class="hp-hero__definition-wrap">
-        <p class="hp-hero__definition">
-          A&middot;ffin&middot;i&middot;ty Group
-          <span style="font-weight:600; opacity:.88;">(noun):</span>
-          <br/>
-          <span style="font-style:normal; font-weight:700;">A group of people linked by a common interest or goal.</span>
-        </p>
+        <div class="hp-hero__definition-card">
+          <p class="hp-hero__definition">
+            A&middot;ffin&middot;i&middot;ty Group
+            <span style="font-weight:600; opacity:.88;">(noun):</span>
+            <br/>
+            <span style="font-style:normal; font-weight:700;">A group of people linked by a common interest or goal.</span>
+          </p>
+        </div>
       </div>
       <div class="hp-hero__text">
-        <div class="hp-hero__tagline">Where Purpose Meets Planning</div>
-        <p class="hp-hero__subtitle">
-          Helping successful families and business owners turn complexity into clarity, decisions into direction, and wealth into a life well planned &mdash; through coordinated guidance across every major area of their financial life.
-        </p>
+        <div class="hp-hero__text-card">
+          <div class="hp-hero__tagline">Where Purpose Meets Planning</div>
+          <p class="hp-hero__subtitle">
+            Guiding families and business owners from complexity to confidence with integrated financial, tax, and wealth planning.
+          </p>
+        </div>
       </div>
     </div>
+
+    <!-- RIGHT SIDE PANELS — white background -->
     <div class="hp-hero__panels">
 
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/business-owners" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">Business Owners &amp; Entrepreneurs</div>
-          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
         <div class="hp-hero__panel-sub">Running a business and building personal wealth</div>
       </a>
@@ -855,15 +1035,15 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">Retirees &amp; Pre-Retirees</div>
-          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
         <div class="hp-hero__panel-sub">Planning for or living in retirement</div>
       </a>
 
-      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners-wealth-accumulators" target="_top">
+      <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/high-earners" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">High Earners &amp; Wealth Accumulators</div>
-          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
         <div class="hp-hero__panel-sub">High income, complex taxes, serious wealth building</div>
       </a>
@@ -871,7 +1051,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       <a class="hp-hero__panel" href="https://tagplanning.wixstudio.com/demo/business-organizations" target="_top">
         <div class="hp-hero__panel-heading">
           <div class="hp-hero__panel-title">Businesses &amp; Organizations</div>
-          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          <svg class="hp-hero__panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
         </div>
         <div class="hp-hero__panel-sub">Comprehensive financial management for companies, nonprofits, and retirement plans</div>
       </a>
@@ -879,6 +1059,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
     </div>
   </section>
 
+  <!-- FIRM SECTION — reduced spacing + 12 services grid -->
   <section class="hp-firm">
     <div class="hp-firm__inner">
       <div class="hp-firm__left">
@@ -893,14 +1074,89 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         </div>
       </div>
     </div>
+
+    <!-- 12 SERVICES TREE CHART (hidden) -->
+    <div class="hp-firm__services-wrap" style="display:none">
+
+      <div class="hp-firm__services-cols">
+
+        <!-- LEFT BRANCH: FOR INDIVIDUALS -->
+        <div>
+          <div class="hp-firm__services-branch-head">
+            <div class="hp-firm__services-branch-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="hp-firm__services-branch-title">For Individuals</span>
+          </div>
+          <div class="hp-firm__services-leaves">
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/total-wealth-management" target="_top">
+              <span class="hp-firm__services-leaf-name">Total Wealth Management</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">
+              <span class="hp-firm__services-leaf-name">Investment Management</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/real-estate-investing" target="_top">
+              <span class="hp-firm__services-leaf-name">Real Estate Investing</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">
+              <span class="hp-firm__services-leaf-name">Insurance Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/estate-planning" target="_top">
+              <span class="hp-firm__services-leaf-name">Estate Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/retirement-planning" target="_top">
+              <span class="hp-firm__services-leaf-name">Retirement Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">
+              <span class="hp-firm__services-leaf-name">Tax Planning &amp; Preparation</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT BRANCH: FOR BUSINESSES -->
+        <div>
+          <div class="hp-firm__services-branch-head">
+            <div class="hp-firm__services-branch-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <span class="hp-firm__services-branch-title">For Businesses</span>
+          </div>
+          <div class="hp-firm__services-leaves">
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/business-financial-management" target="_top">
+              <span class="hp-firm__services-leaf-name">Business Financial Management</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/401k-retirement" target="_top">
+              <span class="hp-firm__services-leaf-name">401(k) &amp; Retirement Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/business-sale-planning" target="_top">
+              <span class="hp-firm__services-leaf-name">Business Sale Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/executive-benefit-planning" target="_top">
+              <span class="hp-firm__services-leaf-name">Executive Benefit Planning</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+            <a class="hp-firm__services-leaf" href="https://tagplanning.wixstudio.com/demo/legal-structure" target="_top">
+              <span class="hp-firm__services-leaf-name">Entity Structure &amp; Legal</span>
+              <span class="hp-firm__services-leaf-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-
-  <!-- people imagery: band -->
-  <section class="ag-band">
-    <img src="https://static.wixstatic.com/media/64b604_bc2f4c1310f7425ba9106e7e881864ff~mv2.jpeg" alt="The families and individuals we serve nationwide" loading="lazy" />
-  </section>
-
+  <!-- FIDUCIARY VIDEO SECTION -->
   <section class="hp-fid-cta">
     <div class="hp-fid-cta__inner">
       <div class="hp-fid-cta__eyebrow">About Our Firm</div>
@@ -919,14 +1175,15 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         </button>
       </div>
       <div class="hp-fid-cta__btns">
-        <a class="ag-btn-gold" href="https://tagplanning.wixstudio.com/demo/contact" target="_top">
-         Schedule a 15-Minute Personalized Virtual Introduction Here
-        </a>
+        <button class="ag-btn-gold" onclick="openYtModal()">
+         Click Here To Watch A Video
+        </button>
         <a class="ag-btn-outline" href="https://tagplanning.wixstudio.com/demo/fiduciary-vs-broker" target="_top">Learn More</a>
       </div>
     </div>
   </section>
 
+  <!-- CONTENT LIBRARY — light background -->
   <section class="hp-insights">
     <div class="hp-insights__inner">
       <div class="hp-insights__header">
@@ -946,7 +1203,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Investing</span>
             <h3 class="hp-ins-card__title">True Diversification: What Your Portfolio Might Be Missing</h3>
-            <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments â€” not just the ones we hope for.</p>
+            <p class="hp-ins-card__excerpt">Owning a mix of stocks and bonds isn't true diversification. A resilient portfolio is built to perform across four distinct economic environments &mdash; not just the ones we hope for.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -958,7 +1215,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Estate Planning</span>
             <h3 class="hp-ins-card__title">Estate Planning Essentials for Families With Significant Assets</h3>
-            <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth â€” it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
+            <p class="hp-ins-card__excerpt">A thoughtful estate plan does more than distribute wealth &mdash; it protects it from taxes, legal exposure, and family conflict. Trusts, titling, and beneficiary coordination all play a critical role.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -970,7 +1227,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">What a Well-Funded Retirement Actually Requires</h3>
-            <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone â€” but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
+            <p class="hp-ins-card__excerpt">Reaching retirement with significant savings is a milestone &mdash; but sustaining wealth across a 20-to-30-year horizon requires income sequencing, tax strategy, and deliberate spending decisions.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -994,7 +1251,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Retirement</span>
             <h3 class="hp-ins-card__title">The 5-to-10 Year Window That Shapes Your Retirement</h3>
-            <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now â€” around tax positioning, Social Security timing, and savings rates â€” have an outsized impact on outcomes.</p>
+            <p class="hp-ins-card__excerpt">The decade before retirement is among the most consequential of your financial life. Decisions made now &mdash; around tax positioning, Social Security timing, and savings rates &mdash; have an outsized impact on outcomes.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -1006,7 +1263,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <div class="hp-ins-card__body">
             <span class="hp-ins-card__cat">Financial Planning</span>
             <h3 class="hp-ins-card__title">Is Your Financial Plan Still Aligned With Your Life?</h3>
-            <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed â€” or what you've built.</p>
+            <p class="hp-ins-card__excerpt">Midlife brings career pivots, shifting priorities, and growing complexity. If your plan hasn't been reviewed recently, it may no longer reflect where you're headed &mdash; or what you've built.</p>
             <span class="hp-ins-card__cta">Read Article &rarr;</span>
           </div>
         </a>
@@ -1053,16 +1310,17 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
           <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top">Contact</a>
           <a href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">Investment Management</a>
           <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">Insurance</a>
+          <a href="https://tagplanning.wixstudio.com/demo/emoney" target="_top">eMoney &ndash; Your Financial GPS</a>
           <a href="https://tagplanning.wixstudio.com/demo/our-team" target="_top">Our Team</a>
           <a href="https://tagplanning.wixstudio.com/demo/faqs" target="_top">FAQ's</a>
         </div>
       </div>
     </div>
-    <div class="ag-footer__bottom">Copyright &copy; 2026 The Affinity Group. All rights reserved.</div>
+    <div class="ag-footer__bottom">Copyright &copy; 2025 The Affinity Group. All rights reserved.</div>
   </div>
 </footer>
 
-<!-- â”€â”€ YOUTUBE MODAL â”€â”€ -->
+<!-- YOUTUBE MODAL -->
 <div id="ytModal" class="yt-modal" role="dialog" aria-modal="true" aria-label="Video Player">
   <div class="yt-modal__backdrop" onclick="closeYtModal()"></div>
   <div class="yt-modal__box">
@@ -1075,7 +1333,7 @@ home-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   </div>
 </div>
 
-<!-- â”€â”€ INSIGHT MODAL â”€â”€ -->
+<!-- INSIGHT MODAL -->
 <div id="insModal" class="ins-modal" role="dialog" aria-modal="true" aria-label="Article">
   <div class="ins-modal__backdrop" onclick="closeInsModal()"></div>
   <div class="ins-modal__box">
@@ -1112,7 +1370,7 @@ var insightArticles = [
     cat: 'Estate Planning',
     title: 'Estate Planning Essentials for Families With Significant Assets',
     img: 'https://static.wixstatic.com/media/64b604_8e27e863ece14ff2b69f0fe3f5c82850~mv2.jpeg',
-    body: '<h3>Why Estate Planning Is More Than Writing a Will</h3><p>Many people think of estate planning as something they\'ll deal with later &#8212; or as a simple matter of writing a will. But for families who have accumulated significant assets, the stakes are much higher. Without a thoughtful plan, wealth built over decades can be eroded by taxes, tied up in probate, or distributed in ways that don\'t reflect your actual wishes.</p><h3>The Foundation: More Than a Will</h3><p>A will only controls assets that pass through probate &#8212; and that excludes retirement accounts, life insurance, jointly held property, and anything held in a trust. A complete estate plan coordinates all of these:</p><ul><li><strong>Revocable Living Trust</strong> &#8212; keeps your estate out of probate, provides continuity if you become incapacitated, and allows specific instructions for how assets are managed and distributed after you pass</li><li><strong>Beneficiary Designations</strong> &#8212; often overlooked, but they override your will. An outdated beneficiary designation can direct assets to an ex-spouse or a deceased family member regardless of what your will says</li><li><strong>Powers of Attorney</strong> &#8212; a durable financial POA and healthcare proxy ensure someone you trust can act on your behalf if you\'re ever unable to act for yourself</li></ul><h3>Advanced Strategies for Significant Estates</h3><p>As your estate grows, proactive tax strategies become increasingly important &#8212; especially with federal estate tax exemptions potentially declining after 2026:</p><ul><li><strong>Irrevocable Trusts (SLATs, ILITs, CRTs)</strong> &#8212; remove assets from your taxable estate while preserving benefits for your family or a charitable cause</li><li><strong>GRATs and Installment Sales</strong> &#8212; transfer future appreciation out of your estate with minimal gift tax impact</li><li><strong>Annual Gifting</strong> &#8212; the annual exclusion ($18,000 per recipient in 2024) compounds meaningfully over time when used consistently and strategically</li></ul><h3>Business Owners: Plan for Succession Too</h3><p>If you own a business, your estate plan must address what happens to it. A buy-sell agreement funded by life insurance, combined with a clear succession plan, prevents your business from becoming a liability &#8212; or a source of conflict &#8212; for your heirs.</p><p>Estate planning isn\'t a one-time event. It\'s an ongoing process that should be reviewed after major life changes, tax law shifts, and significant changes to your asset base. Our team coordinates directly with your estate attorney to keep your plan current, comprehensive, and aligned with your goals.</p>'
+    body: '<h3>Why Estate Planning Is More Than Writing a Will</h3><p>Many people think of estate planning as something they\'ll deal with later &#8212; or as a simple matter of writing a will. But for families who have accumulated significant assets, the stakes are much higher. Without a thoughtful plan, wealth built over decades can be eroded by taxes, tied up in probate, or distributed in ways that don\'t reflect your actual wishes.</p><h3>The Foundation: More Than a Will</h3><p>A will only controls assets that pass through probate &#8212; and that excludes retirement accounts, life insurance, jointly held property, and anything held in a trust. A complete estate plan coordinates all of these:</p><ul><li><strong>Revocable Living Trust</strong> &#8212; keeps your estate out of probate, provides continuity if you become incapacitated, and allows specific instructions for how assets are managed and distributed after you pass</li><li><strong>Beneficiary Designations</strong> &#8212; often overlooked, but they override your will. An outdated beneficiary designation can direct assets to an ex-spouse or a deceased family member regardless of what your will says</li><li><strong>Powers of Attorney</strong> &#8212; a durable financial POA and healthcare proxy ensure someone you trust can act on your behalf if you\'re ever unable to act for yourself</li></ul><h3>Advanced Strategies for Significant Estates</h3><p>As your estate grows, proactive tax strategies become increasingly important &#8212; especially with federal estate tax exemptions potentially declining after 2025:</p><ul><li><strong>Irrevocable Trusts (SLATs, ILITs, CRTs)</strong> &#8212; remove assets from your taxable estate while preserving benefits for your family or a charitable cause</li><li><strong>GRATs and Installment Sales</strong> &#8212; transfer future appreciation out of your estate with minimal gift tax impact</li><li><strong>Annual Gifting</strong> &#8212; the annual exclusion ($18,000 per recipient in 2024) compounds meaningfully over time when used consistently and strategically</li></ul><h3>Business Owners: Plan for Succession Too</h3><p>If you own a business, your estate plan must address what happens to it. A buy-sell agreement funded by life insurance, combined with a clear succession plan, prevents your business from becoming a liability &#8212; or a source of conflict &#8212; for your heirs.</p><p>Estate planning isn\'t a one-time event. It\'s an ongoing process that should be reviewed after major life changes, tax law shifts, and significant changes to your asset base. Our team coordinates directly with your estate attorney to keep your plan current, comprehensive, and aligned with your goals.</p>'
   },
   {
     cat: 'Retirement',
@@ -1179,7 +1437,7 @@ function closeInsModal() {
 </script>
 
 <style>
-/* â”€â”€ wide-screen gap fix â”€â”€ */
+/* ── wide-screen gap fix ── */
 @media (min-width: 1600px) {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1400px, 88vw) !important; }
@@ -1188,6 +1446,15 @@ function closeInsModal() {
   main div[class*="__inner"],
   .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
 }
+</style>
+<style>
+/* Footer text +30% (uniform across site) */
+.ag-footer__doc-links a{font-size:16.9px!important}
+.ag-footer__address{font-size:16.25px!important}
+.ag-footer__disclaimer{font-size:15.6px!important}
+.ag-footer__sitemap-heading{font-size:14.3px!important}
+.ag-footer__sitemap a{font-size:16.25px!important}
+.ag-footer__bottom{font-size:14.95px!important}
 </style>
 </body>
 </html>
