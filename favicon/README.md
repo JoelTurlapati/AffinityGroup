@@ -1,7 +1,8 @@
 # Favicon — The Affinity Group
 
-The site mark: the teal triangle (with two white fan lines) taken from the logo.
-Teal `#157B80` (sampled from the logo triangle).
+The site mark: the teal triangle with its white fan lines, **cropped directly from the
+logo** (`Resources/HomePage/TheAffinityGroupLogo.jpeg`) — exact shape, exterior made
+transparent. Teal `#157B80`.
 
 ## Files
 | File | Use |
@@ -9,8 +10,7 @@ Teal `#157B80` (sampled from the logo triangle).
 | `favicon.ico` | Multi-resolution icon (16–256px). Upload this to Wix. |
 | `favicon-512.png` / `-192.png` | Large PNG (PWA / general use, Wix upload) |
 | `apple-touch-icon.png` | 180px — iOS home-screen icon |
-| `favicon-32.png` / `-16.png` | Browser-tab sizes |
-| `favicon.svg` | Scalable source (regenerate other sizes from this) |
+| `favicon-64.png` / `-48.png` / `-32.png` / `-16.png` | Browser-tab sizes |
 
 ## How to apply on the Wix site (IMPORTANT)
 The favicon is the **browser-tab icon of the top-level Wix page**, not something the
