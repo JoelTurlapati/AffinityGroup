@@ -48,7 +48,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#0a1628}
 .ag-nav__portal svg, .ag-nav__cta-btn svg { flex-shrink: 0; }
 .ag-nav__burger { display: none; }
 .ag-nav__cta-btn{display:inline-flex!important;align-items:center;gap:7px;border:2px solid #C9A84C!important;color:#C9A84C!important;border-radius:5px;padding:9px 20px!important;font-size:16px;letter-spacing:.06em;transition:background .2s,color .2s,transform .15s;background:transparent;margin-left:0}.ag-nav__cta-btn:hover{background:#C9A84C!important;color:#fff!important;transform:translateY(-1px)}
-@media (min-width:901px) and (max-width:1380px){.ag-nav__inner{padding:0 16px;gap:10px}.ag-nav__links{gap:0}.ag-nav__links .ag-nav__label{font-size:12px;padding:10px 9px}.ag-nav__right{gap:8px}.ag-nav__phone{display:none}.ag-nav__portal{font-size:10.5px;padding:8px 10px}.ag-nav__cta-btn{padding:7px 12px!important;font-size:10.5px;letter-spacing:.04em}}
+@media (min-width:901px) and (max-width:1380px){.ag-nav__inner{padding:0 16px;gap:10px}.ag-nav__links{gap:0}.ag-nav__links .ag-nav__label{font-size:12px;padding:10px 9px}.ag-nav__right{gap:8px}.ag-nav__phone { font-size: 14px; }.ag-nav__portal{font-size:10.5px;padding:8px 10px}.ag-nav__cta-btn{padding:7px 12px!important;font-size:10.5px;letter-spacing:.04em}}
 @media (max-width:900px){.ag-nav__links,.ag-nav__right{display:none}.ag-nav__burger{display:block;font-size:22px;background:none;border:none;color:#145568;cursor:pointer}.ag-footer__top{grid-template-columns:1fr;gap:28px}}
 .ag-mobile-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;z-index:9998;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #1D7080;max-height:calc(100vh - 72px);overflow-y:auto}
 .ag-mobile-nav.open{display:block}
@@ -75,7 +75,7 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#0a1628}
 /* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bo-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;margin-top:72px}
 .bo-hero__bg{position:absolute;inset:0;z-index:0}
-.bo-hero__bg img{width:100%;height:100%;object-fit:cover;display:block}
+.bo-hero__bg img,.bo-hero__bg video{width:100%;height:100%;object-fit:cover;display:block}
 .bo-hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,22,40,.55) 0%,rgba(10,22,40,.72) 45%,rgba(10,22,40,.96) 100%)}
 .bo-hero__content{position:relative;z-index:2;padding:0 72px 88px;max-width:860px}
 .bo-hero__eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:28px}
@@ -384,7 +384,9 @@ html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#0a1628}
 <!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
 <section class="bo-hero">
   <div class="bo-hero__bg">
-    <img src="https://static.wixstatic.com/media/64b604_d435ca9f82024f0ea648b06af76b7f17~mv2.jpg" alt="Business and organizations"/>
+    <video autoplay muted loop playsinline poster="https://static.wixstatic.com/media/64b604_d435ca9f82024f0ea648b06af76b7f17~mv2.jpg">
+      <source src="https://video.wixstatic.com/video/64b604_c31557c50a394de7b725f2cf055f0771/720p/mp4/file.mp4" type="video/mp4" />
+    </video>
   </div>
   <div class="bo-hero__content">
     <div class="bo-hero__eyebrow">

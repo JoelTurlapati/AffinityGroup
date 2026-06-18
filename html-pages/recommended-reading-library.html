@@ -303,12 +303,12 @@ html { font-size: 20px; }
 
 /* â”€â”€ COVER â”€â”€ */
 .rl-card__cover {
-  width: 148px;
+  width: 210px;
   flex-shrink: 0;
   background: linear-gradient(145deg, #0c3540 0%, #1D7080 100%);
   position: relative;
   overflow: hidden;
-  min-height: 220px;
+  min-height: 300px;
   display: flex; align-items: center; justify-content: center;
 }
 .rl-card__cover img {
@@ -316,7 +316,7 @@ html { font-size: 20px; }
   width: 100%; height: 100%;
   object-fit: contain; object-position: center center;
   display: block;
-  padding: 6px;
+  padding: 14px;
   z-index: 1;
 }
 .rl-cover__fallback { display: none; }
@@ -356,9 +356,13 @@ html { font-size: 20px; }
 }
 .rl-card__summary {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem; line-height: 1.8;
-  color: #444; font-weight: 400; flex: 1;
+  font-size: 0.78rem; line-height: 1.75;
+  color: #444; font-weight: 400;
   margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .rl-card__takeaways { margin-bottom: 18px; }
 .rl-takeaways__label {
