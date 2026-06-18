@@ -648,6 +648,13 @@ html{font-size:20px}
 .bfm-hero__content .bfm-hero__stats{max-width:520px;margin:0 auto 30px}
 .bfm-hero__content .bfm-hero__desc{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.9;color:rgba(255,255,255,.72);max-width:660px;margin:0 auto}
 
+/* STAT STRIP */
+.bfm-stat-strip{display:grid;grid-template-columns:repeat(3,1fr);background:linear-gradient(135deg,#0c3540 0%,#1D7080 100%);border-bottom:3px solid #C9A84C}
+.bfm-stat-strip__item{padding:22px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.bfm-stat-strip__item:last-child{border-right:none}
+.bfm-stat-strip__num{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;color:#C9A84C;line-height:1;margin-bottom:6px}
+.bfm-stat-strip__label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.14em}
+
 /* INCLUDES SECTION */
 .bfm-includes{background:linear-gradient(160deg,#080e12 0%,#0c3540 60%,#145568 100%);padding:80px 56px}
 .bfm-includes__inner{max-width:1000px;margin:0 auto}
@@ -718,24 +725,25 @@ html{font-size:20px}
     <div class="bfm-hero__badge"><span class="bfm-hero__badge-line"></span><span>For Businesses</span></div>
     <h1>Business Financial Management</h1>
     <p class="bfm-hero__tagline">Affinity Private Tax combines AI-powered technology with experienced accounting and tax professionals to deliver a bionic approach to business financial management.</p>
-    <div class="bfm-hero__stats">
-      <div class="bfm-hero__stat">
-        <span class="bfm-hero__stat-num">6</span>
-        <span class="bfm-hero__stat-label">Integrated<br/>Services</span>
-      </div>
-      <div class="bfm-hero__stat">
-        <span class="bfm-hero__stat-num">1</span>
-        <span class="bfm-hero__stat-label">Coordinated<br/>Relationship</span>
-      </div>
-      <div class="bfm-hero__stat">
-        <span class="bfm-hero__stat-num">12</span>
-        <span class="bfm-hero__stat-label">Months /<br/>Year</span>
-      </div>
-    </div>
     <p class="bfm-hero__desc">We bring bookkeeping, financial reporting, tax planning, tax preparation, and cash-flow guidance together under one coordinated relationship &mdash; so your business always knows where it stands and never scrambles at year-end.</p>
   </div>
 </section>
 
+<!-- STAT STRIP -->
+<div class=”bfm-stat-strip”>
+  <div class=”bfm-stat-strip__item”>
+    <div class=”bfm-stat-strip__num”>6</div>
+    <div class=”bfm-stat-strip__label”>Integrated Services</div>
+  </div>
+  <div class=”bfm-stat-strip__item”>
+    <div class=”bfm-stat-strip__num”>1</div>
+    <div class=”bfm-stat-strip__label”>Coordinated Relationship</div>
+  </div>
+  <div class=”bfm-stat-strip__item”>
+    <div class=”bfm-stat-strip__num”>12</div>
+    <div class=”bfm-stat-strip__label”>Months / Year</div>
+  </div>
+</div>
 
 <!-- WHO WE SERVE â€” QUALIFICATION SECTION -->
 <!-- 3. WHY 6 IN ONE FIRM -->
