@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="The Affinity Group">
+  <defs>
+    <clipPath id="tri"><polygon points="640,150 815,880 185,880"/></clipPath>
+  </defs>
+  <polygon points="640,150 815,880 185,880" fill="#157B80"/>
+  <g clip-path="url(#tri)" stroke="#ffffff" stroke-width="26">
+    <line x1="185" y1="880" x2="736.25" y2="551.5"/>
+    <line x1="185" y1="880" x2="780" y2="734"/>
+  </g>
+</svg>
