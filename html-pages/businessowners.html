@@ -105,10 +105,10 @@ html { font-size: 20px; }
   overflow: hidden; display: flex; align-items: center; justify-content: center;
   background: #0e3d47; margin-top: 72px;
 }
-.bo-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.bo-hero img, .bo-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .bo-hero__overlay { position: absolute; inset: 0; background: rgba(6,6,10,0.62); }
 .bo-hero__text { position: relative; z-index: 2; text-align: center; padding: 40px 32px; color: #fff; max-width: 900px; }
-.bo-hero__badge { display: inline-block; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 8px 22px; border-radius: 40px; margin-bottom: 26px; }
+.bo-hero__badge { display: inline-block; background: #C9A84C; color: #fff; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 12px 34px; border-radius: 40px; margin-bottom: 30px; }
 .bo-hero__text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 700; text-shadow: 0 2px 24px rgba(0,0,0,.4); margin-bottom: 18px; line-height: 1.2; }
 .bo-hero__text p { font-family: 'Inter', sans-serif; font-size: clamp(.9rem, 1.5vw, 1.05rem); font-weight: 300; opacity: .92; max-width: 680px; margin: 0 auto 36px; line-height: 1.75; }
 .bo-hero__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -236,6 +236,23 @@ html { font-size: 20px; }
 @media (min-width: 1920px) {
   main div[class*="__inner"], .ag-footer__inner { max-width: min(1600px, 85vw) !important; }
 }
+
+/* GOLD GLOWING CTA BUTTON */
+.bo-shine-btn{display:inline-block;padding:16px 46px;background:#C9A84C;color:#0c3540;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;text-decoration:none;border-radius:4px;letter-spacing:.1em;text-transform:uppercase;border:2px solid #C9A84C;animation:bo-shine 2.5s ease-in-out infinite;transition:background .2s,color .2s}
+.bo-shine-btn:hover{background:transparent;color:#C9A84C;animation-play-state:paused}
+@keyframes bo-shine{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.6),0 4px 20px rgba(201,168,76,.15)}50%{box-shadow:0 0 0 14px rgba(201,168,76,0),0 4px 44px rgba(201,168,76,.45)}}
+.bo-sec-cta{text-align:center;padding:38px 28px}
+.bo-sec-cta--light{background:#F0F8FA}
+.bo-sec-cta--white{background:#fff}
+.bo-sec-cta--dark{background:#0e3d47}
+.bo-sec-cta--teal{background:#145568}
+
+/* SERVICE CARD BACKGROUND IMAGES */
+.bo-svc{position:relative;overflow:hidden;min-height:290px}
+.bo-svc__bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .45s ease}
+.bo-svc:hover .bo-svc__bg{transform:scale(1.07)}
+.bo-svc__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,25,38,.97) 25%,rgba(14,55,70,.82) 60%,rgba(20,85,100,.5) 100%)}
+.bo-svc__body{position:relative;z-index:2;display:flex;flex-direction:column;height:100%}
 </style>
 
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• NAV â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
@@ -397,7 +414,9 @@ html { font-size: 20px; }
 
   <!-- Â§1 HERO -->
   <section class="bo-hero">
-    <img src="https://static.wixstatic.com/media/64b604_b45afaeb769841258ce15cd1cb3369e1~mv2.jpg" alt="Business owner" />
+    <video autoplay muted loop playsinline poster="https://static.wixstatic.com/media/64b604_b45afaeb769841258ce15cd1cb3369e1~mv2.jpg">
+      <source src="https://video.wixstatic.com/video/64b604_c00d937e22dc41bfbb8f47cdc3d88b19/720p/mp4/file.mp4" type="video/mp4"/>
+    </video>
     <div class="bo-hero__overlay"></div>
     <div class="bo-hero__text">
       <span class="bo-hero__badge">For Business Owners</span>
@@ -405,6 +424,7 @@ html { font-size: 20px; }
       <p>You&rsquo;ve poured your life into building something remarkable. As a fellow founder and owner, Scott Lowe understands the unique financial complexities business owners face &mdash; and built a team to address every dimension of your financial life.</p>
       <div class="bo-hero__btns">
         <a href="#bo-services" class="bo-btn-outline">Explore Your Path &rarr;</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Start Working With Affinity Group</a>
       </div>
     </div>
   </section>
@@ -414,6 +434,9 @@ html { font-size: 20px; }
     <div class="bo-intro__inner">
       <div class="ag-gold-bar"></div>
       <p>We manage and protect what you&rsquo;ve built, so you can focus on what you do best. We build an intentional, coordinated financial plan that ensures your business is a support system for the life you want to live &mdash; not a master that controls every thought and action.</p>
+      <div style="margin-top:32px">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Schedule a Free Conversation</a>
+      </div>
     </div>
   </section>
 
@@ -426,48 +449,75 @@ html { font-size: 20px; }
       <div class="bo-services__grid">
 
         <a href="https://tagplanning.wixstudio.com/demo/total-wealth-management" class="bo-svc" target="_top">
-          <h3>Total Wealth Management</h3>
-          <p>A concierge-level, multi-disciplined approach integrating every area of your financial life &mdash; investments, taxes, estate planning, insurance, and real estate &mdash; into one coordinated strategy.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Total Wealth Management</h3>
+            <p>A concierge-level, multi-disciplined approach integrating every area of your financial life &mdash; investments, taxes, estate planning, insurance, and real estate &mdash; into one coordinated strategy.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
         <a href="https://tagplanning.wixstudio.com/demo/estate-planning" class="bo-svc" target="_top">
-          <h3>Estate Planning</h3>
-          <p>For business owners, estate planning isn&rsquo;t optional &mdash; it&rsquo;s urgent. We coordinate on wills, trusts, account titling, beneficiary updates, and business succession to protect your family and legacy.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Estate Planning</h3>
+            <p>For business owners, estate planning isn&rsquo;t optional &mdash; it&rsquo;s urgent. We coordinate on wills, trusts, account titling, beneficiary updates, and business succession to protect your family and legacy.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
         <a href="https://tagplanning.wixstudio.com/demo/investment-management" class="bo-svc" target="_top">
-          <h3>Investment Management</h3>
-          <p>As a fiduciary RIA, we manage your investment portfolio with zero third-party compensation or conflicts &mdash; ensuring your business income translates into a strategically built portfolio.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Investment Management</h3>
+            <p>As a fiduciary RIA, we manage your investment portfolio with zero third-party compensation or conflicts &mdash; ensuring your business income translates into a strategically built portfolio.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
         <a href="https://tagplanning.wixstudio.com/demo/real-estate-investing" class="bo-svc" target="_top">
-          <h3>Real Estate Investing</h3>
-          <p>Scott Lowe has 18+ years of personal real estate investment experience. We help you evaluate properties, structure investment LLCs, and diversify your wealth well beyond your business.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Real Estate Investing</h3>
+            <p>Scott Lowe has 18+ years of personal real estate investment experience. We help you evaluate properties, structure investment LLCs, and diversify your wealth well beyond your business.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
         <a href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" class="bo-svc" target="_top">
-          <h3>Insurance Strategies</h3>
-          <p>Your income, your life, and your business all need protection. We analyze life, disability, long-term care, and key-person insurance so you and your family are never left exposed.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1609902726285-00668009f004?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Insurance Strategies</h3>
+            <p>Your income, your life, and your business all need protection. We analyze life, disability, long-term care, and key-person insurance so you and your family are never left exposed.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
         <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" class="bo-svc" target="_top">
-          <h3>Tax Planning</h3>
-          <p>Year-round, proactive tax planning and preparation for those with complexity. We use Holistiplan to ensure every opportunity to reduce your personal tax burden is captured &mdash; all year long.</p>
-          <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          <div class="bo-svc__bg" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80')"></div>
+          <div class="bo-svc__overlay"></div>
+          <div class="bo-svc__body">
+            <h3>Tax Planning</h3>
+            <p>Year-round, proactive tax planning and preparation for those with complexity. We use Holistiplan to ensure every opportunity to reduce your personal tax burden is captured &mdash; all year long.</p>
+            <span class="bo-svc__link">Learn More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
         </a>
 
+      </div>
+      <div class="bo-sec-cta" style="padding-top:44px;background:transparent">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Explore Your Personalized Wealth Plan</a>
       </div>
     </div>
   </section>
 
   <!-- Â§4 SECTION: The Challenge -->
-  <div style="background:#F0F8FA;text-align:center;padding:44px 28px">
-    <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" style="display:inline-block;padding:15px 40px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em">Schedule a Consultation</a>
+  <div class="bo-sec-cta bo-sec-cta--light">
+    <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Schedule a Consultation</a>
   </div>
 
   <section class="bo-section bo-section--light">
@@ -480,6 +530,9 @@ html { font-size: 20px; }
         <h2>Founding a Business Is One of the Greatest Accomplishments &mdash; and One of the Greatest Financial Risks.</h2>
         <p>Founding a successful and thriving business is one of the greatest accomplishments a business owner can achieve. It will also be one of their greatest assets. However, owners may find that the demands of the business dictate their personal lives.</p>
         <p>For most business owners, wealth is concentrated in a single asset &mdash; the business itself &mdash; leaving personal finances, estate plans, and retirement goals perpetually on the backburner.</p>
+        <div style="margin-top:28px">
+          <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Protect What You&rsquo;ve Built</a>
+        </div>
       </div>
     </div>
   </section>
@@ -495,6 +548,9 @@ html { font-size: 20px; }
         <h2>Your Business and Personal Financial Life Are Inseparable. Your Planning Should Be Too.</h2>
         <p>Business owners are individuals first. Estate planning, investment management, insurance protection, and retirement planning don&rsquo;t become less important because you run a company &mdash; they become more important.</p>
         <p>We help you understand that what you do with your business finances can directly impact your personal financial picture, and our team of experts helps you manage both simultaneously so you can worry less and spend more time enjoying other aspects of your busy life.</p>
+        <div style="margin-top:28px">
+          <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Build Your Unified Financial Plan</a>
+        </div>
       </div>
     </div>
   </section>
@@ -556,6 +612,9 @@ html { font-size: 20px; }
         </div>
 
       </div>
+      <div class="bo-sec-cta" style="background:transparent;padding-bottom:0">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Let Us Solve These Challenges Together</a>
+      </div>
     </div>
   </section>
 
@@ -569,6 +628,9 @@ html { font-size: 20px; }
         <div><div id='video-player-3005'></div><div id='video-player-disclaimer-part-3005' style='position:relative'></div></div>
         <script src='https://content.jwplatform.com/libraries/ljXVSIQY.js'></script>
         <script src='https://abm.emaplan.com/ABM/MediaServe/Embed?token=60ec53b48a494c4786e798719e41f33b'></script>
+      </div>
+      <div style="margin-top:36px">
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Meet With Scott Today</a>
       </div>
     </div>
   </section>
@@ -593,6 +655,9 @@ html { font-size: 20px; }
         <div class="bo-stat__lbl">Coordinated Relationship for Every Area of Your Financial Life</div>
       </div>
     </div>
+    <div class="bo-sec-cta bo-sec-cta--dark" style="padding-top:36px">
+      <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Start Working With Affinity Group</a>
+    </div>
   </section>
 
   <!-- Â§9 SCOTT â€” single combined section -->
@@ -615,14 +680,14 @@ html { font-size: 20px; }
           <span class="bo-chip">18+ Year Real Estate Investor</span>
           <span class="bo-chip">Fiduciary</span>
         </div>
-        <a href="https://tagplanning.wixstudio.com/demo/our-team" class="ag-btn-primary" target="_top">Meet the Team &rarr;</a>
+        <a href="https://tagplanning.wixstudio.com/demo/our-team" class="bo-shine-btn" target="_top">Meet the Team &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- Â§10 BUSINESS FINANCIAL MANAGEMENT -->
-  <div style="background:#fff;text-align:center;padding:44px 28px">
-    <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" style="display:inline-block;padding:15px 40px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em">Ready to Meet? Let's Talk</a>
+  <div class="bo-sec-cta bo-sec-cta--white">
+    <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Ready to Meet? Let&rsquo;s Talk</a>
   </div>
 
   <section class="bo-bfm">
@@ -647,7 +712,7 @@ html { font-size: 20px; }
         </div>
         <h3>Business Financial Management</h3>
         <p>A year-round service combining QuickBooks Online bookkeeping, business tax planning, business tax preparation, and one coordinated relationship &mdash; for business owners who want everything handled in one place.</p>
-        <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="ag-btn-gold" target="_top">Explore the Service</a>
+        <a href="https://tagplanning.wixstudio.com/demo/outsourced-cfo" class="bo-shine-btn" target="_top">Explore Business Financial Management</a>
         <span class="bo-bfm__sub">Many of our business clients also enjoy individual tax planning. <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" target="_top">Learn more &rarr;</a></span>
       </div>
     </div>
@@ -659,7 +724,7 @@ html { font-size: 20px; }
       <h2>Ready to Build a Financial Plan as Ambitious as Your Business?</h2>
       <p>Let&rsquo;s start with a conversation. No pressure. No pitch. Just an honest discussion about where you are and where you want to be.</p>
       <div class="bo-cta__btns">
-        <a href="https://tagplanning.wixstudio.com/demo/contact" class="ag-btn-primary" target="_top">Schedule a Free Conversation</a>
+        <a href="https://tagplanning.wixstudio.com/demo/contact" class="bo-shine-btn" target="_top">Schedule a Free Conversation</a>
         <a href="https://tagplanning.wixstudio.com/demo/our-team" class="ag-btn-gold" target="_top">Meet Our Team</a>
         <a href="https://tagplanning.wixstudio.com/demo/faqs" class="bo-btn-outline-teal" target="_top">Why Affinity?</a>
       </div>
