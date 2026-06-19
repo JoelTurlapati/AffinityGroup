@@ -166,10 +166,6 @@ html { font-size: 20px; }
 .twm-pillars__heading { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); color: #0c3540; font-weight: 600; line-height: 1.3; margin-bottom: 12px; }
 .twm-pillars__sub { font-family: 'Inter', sans-serif; font-size: .92rem; color: #5a7a84; line-height: 1.7; max-width: 620px; margin: 0 auto; }
 .twm-pillars__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.twm-pillars__orbit { display: grid; grid-template-columns: 1fr 1.05fr 1fr; gap: 26px; align-items: center; margin-top: 10px; }
-.twm-pillars__col { display: flex; flex-direction: column; gap: 22px; }
-.twm-pillars__center { display: flex; align-items: center; justify-content: center; }
-.twm-pillars__center img { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 16px 48px rgba(12,53,64,.18); }
 .twm-pillar { position: relative; overflow: hidden; background: #0c3540; border: none; border-radius: 12px; padding: 30px 26px; text-decoration: none; display: flex; flex-direction: column; min-height: 280px; transition: transform .25s, box-shadow .25s; }
 .twm-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 52px rgba(0,0,0,.28); }
 .twm-pillar__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .55s ease; }
@@ -314,10 +310,6 @@ html { font-size: 20px; }
   .twm-intro__left, .twm-deliverables__left { position: static; }
   .twm-personas__grid { grid-template-columns: 1fr; }
   .twm-pillars__grid { grid-template-columns: 1fr 1fr; }
-  .twm-pillars__orbit { grid-template-columns: 1fr; gap: 22px; }
-  .twm-pillars__center { order: -1; max-width: 560px; margin: 0 auto; }
-  .twm-pillars__col { flex-direction: row; flex-wrap: wrap; }
-  .twm-pillars__col .twm-pillar { flex: 1 1 calc(50% - 11px); }
   .twm-process__grid { grid-template-columns: 1fr; gap: 32px; }
   .twm-services__cols { grid-template-columns: 1fr; }
   .twm-tools__grid { grid-template-columns: 1fr; }
@@ -328,7 +320,6 @@ html { font-size: 20px; }
 }
 @media (max-width: 600px) {
   .twm-pillars__grid { grid-template-columns: 1fr; }
-  .twm-pillars__col .twm-pillar { flex: 1 1 100%; }
   .twm-intro, .twm-personas, .twm-pillars, .twm-deliverables, .twm-emoney, .twm-video, .twm-process, .twm-services, .twm-tools, .twm-im-cta { padding-left: 24px; padding-right: 24px; }
 }
 </style>
@@ -598,8 +589,7 @@ html { font-size: 20px; }
         <h2 class="twm-pillars__heading">Six Core Pillars of Your Wealth Strategy</h2>
         <p class="twm-pillars__sub">Every Total Wealth Management relationship is built around these six integrated disciplines. Click any pillar to learn more.</p>
       </div>
-      <div class="twm-pillars__orbit">
-       <div class="twm-pillars__col">
+      <div class="twm-pillars__grid">
 
         <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/investment-management" target="_top">
           <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_d5b584a07328475d8f593eac489d43c1~mv2.avif" alt="" />
@@ -634,14 +624,6 @@ html { font-size: 20px; }
           <span class="twm-pillar__link">Learn More &#8594;</span>
         </a>
 
-       </div>
-
-       <div class="twm-pillars__center">
-         <img src="https://static.wixstatic.com/media/64b604_45881a61db9e499ba88a90c3f7648078~mv2.png" alt="Total Wealth Management Circle" />
-       </div>
-
-       <div class="twm-pillars__col">
-
         <a class="twm-pillar" href="https://tagplanning.wixstudio.com/demo/life-disability-insurance" target="_top">
           <img class="twm-pillar__bg" src="https://static.wixstatic.com/media/64b604_05447413995e4b64bcc2b3667ff4095a~mv2.avif" alt="" />
           <div class="twm-pillar__overlay"></div>
@@ -675,7 +657,9 @@ html { font-size: 20px; }
           <span class="twm-pillar__link">Learn More &#8594;</span>
         </a>
 
-       </div>
+      </div>
+      <div style="margin-top:40px;text-align:center">
+        <img src="https://static.wixstatic.com/media/64b604_45881a61db9e499ba88a90c3f7648078~mv2.png" alt="Total Wealth Management Circle" style="max-width:680px;width:100%;height:auto;display:inline-block;border-radius:12px" />
       </div>
     </div>
   </section>
