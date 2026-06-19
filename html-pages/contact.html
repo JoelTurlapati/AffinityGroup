@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -413,8 +413,12 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
             <input type="tel" id="cp-phone" name="phone" placeholder="(330) 555-1234" required />
           </div>
           <div class="form-group">
+            <label for="cp-email">Email</label>
+            <input type="email" id="cp-email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
             <label for="cp-message">Message</label>
-            <textarea id="cp-message" name="message" placeholder="Tell us a bit about your situation&hellip;"></textarea>
+            <textarea id="cp-message" name="message" placeholder="Tell us a little about your financial goals and how we can help&hellip;"></textarea>
           </div>
           <button type="submit" class="cp-form__submit">SUBMIT</button>
         </form>
