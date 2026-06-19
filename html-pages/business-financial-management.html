@@ -206,10 +206,11 @@ html{font-size:20px}
 .bfm-reality__head{text-align:center;margin-bottom:48px}
 .bfm-reality__head h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);color:#0d1b2a;font-weight:700;margin-bottom:10px}
 .bfm-reality__head p{font-family:'Inter',sans-serif;font-size:.86rem;color:#5a6a7a;line-height:1.8;max-width:560px;margin:0 auto}
-.bfm-reality__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.bfm-reality__col h3{font-family:'Inter',sans-serif;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
-.bfm-reality__col h3.pain{color:#c0392b}
-.bfm-reality__col h3.apt{color:#1a7a4a}
+.bfm-reality__grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;align-items:start}
+.bfm-reality__col-head{margin-bottom:6px}
+.bfm-reality__col-head h3{font-family:'Inter',sans-serif;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.bfm-reality__col-head h3.pain{color:#c0392b}
+.bfm-reality__col-head h3.apt{color:#1a7a4a}
 .bfm-r-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:8px;margin-bottom:10px}
 .bfm-r-item--pain{background:rgba(240,128,128,.09);border-left:3px solid #e57373}
 .bfm-r-item--apt{background:rgba(29,112,128,.07);border-left:3px solid #1D7080}
@@ -1035,22 +1036,18 @@ html{font-size:20px}
       <p>These are the most common frustrations we hear from business owners. Business Financial Management was built to solve exactly these problems.</p>
     </div>
     <div class="bfm-reality__grid">
-      <div class="bfm-reality__col">
-        <h3 class="pain">&#10060; &nbsp;Common Frustrations</h3>
-        <div class="bfm-r-item bfm-r-item--pain"><p>My CPA only calls me during tax season &mdash; I have no idea where I stand the rest of the year.</p></div>
-        <div class="bfm-r-item bfm-r-item--pain"><p>My bookkeeper and CPA don&rsquo;t communicate with each other.</p></div>
-        <div class="bfm-r-item bfm-r-item--pain"><p>I don&rsquo;t know my actual cash flow position at any given time.</p></div>
-        <div class="bfm-r-item bfm-r-item--pain"><p>I feel like I&rsquo;m paying too much in taxes, but find out too late to do anything about it.</p></div>
-        <div class="bfm-r-item bfm-r-item--pain"><p>My financial reports don&rsquo;t actually help me make better business decisions.</p></div>
-      </div>
-      <div class="bfm-reality__col">
-        <h3 class="apt">&#9989; &nbsp;The BFM Solution</h3>
-        <div class="bfm-r-item bfm-r-item--apt"><p>Year-round visibility into your business finances &mdash; not just a call in April.</p></div>
-        <div class="bfm-r-item bfm-r-item--apt"><p>Books, tax planning, and tax preparation handled by one coordinated team.</p></div>
-        <div class="bfm-r-item bfm-r-item--apt"><p>Real-time cash-flow monitoring built into your bookkeeping relationship.</p></div>
-        <div class="bfm-r-item bfm-r-item--apt"><p>Proactive tax strategy reviewed before decisions are made, not after.</p></div>
-        <div class="bfm-r-item bfm-r-item--apt"><p>Strategic reporting designed to support real business decisions, not just compliance.</p></div>
-      </div>
+      <div class="bfm-reality__col-head"><h3 class="pain">&#10060; &nbsp;Common Frustrations</h3></div>
+      <div class="bfm-reality__col-head"><h3 class="apt">&#9989; &nbsp;The BFM Solution</h3></div>
+      <div class="bfm-r-item bfm-r-item--pain"><p>My CPA only calls me during tax season &mdash; I have no idea where I stand the rest of the year.</p></div>
+      <div class="bfm-r-item bfm-r-item--apt"><p>Year-round visibility into your business finances &mdash; not just a call in April.</p></div>
+      <div class="bfm-r-item bfm-r-item--pain"><p>My bookkeeper and CPA don&rsquo;t communicate with each other.</p></div>
+      <div class="bfm-r-item bfm-r-item--apt"><p>Books, tax planning, and tax preparation handled by one coordinated team.</p></div>
+      <div class="bfm-r-item bfm-r-item--pain"><p>I don&rsquo;t know my actual cash flow position at any given time.</p></div>
+      <div class="bfm-r-item bfm-r-item--apt"><p>Real-time cash-flow monitoring built into your bookkeeping relationship.</p></div>
+      <div class="bfm-r-item bfm-r-item--pain"><p>I feel like I&rsquo;m paying too much in taxes, but find out too late to do anything about it.</p></div>
+      <div class="bfm-r-item bfm-r-item--apt"><p>Proactive tax strategy reviewed before decisions are made, not after.</p></div>
+      <div class="bfm-r-item bfm-r-item--pain"><p>My financial reports don&rsquo;t actually help me make better business decisions.</p></div>
+      <div class="bfm-r-item bfm-r-item--apt"><p>Strategic reporting designed to support real business decisions, not just compliance.</p></div>
     </div>
   </div>
 </section>
