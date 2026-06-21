@@ -536,12 +536,12 @@ contact-page { display: block; font-family: 'Inter', sans-serif; color: #1a1a1a;
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = contactForm.querySelector('.cp-form__submit');
-      btn.textContent = 'Sendingâ€¦';
+      btn.textContent = 'Sending...';
       btn.disabled = true;
 
       emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
         .then(function() {
-          btn.textContent = "Thank you! Weâ€™ll be in touch within 24 hours.";
+          btn.textContent = "Thank you! We'll be in touch within 24 hours.";
           btn.style.background = '#145568';
           contactForm.reset();
         }, function() {
