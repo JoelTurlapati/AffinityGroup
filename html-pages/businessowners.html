@@ -253,6 +253,12 @@ html { font-size: 20px; }
 .bo-svc:hover .bo-svc__bg{transform:scale(1.07)}
 .bo-svc__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,25,38,.97) 25%,rgba(14,55,70,.82) 60%,rgba(20,85,100,.5) 100%)}
 .bo-svc__body{position:relative;z-index:2;display:flex;flex-direction:column;height:100%}
+
+/* MOBILE PARAGRAPH SIZING */
+@media (max-width: 600px) {
+  .bo-intro p, .bo-section__text p { font-size: .95rem; line-height: 1.6; }
+  .bo-hero__text p, .bo-card p, .bo-video p, .bo-svc p, .bo-scott__text p, .bo-bfm__left p, .bo-bfm__cta p, .bo-cta p { line-height: 1.6; }
+}
 </style>
 
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• NAV â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
