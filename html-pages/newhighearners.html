@@ -240,6 +240,11 @@ html { font-size: 20px; }
 @media (max-width: 600px) {
   .he-hero__left p, .he-services__head p, .he-tax__left p, .he-tax__right p, .he-challenges__head p, .he-ch-card__body p, .he-tools__head p, .he-cta__content p { line-height: 1.6; }
 }
+
+/* MOBILE BADGE FIX */
+@media (max-width: 900px) {
+  .he-svc-row__tag { grid-column: 1 / -1; justify-self: start; }
+}
 </style>
 
 <!-- â•â• NAV â•â• -->
@@ -427,7 +432,7 @@ html { font-size: 20px; }
       </div>
       <div class="he-stat">
         <div class="he-stat__val">100%</div>
-        <div class="he-stat__lbl">Fiduciary â€” Always</div>
+        <div class="he-stat__lbl">Fiduciary &mdash; Always</div>
       </div>
       <div class="he-stat">
         <div class="he-stat__val">1</div>
@@ -446,7 +451,7 @@ html { font-size: 20px; }
     </div>
   </section>
 
-  <!-- 4. SERVICES â€” numbered list -->
+  <!-- 4. SERVICES &mdash; numbered list -->
   <div style="background:#F0F8FA;text-align:center;padding:44px 28px">
     <a href="https://tagplanning.wixstudio.com/demo/contact" target="_top" style="display:inline-block;padding:15px 40px;background:#1D7080;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em">Schedule a Consultation</a>
   </div>
@@ -455,14 +460,14 @@ html { font-size: 20px; }
     <div class="he-services__inner">
       <div class="he-services__head">
         <h2>Every Service You Need.<br>One Coordinated Relationship.</h2>
-        <p>High earners need more than a portfolio manager. Taxes, insurance, estate planning, real estate, and retirement all interact â€” and without coordination, gaps form between them. We cover every dimension.</p>
+        <p>High earners need more than a portfolio manager. Taxes, insurance, estate planning, real estate, and retirement all interact &mdash; and without coordination, gaps form between them. We cover every dimension.</p>
       </div>
 
       <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" class="he-svc-row" target="_top">
         <span class="he-svc-row__num">01</span>
         <div class="he-svc-row__body">
           <h3>Tax Planning &amp; Preparation</h3>
-          <p>At $250k+ income, taxes are your single largest expense. We use Holistiplan for year-round strategy â€” Roth conversions, loss harvesting, deduction timing, and income deferral â€” not just filing in April.</p>
+          <p>At $250k+ income, taxes are your single largest expense. We use Holistiplan for year-round strategy &mdash; Roth conversions, loss harvesting, deduction timing, and income deferral &mdash; not just filing in April.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -472,7 +477,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">02</span>
         <div class="he-svc-row__body">
           <h3>Investment Management</h3>
-          <p>As a fiduciary RIA we manage your portfolio with zero third-party compensation or conflicts of interest. Every dollar works toward your goals â€” never toward a commission structure.</p>
+          <p>As a fiduciary RIA we manage your portfolio with zero third-party compensation or conflicts of interest. Every dollar works toward your goals &mdash; never toward a commission structure.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -482,7 +487,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">03</span>
         <div class="he-svc-row__body">
           <h3>Total Wealth Management</h3>
-          <p>A concierge-level, multi-disciplined approach that integrates investments, taxes, estate planning, insurance, and real estate into one coordinated strategy â€” reviewed continuously throughout the year.</p>
+          <p>A concierge-level, multi-disciplined approach that integrates investments, taxes, estate planning, insurance, and real estate into one coordinated strategy &mdash; reviewed continuously throughout the year.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -492,7 +497,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">04</span>
         <div class="he-svc-row__body">
           <h3>Estate Planning</h3>
-          <p>Wills, trusts, beneficiary designations, account titling, and gifting strategies â€” all coordinated to protect your family, minimize estate taxes, and ensure your wealth transfers exactly as intended.</p>
+          <p>Wills, trusts, beneficiary designations, account titling, and gifting strategies &mdash; all coordinated to protect your family, minimize estate taxes, and ensure your wealth transfers exactly as intended.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -502,7 +507,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">05</span>
         <div class="he-svc-row__body">
           <h3>Insurance Planning</h3>
-          <p>Your income is your most valuable asset. Life, disability, and long-term care insurance analyzed and structured so your family's lifestyle is protected â€” even if you can no longer earn.</p>
+          <p>Your income is your most valuable asset. Life, disability, and long-term care insurance analyzed and structured so your family's lifestyle is protected &mdash; even if you can no longer earn.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -522,7 +527,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">07</span>
         <div class="he-svc-row__body">
           <h3>Retirement Planning</h3>
-          <p>Income projections, withdrawal strategy, Social Security optimization, and a precise retirement runway â€” so financial independence has a date you can count on, not just a vague someday.</p>
+          <p>Income projections, withdrawal strategy, Social Security optimization, and a precise retirement runway &mdash; so financial independence has a date you can count on, not just a vague someday.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--ind">Individuals</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -542,7 +547,7 @@ html { font-size: 20px; }
         <span class="he-svc-row__num">09</span>
         <div class="he-svc-row__body">
           <h3>Executive Benefit Planning</h3>
-          <p>Deferred compensation, stock options, RSUs, and supplemental benefits â€” we optimize when to exercise, when to defer, and how to minimize the tax hit on every component of your executive comp package.</p>
+          <p>Deferred compensation, stock options, RSUs, and supplemental benefits &mdash; we optimize when to exercise, when to defer, and how to minimize the tax hit on every component of your executive comp package.</p>
         </div>
         <span class="he-svc-row__tag he-svc-row__tag--biz">Business</span>
         <div class="he-svc-row__arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
@@ -563,7 +568,7 @@ html { font-size: 20px; }
       </div>
       <div class="he-tax__right">
         <h2>Filing in April Is Not a Tax Strategy. Year-Round Planning Is.</h2>
-        <p>Our team uses Holistiplan â€” a sophisticated tax planning tool â€” to model every scenario available to you: Roth conversions, tax-loss harvesting, charitable gifting, deduction timing, income deferral, and more.</p>
+        <p>Our team uses Holistiplan &mdash; a sophisticated tax planning tool &mdash; to model every scenario available to you: Roth conversions, tax-loss harvesting, charitable gifting, deduction timing, income deferral, and more.</p>
         <p>We do this every month of the year, not just before your return is due. The difference between reactive filing and proactive planning compounds dramatically over a decade.</p>
         <a href="https://tagplanning.wixstudio.com/demo/tax-planning-preparation" class="he-tax__link" target="_top">
           Explore Tax Planning &amp; Preparation
@@ -578,7 +583,7 @@ html { font-size: 20px; }
     <div class="he-challenges__inner">
       <div class="he-challenges__head">
         <h2>The Six Gaps That Cost<br>High Earners the Most</h2>
-        <p>These are the most common wealth-building blind spots we see in $250k+ earners. Our role is to close every one of them â€” proactively, before they cost you more time and money.</p>
+        <p>These are the most common wealth-building blind spots we see in $250k+ earners. Our role is to close every one of them &mdash; proactively, before they cost you more time and money.</p>
       </div>
       <div class="he-challenges__grid">
 
@@ -608,7 +613,7 @@ html { font-size: 20px; }
           </div>
           <div class="he-ch-card__body">
             <h3>Scattered, Uncoordinated Accounts</h3>
-            <p>Old 401(k)s from former employers, random brokerage accounts, and bank savings â€” all with no unified strategy. Coordination gaps can cost as much as the investments themselves.</p>
+            <p>Old 401(k)s from former employers, random brokerage accounts, and bank savings &mdash; all with no unified strategy. Coordination gaps can cost as much as the investments themselves.</p>
           </div>
         </div>
 
@@ -618,7 +623,7 @@ html { font-size: 20px; }
           </div>
           <div class="he-ch-card__body">
             <h3>No Time to Manage Any of It</h3>
-            <p>Career, family, community â€” your bandwidth is maxed. Financial planning keeps getting delayed. We act as your dedicated financial team so decisions happen on your behalf, not on your to-do list.</p>
+            <p>Career, family, community &mdash; your bandwidth is maxed. Financial planning keeps getting delayed. We act as your dedicated financial team so decisions happen on your behalf, not on your to-do list.</p>
           </div>
         </div>
 
@@ -638,7 +643,7 @@ html { font-size: 20px; }
           </div>
           <div class="he-ch-card__body">
             <h3>No Clear Retirement Runway</h3>
-            <p>Most high earners cannot answer: &ldquo;When could I stop working if I wanted to?&rdquo; We build a precise retirement timeline â€” so financial independence has a date, not just a dream.</p>
+            <p>Most high earners cannot answer: &ldquo;When could I stop working if I wanted to?&rdquo; We build a precise retirement timeline &mdash; so financial independence has a date, not just a dream.</p>
           </div>
         </div>
 
@@ -655,7 +660,7 @@ html { font-size: 20px; }
     <div class="he-tools__inner">
       <div class="he-tools__head">
         <h2>Tools &amp; Resources</h2>
-        <p>Before we ever sit down together, these resources on the Affinity Group website help you understand your numbers â€” and start thinking like a high earner who has a real plan.</p>
+        <p>Before we ever sit down together, these resources on the Affinity Group website help you understand your numbers &mdash; and start thinking like a high earner who has a real plan.</p>
       </div>
       <div class="he-tools__grid">
 
@@ -664,7 +669,7 @@ html { font-size: 20px; }
           <div class="he-tool__overlay"></div>
           <div class="he-tool__content">
             <h3>Financial Calculators</h3>
-            <p>Retirement savings, tax scenarios, investment growth â€” run your own numbers and see where you actually stand today.</p>
+            <p>Retirement savings, tax scenarios, investment growth &mdash; run your own numbers and see where you actually stand today.</p>
             <span class="he-tool__link">Open Calculators <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -674,7 +679,7 @@ html { font-size: 20px; }
           <div class="he-tool__overlay"></div>
           <div class="he-tool__content">
             <h3>Recommended Reading Library</h3>
-            <p>The books our advisors recommend to clients â€” on investing, tax strategy, wealth building, and financial independence.</p>
+            <p>The books our advisors recommend to clients &mdash; on investing, tax strategy, wealth building, and financial independence.</p>
             <span class="he-tool__link">Browse Reading List <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -684,7 +689,7 @@ html { font-size: 20px; }
           <div class="he-tool__overlay"></div>
           <div class="he-tool__content">
             <h3>Articles &amp; Insights</h3>
-            <p>Guides and insights covering tax strategies, investment principles, real estate, and retirement planning â€” written in plain language.</p>
+            <p>Guides and insights covering tax strategies, investment principles, real estate, and retirement planning &mdash; written in plain language.</p>
             <span class="he-tool__link">Explore Content <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
